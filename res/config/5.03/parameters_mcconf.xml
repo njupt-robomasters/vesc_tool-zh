@@ -4136,14 +4136,14 @@ p, li { white-space: pre-wrap; }
             <subgroup>
                 <subgroupName>电流</subgroupName>
                 <subgroupParams>
-                    <param>::sep::Motor</param>
+                    <param>::sep::电机</param>
                     <param>l_current_max</param>
                     <param>l_current_min</param>
                     <param>l_abs_current_max</param>
                     <param>l_slow_abs_current</param>
                     <param>l_current_max_scale</param>
                     <param>l_current_min_scale</param>
-                    <param>::sep::Battery</param>
+                    <param>::sep::电池</param>
                     <param>l_in_current_max</param>
                     <param>l_in_current_min</param>
                     <param>::sep::DRV8301</param>
@@ -4176,12 +4176,12 @@ p, li { white-space: pre-wrap; }
             <subgroup>
                 <subgroupName>温度</subgroupName>
                 <subgroupParams>
-                    <param>::sep::General</param>
+                    <param>::sep::通用</param>
                     <param>l_temp_accel_dec</param>
                     <param>::sep::MOSFET</param>
                     <param>l_temp_fet_start</param>
                     <param>l_temp_fet_end</param>
-                    <param>::sep::Motor</param>
+                    <param>::sep::电机</param>
                     <param>l_temp_motor_start</param>
                     <param>l_temp_motor_end</param>
                 </subgroupParams>
@@ -4368,15 +4368,15 @@ p, li { white-space: pre-wrap; }
                 <subgroupName>偏移</subgroupName>
                 <subgroupParams>
                     <param>foc_offsets_cal_on_boot</param>
-                    <param>::sep::Current</param>
+                    <param>::sep::电流</param>
                     <param>foc_offsets_current__0</param>
                     <param>foc_offsets_current__1</param>
                     <param>foc_offsets_current__2</param>
-                    <param>::sep::Voltage</param>
+                    <param>::sep::电压</param>
                     <param>foc_offsets_voltage__0</param>
                     <param>foc_offsets_voltage__1</param>
                     <param>foc_offsets_voltage__2</param>
-                    <param>::sep::Voltage Undriven</param>
+                    <param>::sep::电压未驱动</param>
                     <param>foc_offsets_voltage_undriven__0</param>
                     <param>foc_offsets_voltage_undriven__1</param>
                     <param>foc_offsets_voltage_undriven__2</param>
@@ -4432,9 +4432,9 @@ p, li { white-space: pre-wrap; }
             <subgroup>
                 <subgroupName>通用</subgroupName>
                 <subgroupParams>
-                    <param>::sep::Common</param>
+                    <param>::sep::通用</param>
                     <param>sp_pid_loop_rate</param>
-                    <param>::sep::Speed Controller</param>
+                    <param>::sep::速度控制器</param>
                     <param>s_pid_kp</param>
                     <param>s_pid_ki</param>
                     <param>s_pid_kd</param>
@@ -4442,7 +4442,7 @@ p, li { white-space: pre-wrap; }
                     <param>s_pid_min_erpm</param>
                     <param>s_pid_allow_braking</param>
                     <param>s_pid_ramp_erpms_s</param>
-                    <param>::sep::Position Controller</param>
+                    <param>::sep::位置控制器</param>
                     <param>p_pid_kp</param>
                     <param>p_pid_ki</param>
                     <param>p_pid_kd</param>

@@ -408,15 +408,36 @@ LONGNAME_TRANSLATIONS = {
     "Imu Rotation Yaw": "IMU 旋转 Yaw",
 }
 
+SEP_TRANSLATIONS = {
+    "::sep::Motor": "::sep::电机",
+    "::sep::Battery": "::sep::电池",
+    "::sep::MOSFET": "::sep::MOSFET",
+    "::sep::ABI Encoder": "::sep::ABI 编码器",
+    "::sep::Sin/Cos Encoder": "::sep::正余弦编码器",
+    "::sep::Common": "::sep::通用",
+    "::sep::Speed Controller": "::sep::速度控制器",
+    "::sep::Position Controller": "::sep::位置控制器",
+    "::sep::Current": "::sep::电流",
+    "::sep::Voltage": "::sep::电压",
+    "::sep::Voltage Undriven": "::sep::电压未驱动",
+    "::sep::Motor Temperature Sensor Type": "::sep::电机温度传感器类型",
+    "::sep::General": "::sep::通用",
+    "::sep::Encoder": "::sep::编码器",
+    "::sep::Current Controller": "::sep::电流控制器",
+    "::sep::DRV8301": "::sep::DRV8301",
+}
+
 
 def process_file(filepath):
-    """Translate longName elements in a single XML file. Returns count of translations."""
+    """Translate longName and ::sep:: elements in a single XML file.
+    Returns (longname_count, sep_count)."""
     if not os.path.exists(filepath):
-        return 0
+        return (0, 0)
 
     tree = ET.parse(filepath)
     root = tree.getroot()
-    count = 0
+    longname_count = 0
+    sep_count = 0
 
     for elem in root.iter():
         tag = elem.tag.lower() if "}" not in elem.tag else elem.tag.split("}", 1)[1]
@@ -429,12 +450,23 @@ def process_file(filepath):
                     leading = elem.text[: len(elem.text) - len(elem.text.lstrip())]
                     trailing = elem.text[len(elem.text.rstrip()):]
                     elem.text = leading + new_text + trailing
-                    count += 1
+                    longname_count += 1
 
-    if count > 0:
+        if tag == "param" and elem.text and elem.text.strip().startswith("::sep::"):
+            stripped = elem.text.strip()
+            if stripped in SEP_TRANSLATIONS:
+                new_text = SEP_TRANSLATIONS[stripped]
+                if stripped != new_text:
+                    leading = elem.text[: len(elem.text) - len(elem.text.lstrip())]
+                    trailing = elem.text[len(elem.text.rstrip()):]
+                    elem.text = leading + new_text + trailing
+                    sep_count += 1
+
+    total = longname_count + sep_count
+    if total > 0:
         tree.write(filepath, encoding="utf-8", xml_declaration=True)
 
-    return count
+    return (longname_count, sep_count)
 
 
 def main():
@@ -448,6 +480,7 @@ def main():
     ])
 
     total_longname = 0
+    total_sep = 0
     files_modified = 0
 
     for ver in versions:
@@ -455,18 +488,27 @@ def main():
         apc = os.path.join(BASE, ver, "parameters_appconf.xml")
 
         for fp in (mcc, apc):
-            n = process_file(fp)
-            if n > 0:
-                total_longname += n
+            ln, sp = process_file(fp)
+            total_n = ln + sp
+            if total_n > 0:
+                total_longname += ln
+                total_sep += sp
                 files_modified += 1
                 rel = os.path.relpath(fp, os.path.dirname(BASE))
-                print(f"  {rel}: {n} translations")
+                parts = []
+                if ln > 0:
+                    parts.append(f"{ln} longName")
+                if sp > 0:
+                    parts.append(f"{sp} separator")
+                print(f"  {rel}: {', '.join(parts)}")
 
     print()
     print(f"=== Summary ===")
-    print(f"   longName translations: {total_longname}")
-    print(f"   Files modified:        {files_modified}")
-    print(f"   Versions processed:    {len(versions)}")
+    print(f"   longName translations:  {total_longname}")
+    print(f"   separator translations: {total_sep}")
+    print(f"   Total translations:     {total_longname + total_sep}")
+    print(f"   Files modified:         {files_modified}")
+    print(f"   Versions processed:     {len(versions)}")
 
     # Verify key files are valid XML
     print()
