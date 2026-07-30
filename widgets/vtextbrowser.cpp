@@ -33,7 +33,7 @@ VTextBrowser::VTextBrowser(QWidget *parent)
     viewport()->setMouseTracking(true);
 
     QFont f = document()->defaultFont();
-    f.setPointSizeF(f.pointSizeF() * 1.1);
+    f.setPointSizeF(f.pointSizeF() * 1.5);
     document()->setDefaultFont(f);
 }
 
