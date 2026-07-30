@@ -31,6 +31,10 @@ VTextBrowser::VTextBrowser(QWidget *parent)
                             Qt::LinksAccessibleByKeyboard);
 
     viewport()->setMouseTracking(true);
+
+    QFont f = document()->defaultFont();
+    f.setPointSizeF(f.pointSizeF() * 1.1);
+    document()->setDefaultFont(f);
 }
 
 void VTextBrowser::mousePressEvent(QMouseEvent *e)
