@@ -119,7 +119,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    this->setWindowIcon(QIcon(":/res/icon.svg"));
+    this->setWindowIcon(QIcon(":/res/icons/v_icon-256.png"));
 
     ui->actionParameterEditorMcconf->setIcon(Utility::getIcon("icons/Horizontal Settings Mixer-96.png"));
     ui->actionParameterEditorAppconf->setIcon(Utility::getIcon("icons/Horizontal Settings Mixer-96.png"));
