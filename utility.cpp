@@ -2525,7 +2525,6 @@ QString Utility::configPath(QString subPath)
         for (auto path : paths) {
             QFile file(path);
             if (file.exists()) {
-                QResource::unregisterResource(path);
                 QResource::registerResource(path);
                 break;
             }
