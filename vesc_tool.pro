@@ -294,6 +294,8 @@ RESOURCES += res.qrc \
     res_qml.qrc
 RESOURCES += res_embed.qrc
 
+RC_FILE = vesc_tool.rc
+
 RESOURCES += res_fw_bms.qrc
 
 !exclude_fw {

@@ -39,6 +39,9 @@
 #include <QFontDatabase>
 #include <QPixmapCache>
 
+#include <QtPlugin>
+Q_IMPORT_PLUGIN(QSvgIconPlugin)
+
 #include "tcphub.h"
 
 #ifndef HAS_BLUETOOTH
