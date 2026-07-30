@@ -160,7 +160,7 @@ static void addFonts() {
     QFontDatabase::addApplicationFont("://res/fonts/Exan-Regular.ttf");
 
 #ifdef Q_OS_WIN
-    QFont font("Microsoft YaHei", 10);
+    QFont font("Microsoft YaHei", 11);
 #else
     QFont font("Roboto", 12);
 #endif
