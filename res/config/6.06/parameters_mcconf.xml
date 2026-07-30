@@ -97,7 +97,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_current_max>
         <l_current_min>
-            <longName>Motor Current Max Brake</longName>
+            <longName>电机最大制动电流</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
