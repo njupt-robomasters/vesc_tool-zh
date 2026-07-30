@@ -1,0 +1,62 @@
+# Build outputs
+build/
+Build/
+*.o
+*.obj
+*.elf
+*.hex
+*.bin
+*.a
+*.la
+*.lai
+*.so
+*.dll
+*.dylib
+*.slo
+*.lo
+
+# Qt
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+Makefile*
+*build-*
+object_script.*.Release
+object_script.*.Debug
+*_plugin_import.cpp
+
+# IDE
+.vscode/
+.project
+.cproject
+.settings/
+*.code-workspace
+*.autosave
+
+# Nix
+/result
+/.cache
+compile_commands.json
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# Archives
+*.zip
+*.7z
+*.tar.gz
+*.rar
+
+# Misc
+.dep/
+*.keystore
