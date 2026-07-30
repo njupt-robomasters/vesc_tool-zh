@@ -292,7 +292,7 @@ RESOURCES += res.qrc \
     res_custom_module.qrc \
     res_lisp.qrc \
     res_qml.qrc
-# RESOURCES += res/config/res_config.qrc
+RESOURCES += res_embed.qrc
 
 RESOURCES += res_fw_bms.qrc
 

@@ -2518,17 +2518,7 @@ QString Utility::configPath(QString subPath)
     // seems to sometimes freeze or crash on windows.
     static bool resourceLoaded = false;
     if (!resourceLoaded) {
-        QStringList paths;
-        paths.append(qApp->applicationDirPath() + "/res_config.rcc");
-        paths.append(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/res_config.rcc");
-
-        for (auto path : paths) {
-            QFile file(path);
-            if (file.exists()) {
-                QResource::registerResource(path);
-                break;
-            }
-        }
+        QResource::registerResource(":/res_config.rcc");
 
         resourceLoaded = true;
     }
