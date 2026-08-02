@@ -1641,6 +1641,7 @@ int main(int argc, char *argv[])
             darkPalette.setColor(QPalette::LinkVisited, QColor(220,150,255));
             qApp->setPalette(darkPalette);
             qApp->setStyleSheet(
+                        "QComboBox, QPushButton, QLineEdit, QLabel, QCheckBox, QRadioButton, QGroupBox, QSpinBox, QDoubleSpinBox { font-family: 'Microsoft YaHei'; } "
                         "QTabBar::tab:selected, QTabBar::tab:hover {"
                         "    background: #3d3d3d;"
                         "    color: #eeeeee;"
