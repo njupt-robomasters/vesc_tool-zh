@@ -9,7 +9,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Roboto'; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;The PWM mode to use for BLDC motors. Synchronous is the most tested and recommended mode. The others are likely to cause problems.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;BLDC 电机使用的 PWM 模式。 同步模式是测试最充分、推荐使用的模式。 其他模式可能导致问题。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine>MCCONF_PWM_MODE</cDefine>
             <valInt>1</valInt>
             <enumNames>Nonsynchronous HISW</enumNames>
@@ -186,7 +186,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_abs_current_max>
         <l_min_erpm>
-            <longName>Max ERPM Reverse</longName>
+            <longName>反向最大 ERPM</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -208,7 +208,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_min_erpm>
         <l_max_erpm>
-            <longName>Max ERPM</longName>
+            <longName>最大 ERPM</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -230,7 +230,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_max_erpm>
         <l_erpm_start>
-            <longName>ERPM Limit Start</longName>
+            <longName>ERPM 限制起点</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -252,7 +252,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_erpm_start>
         <l_max_erpm_fbrake>
-            <longName>Max ERPM Full Brake</longName>
+            <longName>全刹车最大 ERPM</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -274,7 +274,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_max_erpm_fbrake>
         <l_max_erpm_fbrake_cc>
-            <longName>Max ERPM Full Brake Current Control</longName>
+            <longName>CC 全刹车最大 ERPM</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -396,7 +396,7 @@ p, li { white-space: pre-wrap; }
             <valInt>1</valInt>
         </l_slow_abs_current>
         <l_temp_fet_start>
-            <longName>MOSFET Temp Cutoff Start</longName>
+            <longName>MOSFET 温度截止起点</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -418,7 +418,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_temp_fet_start>
         <l_temp_fet_end>
-            <longName>MOSFET Temp Cutoff End</longName>
+            <longName>MOSFET 温度截止终点</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -440,7 +440,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_temp_fet_end>
         <l_temp_motor_start>
-            <longName>Motor Temp Cutoff Start</longName>
+            <longName>电机温度截止起点</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -462,7 +462,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_temp_motor_start>
         <l_temp_motor_end>
-            <longName>Motor Temp Cutoff End</longName>
+            <longName>电机温度截止终点</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -484,7 +484,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_temp_motor_end>
         <l_temp_accel_dec>
-            <longName>Acceleration Temperature Decrease</longName>
+            <longName>温度加速减速</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -574,7 +574,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_watt_max>
         <l_watt_min>
-            <longName>Maximum Braking Wattage</longName>
+            <longName>最大制动功率</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -598,7 +598,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_watt_min>
         <l_current_max_scale>
-            <longName>Max Current Scale</longName>
+            <longName>电流最大比例</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -620,7 +620,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </l_current_max_scale>
         <l_current_min_scale>
-            <longName>Min Current Scale</longName>
+            <longName>电流最小比例</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -664,7 +664,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </sl_min_erpm>
         <sl_min_erpm_cycle_int_limit>
-            <longName>Minimum ERPM Integrator</longName>
+            <longName>开环 ERPM 起点</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -686,7 +686,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </sl_min_erpm_cycle_int_limit>
         <sl_max_fullbreak_current_dir_change>
-            <longName>Max Brake Current at Direction Change</longName>
+            <longName>最大全刹车电流方向变化</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -708,7 +708,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </sl_max_fullbreak_current_dir_change>
         <sl_cycle_int_limit>
-            <longName>Cycle Integrator Limit</longName>
+            <longName>周期积分限制</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -730,7 +730,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </sl_cycle_int_limit>
         <sl_phase_advance_at_br>
-            <longName>Phase Advance at BR ERPM</longName>
+            <longName>全刹车相位提前</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -752,7 +752,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </sl_phase_advance_at_br>
         <sl_cycle_int_rpm_br>
-            <longName>BR ERPM</longName>
+            <longName>全刹车 RPM</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -774,7 +774,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </sl_cycle_int_rpm_br>
         <sl_bemf_coupling_k>
-            <longName>BEMF Coupling</longName>
+            <longName>BEMF 耦合常数</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -796,7 +796,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </sl_bemf_coupling_k>
         <hall_table__0>
-            <longName>Hall Table [0]</longName>
+            <longName>霍尔表 [0]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -816,7 +816,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </hall_table__0>
         <hall_table__1>
-            <longName>Hall Table [1]</longName>
+            <longName>霍尔表 [1]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -836,7 +836,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </hall_table__1>
         <hall_table__2>
-            <longName>Hall Table [2]</longName>
+            <longName>霍尔表 [2]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -856,7 +856,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </hall_table__2>
         <hall_table__3>
-            <longName>Hall Table [3]</longName>
+            <longName>霍尔表 [3]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -876,7 +876,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </hall_table__3>
         <hall_table__4>
-            <longName>Hall Table [4]</longName>
+            <longName>霍尔表 [4]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -896,7 +896,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </hall_table__4>
         <hall_table__5>
-            <longName>Hall Table [5]</longName>
+            <longName>霍尔表 [5]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -916,7 +916,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </hall_table__5>
         <hall_table__6>
-            <longName>Hall Table [6]</longName>
+            <longName>霍尔表 [6]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -936,7 +936,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </hall_table__6>
         <hall_table__7>
-            <longName>Hall Table [7]</longName>
+            <longName>霍尔表 [7]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -956,7 +956,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </hall_table__7>
         <hall_sl_erpm>
-            <longName>Sensorless ERPM Hybrid</longName>
+            <longName>无感混合 ERPM</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -978,7 +978,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </hall_sl_erpm>
         <foc_current_kp>
-            <longName>Current KP</longName>
+            <longName>电流控制器 Kp</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1000,7 +1000,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_current_kp>
         <foc_current_ki>
-            <longName>Current KI</longName>
+            <longName>电流控制器 Ki</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1022,7 +1022,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_current_ki>
         <foc_f_sw>
-            <longName>Switching Frequency</longName>
+            <longName>DC PWM 频率</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1212,7 +1212,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_encoder_cos_offset>
         <foc_encoder_sincos_filter_constant>
-            <longName>Sin/Cos Filter Constant</longName>
+            <longName>正余弦编码器滤波常数</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1258,7 +1258,7 @@ p, li { white-space: pre-wrap; }
             <enumNames>Hall Sensors</enumNames>
         </foc_sensor_mode>
         <foc_pll_kp>
-            <longName>Speed Tracker Kp</longName>
+            <longName>PLL Kp</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1280,7 +1280,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_pll_kp>
         <foc_pll_ki>
-            <longName>Speed Tracker Ki</longName>
+            <longName>PLL Ki</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1346,7 +1346,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_motor_r>
         <foc_motor_flux_linkage>
-            <longName>Motor Flux Linkage (λ)</longName>
+            <longName>电机磁链（λ）</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1368,7 +1368,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_motor_flux_linkage>
         <foc_observer_gain>
-            <longName>Observer Gain (x1M)</longName>
+            <longName>观测器增益（x1M）</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1390,7 +1390,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_observer_gain>
         <foc_observer_gain_slow>
-            <longName>Observer Gain At Minimum Duty</longName>
+            <longName>观测器增益（低速）</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1412,7 +1412,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_observer_gain_slow>
         <foc_duty_dowmramp_kp>
-            <longName>Duty Downramp Kp</longName>
+            <longName>占空下降斜坡 Kp</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1434,7 +1434,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_duty_dowmramp_kp>
         <foc_duty_dowmramp_ki>
-            <longName>Duty Downramp Ki</longName>
+            <longName>占空下降斜坡 Ki</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1456,7 +1456,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_duty_dowmramp_ki>
         <foc_openloop_rpm>
-            <longName>Openloop ERPM</longName>
+            <longName>开环 ERPM</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1478,7 +1478,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_openloop_rpm>
         <foc_sl_openloop_hyst>
-            <longName>Openloop Hysteresis</longName>
+            <longName>SL 开环迟滞</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1500,7 +1500,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_sl_openloop_hyst>
         <foc_sl_openloop_time>
-            <longName>Openloop Time</longName>
+            <longName>SL 开环时间</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1566,7 +1566,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_sl_d_current_factor>
         <foc_hall_table__0>
-            <longName>Hall Table [0]</longName>
+            <longName>霍尔表 [0]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1586,7 +1586,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </foc_hall_table__0>
         <foc_hall_table__1>
-            <longName>Hall Table [1]</longName>
+            <longName>霍尔表 [1]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1606,7 +1606,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </foc_hall_table__1>
         <foc_hall_table__2>
-            <longName>Hall Table [2]</longName>
+            <longName>霍尔表 [2]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1626,7 +1626,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </foc_hall_table__2>
         <foc_hall_table__3>
-            <longName>Hall Table [3]</longName>
+            <longName>霍尔表 [3]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1646,7 +1646,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </foc_hall_table__3>
         <foc_hall_table__4>
-            <longName>Hall Table [4]</longName>
+            <longName>霍尔表 [4]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1666,7 +1666,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </foc_hall_table__4>
         <foc_hall_table__5>
-            <longName>Hall Table [5]</longName>
+            <longName>霍尔表 [5]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1686,7 +1686,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </foc_hall_table__5>
         <foc_hall_table__6>
-            <longName>Hall Table [6]</longName>
+            <longName>霍尔表 [6]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1706,7 +1706,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </foc_hall_table__6>
         <foc_hall_table__7>
-            <longName>Hall Table [7]</longName>
+            <longName>霍尔表 [7]</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1810,7 +1810,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_sat_comp>
         <foc_temp_comp>
-            <longName>Temp Comp</longName>
+            <longName>温度补偿</longName>
             <type>5</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1822,7 +1822,7 @@ p, li { white-space: pre-wrap; }
             <valInt>0</valInt>
         </foc_temp_comp>
         <foc_temp_comp_base_temp>
-            <longName>Temp Comp Base Temp</longName>
+            <longName>温度补偿基准温度</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1844,7 +1844,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </foc_temp_comp_base_temp>
         <foc_current_filter_const>
-            <longName>Current Filter Constant</longName>
+            <longName>电流滤波常数</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1906,7 +1906,7 @@ p, li { white-space: pre-wrap; }
             <vTx>4</vTx>
         </gpd_buffer_interpol>
         <gpd_current_filter_const>
-            <longName>Current Filter Constant</longName>
+            <longName>电流滤波常数</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1928,7 +1928,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </gpd_current_filter_const>
         <gpd_current_kp>
-            <longName>Current KP</longName>
+            <longName>电流控制器 Kp</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -1950,7 +1950,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </gpd_current_kp>
         <gpd_current_ki>
-            <longName>Current KI</longName>
+            <longName>电流控制器 Ki</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2082,7 +2082,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </s_pid_min_erpm>
         <s_pid_allow_braking>
-            <longName>Allow Braking</longName>
+            <longName>速度控制器允许制动</longName>
             <type>5</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2182,7 +2182,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </p_pid_kd_filter>
         <p_pid_ang_div>
-            <longName>Position Angle Division</longName>
+            <longName>位置控制器角度分频</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2204,7 +2204,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </p_pid_ang_div>
         <cc_startup_boost_duty>
-            <longName>Startup boost</longName>
+            <longName>启动增强占空</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2226,7 +2226,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </cc_startup_boost_duty>
         <cc_min_current>
-            <longName>Minimum Current</longName>
+            <longName>最小电流</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2248,7 +2248,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </cc_min_current>
         <cc_gain>
-            <longName>Current Controller Gain</longName>
+            <longName>电流控制器增益</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2270,7 +2270,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </cc_gain>
         <cc_ramp_step_max>
-            <longName>Current Control Ramp Step Max</longName>
+            <longName>电流控制器最大斜坡步长</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2312,7 +2312,7 @@ p, li { white-space: pre-wrap; }
             <vTx>6</vTx>
         </m_fault_stop_time_ms>
         <m_duty_ramp_step>
-            <longName>Duty Ramp Step Max</longName>
+            <longName>占空最大步长</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2468,7 +2468,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </m_drv8301_oc_adj>
         <m_bldc_f_sw_min>
-            <longName>Minimum Switching Frequency</longName>
+            <longName>最小 PWM 频率</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2490,7 +2490,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </m_bldc_f_sw_min>
         <m_bldc_f_sw_max>
-            <longName>Maximum Switching Frequency</longName>
+            <longName>最大 PWM 频率</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2512,7 +2512,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </m_bldc_f_sw_max>
         <m_dc_f_sw>
-            <longName>Switching Frequency</longName>
+            <longName>DC PWM 频率</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2534,7 +2534,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </m_dc_f_sw>
         <m_ntc_motor_beta>
-            <longName>Beta Value for Motor Thermistor</longName>
+            <longName>NTC 电机 Beta</longName>
             <type>1</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2664,7 +2664,7 @@ p, li { white-space: pre-wrap; }
             <enumNames>BATTERY_TYPE_LEAD_ACID</enumNames>
         </si_battery_type>
         <si_battery_cells>
-            <longName>Battery Cells Series</longName>
+            <longName>电池串数</longName>
             <type>2</type>
             <transmittable>1</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2761,7 +2761,7 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name="qrichtext" content="1" /&gt;&lt;style type="text/css"&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=" font-family:'Roboto'; ; font-weight:400; font-style:normal;"&gt;
-&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-family:'Roboto';"&gt;The number of motor poles. This is always a multiple of two.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
+&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"&gt;&lt;span style=" font-family:'Roboto';"&gt;电机极数。 This is always a multiple of two.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</description>
             <cDefine />
             <editorScale>1</editorScale>
             <editAsPercentage>0</editAsPercentage>
@@ -2774,7 +2774,7 @@ p, li { white-space: pre-wrap; }
             <vTx>1</vTx>
         </motor_poles>
         <motor_sensor_type>
-            <longName>Position Sensor</longName>
+            <longName>电机传感器类型</longName>
             <type>4</type>
             <transmittable>0</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2791,7 +2791,7 @@ p, li { white-space: pre-wrap; }
             <enumNames>Other Sensor</enumNames>
         </motor_sensor_type>
         <motor_description>
-            <longName>Motor Description</longName>
+            <longName>电机描述</longName>
             <type>3</type>
             <transmittable>0</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2825,7 +2825,7 @@ p, li { white-space: pre-wrap; }
             <vTx>9</vTx>
         </motor_loss_torque>
         <motor_quality_bearings>
-            <longName>Bearing Quality</longName>
+            <longName>电机轴承质量</longName>
             <type>2</type>
             <transmittable>0</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2845,7 +2845,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </motor_quality_bearings>
         <motor_quality_magnets>
-            <longName>Magnet Quality</longName>
+            <longName>电机磁铁质量</longName>
             <type>2</type>
             <transmittable>0</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2865,7 +2865,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </motor_quality_magnets>
         <motor_quality_construction>
-            <longName>Construction Quality</longName>
+            <longName>电机结构质量</longName>
             <type>2</type>
             <transmittable>0</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -2885,7 +2885,7 @@ p, li { white-space: pre-wrap; }
             <vTx>2</vTx>
         </motor_quality_construction>
         <motor_quality_description>
-            <longName>Quality Description</longName>
+            <longName>质量描述</longName>
             <type>3</type>
             <transmittable>0</transmittable>
             <description>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd"&gt;
@@ -3041,14 +3041,14 @@ p, li { white-space: pre-wrap; }
             <subgroup>
                 <subgroupName>Current</subgroupName>
                 <subgroupParams>
-                    <param>::sep::Motor</param>
+                    <param>::sep::电机</param>
                     <param>l_current_max</param>
                     <param>l_current_min</param>
                     <param>l_abs_current_max</param>
                     <param>l_slow_abs_current</param>
                     <param>l_current_max_scale</param>
                     <param>l_current_min_scale</param>
-                    <param>::sep::Battery</param>
+                    <param>::sep::电池</param>
                     <param>l_in_current_max</param>
                     <param>l_in_current_min</param>
                     <param>::sep::DRV8301</param>
@@ -3081,12 +3081,12 @@ p, li { white-space: pre-wrap; }
             <subgroup>
                 <subgroupName>Temperature</subgroupName>
                 <subgroupParams>
-                    <param>::sep::General</param>
+                    <param>::sep::通用</param>
                     <param>l_temp_accel_dec</param>
                     <param>::sep::MOSFET</param>
                     <param>l_temp_fet_start</param>
                     <param>l_temp_fet_end</param>
-                    <param>::sep::Motor</param>
+                    <param>::sep::电机</param>
                     <param>l_temp_motor_start</param>
                     <param>l_temp_motor_end</param>
                 </subgroupParams>
@@ -3257,14 +3257,14 @@ p, li { white-space: pre-wrap; }
             <subgroup>
                 <subgroupName>General</subgroupName>
                 <subgroupParams>
-                    <param>::sep::Speed Controller</param>
+                    <param>::sep::速度控制器</param>
                     <param>s_pid_kp</param>
                     <param>s_pid_ki</param>
                     <param>s_pid_kd</param>
                     <param>s_pid_kd_filter</param>
                     <param>s_pid_min_erpm</param>
                     <param>s_pid_allow_braking</param>
-                    <param>::sep::Position Controller</param>
+                    <param>::sep::位置控制器</param>
                     <param>p_pid_kp</param>
                     <param>p_pid_ki</param>
                     <param>p_pid_kd</param>
