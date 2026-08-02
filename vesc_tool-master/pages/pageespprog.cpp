@@ -249,9 +249,9 @@ void PageEspProg::on_flashButton_clicked()
 void PageEspProg::on_blChooseButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Bootloader"),
+                                                    tr("选择引导程序"),
                                                     ui->blEdit->text(),
-                                                    tr("Binary files (*.bin)"));
+                                                    tr("二进制文件 (*.bin)"));
     if (!filename.isNull()) {
         ui->blEdit->setText(filename);
     }
@@ -260,9 +260,9 @@ void PageEspProg::on_blChooseButton_clicked()
 void PageEspProg::on_partChooseButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Partition Table"),
+                                                    tr("选择分区表"),
                                                     ui->partEdit->text(),
-                                                    tr("Binary files (*.bin)"));
+                                                    tr("二进制文件 (*.bin)"));
     if (!filename.isNull()) {
         ui->partEdit->setText(filename);
     }
@@ -271,9 +271,9 @@ void PageEspProg::on_partChooseButton_clicked()
 void PageEspProg::on_appChooseButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Application"),
+                                                    tr("选择应用程序"),
                                                     ui->appEdit->text(),
-                                                    tr("Binary files (*.bin)"));
+                                                    tr("二进制文件 (*.bin)"));
     if (!filename.isNull()) {
         ui->appEdit->setText(filename);
     }

@@ -231,7 +231,7 @@
               <bool>false</bool>
              </property>
              <property name="prefix">
-              <string>Pwr: </string>
+              <string>功率：</string>
              </property>
              <property name="suffix">
               <string> W</string>
@@ -287,7 +287,7 @@
               <string>RPM exponent</string>
              </property>
              <property name="prefix">
-              <string>Exp: </string>
+              <string>指数：</string>
              </property>
              <property name="minimum">
               <double>0.000000000000000</double>

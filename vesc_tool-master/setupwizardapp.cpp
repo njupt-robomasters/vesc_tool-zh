@@ -49,7 +49,7 @@ SetupWizardApp::SetupWizardApp(VescInterface *vesc, QWidget *parent)
     setPixmap(QWizard::LogoPixmap, icon_logo);
     resize(800, 450);
 
-    setWindowTitle(tr("App Setup Wizard"));
+    setWindowTitle(tr("应用设置向导"));
 
     mSideLabel = new AspectImgLabel(Qt::Vertical);
     mSideLabel->setPixmap(Utility::getIcon("logo_vertical.png"));
@@ -81,13 +81,11 @@ AppIntroPage::AppIntroPage(VescInterface *vesc, QWidget *parent)
     : QWizardPage(parent)
 {
     mVesc = vesc;
-    setTitle(tr("VESC® Input Setup Wizard"));
+    setTitle(tr("VESC® 输入设置向导"));
 
-    mLabel = new QLabel(tr("This wizard will help you choose what type of input to use "
-                           "for your VESC®, and set up the apps according to your input."
+    mLabel = new QLabel(tr("此向导将帮助您选择 VESC® 使用的输入类型，并根据您的输入设置应用程序。"
                            "<br><br>"
-                           "To get more information about the parameters and tools in the "
-                           "wizard, click on the questionmark next to them."));
+                           "要获取向导中参数和工具的更多信息，请点击旁边的问号。"));
 
     mLabel->setWordWrap(true);
 
@@ -122,12 +120,11 @@ bool AppIntroPage::validatePage()
     if (!mVesc->isPortConnected()) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::information(this,
-                                         tr("Connection"),
-                                         tr("You are not connected to the VESC. Would you like to try to "
-                                            "automatically connect?<br><br>"
+                                         tr("连接"),
+                                         tr("您未连接到 VESC。是否尝试自动连接？"
+                                            "<br><br>"
                                             ""
-                                            "<i>Notice that the USB cable must be plugged in and that the VESC "
-                                            "must be powered for the connection to work.</i>"),
+                                            "<i>请注意，USB 线必须插入且 VESC 必须通电才能建立连接。</i>"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
         if (reply == QMessageBox::Yes) {
@@ -157,10 +154,8 @@ AppConnectionPage::AppConnectionPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("Connect VESC"));
-    setSubTitle(tr("The VESC has to be connected in order to use this "
-                   "wizard. Please connect using one of the available "
-                   "interfaces."));
+    setTitle(tr("连接 VESC"));
+    setSubTitle(tr("VESC 必须连接才能使用此向导。请使用可用的接口之一进行连接。"));
 
     mPageConnection = new PageConnection;
     mPageConnection->setVesc(mVesc);
@@ -193,13 +188,10 @@ AppFirmwarePage::AppFirmwarePage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("Update Firmware"));
-    setSubTitle(tr("You need to update the firmware on the VESC in order "
-                   "to use it with this version of VESC Tool."));
+    setTitle(tr("更新固件"));
+    setSubTitle(tr("您需要更新 VESC 上的固件才能与此版本的 VESC Tool 一起使用。"));
 
-    mLabel = new QLabel(tr("Your VESC (or one of the VESCs on the CAN-bus) has old firmware, "
-                           "and needs to be updated. After that, "
-                           "the motor configuration has to be done again."));
+    mLabel = new QLabel(tr("您的 VESC（或 CAN 总线上的某个 VESC）固件版本过旧，需要更新。之后必须重新进行电机配置。"));
 
     mLabel->setWordWrap(true);
 
@@ -218,9 +210,8 @@ AppMultiPage::AppMultiPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("Multiple VESCs"));
-    setSubTitle(tr("Found multiple VESCs on the CAN-bus, choose "
-                   "which one the input is connected to."));
+    setTitle(tr("多个 VESC"));
+    setSubTitle(tr("在 CAN 总线上发现多个 VESC，请选择输入连接到哪一个。"));
 
     mCanFwdList = new QListWidget;
     mCanFwdList->setIconSize(QSize(50, 50));
@@ -245,7 +236,7 @@ void AppMultiPage::initializePage()
 
     if (params.hwType == HW_TYPE_VESC) {
         QListWidgetItem *item = new QListWidgetItem;
-        item->setText(tr("This VESC (ID: %1)").
+        item->setText(tr("此 VESC（ID：%1）").
                       arg(mVesc->appConfig()->getParamInt("controller_id")));
         item->setIcon(Utility::getIcon("icons/Connected-96.png"));
         item->setData(Qt::UserRole, -1);
@@ -265,7 +256,7 @@ void AppMultiPage::initializePage()
         }
 
         QListWidgetItem *item = new QListWidgetItem;
-        item->setText(tr("VESC with ID: %1").arg(dev));
+        item->setText(tr("ID 为 %1 的 VESC").arg(dev));
         item->setIcon(Utility::getIcon("icons/can_off.png"));
         item->setData(Qt::UserRole, dev);
         mCanFwdList->addItem(item);
@@ -316,30 +307,30 @@ AppGeneralPage::AppGeneralPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("Choose App"));
-    setSubTitle(tr("Choose what type of input you want to control this VESC with."));
+    setTitle(tr("选择应用"));
+    setSubTitle(tr("选择用于控制此 VESC 的输入类型。"));
 
     mInputList = new QListWidget;
     QListWidgetItem *item = new QListWidgetItem;
-    item->setText(tr("PPM input, such as conventional RC receivers."));
+    item->setText(tr("PPM 输入，如传统遥控接收机。"));
     item->setIcon(QIcon("://res/images/rc_rx.jpg"));
     item->setData(Qt::UserRole, SetupWizardApp::Input_Ppm);
     mInputList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("NRF controller."));
+    item->setText(tr("NRF 控制器。"));
     item->setIcon(QIcon("://res/images/vedder_nunchuk.jpg"));
     item->setData(Qt::UserRole, SetupWizardApp::Input_NunchukNrf);
     mInputList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("ADC input, such as conventional ebike throttles."));
+    item->setText(tr("ADC 输入，如传统电动车油门。"));
     item->setIcon(QIcon("://res/images/ebike_throttle.jpg"));
     item->setData(Qt::UserRole, SetupWizardApp::Input_Adc);
     mInputList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("Wireless nyko kama nunchuk."));
+    item->setText(tr("无线 Nyko Kama Nunchuk。"));
     item->setIcon(QIcon("://res/images/nunchuk.jpg"));
     item->setData(Qt::UserRole, SetupWizardApp::Input_Nunchuk);
     mInputList->addItem(item);
@@ -400,12 +391,12 @@ AppNunchukPage::AppNunchukPage(VescInterface *vesc, QWidget *parent)
     : QWizardPage(parent)
 {
     mVesc = vesc;
-    setTitle(tr("Nunchuk Configuration"));
+    setTitle(tr("Nunchuk 配置"));
 
     mParamTab = new ParamTable;
     mNrfPair = new NrfPair;
     mTimer = new QTimer(this);
-    mWriteButton = new QPushButton(tr(" | Write Configuration To Vesc"));
+    mWriteButton = new QPushButton(tr(" | 将配置写入 VESC"));
     mWriteButton->setIcon(Utility::getIcon("icons/app_down.png"));
     mWriteButton->setIconSize(QSize(24, 24));
 
@@ -453,13 +444,13 @@ void AppNunchukPage::initializePage()
     mParamTab->addParamRow(mVesc->appConfig(), "app_chuk_conf.smart_rev_max_duty");
     mParamTab->addParamRow(mVesc->appConfig(), "app_chuk_conf.smart_rev_ramp_time");
 
-    mParamTab->addRowSeparator(tr("Multiple VESCs over CAN-bus"));
+    mParamTab->addRowSeparator(tr("CAN 总线上的多个 VESC"));
     mParamTab->addParamRow(mVesc->appConfig(), "app_chuk_conf.tc");
     mParamTab->addParamRow(mVesc->appConfig(), "app_chuk_conf.tc_max_diff");
     mVesc->appConfig()->updateParamBool("app_chuk_conf.multi_esc", true);
 
     if (field("Input").toInt() == SetupWizardApp::Input_Nunchuk) {
-        setSubTitle(tr("Configure your nyko kama nunchuk."));
+        setSubTitle(tr("配置您的 Nyko Kama Nunchuk。"));
         mNrfPair->setVisible(false);        
         mVesc->appConfig()->updateParamEnum("app_to_use", 6);
         mVesc->commands()->setAppConf();
@@ -468,7 +459,7 @@ void AppNunchukPage::initializePage()
         mVesc->commands()->setAppConf();
         Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 2000);
     } else {
-        setSubTitle(tr("Pair and configure your NRF nunchuk."));
+        setSubTitle(tr("配对并配置您的 NRF Nunchuk。"));
         mNrfPair->setVisible(true);
 //        mVesc->appConfig()->updateParamEnum("app_to_use", 7);
         mVesc->appConfig()->updateParamEnum("app_to_use", 3); // Assume permanent NRF or NRF51 on UART
@@ -479,18 +470,11 @@ void AppNunchukPage::initializePage()
         Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 2000);
 
         QMessageBox::information(this,
-                                 tr("NRF Pairing"),
-                                 tr("You are about to start pairing your NRF nunchuk. After clicking OK "
-                                    "you can use any of the buttons on the nunchuk to finish the pairing "
-                                    "process. Notice that the nunchuk has to be switched off for the "
-                                    "pairing to succeed. After the pairing is done you might need to use "
-                                    "one of the nunchuk buttons again to switch the nunchuk on before you "
-                                    "can use it."
+                                 tr("NRF 配对"),
+                                 tr("您即将开始配对 NRF Nunchuk。点击确定后，您可以使用 Nunchuk 上的任意按钮完成配对过程。请注意，Nunchuk 必须处于关闭状态才能成功配对。配对完成后，您可能需要再次使用 Nunchuk 按钮将其打开才能使用。"
                                     "<br><br>"
-                                    "<font color=\"red\">Warning: </font>"
-                                    "After the pairing is done the nunchuk will become activated, so if "
-                                    "you move the joystick the motor will start spinning. Make sure that "
-                                    "nothing is in the way."));
+                                    "<font color=\"red\">警告：</font>"
+                                    "配对完成后 Nunchuk 将被激活，如果您移动摇杆，电机将开始转动。请确保周围没有任何障碍物。"));
 
         mNrfPair->startPairing();
     }
@@ -516,8 +500,8 @@ AppPpmMapPage::AppPpmMapPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("PPM Mapping"));
-    setSubTitle(tr("Map your PPM receiver."));
+    setTitle(tr("PPM 映射"));
+    setSubTitle(tr("映射您的 PPM 接收机。"));
 
     mParamTab = new ParamTable;
     mPpmMap = new PpmMap;
@@ -588,11 +572,11 @@ AppPpmPage::AppPpmPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("PPM Configuration"));
-    setSubTitle(tr("Configure your PPM receiver."));
+    setTitle(tr("PPM 配置"));
+    setSubTitle(tr("配置您的 PPM 接收机。"));
 
     mParamTab = new ParamTable;
-    mWriteButton = new QPushButton(tr(" | Write Configuration To Vesc"));
+    mWriteButton = new QPushButton(tr(" | 将配置写入 VESC"));
     mWriteButton->setIcon(Utility::getIcon("icons/app_down.png"));
     mWriteButton->setIconSize(QSize(24, 24));
 
@@ -620,7 +604,7 @@ void AppPpmPage::initializePage()
 {
     mParamTab->setRowCount(0);
 
-    mParamTab->addRowSeparator(tr("General"));
+    mParamTab->addRowSeparator(tr("通用"));
     mParamTab->addParamRow(mVesc->appConfig(), "app_ppm_conf.ctrl_type");
     mParamTab->addParamRow(mVesc->appConfig(), "app_ppm_conf.median_filter");
     mParamTab->addParamRow(mVesc->appConfig(), "app_ppm_conf.safe_start");
@@ -631,7 +615,7 @@ void AppPpmPage::initializePage()
     mParamTab->addParamRow(mVesc->appConfig(), "app_ppm_conf.smart_rev_max_duty");
     mParamTab->addParamRow(mVesc->appConfig(), "app_ppm_conf.smart_rev_ramp_time");
 
-    mParamTab->addRowSeparator(tr("Multiple VESCs over CAN-bus"));
+    mParamTab->addRowSeparator(tr("CAN 总线上的多个 VESC"));
     mParamTab->addParamRow(mVesc->appConfig(), "app_ppm_conf.tc");
     mParamTab->addParamRow(mVesc->appConfig(), "app_ppm_conf.tc_max_diff");
     mVesc->appConfig()->updateParamBool("app_ppm_conf.multi_esc", true);
@@ -645,8 +629,8 @@ AppAdcMapPage::AppAdcMapPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("ADC Mapping"));
-    setSubTitle(tr("Map your analog throttle."));
+    setTitle(tr("ADC 映射"));
+    setSubTitle(tr("映射您的模拟油门。"));
 
     mParamTab = new ParamTable;
     mAdcMap = new AdcMap;
@@ -736,11 +720,11 @@ AppAdcPage::AppAdcPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("ADC Configuration"));
-    setSubTitle(tr("Configure your analog throttle."));
+    setTitle(tr("ADC 配置"));
+    setSubTitle(tr("配置您的模拟油门。"));
 
     mParamTab = new ParamTable;
-    mWriteButton = new QPushButton(tr(" | Write Configuration To Vesc"));
+    mWriteButton = new QPushButton(tr(" | 将配置写入 VESC"));
     mWriteButton->setIcon(Utility::getIcon("icons/app_down.png"));
     mWriteButton->setIconSize(QSize(24, 24));
 
@@ -768,7 +752,7 @@ void AppAdcPage::initializePage()
 {
     mParamTab->setRowCount(0);
 
-    mParamTab->addRowSeparator(tr("General"));
+    mParamTab->addRowSeparator(tr("通用"));
     mParamTab->addParamRow(mVesc->appConfig(), "app_adc_conf.ctrl_type");
     mParamTab->addParamRow(mVesc->appConfig(), "app_adc_conf.use_filter");
     mParamTab->addParamRow(mVesc->appConfig(), "app_adc_conf.safe_start");
@@ -777,7 +761,7 @@ void AppAdcPage::initializePage()
     mParamTab->addParamRow(mVesc->appConfig(), "app_adc_conf.ramp_time_pos");
     mParamTab->addParamRow(mVesc->appConfig(), "app_adc_conf.ramp_time_neg");
 
-    mParamTab->addRowSeparator(tr("Multiple VESCs over CAN-bus"));
+    mParamTab->addRowSeparator(tr("CAN 总线上的多个 VESC"));
     mParamTab->addParamRow(mVesc->appConfig(), "app_adc_conf.tc");
     mParamTab->addParamRow(mVesc->appConfig(), "app_adc_conf.tc_max_diff");
     mVesc->appConfig()->updateParamBool("app_adc_conf.multi_esc", true);
@@ -790,7 +774,7 @@ AppConclusionPage::AppConclusionPage(VescInterface *vesc, QWidget *parent)
     : QWizardPage(parent)
 {
     mVesc = vesc;
-    setTitle(tr("Conclusion"));
+    setTitle(tr("完成"));
 
     mLabel = new QLabel;
     mLabel->setWordWrap(true);
@@ -807,6 +791,5 @@ int AppConclusionPage::nextId() const
 
 void AppConclusionPage::initializePage()
 {
-    mLabel->setText(tr("You have finished the app setup. At this point "
-                       "everything should be ready to run."));
+    mLabel->setText(tr("您已完成应用设置。此时一切应已准备就绪，可以运行。"));
 }

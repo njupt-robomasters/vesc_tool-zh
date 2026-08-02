@@ -113,9 +113,9 @@ void PageCustomConfig::on_saveXmlButton_clicked()
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the configuration XML file"),
+                                        tr("选择配置 XML 文件的保存位置"),
                                         ".",
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     if (path.isNull()) {
         return;
@@ -130,8 +130,8 @@ void PageCustomConfig::on_saveXmlButton_clicked()
     if (res) {
         mVesc->emitStatusMessage("Saved custom configuration", true);
     } else {
-        mVesc->emitMessageDialog(tr("Save custom configuration"),
-                                 tr("Could not save custom configuration:<BR>"
+        mVesc->emitMessageDialog(tr("保存自定义配置"),
+                                 tr("无法保存自定义配置:<BR>"
                                     "%1").arg(mVesc->mcConfig()->xmlStatus()),
                                  false, false);
     }
@@ -141,9 +141,9 @@ void PageCustomConfig::on_loadXmlButton_clicked()
 {
     QString path;
     path = QFileDialog::getOpenFileName(this,
-                                        tr("Choose custom configuration file to load"),
+                                        tr("选择要加载的自定义配置文件"),
                                         ".",
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     if (path.isNull()) {
         return;
@@ -154,8 +154,8 @@ void PageCustomConfig::on_loadXmlButton_clicked()
     if (res) {
         mVesc->emitStatusMessage("Loaded custom configuration", true);
     } else {
-        mVesc->emitMessageDialog(tr("Load custom configuration"),
-                                 tr("Could not load custom configuration:<BR>"
+        mVesc->emitMessageDialog(tr("加载自定义配置"),
+                                 tr("无法加载自定义配置:<BR>"
                                     "%1").arg(mVesc->mcConfig()->xmlStatus()),
                                  false, false);
     }

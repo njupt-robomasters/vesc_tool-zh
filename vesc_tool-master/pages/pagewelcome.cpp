@@ -27,6 +27,7 @@
 #include <QQmlEngine>
 #include <QQmlContext>
 #include <QSettings>
+#include <QFont>
 #include <QmlHighlighter>
 #include <QQuickItem>
 
@@ -48,6 +49,7 @@ PageWelcome::PageWelcome(QWidget *parent) :
 
     layout()->setContentsMargins(0, 0, 0, 0);
     mVesc = nullptr;
+    ui->bgWidget->setFont(QFont("Microsoft YaHei", 10));
     ui->bgWidget->setPixmap(QPixmap("://res/bg.png"));
 
     connect(ui->wizardFocSimpleButton, &QPushButton::clicked, [this]() {

@@ -524,8 +524,8 @@ void PageScripting::removeEditor(ScriptEditor *editor)
        // Ask user for confirmation
        QMessageBox::StandardButton answer = QMessageBox::question(
             this,
-            tr("Delete the tab"),
-            tr("Do you want to delete the tab contents?"),
+            tr("删除标签页"),
+            tr("是否要删除标签页内容？"),
             QMessageBox::Yes | QMessageBox::No
        );
 
@@ -634,9 +634,9 @@ bool PageScripting::exportCArray(QString name)
     }
 
     filename = QFileDialog::getSaveFileName(this,
-                                        tr("Choose the .c or .h file name. Both files will be created."),
+                                        tr("选择 .c 或 .h 文件名。两个文件都将被创建。"),
                                         dir,
-                                        tr("C Source/Header files (*.c *.h)"));
+                                        tr("C 源文件/头文件 (*.c *.h)"));
 
     if (filename.isNull()) {
         return false;
@@ -651,13 +651,13 @@ bool PageScripting::exportCArray(QString name)
 
     QFile sourceFile(sourceFileName);
     if (!sourceFile.open(QIODevice::WriteOnly)) {
-        qWarning() << tr("Could not open %1 for writing").arg(sourceFileName);
+        qWarning() << tr("无法打开 %1 进行写入").arg(sourceFileName);
         return false;
     }
 
     QFile headerFile(headerFileName);
     if (!headerFile.open(QIODevice::WriteOnly)) {
-        qWarning() << tr("Could not open %1 for writing").arg(headerFileName);
+        qWarning() << tr("无法打开 %1 进行写入").arg(headerFileName);
         return false;
     }
 

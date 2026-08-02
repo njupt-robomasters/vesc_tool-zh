@@ -115,7 +115,7 @@ void PageBms::bmsValuesRx(BMS_VALUES val)
 
     QStringList tLabels;
     if (val.data_version == 1) {
-        tLabels.append({"IC", "Cell Min", "Cell Max", "Mosfet", "Ambient"});
+        tLabels.append({"IC", tr("电芯最低"), tr("电芯最高"), "MOSFET", tr("环境")});
     }
 
     QSharedPointer<QCPAxisTickerText> textTicker2(new QCPAxisTickerText);
@@ -219,7 +219,7 @@ void PageBms::reloadTempBars(int sensors)
 
     ui->plotTemp->xAxis->setRange(0.0, sensors + 1);
     ui->plotTemp->yAxis->setRange(-20.0, 90.0);
-    ui->plotTemp->yAxis->setLabel("Temperature (degC)");
+    ui->plotTemp->yAxis->setLabel(tr("温度 (°C)"));
 
     QSharedPointer<QCPAxisTickerText> textTickerTemp(new QCPAxisTickerText);
 

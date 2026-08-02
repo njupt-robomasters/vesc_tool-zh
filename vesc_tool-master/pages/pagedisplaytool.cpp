@@ -167,8 +167,8 @@ void PageDisplayTool::updateOverlay()
 void PageDisplayTool::on_exportFontButton_clicked()
 {
     QString filename = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Binary File"), "",
-                                                    tr("Bin files (*.bin *.BIN *.Bin)"));
+                                                    tr("保存二进制文件"), "",
+                                                    tr("Bin 文件 (*.bin *.BIN *.Bin)"));
 
     if (filename.isEmpty()) {
         return;
@@ -327,8 +327,8 @@ void PageDisplayTool::on_updateSizeButtonDisp_clicked()
 void PageDisplayTool::on_fontEditExportButton_clicked()
 {
     QString filename = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Binary File"), "",
-                                                    tr("Bin files (*.bin *.BIN *.Bin)"));
+                                                    tr("保存二进制文件"), "",
+                                                    tr("Bin 文件 (*.bin *.BIN *.Bin)"));
 
     if (filename.isEmpty()) {
         return;
@@ -421,8 +421,8 @@ void PageDisplayTool::on_fontEditApplyButton_clicked()
 void PageDisplayTool::on_fontEditImportButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Load Binary Font"), "",
-                                                    tr("Bin files (*.bin *.BIN *.Bin)"));
+                                                    tr("加载二进制字体"), "",
+                                                    tr("Bin 文件 (*.bin *.BIN *.Bin)"));
 
     if (!filename.isEmpty()) {
         QFile f(filename);

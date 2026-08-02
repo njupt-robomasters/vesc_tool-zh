@@ -118,14 +118,14 @@ void TcpHub::newTcpHubConnection()
             mConnectedVescs.insert(uuid, v);
 
             connect(v->vescSocket, &QTcpSocket::disconnected, [v, uuid, this]() {
-                qDebug() << tr("VESC with UUID %1 disconnected").arg(uuid);
+                qDebug() << tr("UUID 为 %1 的 VESC 已断开连接").arg(uuid);
                 mConnectedVescs.remove(uuid);
                 QTimer::singleShot(0, [v]() {
                     delete v;
                 });
             });
 
-            qDebug() << tr("VESC with UUID %1 connected").arg(uuid);
+            qDebug() << tr("UUID 为 %1 的 VESC 已连接").arg(uuid);
             return;
         } else if (type == "VESCTOOL") {
             if (mConnectedVescs.contains(uuid)) {
@@ -160,7 +160,7 @@ void TcpHub::newTcpHubConnection()
                     qWarning() << "Invalid password" << pass << v->pass;
                 }
             } else {
-                qWarning() << tr("No VESC with UUID %1 found").arg(uuid);
+                qWarning() << tr("未找到 UUID 为 %1 的 VESC").arg(uuid);
             }
         } else if (type == "PING") {
             if (mConnectedVescs.contains(uuid)) {

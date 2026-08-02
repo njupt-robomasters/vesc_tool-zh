@@ -62,16 +62,15 @@ void DetectFoc::on_rlButton_clicked()
     if (mVesc) {
         if (!mVesc->isPortConnected()) {
             QMessageBox::critical(this,
-                                  tr("Connection Error"),
-                                  tr("The VESC is not connected. Please connect it."));
+                                  tr("连接错误"),
+                                  tr("VESC 未连接。请先连接。"));
             return;
         }
 
         QMessageBox::StandardButton reply = QMessageBox::warning(this,
-                                     tr("Measure R & L"),
-                                     tr("When measuring R & L the motor is going to make some noises, but "
-                                        "not rotate. These noises are completely normal, so don't unplug "
-                                        "anything unless you see smoke."),
+                                     tr("测量电阻和电感"),
+                             tr("测量电阻和电感时电机会发出一些声音，但"
+                                "不会转动。请确保电机可以自由旋转，且上面没有任何负载。"),
                                      QMessageBox::Ok | QMessageBox::Cancel);
 
         if (reply == QMessageBox::Ok) {
@@ -86,8 +85,8 @@ void DetectFoc::on_lambdaButton_clicked()
     if (mVesc) {
         if (!mVesc->isPortConnected()) {
             QMessageBox::critical(this,
-                                  tr("Connection Error"),
-                                  tr("The VESC is not connected. Please connect it."));
+                                  tr("连接错误"),
+                                  tr("VESC 未连接。请先连接。"));
             return;
         }
 
@@ -96,19 +95,19 @@ void DetectFoc::on_lambdaButton_clicked()
             if (ui->resistanceBox->value() < 1e-10) {
                 QMessageBox::critical(this,
                                       tr("Measure Error"),
-                                      tr("R is 0. Please measure it first."));
+                                      tr("电阻为 0。请先测量。"));
                 return;
             }
 
             reply = QMessageBox::warning(this,
-                                         tr("Warning"),
+                                         tr("警告"),
                                          tr("<font color=\"red\">Warning: </font>"
                                             "This is going to spin up the motor. Make "
                                             "sure that nothing is in the way."),
                                          QMessageBox::Ok | QMessageBox::Cancel);
         } else {
             reply = QMessageBox::warning(this,
-                                         tr("Warning"),
+                                         tr("警告"),
                                          tr("As the current is 0 this is going to perform passive flux "
                                             "linkage measurement. Make sure that the motor is driven "
                                             "externally."),
@@ -166,12 +165,12 @@ void DetectFoc::motorRLReceived(double r, double l, double ld_lq_diff)
     mRunning = false;
 
     if (r < 1e-9 && l < 1e-9) {
-        mVesc->emitStatusMessage(tr("Bad FOC Detection Result Received"), false);
+        mVesc->emitStatusMessage(tr("收到异常的 FOC 检测结果"), false);
         QMessageBox::critical(this,
-                              tr("Bad Detection Result"),
-                              tr("Could not measure the motor resistance and inductance."));
+                               tr("检测结果异常"),
+                               tr("无法测量电机电阻和电感。"));
     } else {
-        mVesc->emitStatusMessage(tr("FOC Detection Result Received"), true);
+        mVesc->emitStatusMessage(tr("收到 FOC 检测结果"), true);
         ui->resistanceBox->setValue(r * 1e3);
         ui->inductanceBox->setValue(l);
         ui->inductanceDiffBox->setValue(ld_lq_diff);
@@ -207,13 +206,12 @@ void DetectFoc::motorLinkageReceived(double flux_linkage)
     mRunning = false;
 
     if (flux_linkage < 1e-9) {
-        mVesc->emitStatusMessage(tr("Bad FOC Detection Result Received"), false);
+        mVesc->emitStatusMessage(tr("收到异常的 FOC 检测结果"), false);
         QMessageBox::critical(this,
-                              tr("Bad Detection Result"),
-                              tr("Could not measure the flux linkage properly. Adjust the start parameters "
-                                 "according to the help text and try again."));
+                               tr("检测结果异常"),
+                               tr("未能正确测量磁链。请根据帮助文本调整启动参数后重试。"));
     } else {
-        mVesc->emitStatusMessage(tr("FOC Detection Result Received"), true);
+        mVesc->emitStatusMessage(tr("收到 FOC 检测结果"), true);
         ui->lambdaBox->setValue(flux_linkage * 1e3);
         ui->obsGainBox->setValue(0.0);
         on_calcGainButton_clicked();
@@ -251,7 +249,7 @@ void DetectFoc::on_applyAllButton_clicked()
         if (r < 1e-10) {
             QMessageBox::critical(this,
                                   tr("Apply Error"),
-                                  tr("R is 0. Please measure it first."));
+                                  tr("电阻为 0。请先测量。"));
             return;
         }
 
@@ -288,14 +286,14 @@ void DetectFoc::on_applyAllButton_clicked()
             mVesc->mcConfig()->updateParamDouble("foc_current_kp", ui->kpBox->value());
             mVesc->mcConfig()->updateParamDouble("foc_current_ki", ui->kiBox->value());
             mVesc->mcConfig()->updateParamDouble("foc_observer_gain", ui->obsGainBox->value() * 1e6);
-            mVesc->emitStatusMessage(tr("KP, KI and Observer Gain Applied"), true);
+            mVesc->emitStatusMessage(tr("KP、KI 和观测器增益已应用"), true);
             mLastOkValuesApplied = true;
 
             if (mEncoderValuesOk) {
                 mVesc->mcConfig()->updateParamDouble("foc_encoder_offset", ui->encOffsetBox->value());
                 mVesc->mcConfig()->updateParamDouble("foc_encoder_ratio", ui->encRatioBox->value());
                 mVesc->mcConfig()->updateParamBool("foc_encoder_inverted", ui->encInvertedBox->currentIndex() != 0);
-                mVesc->emitStatusMessage(tr("Encoder Parameters Applied"), true);
+                mVesc->emitStatusMessage(tr("编码器参数已应用"), true);
             }
         } else {
             mVesc->emitStatusMessage(tr("Apply Parameters Failed"), false);
@@ -365,7 +363,7 @@ void DetectFoc::on_calcKpKiButton_clicked()
     if (r < 1e-10) {
         QMessageBox::critical(this,
                               tr("Calculate Error"),
-                              tr("R is 0. Please measure it first."));
+                              tr("电阻为 0。请先测量。"));
         return;
     }
 
@@ -437,7 +435,7 @@ void DetectFoc::on_calcApplyLocalButton_clicked()
         mVesc->mcConfig()->updateParamDouble("foc_current_kp", kp);
         mVesc->mcConfig()->updateParamDouble("foc_current_ki", ki);
         mVesc->mcConfig()->updateParamDouble("foc_observer_gain", gain * 1e6);
-        mVesc->emitStatusMessage(tr("KP, KI and Observer Gain Applied"), true);
+        mVesc->emitStatusMessage(tr("KP、KI 和观测器增益已应用"), true);
     }
 }
 
@@ -448,7 +446,7 @@ void DetectFoc::on_encApplyButton_clicked()
             mVesc->mcConfig()->updateParamDouble("foc_encoder_offset", ui->encOffsetBox->value());
             mVesc->mcConfig()->updateParamDouble("foc_encoder_ratio", ui->encRatioBox->value());
             mVesc->mcConfig()->updateParamBool("foc_encoder_inverted", ui->encInvertedBox->currentIndex() != 0);
-            mVesc->emitStatusMessage(tr("Encoder Parameters Applied"), true);
+            mVesc->emitStatusMessage(tr("编码器参数已应用"), true);
         }
     } else {
         QMessageBox::critical(this,

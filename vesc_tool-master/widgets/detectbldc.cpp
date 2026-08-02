@@ -50,9 +50,8 @@ void DetectBldc::on_runButton_clicked()
     if (mVesc) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::warning(this,
-                                     tr("Detect BLDC Parameters"),
-                                     tr("This is going to spin up the motor. Make "
-                                        "sure that nothing is in the way."),
+                                     tr("检测 BLDC 参数"),
+                             tr("这将使电机旋转。请确保电机可以自由旋转，且上面没有任何负载。"),
                                      QMessageBox::Ok | QMessageBox::Cancel);
 
         if (reply == QMessageBox::Ok) {
@@ -83,11 +82,11 @@ void DetectBldc::on_applyButton_clicked()
                 mVesc->mcConfig()->updateParamInt("hall_table__7", mResult.hall_table.at(7));
             }
 
-            mVesc->emitStatusMessage(tr("Detection Result Applied"), true);
+            mVesc->emitStatusMessage(tr("检测结果已应用"), true);
         } else {
             QMessageBox::warning(this,
-                                 tr("Apply Detection Result"),
-                                 tr("Detection result not received. Make sure to run the detection first."));
+                                 tr("应用检测结果"),
+                                 tr("未收到检测结果。请确保先运行检测。"));
         }
     }
 }
@@ -129,10 +128,10 @@ void DetectBldc::bldcDetectReceived(bldc_detect param)
     mRunning = false;
 
     if (param.cycle_int_limit < 0.01 && param.bemf_coupling_k < 0.01) {
-        mVesc->emitStatusMessage(tr("Bad Detection Result Received"), false);
-        ui->resultBrowser->setText(tr("Detection failed."));
+        mVesc->emitStatusMessage(tr("收到异常的检测结果"), false);
+        ui->resultBrowser->setText(tr("检测失败。"));
     } else {
-        mVesc->emitStatusMessage(tr("Detection Result Received"), true);
+        mVesc->emitStatusMessage(tr("收到检测结果"), true);
 
         mResult = param;
         mResultReceived = true;
@@ -164,10 +163,10 @@ void DetectBldc::bldcDetectReceived(bldc_detect param)
             hall_str = QString("Unknown hall error: %1\n").arg(param.hall_res);
         }
 
-        ui->resultBrowser->setText(QString().asprintf("Detection results:\n"
-                                                     "Integrator limit: %.2f\n"
-                                                     "BEMF Coupling: %.2f\n"
-                                                     "%s",
+        ui->resultBrowser->setText(QString().asprintf(tr("检测结果：\n"
+                                                     "积分器限制：%.2f\n"
+                                                     "BEMF 耦合：%.2f\n"
+                                                     "%s").toLocal8Bit().data(),
                                                      param.cycle_int_limit,
                                                      param.bemf_coupling_k,
                                                      hall_str.toLocal8Bit().data()));

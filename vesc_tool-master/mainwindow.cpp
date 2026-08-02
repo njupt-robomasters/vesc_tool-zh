@@ -695,9 +695,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
     if (mPageLisp->hasUnsavedTabs()) {
         QMessageBox::StandardButton answer = QMessageBox::question(
                     this,
-                    tr("Unsaved LispBM Tabs"),
-                    tr("There are unsaved LispBM tabs open. Do you want to close "
-                       "VESC Tool without saving them?"),
+                    tr("未保存的 LispBM 标签页"),
+                    tr("存在未保存的 LispBM 标签页。是否要在不保存的情况下关闭 VESC Tool？"),
                     QMessageBox::Yes | QMessageBox::Cancel
                     );
 
@@ -709,9 +708,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
     } else if (mPageScripting->hasUnsavedTabs()) {
         QMessageBox::StandardButton answer = QMessageBox::question(
                     this,
-                    tr("Unsaved Qml-Tabs"),
-                    tr("There are unsaved Qml-tabs open. Do you want to close "
-                       "VESC Tool without saving them?"),
+                    tr("未保存的 QML 标签页"),
+                    tr("存在未保存的 QML 标签页。是否要在不保存的情况下关闭 VESC Tool？"),
                     QMessageBox::Yes | QMessageBox::Cancel
                     );
 
@@ -969,9 +967,8 @@ void MainWindow::timerSlot()
 
         if (!mSettings.value("intro_done").toBool()) {
             QMessageBox::critical(this,
-                                  tr("Warning"),
-                                  tr("You have not finished the VESC Tool introduction. You must do that "
-                                     "in order to use VESC Tool."));
+                                  tr("警告"),
+                                  tr("您尚未完成 VESC Tool 介绍。必须完成介绍才能使用 VESC Tool。"));
             QCoreApplication::quit();
         }
 
@@ -1013,10 +1010,8 @@ void MainWindow::serialPortNotWritable(const QString &port)
 #ifdef Q_OS_LINUX
     QMessageBox::StandardButton reply;
     reply = QMessageBox::warning(this,
-                                 tr("Connect Serial Port"),
-                                 tr("The serial port is not writable. This can usually be fixed by "
-                                    "adding your user to the dialout, uucp and/or lock groups. Would "
-                                    "you like to do that?"),
+                                 tr("连接串口"),
+                                 tr("串口不可写。通常可以通过将您的用户添加到 dialout、uucp 和/或 lock 组来修复。是否要执行此操作？"),
                                  QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
     if (reply == QMessageBox::Yes) {
@@ -1053,16 +1048,15 @@ void MainWindow::serialPortNotWritable(const QString &port)
         process.start("pkexec", QStringList() << "usermod" << "-aG" << grps << name);
         waitProcess(process);
         if (process.exitCode() == 0) {
-            showMessageDialog(tr("Command Result"),
-                              tr("Result from command:\n\n"
+            showMessageDialog(tr("命令结果"),
+                              tr("命令执行结果：\n\n"
                                  "%1\n"
-                                 "You have to reboot for this "
-                                 "change to take effect.").
+                                 "您需要重新启动才能使此更改生效。").
                               arg(QString(process.readAllStandardOutput())),
                               true, false);
         } else {
-            showMessageDialog(tr("Command Result"),
-                              tr("Running command failed."),
+            showMessageDialog(tr("命令结果"),
+                              tr("运行命令失败。"),
                               false, false);
         }
         process.close();
@@ -1088,10 +1082,8 @@ void MainWindow::paramChangedDouble(QObject *src, QString name, double newParam)
 void MainWindow::mcConfigCheckResult(QStringList paramsNotSet)
 {
     if (!paramsNotSet.isEmpty()) {
-        ParamDialog::showParams(tr("Parameters truncated"),
-                                tr( "The following parameters were truncated or not updated. That can happen because "
-                                    "they were set outside their allowed limits or because the write failed. In case the "
-                                    "write failed you can try writing them again."),
+        ParamDialog::showParams(tr("参数已截断"),
+                                tr( "以下参数被截断或未更新。这可能是因为它们被设置在允许范围之外，或者写入失败。如果写入失败，您可以尝试再次写入。"),
                                 mVesc->mcConfig(),
                                 paramsNotSet,
                                 this);
@@ -1169,9 +1161,9 @@ void MainWindow::on_actionSaveMotorConfXml_triggered()
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the motor configuration XML file"),
+                                        tr("选择电机配置 XML 文件的保存位置"),
                                         mLastMCConfigXMLPath,
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     if (path.isNull()) {
         return;
@@ -1187,8 +1179,8 @@ void MainWindow::on_actionSaveMotorConfXml_triggered()
         showStatusInfo("Saved motor configuration", true);
         mLastMCConfigXMLPath = path;
     } else {
-        showMessageDialog(tr("Save motor configuration"),
-                          tr("Could not save motor configuration:<BR>"
+        showMessageDialog(tr("保存电机配置"),
+                          tr("无法保存电机配置：<BR>"
                              "%1").arg(mVesc->mcConfig()->xmlStatus()),
                           false, false);
     }
@@ -1198,9 +1190,9 @@ void MainWindow::on_actionLoadMotorConfXml_triggered()
 {
     QString path;
     path = QFileDialog::getOpenFileName(this,
-                                        tr("Choose motor configuration file to load"),
+                                        tr("选择要加载的电机配置文件"),
                                         mLastMCConfigXMLPath,
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     if (path.isNull()) {
         return;
@@ -1212,8 +1204,8 @@ void MainWindow::on_actionLoadMotorConfXml_triggered()
         showStatusInfo("Loaded motor configuration", true);
         mLastMCConfigXMLPath = path;
     } else {
-        showMessageDialog(tr("Load motor configuration"),
-                          tr("Could not load motor configuration:<BR>"
+        showMessageDialog(tr("加载电机配置"),
+                          tr("无法加载电机配置：<BR>"
                              "%1").arg(mVesc->mcConfig()->xmlStatus()),
                           false, false);
     }
@@ -1223,9 +1215,9 @@ void MainWindow::on_actionSaveAppconfXml_triggered()
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the app configuration XML file"),
+                                        tr("选择应用配置 XML 文件的保存位置"),
                                         mLastAppConfigXMLPath,
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     if (path.isNull()) {
         return;
@@ -1241,8 +1233,8 @@ void MainWindow::on_actionSaveAppconfXml_triggered()
         showStatusInfo("Saved app configuration", true);
         mLastAppConfigXMLPath = path;
     } else {
-        showMessageDialog(tr("Save app configuration"),
-                          tr("Could not save app configuration:<BR>"
+        showMessageDialog(tr("保存应用配置"),
+                          tr("无法保存应用配置：<BR>"
                              "%1").arg(mVesc->appConfig()->xmlStatus()),
                           false, false);
     }
@@ -1252,9 +1244,9 @@ void MainWindow::on_actionLoadAppconfXml_triggered()
 {
     QString path;
     path = QFileDialog::getOpenFileName(this,
-                                        tr("Choose app configuration file to load"),
+                                        tr("选择要加载的应用配置文件"),
                                         mLastAppConfigXMLPath,
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     if (path.isNull()) {
         return;
@@ -1266,8 +1258,8 @@ void MainWindow::on_actionLoadAppconfXml_triggered()
         showStatusInfo("Loaded app configuration", true);
         mLastAppConfigXMLPath = path;
     } else {
-        showMessageDialog(tr("Load app configuration"),
-                          tr("Could not load app configuration:<BR>"
+        showMessageDialog(tr("加载应用配置"),
+                          tr("无法加载应用配置：<BR>"
                              "%1").arg(mVesc->appConfig()->xmlStatus()),
                           false, false);
     }
@@ -1375,17 +1367,17 @@ void MainWindow::saveParamFileDialog(QString conf, bool wrapIfdef)
 
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the configuration header file"),
+                                        tr("选择配置头文件的保存位置"),
                                         QString("./%1_default").arg(conf.toLower()),
-                                        tr("h files (*.h)"));
+                                        tr("h 头文件 (*.h)"));
 
     if (path.isNull()) {
         return;
     }
 
     if (path.contains(" ")) {
-        showMessageDialog(tr("Save header"),
-                          tr("Spaces are not allowed in the filename."),
+        showMessageDialog(tr("保存头文件"),
+                          tr("文件名中不允许包含空格。"),
                           false, false);
         return;
     }
@@ -1399,8 +1391,8 @@ void MainWindow::saveParamFileDialog(QString conf, bool wrapIfdef)
     if (res) {
         showStatusInfo("Saved C header", true);
     } else {
-        showMessageDialog(tr("Save header"),
-                          tr("Could not save header"),
+        showMessageDialog(tr("保存头文件"),
+                          tr("无法保存头文件"),
                           false, false);
     }
 }
@@ -1430,7 +1422,7 @@ void MainWindow::reloadPages()
     mPageWelcome->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageWelcome);
     QString theme = Utility::getThemePath();
-    addPageItem(tr("Welcome & Wizards"),  theme + "icons/Home-96.png", "", true);
+    addPageItem(tr("欢迎与向导"),  theme + "icons/Home-96.png", "", true);
     connect(ui->actionAutoSetupFOC, SIGNAL(triggered(bool)),
             mPageWelcome, SLOT(startSetupWizardFocQml()));
     connect(ui->actionMotorSetupWizard, SIGNAL(triggered(bool)),
@@ -1443,22 +1435,22 @@ void MainWindow::reloadPages()
     mPageConnection = new PageConnection(this);
     mPageConnection->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageConnection);
-    addPageItem(tr("Connection"),  theme + "icons/Connected-96.png", "", true);
+    addPageItem(tr("连接"),  theme + "icons/Connected-96.png", "", true);
 
     mPageFirmware = new PageFirmware(this);
     mPageFirmware->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageFirmware);
-    addPageItem(tr("Firmware"),  theme + "icons/Electronics-96.png", "", true);
+    addPageItem(tr("固件"),  theme + "icons/Electronics-96.png", "", true);
 
     mPagePackage = new PageVescPackage(this);
     mPagePackage->setVesc(mVesc);
     ui->pageWidget->addWidget(mPagePackage);
-    addPageItem(tr("VESC Packages"),  theme + "icons/Package-96.png", "", true);
+    addPageItem(tr("VESC 包"),  theme + "icons/Package-96.png", "", true);
 
     mPageMotorSettings = new PageMotorSettings(this);
     mPageMotorSettings->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageMotorSettings);
-    addPageItem(tr("Motor Settings"),  theme + "icons/motor.png", "", true);
+    addPageItem(tr("电机设置"),  theme + "icons/motor.png", "", true);
     mPageNameIdList.insert("motor", ui->pageList->count() - 1);
     connect(mPageMotorSettings, SIGNAL(startFocWizard()),
             mPageWelcome, SLOT(startSetupWizardFocQml()));
@@ -1466,7 +1458,7 @@ void MainWindow::reloadPages()
     mPageMotor = new PageMotor(this);
     mPageMotor->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageMotor);
-    addPageItem(tr("General"),  theme + "icons/Horizontal Settings Mixer-96.png",
+    addPageItem(tr("通用"),  theme + "icons/Horizontal Settings Mixer-96.png",
                 theme + "icons/mcconf.png", false, true);
     mPageNameIdList.insert("motor_general", ui->pageList->count() - 1);
 
@@ -1494,41 +1486,41 @@ void MainWindow::reloadPages()
     mPageGpd = new PageGPD(this);
     mPageGpd->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageGpd);
-    addPageItem(tr("GPDrive"),  theme + "icons/3ph_sine.png",
+    addPageItem(tr("GPD"),  theme + "icons/3ph_sine.png",
                 theme + "icons/mcconf.png", false, true);
     mPageNameIdList.insert("motor_gpdrive", ui->pageList->count() - 1);
 
     mPageControllers = new PageControllers(this);
     mPageControllers->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageControllers);
-    addPageItem(tr("PID Controllers"),  theme + "icons/Speed-96.png",
+    addPageItem(tr("PID 控制器"),  theme + "icons/Speed-96.png",
                 theme + "icons/mcconf.png", false, true);
     mPageNameIdList.insert("motor_pid", ui->pageList->count() - 1);
 
     mPageMotorInfo = new PageMotorInfo(this);
     mPageMotorInfo->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageMotorInfo);
-    addPageItem(tr("Additional Info"),  theme + "icons/About-96.png",
+    addPageItem(tr("附加信息"),  theme + "icons/About-96.png",
                 theme + "icons/mcconf.png", false, true);
     mPageNameIdList.insert("motor_additional_info", ui->pageList->count() - 1);
 
     mPageExperiments = new PageExperiments(this);
     mPageExperiments->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageExperiments);
-    addPageItem(tr("Experiments"),  theme + "icons/Calculator-96.png",
+    addPageItem(tr("实验"),  theme + "icons/Calculator-96.png",
                 theme + "icons/mcconf.png", false, true);
     mPageNameIdList.insert("motor_experiments", ui->pageList->count() - 1);
 
     mPageAppSettings = new PageAppSettings(this);
     mPageAppSettings->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageAppSettings);
-    addPageItem(tr("App Settings"),  theme + "icons/Outgoing Data-96.png", "", true);
+    addPageItem(tr("应用设置"),  theme + "icons/Outgoing Data-96.png", "", true);
     mPageNameIdList.insert("app", ui->pageList->count() - 1);
 
     mPageAppGeneral = new PageAppGeneral(this);
     mPageAppGeneral->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageAppGeneral);
-    addPageItem(tr("General"),  theme + "icons/Horizontal Settings Mixer-96.png",
+    addPageItem(tr("通用"),  theme + "icons/Horizontal Settings Mixer-96.png",
                 theme + "icons/appconf.png", false, true);
     mPageNameIdList.insert("app_general", ui->pageList->count() - 1);
 
@@ -1556,14 +1548,14 @@ void MainWindow::reloadPages()
     mPageAppNunchuk = new PageAppNunchuk(this);
     mPageAppNunchuk->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageAppNunchuk);
-    addPageItem(tr("VESC Remote"),  theme + "icons/icons8-fantasy-96.png",
+    addPageItem(tr("VESC 遥控"),  theme + "icons/icons8-fantasy-96.png",
                 theme + "icons/appconf.png", false, true);
     mPageNameIdList.insert("app_vescremote", ui->pageList->count() - 1);
 
     mPageAppNrf = new PageAppNrf(this);
     mPageAppNrf->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageAppNrf);
-    addPageItem(tr("Nrf"),  theme + "icons/Online-96.png",
+    addPageItem(tr("NRF"),  theme + "icons/Online-96.png",
                 theme + "icons/appconf.png", false, true);
     mPageNameIdList.insert("app_nrf", ui->pageList->count() - 1);
 
@@ -1593,7 +1585,7 @@ void MainWindow::reloadPages()
     mPageCustomConfig1->setVesc(mVesc);
     mPageCustomConfig1->setConfNum(1);
     ui->pageWidget->addWidget(mPageCustomConfig1);
-    addPageItem(tr("Config1"),  theme + "icons/Electronics-96.png", "", true);
+    addPageItem(tr("自定义配置 1"),  theme + "icons/Electronics-96.png", "", true);
     mPageNameIdList.insert("app_custom_config_1", ui->pageList->count() - 1);
     ui->pageList->item(ui->pageList->count() - 1)->setHidden(true);
 
@@ -1601,54 +1593,54 @@ void MainWindow::reloadPages()
     mPageCustomConfig2->setVesc(mVesc);
     mPageCustomConfig2->setConfNum(2);
     ui->pageWidget->addWidget(mPageCustomConfig2);
-    addPageItem(tr("Config2"),  theme + "icons/Electronics-96.png", "", true);
+    addPageItem(tr("自定义配置 2"),  theme + "icons/Electronics-96.png", "", true);
     mPageNameIdList.insert("app_custom_config_2", ui->pageList->count() - 1);
     ui->pageList->item(ui->pageList->count() - 1)->setHidden(true);
 
     mPageDataAnalysis = new PageDataAnalysis(this);
     mPageDataAnalysis->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageDataAnalysis);
-    addPageItem(tr("Data Analysis"),  theme + "icons/Line Chart-96.png", "", true);
+    addPageItem(tr("数据分析"),  theme + "icons/Line Chart-96.png", "", true);
 
     mPageRtData = new PageRtData(this);
     mPageRtData->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageRtData);
-    addPageItem(tr("Realtime Data"),  theme + "icons/rt_off.png", "", false, true);
+    addPageItem(tr("实时数据"),  theme + "icons/rt_off.png", "", false, true);
     mPageNameIdList.insert("data_rt", ui->pageList->count() - 1);
 
     mPageSampledData = new PageSampledData(this);
     mPageSampledData->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageSampledData);
-    addPageItem(tr("Sampled Data"),  theme + "icons/Line Chart-96.png", "", false, true);
+    addPageItem(tr("采样数据"),  theme + "icons/Line Chart-96.png", "", false, true);
     mPageNameIdList.insert("data_sampled", ui->pageList->count() - 1);
 
     auto experimentPlot = new ExperimentPlot(this);
     experimentPlot->setVesc(mVesc);
     ui->pageWidget->addWidget(experimentPlot);
-    addPageItem(tr("Experiment Plot"),  theme + "icons/rt_off.png", "", false, true);
+    addPageItem(tr("实验绘图"),  theme + "icons/rt_off.png", "", false, true);
     mPageNameIdList.insert("data_experiment", ui->pageList->count() - 1);
 
     mPageImu = new PageImu(this);
     mPageImu->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageImu);
-    addPageItem(tr("IMU Data"),  theme + "icons/Gyroscope-96.png", "", false, true);
+    addPageItem(tr("IMU 数据"),  theme + "icons/Gyroscope-96.png", "", false, true);
     mPageNameIdList.insert("data_imu", ui->pageList->count() - 1);
 
     mPageBms = new PageBms(this);
     mPageBms->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageBms);
-    addPageItem(tr("BMS Data"),  theme + "icons/icons8-battery-100.png", "", false, true);
+    addPageItem(tr("BMS 数据"),  theme + "icons/icons8-battery-100.png", "", false, true);
     mPageNameIdList.insert("data_bms", ui->pageList->count() - 1);
 
     mPageLogAnalysis = new PageLogAnalysis(this);
     mPageLogAnalysis->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageLogAnalysis);
-    addPageItem(tr("Log Analysis"),  theme + "icons/Waypoint Map-96.png", "", false, true);
+    addPageItem(tr("日志分析"),  theme + "icons/Waypoint Map-96.png", "", false, true);
 
     mPageMotorComparison = new PageMotorComparison(this);
     mPageMotorComparison->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageMotorComparison);
-    addPageItem(tr("Motor Analysis"),  theme + "icons/motor.png", "", false, true);
+    addPageItem(tr("电机分析"),  theme + "icons/motor.png", "", false, true);
     mPageNameIdList.insert("motor_comparison", ui->pageList->count() - 1);
 
     VTextBrowser *vt = new VTextBrowser(this);
@@ -1657,45 +1649,45 @@ void MainWindow::reloadPages()
         vt->setText(p->description);
     }
     ui->pageWidget->addWidget(vt);
-    addPageItem(tr("VESC Dev Tools"),  theme + "icons/v_icon-96.png", "", true);
+    addPageItem(tr("VESC 开发工具"),  theme + "icons/v_icon-96.png", "", true);
 
     mPageTerminal = new PageTerminal(this);
     mPageTerminal->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageTerminal);
-    addPageItem("Terminal",  theme + "icons/Console-96.png", "", false, true);
+    addPageItem(tr("终端"),  theme + "icons/Console-96.png", "", false, true);
 
     mPageScripting = new PageScripting(this);
     mPageScripting->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageScripting);
-    addPageItem("QML Scripting",  theme + "icons_textedit/Outdent-96.png", "", false, true);
+    addPageItem(tr("QML 脚本"),  theme + "icons_textedit/Outdent-96.png", "", false, true);
 
     mPageLisp = new PageLisp(this);
     mPageLisp->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageLisp);
-    addPageItem("LispBM Scripting",  theme + "icons_textedit/Outdent-96.png", "", false, true);
+    addPageItem(tr("LispBM 脚本"),  theme + "icons_textedit/Outdent-96.png", "", false, true);
 
     mPageCanAnalyzer = new PageCanAnalyzer(this);
     mPageCanAnalyzer->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageCanAnalyzer);
-    addPageItem(tr("CAN Tools"),  theme + "icons/can_off.png", "", false, true);
+    addPageItem(tr("CAN 工具"),  theme + "icons/can_off.png", "", false, true);
 
     mPageDisplayTool = new PageDisplayTool(this);
     ui->pageWidget->addWidget(mPageDisplayTool);
-    addPageItem(tr("Display Tool"),  theme + "icons/Calculator-96.png", "", false, true);
+    addPageItem(tr("显示工具"),  theme + "icons/Calculator-96.png", "", false, true);
 
     mPageDebugPrint = new PageDebugPrint(this);
     ui->pageWidget->addWidget(mPageDebugPrint);
-    addPageItem(tr("Debug Console"),  theme + "icons/Bug-96.png", "", false, true);
+    addPageItem(tr("调试控制台"),  theme + "icons/Bug-96.png", "", false, true);
 
     mPageSwdProg = new PageSwdProg(this);
     mPageSwdProg->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageSwdProg);
-    addPageItem(tr("SWD Programmer"),  theme + "icons/Electronics-96.png", "", true);
+    addPageItem(tr("SWD 编程器"),  theme + "icons/Electronics-96.png", "", true);
 
     mPageEspProg = new PageEspProg(this);
     mPageEspProg->setVesc(mVesc);
     ui->pageWidget->addWidget(mPageEspProg);
-    addPageItem(tr("ESP Programmer"),  theme + "icons/Electronics-96.png", "", true);
+    addPageItem(tr("ESP 编程器"),  theme + "icons/Electronics-96.png", "", true);
 
     /*
      * Page IDs
@@ -1767,17 +1759,16 @@ void MainWindow::checkUdev()
         if (!fi_vesc.exists()) {
             QMessageBox::StandardButton reply;
             reply = QMessageBox::information(this,
-                                             tr("Modemmanager"),
-                                             tr("It looks like modemmanager is installed on your system, and that "
-                                                "there are no VESC udev rules installed. This will cause a delay "
-                                                "from when you plug in the VESC until you can use it. Would you like "
-                                                "to add a udev rule to prevent modemmanager from grabbing the VESC?"),
+                                             tr("调制解调器管理器"),
+                                             tr("您的系统上似乎安装了 modemmanager，但没有安装 VESC udev 规则。"
+                                                "这将导致从插入 VESC 到可以使用它之间存在延迟。是否要添加"
+                                                "一条 udev 规则来阻止 modemmanager 占用 VESC 设备？"),
                                              QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
             if (reply == QMessageBox::Yes) {
                 QFile f_vesc(QDir::temp().absoluteFilePath(fi_vesc.fileName()));
                 if (!f_vesc.open(QIODevice::WriteOnly | QIODevice::Text)) {
-                    showMessageDialog(tr("Create File Error"),
+                    showMessageDialog(tr("创建文件错误"),
                                       f_vesc.errorString(),
                                       false, false);
                     return;
@@ -1799,9 +1790,8 @@ void MainWindow::checkUdev()
                 if (process.exitCode() == 0) {
                     QMessageBox::StandardButton reply;
                     reply = QMessageBox::information(this,
-                                                     tr("Modemmanager"),
-                                                     tr("The udev rule was created successfully. Would you like "
-                                                        "to reload udev to apply the new rule?"),
+                                                     tr("调制解调器管理器"),
+                                                     tr("udev 规则已成功创建。是否要重新加载 udev 以应用新规则？"),
                                                      QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
                     if (reply == QMessageBox::Yes) {
@@ -1814,24 +1804,23 @@ void MainWindow::checkUdev()
                         waitProcess(process);
 
                         if (process.exitCode() == 0) {
-                            showMessageDialog(tr("Command Result"),
-                                              tr("Reloaded udev rules sucessfully."),
+                            showMessageDialog(tr("命令结果"),
+                                              tr("已成功重新加载 udev 规则。"),
                                               true, false);
                         } else {
                             QString out = process.readAll();
 
                             if (out.isEmpty()) {
-                                showMessageDialog(tr("Command Result"),
-                                                  tr("Could not reload udev rules. A reboot is probably "
-                                                     "required for this change to take effect."),
+                                showMessageDialog(tr("命令结果"),
+                                                  tr("无法重新加载 udev 规则。可能需要重启才能使此更改生效。"),
                                                   false, false);
                             }
                         }
                         process.close();
                     }
                 } else {
-                    showMessageDialog(tr("Command Result"),
-                                      tr("Could not move rules file:\n\n"
+                    showMessageDialog(tr("命令结果"),
+                                      tr("无法移动规则文件：\n\n"
                                          "%1").
                                       arg(QString(process.readAllStandardOutput())),
                                       false, false);
@@ -2058,9 +2047,9 @@ void MainWindow::on_actionExportConfigurationParser_triggered()
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the parser C source and header file"),
+                                        tr("选择解析器 C 源文件和头文件的保存位置"),
                                         mLastParamParserCPath,
-                                        tr("C Source/Header files (*.c *.h)"));
+                                        tr("C 源文件/头文件 (*.c *.h)"));
 
     if (path.isNull()) {
         return;
@@ -2090,9 +2079,8 @@ void MainWindow::on_actionClearConfigurationBackups_triggered()
 {
     QMessageBox::StandardButton reply;
     reply = QMessageBox::warning(this,
-                                 tr("Warning"),
-                                 tr("This is going to remove all configuration backups for "
-                                    "this instance of VESC Tool. Continue?"),
+                                 tr("警告"),
+                                 tr("这将删除此 VESC Tool 实例的所有配置备份。是否继续？"),
                                  QMessageBox::Yes | QMessageBox::Cancel);
 
     if (reply == QMessageBox::Yes) {

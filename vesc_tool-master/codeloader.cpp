@@ -67,7 +67,7 @@ bool CodeLoader::lispErase(int size)
     }
 
     if (!mVesc->isPortConnected()) {
-        mVesc->emitMessageDialog(tr("Erase old code"), tr("Not Connected"), false);
+        mVesc->emitMessageDialog(tr("擦除旧代码"), tr("未连接"), false);
         return false;
     }
 
@@ -95,15 +95,15 @@ bool CodeLoader::lispErase(int size)
 
     int erRes = waitEraseRes();
     if (erRes != 1) {
-        QString msg = tr("Unknown failure");
+        QString msg = tr("未知故障");
 
         if (erRes == -10) {
-            msg = tr("Erase timed out");
+            msg = tr("擦除超时");
         } else if (erRes == -1) {
-            msg = tr("Erasing LispBM Code failed");
+            msg = tr("擦除 LispBM 代码失败");
         }
 
-        mVesc->emitMessageDialog(tr("Erase LispBM"), msg, false);
+        mVesc->emitMessageDialog(tr("擦除 LispBM"), msg, false);
         return false;
     }
 
@@ -388,7 +388,7 @@ bool CodeLoader::lispUpload(VByteArray vb)
     }
 
     if (data.size() > max_size) {
-        mVesc->emitMessageDialog(tr("Upload Code"), tr("Not enough space"), false);
+        mVesc->emitMessageDialog(tr("上传代码"), tr("空间不足"), false);
         return false;
     }
 
@@ -436,7 +436,7 @@ bool CodeLoader::lispUpload(VByteArray vb)
         int sz = data.size() > chunkSize ? chunkSize : data.size();
 
         if (writeChunk(data.mid(0, sz), offset) < 0) {
-            mVesc->emitMessageDialog(tr("Upload Code"), tr("Write failed"), false);
+            mVesc->emitMessageDialog(tr("上传代码"), tr("写入失败"), false);
             ok = false;
             break;
         }
@@ -489,7 +489,7 @@ bool CodeLoader::lispUploadFromPath(QString path, bool reduceLisp)
 bool CodeLoader::lispStream(VByteArray vb, qint8 mode)
 {
     if (!mVesc->isPortConnected()) {
-        mVesc->emitMessageDialog(tr("Stream code"), tr("Not Connected"), false);
+        mVesc->emitMessageDialog(tr("流式代码"), tr("未连接"), false);
         return false;
     }
 
@@ -524,7 +524,7 @@ bool CodeLoader::lispStream(VByteArray vb, qint8 mode)
         mVesc->commands()->lispStreamCode(vb.mid(0, sz), offset, size_tot, mode);
         auto writeRes = waitWriteRes();
         if (writeRes != 0) {
-            mVesc->emitMessageDialog(tr("Stream Code"), tr("Stream failed. Result: %1").arg(writeRes), false);
+            mVesc->emitMessageDialog(tr("流式代码"), tr("流式传输失败。结果: %1").arg(writeRes), false);
             ok = false;
             break;
         }
@@ -539,7 +539,7 @@ bool CodeLoader::lispStream(VByteArray vb, qint8 mode)
 QString CodeLoader::lispRead(QWidget *parent, QString &lispPath)
 {
     if (!mVesc->isPortConnected()) {
-        mVesc->emitMessageDialog(tr("Read code"), tr("Not Connected"), false);
+        mVesc->emitMessageDialog(tr("读取代码"), tr("未连接"), false);
         return "";
     }
 
@@ -665,8 +665,8 @@ QString CodeLoader::lispRead(QWidget *parent, QString &lispPath)
         }
     }
 
-    mVesc->emitMessageDialog(tr("Get LispBM"),
-                             tr("Could not read LispBM code"),
+    mVesc->emitMessageDialog(tr("获取 LispBM"),
+                             tr("无法读取 LispBM 代码"),
                              false);
 
     disconnect(conn);
@@ -691,7 +691,7 @@ bool CodeLoader::qmlErase(int size)
     }
 
     if (!mVesc->isPortConnected()) {
-        mVesc->emitMessageDialog(tr("Erase Qml"), tr("Not Connected"), false);
+        mVesc->emitMessageDialog(tr("擦除 Qml"), tr("未连接"), false);
         return false;
     }
 
@@ -719,15 +719,15 @@ bool CodeLoader::qmlErase(int size)
 
     int erRes = waitEraseRes();
     if (erRes != 1) {
-        QString msg = "Unknown failure";
+        QString msg = "未知故障";
 
         if (erRes == -10) {
-            msg = "Erase timed out";
+            msg = "擦除超时";
         } else if (erRes == -1) {
-            msg = "Erasing QMLUI failed";
+            msg = "擦除 QMLUI 失败";
         }
 
-        mVesc->emitMessageDialog(tr("Erase Qml"), msg, false);
+        mVesc->emitMessageDialog(tr("擦除 Qml"), msg, false);
         return false;
     }
 
@@ -789,7 +789,7 @@ bool CodeLoader::qmlUpload(QByteArray script, bool isFullscreen)
     data.append(vb);
 
     if (data.size() > (1024 * 120)) {
-        mVesc->emitMessageDialog(tr("Upload Qml"), tr("Not enough space"), false);
+        mVesc->emitMessageDialog(tr("上传 Qml"), tr("空间不足"), false);
         return false;
     }
 
@@ -800,7 +800,7 @@ bool CodeLoader::qmlUpload(QByteArray script, bool isFullscreen)
         int sz = data.size() > chunkSize ? chunkSize : data.size();
 
         if (writeChunk(data.mid(0, sz), offset) < 0) {
-            mVesc->emitMessageDialog(tr("Upload Qml"), tr("Qml write failed"), false);
+            mVesc->emitMessageDialog(tr("上传 Qml"), tr("Qml 写入失败"), false);
             ok = false;
             break;
         }

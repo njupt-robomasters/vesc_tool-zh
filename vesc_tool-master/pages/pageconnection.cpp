@@ -338,7 +338,7 @@ void PageConnection::pairingListUpdated()
 
     for (QString uuid: mVesc->getPairedUuids()) {
         QListWidgetItem *item = new QListWidgetItem;
-        item->setText("UUID: " + uuid);
+        item->setText("UUID：" + uuid);
         item->setIcon(QIcon("://res/icon.svg"));
         item->setData(Qt::UserRole, uuid);
         ui->pairedListWidget->addItem(item);
@@ -546,9 +546,9 @@ void PageConnection::on_pairConnectedButton_clicked()
             } else {
                 QMessageBox::StandardButton reply;
                 reply = QMessageBox::warning(this,
-                                             tr("Pair connected VESC"),
-                                             tr("This is going to pair the connected VESC with this instance of VESC Tool. VESC Tool instances "
-                                                "that are not paired with this VESC will not be able to connect over bluetooth any more. Continue?"),
+                                             tr("配对已连接的 VESC"),
+                                             tr("此操作将已连接的 VESC 与此 VESC Tool 实例配对。"
+                                                "未与此 VESC 配对的 VESC Tool 实例将无法再通过蓝牙连接。是否继续？"),
                                              QMessageBox::Ok | QMessageBox::Cancel);
                 if (reply == QMessageBox::Ok) {
                     mVesc->addPairedUuid(mVesc->getConnectedUuid());
@@ -593,10 +593,9 @@ void PageConnection::on_deletePairedButton_clicked()
         if (item) {
             QMessageBox::StandardButton reply;
             reply = QMessageBox::warning(this,
-                                         tr("Delete paired VESC"),
-                                         tr("This is going to delete this VESC from the paired list. If that VESC "
-                                            "has the pairing flag set you won't be able to connect to it over BLE "
-                                            "any more. Are you sure?"),
+                                         tr("删除已配对的 VESC"),
+                                         tr("此操作将从配对列表中删除此 VESC。"
+                                            "如果该 VESC 已设置配对标志，您将无法再通过 BLE 连接。确定吗？"),
                                          QMessageBox::Ok | QMessageBox::Cancel);
             if (reply == QMessageBox::Ok) {
                 mVesc->deletePairedUuid(item->data(Qt::UserRole).toString());
@@ -614,8 +613,8 @@ void PageConnection::on_clearPairedButton_clicked()
         if (item) {
             QMessageBox::StandardButton reply;
             reply = QMessageBox::warning(this,
-                                         tr("Clear paired VESCs"),
-                                         tr("This is going to clear the pairing list of this instance of VESC Tool. Are you sure?"),
+                                         tr("清除所有配对的 VESC"),
+                                         tr("此操作将清除此 VESC Tool 实例的配对列表。确定吗？"),
                                          QMessageBox::Ok | QMessageBox::Cancel);
             if (reply == QMessageBox::Ok) {
                 mVesc->clearPairedUuids();
@@ -653,8 +652,8 @@ void PageConnection::on_unpairButton_clicked()
                 if (item) {
                     QMessageBox::StandardButton reply;
                     reply = QMessageBox::warning(this,
-                                                 tr("Unpair connected VESC"),
-                                                 tr("This is going to unpair the connected VESC. Continue?"),
+                                                 tr("取消配对已连接的 VESC"),
+                                                 tr("此操作将取消配对已连接的 VESC。是否继续？"),
                                                  QMessageBox::Ok | QMessageBox::Cancel);
                     if (reply == QMessageBox::Ok) {
                         ConfigParams *ap = mVesc->appConfig();

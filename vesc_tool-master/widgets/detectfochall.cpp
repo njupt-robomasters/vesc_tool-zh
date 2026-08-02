@@ -54,9 +54,9 @@ void DetectFocHall::on_startButton_clicked()
     if (mVesc) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::warning(this,
-                                     tr("Detect FOC Hall Sensor Parameters"),
-                                     tr("This is going to turn the motor slowly. Make "
-                                        "sure that nothing is in the way."),
+                                     tr("检测 FOC 霍尔传感器参数"),
+                             tr("这将使电机缓慢转动。请确保"
+                                "没有障碍物。"),
                                      QMessageBox::Ok | QMessageBox::Cancel);
 
         if (reply == QMessageBox::Ok) {
@@ -76,7 +76,7 @@ void DetectFocHall::on_applyButton_clicked()
         mVesc->mcConfig()->updateParamInt("foc_hall_table__5", ui->hall5Box->value());
         mVesc->mcConfig()->updateParamInt("foc_hall_table__6", ui->hall6Box->value());
         mVesc->mcConfig()->updateParamInt("foc_hall_table__7", ui->hall7Box->value());
-        mVesc->emitStatusMessage(tr("Hall Sensor Parameters Applied"), true);
+        mVesc->emitStatusMessage(tr("霍尔传感器参数已应用"), true);
     }
 }
 
@@ -98,9 +98,9 @@ void DetectFocHall::setVesc(VescInterface *vesc)
 void DetectFocHall::focHallTableReceived(QVector<int> hall_table, int res)
 {
     if (res != 0) {
-        mVesc->emitStatusMessage(tr("Bad FOC Hall Detection Result Received"), false);
+        mVesc->emitStatusMessage(tr("收到异常的 FOC 霍尔检测结果"), false);
     } else {
-        mVesc->emitStatusMessage(tr("FOC Hall Result Received"), true);
+        mVesc->emitStatusMessage(tr("FOC 霍尔检测结果已收到"), true);
         ui->hall0Box->setValue(hall_table.at(0));
         ui->hall1Box->setValue(hall_table.at(1));
         ui->hall2Box->setValue(hall_table.at(2));

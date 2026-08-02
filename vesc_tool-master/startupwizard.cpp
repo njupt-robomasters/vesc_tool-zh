@@ -41,7 +41,7 @@ StartupWizard::StartupWizard(VescInterface *vesc, QWidget *parent)
     setPixmap(QWizard::LogoPixmap, icon_logo);
     resize(800, 450);
 
-    setWindowTitle(tr("VESC Tool Introduction"));
+    setWindowTitle(tr("VESC Tool 介绍"));
 
     mSideLabel = new AspectImgLabel(Qt::Vertical);
     mSideLabel->setPixmap(Utility::getIcon("logo_vertical.png"));
@@ -74,8 +74,8 @@ StartupIntroPage::StartupIntroPage(VescInterface *vesc, QWidget *parent)
         setTitle(p->longName);
         mBrowser->setHtml(p->description);
     } else {
-        setTitle("Text not found.");
-        mBrowser->setText("Text not found.");
+        setTitle("未找到文本。");
+        mBrowser->setText("未找到文本。");
     }
 
     QVBoxLayout *layout = new QVBoxLayout;
@@ -92,7 +92,7 @@ StartupUsagePage::StartupUsagePage(VescInterface *vesc, QWidget *parent)
     : QWizardPage(parent)
 {
     mBrowser = new VTextBrowser;
-    mAcceptBox = new QCheckBox("Yes, I understand and accept");
+    mAcceptBox = new QCheckBox("是的，我已经理解并接受");
 
     ConfigParam *p = vesc->infoConfig()->getParam("wizard_startup_usage");
     if (p != 0) {
@@ -101,8 +101,8 @@ StartupUsagePage::StartupUsagePage(VescInterface *vesc, QWidget *parent)
         mBrowser->setHtml(p->description);
     } else {
         setTitle("Text not found.");
-        setSubTitle("Text not found");
-        mBrowser->setText("Text not found.");
+        setSubTitle("未找到文本");
+        mBrowser->setText("未找到文本。");
     }
 
     registerField("usageAccept*", mAcceptBox);
@@ -142,7 +142,7 @@ StartupWarrantyPage::StartupWarrantyPage(VescInterface *vesc, QWidget *parent)
     : QWizardPage(parent)
 {
     mBrowser = new VTextBrowser;
-    mAcceptBox = new QCheckBox("Yes, I understand and accept");
+    mAcceptBox = new QCheckBox("是的，我已经理解并接受");
 
     ConfigParam *p = vesc->infoConfig()->getParam("wizard_startup_warranty");
     if (p != 0) {
@@ -151,8 +151,8 @@ StartupWarrantyPage::StartupWarrantyPage(VescInterface *vesc, QWidget *parent)
         mBrowser->setHtml(p->description);
     } else {
         setTitle("Text not found.");
-        setSubTitle("Text not found");
-        mBrowser->setText("Text not found.");
+        setSubTitle("未找到文本");
+        mBrowser->setText("未找到文本。");
     }
 
     registerField("warrantyAccept*", mAcceptBox);
@@ -200,8 +200,8 @@ StartupConclusionPage::StartupConclusionPage(VescInterface *vesc, QWidget *paren
         setTitle(p->longName);
         mBrowser->setHtml(p->description);
     } else {
-        setTitle("Text not found.");
-        mBrowser->setText("Text not found.");
+        setTitle("未找到文本。");
+        mBrowser->setText("未找到文本。");
     }
 
     QVBoxLayout *layout = new QVBoxLayout;

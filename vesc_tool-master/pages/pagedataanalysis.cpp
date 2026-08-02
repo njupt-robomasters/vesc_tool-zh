@@ -66,7 +66,7 @@ void PageDataAnalysis::setVesc(VescInterface *vesc)
                 ui->textEdit->setHtml(p->description);
             }
         } else {
-            ui->textEdit->setText("Data Analysis Description not found.");
+            ui->textEdit->setText(tr("未找到数据分析说明"));
         }
     }
 }

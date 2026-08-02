@@ -45,7 +45,7 @@ SetupWizardMotor::SetupWizardMotor(VescInterface *vesc, QWidget *parent)
     setPixmap(QWizard::LogoPixmap, icon_logo);
     resize(800, 450);
 
-    setWindowTitle(tr("Motor Setup Wizard"));
+    setWindowTitle(tr("电机设置向导"));
 
     mSideLabel = new AspectImgLabel(Qt::Vertical);
     mSideLabel->setPixmap(QPixmap("://res/logo_vertical.png"));
@@ -70,19 +70,9 @@ IntroPage::IntroPage(VescInterface *vesc, QWidget *parent)
     : QWizardPage(parent)
 {
     mVesc = vesc;
-    setTitle(tr("VESC® Motor Setup Wizard"));
+    setTitle(tr("VESC® 电机设置向导"));
 
-    mLabel = new QLabel(tr("This wizard will guide you through the motor setup of the VESC® "
-                           "step by step. Notice that only the required options for "
-                           "getting the motor running are shown. For tweaking the advanced "
-                           "settings, the configuration pages have to be entered after "
-                           "finishing this wizard.<br><br>"
-                           ""
-                           "To get more information about the parameters and tools in the "
-                           "wizard, click on the questionmark next to them.<br><br>"
-                           ""
-                           "After finishing the motor setup, you can use the input setup wizard "
-                           "to configure the apps for input to the VESC."));
+    mLabel = new QLabel(tr("此向导将逐步引导您完成 VESC® 的电机设置。请注意，仅显示使电机运行所需的选项。要调整高级设置，需要在完成此向导后进入配置页面。<br><br>要获取向导中参数和工具的更多信息，请点击旁边的问号。<br><br>完成电机设置后，您可以使用输入设置向导来配置 VESC 的应用程序输入。"));
     mLabel->setWordWrap(true);
 
     QVBoxLayout *layout = new QVBoxLayout;
@@ -110,11 +100,8 @@ bool IntroPage::validatePage()
     if (!mVesc->isPortConnected()) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::information(this,
-                                         tr("Connection"),
-                                         tr("You are not connected to the VESC. Would you like to try to automatically connect?<br><br>"
-                                            ""
-                                            "<i>Notice that the USB cable must be plugged in and that the VESC "
-                                            "must be powered for the connection to work.</i>"),
+                                         tr("连接"),
+                                         tr("您未连接到 VESC。是否尝试自动连接？<br><br><i>请注意，USB 线必须插入且 VESC 必须通电才能建立连接。</i>"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
         if (reply == QMessageBox::Yes) {
@@ -131,10 +118,8 @@ ConnectionPage::ConnectionPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("Connect VESC"));
-    setSubTitle(tr("The VESC has to be connected in order to use this "
-                   "wizard. Please connect using one of the available "
-                   "interfaces."));
+    setTitle(tr("连接 VESC"));
+    setSubTitle(tr("VESC 必须连接才能使用此向导。请使用可用的接口之一进行连接。"));
 
     mPageConnection = new PageConnection;
     mPageConnection->setVesc(mVesc);
@@ -166,9 +151,8 @@ FirmwarePage::FirmwarePage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("Update Firmware"));
-    setSubTitle(tr("You need to update the firmware on the VESC in order "
-                   "to use it with this version of VESC Tool."));
+    setTitle(tr("更新固件"));
+    setSubTitle(tr("您需要更新 VESC 上的固件才能与此版本的 VESC Tool 一起使用。"));
 
     mPageFirmware = new PageFirmware;
     mPageFirmware->setVesc(mVesc);
@@ -210,9 +194,8 @@ MotorTypePage::MotorTypePage(VescInterface *vesc, QWidget *parent)
     mVesc = vesc;
     mLoadDefaultAsked = false;
 
-    setTitle(tr("Choose Motor Type"));
-    setSubTitle(tr("This choise will help the wizard show the relevant "
-                   "configuration pages."));
+    setTitle(tr("选择电机类型"));
+    setSubTitle(tr("此选择将帮助向导显示相关的配置页面。"));
 
     mParamTab = new ParamTable;
     mParamTab->addParamRow(mVesc->mcConfig(), "motor_type");
@@ -240,9 +223,8 @@ void MotorTypePage::showEvent(QShowEvent *event)
 
         QMessageBox::StandardButton reply;
         reply = QMessageBox::information(this,
-                                         tr("Load Default Configuration"),
-                                         tr("Would you like to load the default configuration from "
-                                            "the connected VESC before proceeding with the setup?"),
+                                         tr("加载默认配置"),
+                                         tr("是否在继续设置之前从连接的 VESC 加载默认配置？"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
         if (reply == QMessageBox::Yes) {
@@ -259,23 +241,19 @@ CurrentsPage::CurrentsPage(VescInterface *vesc, QWidget *parent)
     mVesc = vesc;
     mWarningShown = false;
 
-    setTitle(tr("Set Current Limits"));
-    setSubTitle(tr("It is important to set correct current limits, both for correct "
-                   "parameter detection and for safe operation."));
+    setTitle(tr("设置电流限制"));
+    setSubTitle(tr("设置正确的电流限制非常重要，既能确保参数检测的准确性，也能保证安全运行。"));
 
     mParamTab = new ParamTable;
-    mParamTab->addRowSeparator(tr("Motor"));
+    mParamTab->addRowSeparator(tr("电机"));
     mParamTab->addParamRow(mVesc->mcConfig(), "l_current_max");
     mParamTab->addParamRow(mVesc->mcConfig(), "l_current_min");
-    mParamTab->addRowSeparator(tr("Battery"));
+    mParamTab->addRowSeparator(tr("电池"));
     mParamTab->addParamRow(mVesc->mcConfig(), "l_in_current_max");
     mParamTab->addParamRow(mVesc->mcConfig(), "l_in_current_min");
     mConfigureBatteryCutoff = true;
 
-    mLabel = new QLabel(tr("<font color=\"red\">WARNING: </font>"
-                           "Using too high current settings can damage the motor, the VESC "
-                           "and/or the battery. Make sure to read the specifications of your "
-                           "system if you are not sure about how to configure the current limits."));
+    mLabel = new QLabel(tr("<font color=\"red\">警告：</font>使用过高的电流设置可能会损坏电机、VESC 和/或电池。如果不确定如何配置电流限制，请务必阅读系统规格说明。"));
     mLabel->setWordWrap(true);
 
     QVBoxLayout *layout = new QVBoxLayout;
@@ -298,12 +276,8 @@ bool CurrentsPage::validatePage()
     mVesc->commands()->setMcconf();
 
     mConfigureBatteryCutoff = QMessageBox::information(this,
-                                     tr("Configure Battery Cutoff"),
-                                     tr("Would you like to configure a soft battery cutoff voltage "
-                                        "to prevent the battery from over-discharging?"
-                                        "<br><br>"
-                                        "If you are using a power supply instead of a battery you can "
-                                        "skip this step."),
+                                     tr("配置电池截止"),
+                                     tr("是否配置软电池截止电压以防止电池过度放电？<br><br>如果您使用的是电源而非电池，可以跳过此步骤。"),
                                      QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes)
             == QMessageBox::Yes;
 
@@ -316,11 +290,8 @@ void CurrentsPage::showEvent(QShowEvent *event)
         mWarningShown = true;
 
         QMessageBox::warning(this,
-                             tr("Important Notice"),
-                             tr("You are about to configure the current limits. Keep in mind that "
-                                "using too high current settings can damage the motor, the VESC "
-                                "and/or the battery. Make sure to read the specifications of your "
-                                "system if you are not sure about how to configure the current limits."));
+                             tr("重要提示"),
+                             tr("您即将配置电流限制。请注意，使用过高的电流设置可能会损坏电机、VESC 和/或电池。如果不确定如何配置电流限制，请务必阅读系统规格说明。"));
 
     }
 
@@ -332,8 +303,8 @@ VoltagesPage::VoltagesPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("Set Voltage Limits"));
-    setSubTitle(tr("Set soft voltage limits to prevent overdischarging your battery."));
+    setTitle(tr("设置电压限制"));
+    setSubTitle(tr("设置软电压限制以防止电池过度放电。"));
 
     mParamTab = new ParamTable;
     mParamTab->addParamRow(mVesc->mcConfig(), "l_battery_cut_start");
@@ -364,8 +335,8 @@ SensorsPage::SensorsPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("Choose sensor mode"));
-    setSubTitle(tr("Select what type of sensor (if any) your motor has."));
+    setTitle(tr("选择传感器模式"));
+    setSubTitle(tr("选择电机的传感器类型（如有）。"));
 
     mSensorMode = new QComboBox;
     mSensorMode->addItem("No Sensor (Sensorless)", SetupWizardMotor::Sensor_Sensorless);
@@ -521,8 +492,8 @@ BldcPage::BldcPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("BLDC Settings"));
-    setSubTitle(tr("Run detection and get the required parameters for BLDC commutation."));
+    setTitle(tr("BLDC 设置"));
+    setSubTitle(tr("运行检测并获取 BLDC 换向所需的参数。"));
 
     mParamTab = new ParamTable;
     mDetect = new DetectBldc(this);
@@ -551,7 +522,7 @@ void BldcPage::initializePage()
     mParamTab->setRowCount(0);
     mParamTab->addParamRow(mVesc->mcConfig(), "sl_cycle_int_limit");
     mParamTab->addParamRow(mVesc->mcConfig(), "sl_bemf_coupling_k");
-    mParamTab->addRowSeparator(tr("Hall Sensor Settings"));
+    mParamTab->addRowSeparator(tr("霍尔传感器设置"));
 
     if (field("SensorMode").toInt() == SetupWizardMotor::Sensor_Hall) {
         mParamTab->addParamRow(mVesc->mcConfig(), "hall_sl_erpm");
@@ -566,8 +537,8 @@ FocPage::FocPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("FOC Settings"));
-    setSubTitle(tr("Run detection and get the required parameters for FOC."));
+    setTitle(tr("FOC 设置"));
+    setSubTitle(tr("运行检测并获取 FOC 所需的参数。"));
 
     mParamTab = new ParamTable;
     mDetect = new DetectFoc(this);
@@ -625,26 +596,14 @@ bool FocPage::validatePage()
         QString msg;
 
         if (mDetect->allValuesOk()) {
-            msg = tr("You have not applied the detection result. Would you like to "
-                     "continue with the wizard without using the detected values?"
-                     "<br><br>"
-                     "<font color=\"red\">WARNING: </font>"
-                     "Using the wrong motor parameters will most likely damage your "
-                     "VESC and/or motor. Answering <b>No</b> and applying the dection result "
-                     "is recommended.");
+            msg = tr("您尚未应用检测结果。是否在不使用检测值的情况下继续向导？<br><br><font color=\"red\">警告：</font>使用错误的电机参数很可能会损坏您的 VESC 和/或电机。建议选择<b>否</b>并应用检测结果。");
         } else {
-            msg = tr("You have not finished the detection. Would you like to continue "
-                     "with the wizard anyway?"
-                     "<br><br>"
-                     "<font color=\"red\">WARNING: </font>"
-                     "Using the wrong motor parameters will most likely damage your "
-                     "VESC and/or motor. Answering <b>No</b> and finishing the detection "
-                     "is recommended.");
+            msg = tr("您尚未完成检测。是否仍要继续向导？<br><br><font color=\"red\">警告：</font>使用错误的电机参数很可能会损坏您的 VESC 和/或电机。建议选择<b>否</b>并完成检测。");
         }
 
         QMessageBox::StandardButton reply;
         reply = QMessageBox::warning(this,
-                                     tr("Continue Without Detection Result?"),
+                                     tr("是否在无检测结果的情况下继续？"),
                                      msg,
                                      QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 
@@ -663,8 +622,8 @@ FocEncoderPage::FocEncoderPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("FOC Encoder Settings"));
-    setSubTitle(tr("Detect and set the required settings for running FOC with an encoder."));
+    setTitle(tr("FOC 编码器设置"));
+    setSubTitle(tr("检测并设置使用编码器运行 FOC 所需的设置。"));
 
     mParamTab = new ParamTable;
     mDetect = new DetectFocEncoder(this);
@@ -697,8 +656,8 @@ FocHallPage::FocHallPage(VescInterface *vesc, QWidget *parent)
 {
     mVesc = vesc;
 
-    setTitle(tr("FOC Hall Sensor Settings"));
-    setSubTitle(tr("Detect and set the required settings for running FOC with hall sensors."));
+    setTitle(tr("FOC 霍尔传感器设置"));
+    setSubTitle(tr("检测并设置使用霍尔传感器运行 FOC 所需的设置。"));
 
     mParamTab = new ParamTable;
     mDetect = new DetectFocHall(this);
@@ -735,11 +694,9 @@ ConclusionPage::ConclusionPage(VescInterface *vesc, QWidget *parent)
     : QWizardPage(parent)
 {
     mVesc = vesc;
-    setTitle(tr("Conclusion"));
+    setTitle(tr("完成"));
 
-    mLabel = new QLabel(tr("You have finished the motor setup for the VESC®. The next step "
-                           "is to run the app setup to configure what type of interface "
-                           "to use with your VESC."));
+    mLabel = new QLabel(tr("您已完成 VESC® 的电机设置。下一步是运行应用设置来配置与 VESC 配合使用的接口类型。"));
     mLabel->setWordWrap(true);
 
     QVBoxLayout *layout = new QVBoxLayout;

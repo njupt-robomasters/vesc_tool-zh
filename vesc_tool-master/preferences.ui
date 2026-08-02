@@ -716,7 +716,7 @@
           <item row="3" column="1">
            <widget class="QDoubleSpinBox" name="jsCurrentMaxBox">
             <property name="prefix">
-             <string>Max Current: </string>
+             <string>最大电流: </string>
             </property>
             <property name="suffix">
              <string> A</string>
@@ -732,7 +732,7 @@
           <item row="4" column="1">
            <widget class="QDoubleSpinBox" name="jsErpmMaxBox">
             <property name="prefix">
-             <string>Max ERPM: </string>
+             <string>最大 ERPM: </string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -784,7 +784,7 @@
           <item row="4" column="0">
            <widget class="QDoubleSpinBox" name="jsErpmMinBox">
             <property name="prefix">
-             <string>Min ERPM: </string>
+             <string>最小 ERPM: </string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -803,7 +803,7 @@
           <item row="3" column="0">
            <widget class="QDoubleSpinBox" name="jsCurrentMinBox">
             <property name="prefix">
-             <string>Min Current: </string>
+             <string>最小电流: </string>
             </property>
             <property name="suffix">
              <string> A</string>
@@ -836,7 +836,7 @@
           <item row="1" column="1">
            <widget class="QSpinBox" name="jsMaxBox">
             <property name="prefix">
-             <string>Max: </string>
+             <string>最大: </string>
             </property>
             <property name="minimum">
              <number>-1000</number>
@@ -852,7 +852,7 @@
           <item row="1" column="0">
            <widget class="QSpinBox" name="jsMinBox">
             <property name="prefix">
-             <string>Min: </string>
+             <string>最小: </string>
             </property>
             <property name="minimum">
              <number>-1000</number>

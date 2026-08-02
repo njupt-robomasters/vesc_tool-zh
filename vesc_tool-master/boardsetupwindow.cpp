@@ -203,10 +203,10 @@ void BoardSetupWindow::on_startButton_clicked()
     if(ui->motorDetectionCheckBox->isChecked()){
         QMessageBox::StandardButton reply;
         reply = QMessageBox::information(this,
-                                         tr("Board Setup Started"),
-                                         tr("You have begun the board setup process with motor calibration enabled.") +
-                                         tr(" Please ensure the motors and wheels are able to free-spin without") +
-                                         tr(" interference before pressing OK."),
+                                         tr("电路板设置已启动"),
+                                         tr("您已开始电路板设置流程，已启用电机校准。") +
+                                         tr("请在按确定之前确保电机和轮子可以自由旋转而不受") +
+                                         tr("干扰。"),
                                          QMessageBox::Ok|QMessageBox::Cancel);
         if(reply!=QMessageBox::Ok){
             return;
@@ -292,18 +292,18 @@ void BoardSetupWindow::on_startButton_clicked()
         resetRoutine();
         return;
     }
-    testResultMsg = "Setup completed succesfully. Your board should now be ready to ride.";
+    testResultMsg = "设置已成功完成。您的开发板现在应该可以正常使用了。";
     testResult = true;
     resetRoutine();
 }
 
 void BoardSetupWindow::resetRoutine(){
-    //showMessageDialog(tr("Test Results"),
+    //showMessageDialog(tr("测试结果"),
     //                  tr(testResultMsg.toUtf8()),
     //                 testResult, false);
     QMessageBox::StandardButton reply;
     reply = QMessageBox::information(this,
-                                     tr("Test Results:"),
+                                     tr("测试结果："),
                                      tr(testResultMsg.toUtf8()),
                                      QMessageBox::Ok);
     mVesc->disconnectPort();
@@ -339,16 +339,16 @@ void BoardSetupWindow::resetRoutine(){
     ui->appSetupLabel->setStyleSheet("");
     ui->remoteTestLabel->setStyleSheet("");
 
-    ui->usbConnectLabel->setText("Connect USB Port");
-    ui->CANScanLabel->setText("CAN Bus Scan");
-    ui->bootloaderLabel->setText("Bootloader Upload");
-    ui->firmwareLabel->setText("Firmware Upload");
-    ui->bleFirmwareLabel->setText("BLE Firmware Upload");
-    ui->motorDetectionLabel->setText("Motor FOC Detection");
-    ui->motorDirectionLabel->setText("Motor Direction Calibration");
-    ui->motorTestLabel->setText("Motor Test");
-    ui->appSetupLabel->setText("App Setup");
-    ui->remoteTestLabel->setText("App Test");
+    ui->usbConnectLabel->setText("连接 USB 端口");
+    ui->CANScanLabel->setText("CAN 总线扫描");
+    ui->bootloaderLabel->setText("引导加载程序上传");
+    ui->firmwareLabel->setText("固件上传");
+    ui->bleFirmwareLabel->setText("BLE 固件上传");
+    ui->motorDetectionLabel->setText("电机 FOC 检测");
+    ui->motorDirectionLabel->setText("电机方向校准");
+    ui->motorTestLabel->setText("电机测试");
+    ui->appSetupLabel->setText("应用设置");
+    ui->remoteTestLabel->setText("应用测试");
 
 }
 
@@ -363,7 +363,7 @@ bool BoardSetupWindow::trySerialConnect(){
         ui->usbConnectLabel->setStyleSheet("QLabel { background-color : lightGreen; color : black; }");
     }else{
         ui->usbConnectLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "Could not connect USB. Make sure the unit is powered on, connected to the computer, and the correct Serial port is selected.";
+        testResultMsg = "无法连接 USB。请确保设备已通电、已连接到计算机，并且选择了正确的串口。";
         testResult = false;
     }
     return mVesc->isPortConnected();
@@ -378,7 +378,7 @@ bool BoardSetupWindow::tryCANScan(){
     if(CAN_Timeout){
         res = false;
         ui->CANScanLabel->setStyleSheet("QLabel { background-color : lightGreen; color : black; }");
-        testResultMsg = "Could not connect USB. Make sure the unit is powered on, connected to the computer, and the correct Serial port is selected.";
+        testResultMsg = "无法连接 USB。请确保设备已通电、已连接到计算机，并且选择了正确的串口。";
         testResult = false;
     }else{
         res = true;
@@ -386,7 +386,7 @@ bool BoardSetupWindow::tryCANScan(){
         mVesc->commands()->getAppConf();
         if(!Utility::waitSignal(mVesc->appConfig(), SIGNAL(updated()), 5000)){
             ui->CANScanLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Failed to read app config during CAN Scan.";
+            testResultMsg = "CAN 扫描期间无法读取应用配置。";
             return false;
         }
         int this_ID = mVesc->appConfig()->getParamInt("controller_id");
@@ -418,17 +418,17 @@ bool BoardSetupWindow::tryBootloaderUpload(){
     is_Bootloader = true;
     if (!file.open(QIODevice::ReadOnly)) {
         QMessageBox::critical(this,
-                              tr("Upload Error"),
-                              tr("Could not open file. Make sure that the path is valid."));
-        testResultMsg = "Something is wrong with the included bootloader file in this software.";
+                              tr("上传错误"),
+                              tr("无法打开文件。请确保路径有效。"));
+        testResultMsg = "此软件中包含的引导加载程序文件有问题。";
         testResult = false;
         return false;
     }
     if (file.size() > 400000) {
         QMessageBox::critical(this,
-                              tr("Upload Error"),
-                              tr("The selected file is too large to be a firmware."));
-        testResultMsg = "The included bootloader file is too large.";
+                              tr("上传错误"),
+                              tr("所选文件太大，不是有效的固件。"));
+        testResultMsg = "包含的引导加载程序文件太大。";
         testResult = false;
         return false;
     }
@@ -439,7 +439,7 @@ bool BoardSetupWindow::tryBootloaderUpload(){
         ui->bootloaderLabel->setStyleSheet("QLabel { background-color : lightGreen; color : black; }");
     }else{
         ui->bootloaderLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "The bootloader upload timed out. Please try the routine again, you may need to update the firmware first seperatley from the VESC tool.";
+        testResultMsg = "引导加载程序上传超时。请重试该流程，您可能需要先在 VESC Tool 之外单独更新固件。";
         testResult = false;
     }
     return fwRes;
@@ -462,9 +462,9 @@ bool BoardSetupWindow::tryFirmwareUpload(){
         file.setFileName(FW_Path);
         if (!file.open(QIODevice::ReadOnly)) {
             QMessageBox::critical(this,
-                                  tr("Upload Error"),
-                                  tr("Could not open file. Make sure that the path is valid."));
-            testResultMsg = "Something is wrong with the included firmware file for your hardware in this software.";
+                                  tr("上传错误"),
+                                  tr("无法打开文件。请确保路径有效。"));
+            testResultMsg = "此软件中包含用于您硬件的固件文件有问题。";
             testResult = false;
             return false;
         }
@@ -474,17 +474,17 @@ bool BoardSetupWindow::tryFirmwareUpload(){
         fwRes = mVesc->fwUpload(data, is_Bootloader, num_VESCs > 1);
         if(!fwRes){
             ui->firmwareLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "The firmware upload timed out. Please try the routine again, you may need to update the firmware first seperatley from the VESC tool.";
+            testResultMsg = "固件上传超时。请重试该流程，您可能需要先在 VESC Tool 之外单独更新固件。";
             return false;
         }
     }else{
         // Didn't find any supported default firmwares
         ui->bootloaderLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "The firmware file path is non-existent.";
+        testResultMsg = "固件文件路径不存在。";
         return false;
     }
     for(int j = 25; j >= 0; j--){
-        ui->firmwareLabel->setText("Waiting for Reboot: " + QString::number(j)  + " s");
+        ui->firmwareLabel->setText("等待重启: " + QString::number(j)  + " s");
         Utility::sleepWithEventLoop(1000);
 
         if (j < 20 && mVesc->lastPortAvailable()) {
@@ -494,10 +494,10 @@ bool BoardSetupWindow::tryFirmwareUpload(){
     }
     bool reconnected = trySerialConnect();
     if(reconnected){
-        ui->firmwareLabel->setText("Firmware Uploaded Succesfully and Reconnected");
+        ui->firmwareLabel->setText("固件上传成功并已重新连接");
         ui->firmwareLabel->setStyleSheet("QLabel { background-color : lightGreen; color : black; }");
     }else{
-        ui->firmwareLabel->setText("Unit did not reconnect after firmware upload.");
+        ui->firmwareLabel->setText("固件上传后设备未重新连接。");
         ui->firmwareLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
         testResult = false;
     }
@@ -515,7 +515,7 @@ bool BoardSetupWindow::tryFOCCalibration(){
     mVesc->commands()->getAppConf();
     if(!Utility::waitSignal(mVesc->appConfig(), SIGNAL(updated()), 5000)){
         ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "Failed to read app config during motor setup routine.";
+        testResultMsg = "电机设置过程中无法读取应用配置。";
         return false;
     }
     app_enum_old = mVesc->appConfig()->getParamEnum("app_to_use");
@@ -524,7 +524,7 @@ bool BoardSetupWindow::tryFOCCalibration(){
     mVesc->commands()->setAppConf();
     if(!Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 2000)){
         ui->appSetupLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "Failed to write app config during motor routine.";
+        testResultMsg = "电机设置过程中无法写入应用配置。";
         return false;
     }
 
@@ -535,11 +535,11 @@ bool BoardSetupWindow::tryFOCCalibration(){
     bool xml_res = mVesc->mcConfig()->loadXml(mcXmlPath, "MCConfiguration");
     if(!xml_res){
         ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "motor XML read failed during FOC calibration";
+        testResultMsg = "FOC 校准期间电机 XML 读取失败";
         return false;
     }
     mVesc->ignoreCanChange(true);
-    ui->motorDetectionLabel->setText("Writing Default Configs");
+    ui->motorDetectionLabel->setText("正在写入默认配置");
     mVesc->commands()->setSendCan(false);
     mVesc->commands()->setMcconf(false);
     Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 2000);
@@ -553,7 +553,7 @@ bool BoardSetupWindow::tryFOCCalibration(){
     mVesc->commands()->setSendCan(false);
 
     Utility::sleepWithEventLoop(1000);
-    ui->motorDetectionLabel->setText("Running FOC Detection");
+    ui->motorDetectionLabel->setText("正在运行 FOC 检测");
     double max_loss = pow(mMcConfig_Target->getParamDouble("l_current_max"),2.0) * mMcConfig_Target->getParamDouble("foc_motor_r");
     qDebug() << "max loss" << max_loss;
     mVesc->mcConfig();
@@ -567,7 +567,7 @@ bool BoardSetupWindow::tryFOCCalibration(){
         ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
         return false;
     }
-    ui->motorDetectionLabel->setText("Checking Detected Values for Accuracy");
+    ui->motorDetectionLabel->setText("正在检查检测值的准确性");
     mVesc->ignoreCanChange(true);
     float tolerance = (float) ui->motorTolSlider->value();
     if(ui->motorTolSlider->value() < 100){
@@ -590,37 +590,37 @@ bool BoardSetupWindow::tryFOCCalibration(){
 
         if(mcConfigOutsideParamBounds("foc_motor_r",tolerance )){
             ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Motor Resistance of CAN ID " + canid + " is outside the tolerance for the target value." +
-                    " Check your motors and winding connections. The measured resistance was " +
+            testResultMsg = "CAN ID " + canid + " 的电机电阻超出了目标值的容差范围。" +
+                    " 请检查您的电机和绕组连接。测量电阻为 " +
                     QString::number(mVesc->mcConfig()->getParamDouble("foc_motor_r")*1.0e3)+" mOhm";
             return false;
         }
 
         if(mcConfigOutsideParamBounds("foc_motor_l",tolerance )){
             ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Motor Inductance of CAN ID " + canid + " is outside the tolerance for the target value." +
-                    " Check your motors and winding connections. The measured inductance was " +
+            testResultMsg = "CAN ID " + canid + " 的电机电感超出了目标值的容差范围。" +
+                    " 请检查您的电机和绕组连接。测量电感为 " +
                     QString::number(mVesc->mcConfig()->getParamDouble("foc_motor_l")*1.0e6)+" uH";
             return false;
         }
 
         if(mcConfigOutsideParamBounds("foc_motor_flux_linkage",tolerance)){
             ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Motor Flux Linkage of CAN ID " + canid + " is outside the tolerance for the target value." +
-                    " Check your motors and winding connections and ensure the motors are able to spin freely. The measured flux linkage was " +
+            testResultMsg = "CAN ID " + canid + " 的电机磁链超出了目标值的容差范围。" +
+                    " 请检查您的电机和绕组连接，确保电机可以自由旋转。测量磁链为 " +
                     QString::number(mVesc->mcConfig()->getParamDouble("foc_motor_flux_linkage")*1.0e3)+" mWb";
             return false;
         }
         if(mVesc->mcConfig()->getParamEnum("foc_sensor_mode") != mMcConfig_Target->getParamEnum("foc_sensor_mode")){
             ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Motor Sensors of CAN ID " + canid + " does not match the target setting." +
-                    " Ensure that the sensors are plugged in and wired correctly.";
+            testResultMsg = "CAN ID " + canid + " 的电机传感器与目标设置不匹配。" +
+                    " 请确保传感器已正确插入和接线。";
             return false;
         }
     }
     mVesc->ignoreCanChange(false);
     mVesc->commands()->setSendCan(false);
-    ui->motorDetectionLabel->setText("Detection Completed Succesfully");
+    ui->motorDetectionLabel->setText("检测成功完成");
     ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : lightGreen; color : black; }");
     return true;
 }
@@ -629,7 +629,7 @@ bool BoardSetupWindow::tryMotorDirection(){
     int tach_start[16];
     int tach_end[16];
     QString directionStatus;
-    directionStatus = tr("Spin each motor in the forward direction to continue.\n");
+        directionStatus = tr("请正向旋转每个电机以继续。\n");
     mVesc->ignoreCanChange(true);
     QVector<int> CAN_IDs_VESC;
     FW_RX_PARAMS params;
@@ -654,7 +654,7 @@ bool BoardSetupWindow::tryMotorDirection(){
         mVesc->commands()->getValues();
         if(!Utility::waitSignal(mVesc->commands(), SIGNAL(valuesReceived(MC_VALUES, unsigned int)), 2000)){
             ui->motorDirectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Failed to read tachometer value during motor direction routine.";
+            testResultMsg = "电机方向校准过程中无法读取转速计值。";
             return false;
         }
         tach_start[i+1] = values_now.tachometer;
@@ -663,14 +663,14 @@ bool BoardSetupWindow::tryMotorDirection(){
     bool allHaveTurned = false;
 
     QMessageBox* msgBox = new QMessageBox( this );
-    msgBox->setWindowTitle( tr("Spin Motors") );
+    msgBox->setWindowTitle( tr("旋转电机") );
     msgBox->setText(directionStatus);
     msgBox->addButton(QMessageBox::Cancel);
     msgBox->setModal( true );
     msgBox->open(this, SLOT(msgBoxClosed(QAbstractButton*)));
     mVesc->ignoreCanChange(true);
     while(!allHaveTurned){
-        directionStatus = tr("Spin each motor in the forward direction to continue.\n");
+    directionStatus = tr("请正向旋转每个电机以继续。\n");
         bool turned = true;
         for(int i = -1; i < CAN_IDs_VESC.size(); i++){
 
@@ -697,12 +697,12 @@ bool BoardSetupWindow::tryMotorDirection(){
         msgBox->setText(directionStatus);
         if(!msgBox->isVisible()){
             ui->motorDirectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Direction routine canceled by the user.";
+            testResultMsg = "方向校准被用户取消。";
             return false;
         }
         if(!mVesc->isPortConnected()){
             ui->motorDirectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Disconnected during direction calibration.";
+            testResultMsg = "方向校准期间连接断开。";
             msgBox->close();
             msgBox->deleteLater();
             return false;
@@ -726,7 +726,7 @@ bool BoardSetupWindow::tryMotorDirection(){
         mVesc->commands()->getMcconf();
         if(!Utility::waitSignal(mVesc->mcConfig(), SIGNAL(updated()), 5000)){
             ui->motorDirectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Failed to read config during motor direction routine.";
+            testResultMsg = "电机方向校准过程中无法读取配置。";
             return false;
         }
 
@@ -740,13 +740,13 @@ bool BoardSetupWindow::tryMotorDirection(){
 
         if(!Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 2000)){
             ui->motorDirectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Failed to write config during during motor direction routine.";
+            testResultMsg = "电机方向校准过程中无法写入配置。";
             return false;
         }
     }
 
     ui->motorDirectionLabel->setStyleSheet("QLabel { background-color : lightGreen; color : black; }");
-    ui->motorDirectionLabel->setText("Motor Directions Set");
+    ui->motorDirectionLabel->setText("电机方向已设置");
 
 
     return true;
@@ -761,14 +761,14 @@ bool BoardSetupWindow::tryTestMotorParameters(){
         mVesc->commands()->getAppConf();
         if(!Utility::waitSignal(mVesc->appConfig(), SIGNAL(updated()), 5000)){
             ui->motorDetectionLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Failed to read app config after motor setup routine.";
+            testResultMsg = "电机设置完成后无法读取应用配置。";
             return false;
         }
         mVesc->appConfig()->updateParamEnum("app_to_use",app_enum_old); // set to use no app
         mVesc->commands()->setAppConf();
         if(!Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 2000)){
             ui->appSetupLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-            testResultMsg = "Failed to write app config after motor routine.";
+            testResultMsg = "电机设置完成后无法写入应用配置。";
             return false;
         }
     }
@@ -793,7 +793,7 @@ bool BoardSetupWindow::tryApplySlaveAppSettings(){
     mVesc->commands()->setAppConf();
     if(!Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 5000)){
         ui->appSetupLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "Failed to write master config during slave app routine.";
+        testResultMsg = "从机应用设置过程中无法写入主配置。";
         return false;
     }
 
@@ -835,7 +835,7 @@ bool BoardSetupWindow::tryApplySlaveAppSettings(){
             mVesc->commands()->setAppConf();
             if(!Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 2000)){
                 ui->appSetupLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-                testResultMsg = "Failed to write config during slave app routine.";
+                testResultMsg = "从机应用设置过程中无法写入配置。";
                 return false;
             }
         }
@@ -851,7 +851,7 @@ bool BoardSetupWindow::tryApplyMasterAppSettings(){
     mVesc->commands()->getAppConf();
     if(!Utility::waitSignal(mVesc->appConfig(), SIGNAL(updated()), 5000)){
         ui->appSetupLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "Failed to read app config during slave setup routine.";
+        testResultMsg = "从机设置过程中无法读取应用配置。";
         return false;
     }
     master_ID = mVesc->appConfig()->getParamInt("controller_id");
@@ -859,7 +859,7 @@ bool BoardSetupWindow::tryApplyMasterAppSettings(){
     bool xml_res = mVesc->appConfig()->loadXml(appXmlPath, "APPConfiguration");
     if(!xml_res){
         ui->appSetupLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "app XML read failed during App Setup";
+        testResultMsg = "应用设置期间应用程序 XML 读取失败";
         return false;
     }
     mVesc->appConfig()->updateParamEnum("send_can_status",0); // don't send CAN status on master
@@ -885,7 +885,7 @@ bool BoardSetupWindow::tryApplyMasterAppSettings(){
         break;
     default:
         ui->appSetupLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "Your app type is not compatible with this setup tool currently.";
+        testResultMsg = "您的应用类型目前与此设置工具不兼容。";
         return false;
     }
 
@@ -893,7 +893,7 @@ bool BoardSetupWindow::tryApplyMasterAppSettings(){
     mVesc->commands()->setAppConf();
     if(!Utility::waitSignal(mVesc->commands(), SIGNAL(ackReceived(QString)), 2000)){
         ui->appSetupLabel->setStyleSheet("QLabel { background-color : red; color : black; }");
-        testResultMsg = "Failed to write config during master app routine.";
+        testResultMsg = "主应用设置过程中无法写入配置。";
         return false;
     }
 
@@ -921,9 +921,9 @@ bool BoardSetupWindow::mcConfigOutsideParamBounds(QString paramName, double tole
 void BoardSetupWindow::mcConfigCheckResult(QStringList paramsNotSet)
 {
     if (!paramsNotSet.isEmpty()) {
-        ParamDialog::showParams(tr("Parameters truncated"),
-                                tr("The following parameters were truncated because they were set outside "
-                                   "of their allowed limits."),
+        ParamDialog::showParams(tr("参数已截断"),
+                                tr("以下参数被截断，因为它们被设置在允许范围之外，"
+                                   "或者写入失败。如果写入失败，您可以尝试再次写入。"),
                                 mVesc->mcConfig(),
                                 paramsNotSet,
                                 this);
@@ -936,9 +936,9 @@ void BoardSetupWindow::on_motorConfigButton_clicked()
 {
     QString path;
     path = QFileDialog::getOpenFileName(this,
-                                        tr("Choose motor configuration file to load"),
+                                        tr("选择要加载的电机配置文件"),
                                         ".",
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     loadMotorConfXML(path);
 
@@ -949,17 +949,17 @@ void BoardSetupWindow::on_appConfigButton_clicked()
 {
     QString path;
     path = QFileDialog::getOpenFileName(this,
-                                        tr("Choose app configuration file to load"),
+                                        tr("选择要加载的应用配置文件"),
                                         ".",
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
     loadAppConfXML(path);
 }
 
 void BoardSetupWindow::on_bleFirmwareButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File"), ".",
-                                                    tr("Binary files (*.bin)"));
+                                                    tr("选择固件文件"), ".",
+                                                    tr("二进制文件 (*.bin)"));
 
     if (filename.isNull()) {
         return;
@@ -1091,9 +1091,9 @@ void BoardSetupWindow::loadAppConfXML(QString path){
         default:
             QMessageBox::StandardButton reply;
             reply = QMessageBox::warning(this,
-                                         tr("App Type Not Supported"),
-                                         tr("This tool currently only supports a subset of app types.") +
-                                         tr(" The app config loaded is of a different type and is not compatible."),
+                                         tr("不支持的应用类型"),
+                                         tr("此工具目前仅支持部分应用类型。") +
+                                         tr("加载的应用配置类型不同，不兼容。"),
                                          QMessageBox::Ok);
             ui->appCheckBox->setCheckable(false);
             ui->appCheckBox->setCheckState(Qt::Unchecked);
@@ -1113,8 +1113,8 @@ void BoardSetupWindow::loadAppConfXML(QString path){
         ui->appCheckBox->setCheckState(Qt::Checked);
 
     } else {
-        showMessageDialog(tr("Load app configuration"),
-                          tr("Could not load app configuration:<BR>"
+        showMessageDialog(tr("加载应用配置"),
+                          tr("无法加载应用配置：<BR>"
                              "%1").arg(mAppConfig_Target->xmlStatus()),
                           false, false);
     }
@@ -1135,9 +1135,9 @@ void BoardSetupWindow::loadMotorConfXML(QString path){
         if(mMcConfig_Target->getParamEnum("motor_type") != 2){
             QMessageBox::StandardButton reply;
             reply = QMessageBox::warning(this,
-                                         tr("Motor Type Not Supported"),
-                                         tr("This tool currently only supports FOC motor calibration.") +
-                                         tr(" The config loaded is of a different motor type and is not compatible."),
+                                         tr("不支持的电机类型"),
+                                         tr("此工具目前仅支持 FOC 电机校准。") +
+                                         tr("加载的配置电机类型不同，不兼容。"),
                                          QMessageBox::Ok);
             ui->motorDetectionCheckBox->setCheckable(false);
             ui->motorDetectionCheckBox->setCheckState(Qt::Unchecked);
@@ -1164,8 +1164,8 @@ void BoardSetupWindow::loadMotorConfXML(QString path){
         ui->motorDetectionCheckBox->setCheckable(true);
         ui->motorDetectionCheckBox->setCheckState(Qt::Checked);
     } else {
-        showMessageDialog(tr("Load motor configuration"),
-                          tr("Could not load motor configuration:<BR>"
+        showMessageDialog(tr("加载电机配置"),
+                          tr("无法加载电机配置：<BR>"
                              "%1").arg(mVesc->mcConfig()->xmlStatus()),
                           false, false);
     }
@@ -1188,7 +1188,7 @@ void BoardSetupWindow::fwUploadStatus(const QString &status, double progress, bo
                                          arg(status).
                                          arg(progress * 100, 0, 'f', 1));
         } else {
-            ui->bootloaderLabel->setText("Bootloader " + status);
+            ui->bootloaderLabel->setText("引导加载程序 " + status);
         }
     }else{
         if (isOngoing) {
@@ -1196,7 +1196,7 @@ void BoardSetupWindow::fwUploadStatus(const QString &status, double progress, bo
                                        arg(status).
                                        arg(progress * 100, 0, 'f', 1));
         } else {
-            ui->firmwareLabel->setText("Firmware " + status);
+            ui->firmwareLabel->setText("固件 " + status);
         }
     }
 }

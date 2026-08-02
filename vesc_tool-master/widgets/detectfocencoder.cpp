@@ -54,9 +54,9 @@ void DetectFocEncoder::on_startButton_clicked()
     if (mVesc) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::warning(this,
-                                     tr("Detect FOC Encoder Parameters"),
-                                     tr("This is going to turn the motor slowly. Make "
-                                        "sure that nothing is in the way."),
+                                     tr("检测 FOC 编码器参数"),
+                             tr("这将使电机缓慢转动。请确保"
+                                "没有障碍物。"),
                                      QMessageBox::Ok | QMessageBox::Cancel);
 
         if (reply == QMessageBox::Ok) {
@@ -71,7 +71,7 @@ void DetectFocEncoder::on_applyButton_clicked()
         mVesc->mcConfig()->updateParamDouble("foc_encoder_offset", ui->offsetBox->value());
         mVesc->mcConfig()->updateParamDouble("foc_encoder_ratio", ui->ratioBox->value());
         mVesc->mcConfig()->updateParamBool("foc_encoder_inverted", ui->invertedBox->currentIndex() != 0);
-        mVesc->emitStatusMessage(tr("Encoder Parameters Applied"), true);
+        mVesc->emitStatusMessage(tr("编码器参数已应用"), true);
     }
 }
 
@@ -93,10 +93,10 @@ void DetectFocEncoder::setVesc(VescInterface *vesc)
 void DetectFocEncoder::encoderParamReceived(ENCODER_DETECT_RES res)
 {
     if (res.offset > 1000.0) {
-        mVesc->emitStatusMessage(tr("Encoder not enabled in firmware"), false);
+        mVesc->emitStatusMessage(tr("编码器未在固件中启用"), false);
         QMessageBox::critical(this, "Error", "Encoder support is not enabled. Enable it in the general settings.");
     } else {
-        mVesc->emitStatusMessage(tr("Encoder Result Received"), true);
+        mVesc->emitStatusMessage(tr("编码器检测结果已收到"), true);
         ui->offsetBox->setValue(res.offset);
         ui->ratioBox->setValue(res.ratio);
         ui->invertedBox->setCurrentIndex(res.inverted ? 1 : 0);

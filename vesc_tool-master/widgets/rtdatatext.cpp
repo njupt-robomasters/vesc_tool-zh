@@ -36,7 +36,7 @@ RtDataText::RtDataText(QWidget *parent) : QWidget(parent)
     mValues.current_motor = 0;
     mValues.duty_now = 0;
     mValues.fault_code = FAULT_CODE_NONE;
-    mValues.fault_str = "None";
+    mValues.fault_str = tr("无");
     mValues.id = 0;
     mValues.iq = 0;
     mValues.rpm = 0;
@@ -105,11 +105,11 @@ void RtDataText::paintEvent(QPaintEvent *event)
     const double vidw = event->rect().width();
 
     // Left info box
-    str = QString::asprintf("Power   : %.1f W\n"
-                "Duty    : %.2f %%\n"
+    str = QString::asprintf(tr("功率     : %.1f W\n"
+                "占空比   : %.2f %%\n"
                 "ERPM    : %.1f\n"
-                "I Batt  : %.2f A\n"
-                "I Motor : %.2f A\n",
+                "电池电流 : %.2f A\n"
+                "电机电流 : %.2f A\n").toUtf8().constData(),
                 mValues.v_in * mValues.current_in,
                 mValues.duty_now * 100.0,
                 mValues.rpm,
@@ -125,11 +125,11 @@ void RtDataText::paintEvent(QPaintEvent *event)
                      Qt::AlignLeft, str);
 
     // Middle info box
-    str = QString::asprintf("T FET   : %.2f \u00B0C\n"
-                "T Motor : %.2f \u00B0C\n"
-                "Fault   : %s\n"
+    str = QString::asprintf(tr("FET温度  : %.2f \u00B0C\n"
+                "电机温度 : %.2f \u00B0C\n"
+                "故障     : %s\n"
                 "Tac     : %i\n"
-                "Tac ABS : %i\n",
+                "Tac ABS : %i\n").toUtf8().constData(),
                 mValues.temp_mos,
                 mValues.temp_motor,
                 mValues.fault_str.toLocal8Bit().data(),
@@ -145,11 +145,11 @@ void RtDataText::paintEvent(QPaintEvent *event)
                      Qt::AlignLeft, str);
 
     // Right info box
-    str = QString::asprintf("Ah Draw   : %.1f mAh\n"
-                "Ah Charge : %.1f mAh\n"
-                "Wh Draw   : %.2f Wh\n"
-                "Wh Charge : %.2f Wh\n"
-                "Volts In  : %.1f V",
+    str = QString::asprintf(tr("Ah消耗   : %.1f mAh\n"
+                "Ah充电   : %.1f mAh\n"
+                "Wh消耗   : %.2f Wh\n"
+                "Wh充电   : %.2f Wh\n"
+                "输入电压  : %.1f V").toUtf8().constData(),
                 mValues.amp_hours * 1000.0,
                 mValues.amp_hours_charged * 1000.0,
                 mValues.watt_hours,

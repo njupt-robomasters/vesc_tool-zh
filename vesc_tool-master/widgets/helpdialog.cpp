@@ -64,8 +64,8 @@ void HelpDialog::showHelp(QWidget *parent, ConfigParams *params, QString name, b
         }
     } else {
         QMessageBox::warning(parent,
-                             tr("Show help"),
-                             tr("Help text for %1 not found.").arg(name));
+                             tr("显示帮助"),
+                             tr("未找到 %1 的帮助文本。").arg(name));
     }
 }
 

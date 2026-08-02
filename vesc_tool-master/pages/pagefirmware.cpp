@@ -437,8 +437,8 @@ void PageFirmware::updateBlList(FW_RX_PARAMS params)
 void PageFirmware::on_chooseButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File"), ui->fwEdit->text(),
-                                                    tr("Firmware files (*.bin *.hex)"));
+                                                    tr("选择固件文件"), ui->fwEdit->text(),
+                                                    tr("固件文件 (*.bin *.hex)"));
     if (!filename.isNull()) {
         ui->fwEdit->setText(filename);
     }
@@ -447,8 +447,8 @@ void PageFirmware::on_chooseButton_clicked()
 void PageFirmware::on_choose2Button_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File"), ui->fw2Edit->text(),
-                                                    tr("Firmware files (*.bin *.hex)"));
+                                                    tr("选择固件文件"), ui->fw2Edit->text(),
+                                                    tr("固件文件 (*.bin *.hex)"));
     if (!filename.isNull()) {
         ui->fw2Edit->setText(filename);
     }
@@ -457,8 +457,8 @@ void PageFirmware::on_choose2Button_clicked()
 void PageFirmware::on_choose3Button_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File"), ui->fw3Edit->text(),
-                                                    tr("Firmware files (*.bin *.hex)"));
+                                                    tr("选择固件文件"), ui->fw3Edit->text(),
+                                                    tr("固件文件 (*.bin *.hex)"));
     if (!filename.isNull()) {
         ui->fw3Edit->setText(filename);
     }
@@ -467,8 +467,8 @@ void PageFirmware::on_choose3Button_clicked()
 void PageFirmware::on_choose4Button_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File"), ui->fw4Edit->text(),
-                                                    tr("Firmware files (*.bin *.hex)"));
+                                                    tr("选择固件文件"), ui->fw4Edit->text(),
+                                                    tr("固件文件 (*.bin *.hex)"));
     if (!filename.isNull()) {
         ui->fw4Edit->setText(filename);
     }
@@ -508,8 +508,8 @@ void PageFirmware::uploadFw(bool allOverCan)
     if (mVesc) {
         if (!mVesc->isPortConnected()) {
             QMessageBox::critical(this,
-                                  tr("Connection Error"),
-                                  tr("Not connected to device. Please connect first."));
+                                  tr("连接错误"),
+                                  tr("未连接到设备。请先连接。"));
             return;
         }
 
@@ -535,15 +535,13 @@ void PageFirmware::uploadFw(bool allOverCan)
             } else {
                 if (ui->hwList->count() == 0) {
                     QMessageBox::warning(this,
-                                         tr("Upload Error"),
-                                         tr("This version of VESC Tool does not include any firmware "
-                                            "for your hardware version. You can either "
-                                            "upload a custom file or look for a later version of VESC "
-                                            "Tool that might support your hardware."));
+                                         tr("上传错误"),
+                                         tr("该版本的 VESC Tool 不包含适用于您硬件版本的固件。"
+                                            "您可以上传自定义文件，或寻找可能支持您硬件的 VESC Tool 新版本。"));
                 } else {
                     QMessageBox::warning(this,
-                                         tr("Upload Error"),
-                                         tr("No firmware is selected."));
+                                         tr("上传错误"),
+                                         tr("未选择固件。"));
                 }
 
                 return;
@@ -563,8 +561,8 @@ void PageFirmware::uploadFw(bool allOverCan)
             if (!fileInfo.fileName().toLower().endsWith(".bin") &&
                     !fileInfo.fileName().toLower().endsWith(".hex")) {
                 QMessageBox::critical(this,
-                                      tr("Upload Error"),
-                                      tr("The selected file name seems to be invalid."));
+                                      tr("上传错误"),
+                                      tr("所选文件名似乎无效。"));
                 return;
             }
 
@@ -583,13 +581,12 @@ void PageFirmware::uploadFw(bool allOverCan)
             } else {
                 if (ui->blList->count() == 0) {
                     QMessageBox::warning(this,
-                                         tr("Upload Error"),
-                                         tr("This version of VESC Tool does not include any bootloader "
-                                            "for your hardware version."));
+                                         tr("上传错误"),
+                                         tr("该版本的 VESC Tool 不包含适用于您硬件版本的引导程序。"));
                 } else {
                     QMessageBox::warning(this,
-                                         tr("Upload Error"),
-                                         tr("No bootloader is selected."));
+                                         tr("上传错误"),
+                                         tr("未选择引导程序。"));
                 }
 
                 return;
@@ -599,8 +596,8 @@ void PageFirmware::uploadFw(bool allOverCan)
         if (!fileBl.fileName().isEmpty()) {
             if (!fileBl.open(QIODevice::ReadOnly)) {
                 QMessageBox::critical(this,
-                                      tr("Upload Error"),
-                                      tr("Could not open bootloader file. Make sure that the path is valid."));
+                                      tr("上传错误"),
+                                      tr("无法打开引导程序文件。请确保路径有效。"));
                 return;
             }
         }
@@ -608,16 +605,16 @@ void PageFirmware::uploadFw(bool allOverCan)
         if (!file.fileName().isEmpty()) {
             if (!file.open(QIODevice::ReadOnly)) {
                 QMessageBox::critical(this,
-                                      tr("Upload Error"),
-                                      tr("Could not open file. Make sure that the path is valid."));
+                                      tr("上传错误"),
+                                      tr("无法打开文件。请确保路径有效。"));
                 return;
             }
         }
 
         if (file.size() > 8000000 && !(file.fileName().toLower().endsWith(".hex"))) {
             QMessageBox::critical(this,
-                                  tr("Upload Error"),
-                                  tr("The selected file is too large to be a firmware."));
+                                  tr("上传错误"),
+                                  tr("所选文件太大，不是有效的固件。"));
             return;
         }
 
@@ -625,32 +622,27 @@ void PageFirmware::uploadFw(bool allOverCan)
 
         if ((ui->fwTabWidget->currentIndex() == 0 && ui->hwList->count() == 1) || ui->fwTabWidget->currentIndex() == 3) {
             reply = QMessageBox::warning(this,
-                                         tr("Warning"),
-                                         tr("Uploading new firmware will clear all settings in the VESC firmware "
-                                            "and you have to do the configuration again. Do you want to "
-                                            "continue?"),
+                                         tr("警告"),
+                                         tr("上传新固件将清除 VESC 固件中的所有设置，您需要重新进行配置。是否继续？"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
         } else if ((ui->fwTabWidget->currentIndex() == 0 && ui->hwList->count() > 1) || ui->fwTabWidget->currentIndex() == 1) {
             reply = QMessageBox::warning(this,
-                                         tr("Warning"),
-                                         tr("Uploading firmware for the wrong hardware version "
-                                            "WILL damage the hardware. Are you sure that you have "
-                                            "chosen the correct hardware version?"),
+                                         tr("警告"),
+                                         tr("为错误的硬件版本上传固件将会损坏硬件。"
+                                            "您确定已选择了正确的硬件版本吗？"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
         } else if (ui->fwTabWidget->currentIndex() == 2) {
             if (mVesc->commands()->getLimitedSupportsEraseBootloader()) {
                 reply = QMessageBox::warning(this,
-                                             tr("Warning"),
-                                             tr("This will attempt to upload a bootloader to the connected device. "
-                                                "Do you want to continue?"),
+                                             tr("警告"),
+                                             tr("此操作将尝试向已连接的设备上传引导程序。是否继续？"),
                                              QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
             } else {
                 reply = QMessageBox::warning(this,
-                                             tr("Warning"),
-                                             tr("This will attempt to upload a bootloader to the connected device. "
-                                                "If the connected device already has a bootloader this will destroy "
-                                                "the bootloader and firmware updates cannot be done anymore. Do "
-                                                "you want to continue?"),
+                                             tr("警告"),
+                                             tr("此操作将尝试向已连接的设备上传引导程序。"
+                                                "如果已连接的设备已有引导程序，此操作将销毁引导程序，"
+                                                "之后将无法再进行固件更新。是否继续？"),
                                              QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
             }
         } else {
@@ -706,16 +698,16 @@ void PageFirmware::uploadFw(bool allOverCan)
                 // No bootloader was uploaded prior to the firmware
                 if (fileBl.fileName().isEmpty()) {
                     blMsg = tr("\n\n"
-                               "NOTE: If the old firmware is loaded again after the reboot a bootloader is probably missing. You "
-                               "can try uploading one from the bootloader tab if that is the case.");
+                               "注意：如果在重启后旧固件被重新加载，则可能缺少引导程序。"
+                               "如果是这种情况，您可以尝试从引导程序选项卡上传一个。");
                 }
 
                 if (uploadFw(&file, false, allOverCan)) {
                     QMessageBox::warning(this,
-                                         tr("Warning"),
-                                         tr("The firmware upload is done. The device should reboot automatically within 10 seconds. Do "
-                                            "NOT remove power before the reboot is done as that can brick the CPU and requires a programmer "
-                                            "to fix.") + blMsg);
+                                         tr("警告"),
+                                         tr("固件上传完成。设备应在 10 秒内自动重启。"
+                                            "在重启完成之前请勿断电，否则可能损坏 CPU，"
+                                            "需要编程器才能修复。") + blMsg);
                 }
             }
         }
@@ -794,4 +786,3 @@ void PageFirmware::on_dlFwButton_clicked()
 
     ui->dlFwButton->setEnabled(true);
 }
-

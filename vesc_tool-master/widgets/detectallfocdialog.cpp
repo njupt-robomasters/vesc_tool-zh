@@ -54,13 +54,13 @@ DetectAllFocDialog::DetectAllFocDialog(VescInterface *vesc, QWidget *parent) :
 
     // Simple tab
     QListWidgetItem *item = new QListWidgetItem;
-    item->setText(tr("Mini Outrunner (~75 g)"));
+    item->setText(tr("微型外转子（约 75g）"));
     item->setIcon(QIcon("://res/images/motors/outrunner_mini.jpg"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(20, 1400, 4000, 14)));
     ui->motorList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("Small Outrunner (~200 g)"));
+    item->setText(tr("小型外转子（约 200g）"));
     item->setIcon(QIcon("://res/images/motors/outrunner_small.jpg"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(50, 1400, 4000, 14)));
     ui->motorList->addItem(item);
@@ -178,10 +178,9 @@ void DetectAllFocDialog::on_nextMotorButton_clicked()
 {
     QMessageBox::StandardButton reply;
     reply = QMessageBox::warning(this,
-                                 tr("Motor Selection"),
-                                 tr("Warning: Choosing a significantly too large motor for detection is likely to destroy the motor "
-                                    "during detection. It is important to choose a motor size similar to the motor you are using. "
-                                    "Are you sure that your motor selection is within range?"),
+                                 tr("电机选择"),
+                             tr("警告：选择过大的电机可能导致检测失败并产生错误值。"
+                                "请确保选择的电机尺寸与实际使用的电机相似。"),
                                  QMessageBox::Yes | QMessageBox::Cancel);
     if (reply == QMessageBox::Yes) {
         ui->simpleSetupBox->setCurrentIndex(1);
@@ -251,7 +250,7 @@ void DetectAllFocDialog::runDetect(bool can)
 
     QMessageBox::StandardButton reply;
     reply = QMessageBox::warning(this,
-                                 tr("Warning"),
+                                 tr("警告"),
                                  tr("<font color=\"red\">Warning: </font>"
                                     "This is going to spin up all motors connected on "
                                     "the CAN-bus. Make sure that nothing is in the way."),

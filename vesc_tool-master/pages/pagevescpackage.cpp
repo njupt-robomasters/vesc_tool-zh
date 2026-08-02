@@ -125,8 +125,8 @@ void PageVescPackage::reloadParams()
 void PageVescPackage::on_chooseLoadButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Package File"), ui->loadEdit->text(),
-                                                    tr("VESC Package Files (*.vescpkg)"));
+                                                    tr("选择包文件"), ui->loadEdit->text(),
+                                                    tr("VESC 包文件 (*.vescpkg)"));
     if (!filename.isNull()) {
         ui->loadEdit->setText(filename);
         on_loadRefreshButton_clicked();
@@ -136,8 +136,8 @@ void PageVescPackage::on_chooseLoadButton_clicked()
 void PageVescPackage::on_chooseLispButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose LispBM File"), ui->lispEdit->text(),
-                                                    tr("LispBM files (*.lbm *.lisp)"));
+                                                    tr("选择 LispBM 文件"), ui->lispEdit->text(),
+                                                    tr("LispBM 文件 (*.lbm *.lisp)"));
     if (!filename.isNull()) {
         ui->lispEdit->setText(filename);
     }
@@ -146,8 +146,8 @@ void PageVescPackage::on_chooseLispButton_clicked()
 void PageVescPackage::on_chooseQmlButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Qml File"), ui->qmlEdit->text(),
-                                                    tr("Qml files (*.qml)"));
+                                                    tr("选择 QML 文件"), ui->qmlEdit->text(),
+                                                    tr("QML 文件 (*.qml)"));
     if (!filename.isNull()) {
         ui->qmlEdit->setText(filename);
     }
@@ -156,8 +156,8 @@ void PageVescPackage::on_chooseQmlButton_clicked()
 void PageVescPackage::on_chooseOutputButton_clicked()
 {
     QString filename = QFileDialog::getSaveFileName(this,
-                                                    tr("Choose Package Output File"), ui->outputEdit->text(),
-                                                    tr("VESC Package Files (*.vescpkg)"));
+                                                    tr("选择包输出文件"), ui->outputEdit->text(),
+                                                    tr("VESC 包文件 (*.vescpkg)"));
 
     if (!filename.isNull()) {
         if (!filename.endsWith(".vescpkg", Qt::CaseInsensitive)) {
@@ -168,9 +168,8 @@ void PageVescPackage::on_chooseOutputButton_clicked()
             if (ui->descriptionEdit->toPlainText().size() > 10) {
                 QMessageBox::StandardButton reply =
                         QMessageBox::warning(this,
-                                             tr("Replace Content"),
-                                             tr("Opening an existing package will replace the content "
-                                                "in the editor. Do you want to continue?"),
+                                             tr("替换内容"),
+                                             tr("打开现有包将替换编辑器中的内容。是否继续？"),
                                              QMessageBox::Ok | QMessageBox::Cancel);
 
                 if (reply == QMessageBox::Ok) {
@@ -201,8 +200,8 @@ void PageVescPackage::on_saveButton_clicked()
     QFile file(ui->outputEdit->text());
 
     if (!file.open(QIODevice::WriteOnly)) {
-        mVesc->emitMessageDialog(tr("Save Package"),
-                                 tr("Could not open %1 for writing.").arg(ui->outputEdit->text()),
+        mVesc->emitMessageDialog(tr("保存包"),
+                                 tr("无法打开 %1 进行写入。").arg(ui->outputEdit->text()),
                                  false, false);
         return;
     }
@@ -212,8 +211,8 @@ void PageVescPackage::on_saveButton_clicked()
     if (ui->lispBox->isChecked()) {
         QFile f(ui->lispEdit->text());
         if (!f.open(QIODevice::ReadOnly)) {
-            mVesc->emitMessageDialog(tr("Save Package"),
-                                     tr("Could not open LispBM file for reading."),
+            mVesc->emitMessageDialog(tr("保存包"),
+                                     tr("无法打开 LispBM 文件进行读取。"),
                                      false, false);
             return;
         }
@@ -228,8 +227,8 @@ void PageVescPackage::on_saveButton_clicked()
     if (ui->qmlBox->isChecked()) {
         QFile f(ui->qmlEdit->text());
         if (!f.open(QIODevice::ReadOnly)) {
-            mVesc->emitMessageDialog(tr("Save Package"),
-                                     tr("Could not open qml file for reading."),
+            mVesc->emitMessageDialog(tr("保存包"),
+                                     tr("无法打开 QML 文件进行读取。"),
                                      false, false);
             return;
         }
@@ -246,7 +245,7 @@ void PageVescPackage::on_saveButton_clicked()
     file.write(mLoader.packVescPackage(pkg));
     file.close();
 
-    mVesc->emitStatusMessage(tr("Package Saved"), true);
+    mVesc->emitStatusMessage(tr("包已保存"), true);
 }
 
 void PageVescPackage::on_loadRefreshButton_clicked()
@@ -259,7 +258,7 @@ void PageVescPackage::on_loadRefreshButton_clicked()
     auto pkg = mLoader.unpackVescPackage(f.readAll());
 
     if (!pkg.loadOk && mVesc) {
-        mVesc->emitMessageDialog(tr("Open Package"), tr("Package is not valid."), false);
+        mVesc->emitMessageDialog(tr("打开包"), tr("包无效。"), false);
         return;
     }
 
@@ -278,11 +277,11 @@ void PageVescPackage::on_writeButton_clicked()
     }
 
     if (!mVesc->isPortConnected()) {
-        mVesc->emitMessageDialog(tr("Write Package"), tr("Not Connected"), false);
+        mVesc->emitMessageDialog(tr("写入包"), tr("未连接"), false);
         return;
     }
 
-    QProgressDialog dialog(tr("Writing..."), QString(), 0, 0, this);
+    QProgressDialog dialog(tr("正在写入..."), QString(), 0, 0, this);
     dialog.setWindowModality(Qt::WindowModal);
     dialog.show();
 
@@ -306,9 +305,8 @@ void PageVescPackage::on_writeButton_clicked()
     } else {
         QMessageBox::StandardButton reply =
             QMessageBox::warning(this,
-                                 tr("Incompatible Package"),
-                                 tr("The selected package reports that it is not compatible with "
-                                    "the connected device. Do you want to install it anyway?"),
+                                 tr("不兼容的包"),
+                                 tr("所选包报告与已连接设备不兼容。是否仍要安装？"),
                                  QMessageBox::Yes | QMessageBox::Cancel);
 
         if (reply == QMessageBox::Yes) {
@@ -329,7 +327,7 @@ void PageVescPackage::on_outputRefreshButton_clicked()
     auto pkg = mLoader.unpackVescPackage(f.readAll());
 
     if (!pkg.loadOk) {
-        mVesc->emitMessageDialog(tr("Open Package"), tr("Package is not valid."), false);
+        mVesc->emitMessageDialog(tr("打开包"), tr("包无效。"), false);
         return;
     }
 
@@ -383,11 +381,11 @@ void PageVescPackage::on_uninstallButton_clicked()
     }
 
     if (!mVesc->isPortConnected()) {
-        mVesc->emitMessageDialog(tr("Uninstall Package"), tr("Not Connected"), false);
+        mVesc->emitMessageDialog(tr("卸载包"), tr("未连接"), false);
         return;
     }
 
-    QProgressDialog dialog(tr("Erasing..."), QString(), 0, 0, this);
+    QProgressDialog dialog(tr("正在擦除..."), QString(), 0, 0, this);
     dialog.setWindowModality(Qt::WindowModal);
     dialog.show();
 
@@ -397,8 +395,8 @@ void PageVescPackage::on_uninstallButton_clicked()
     Utility::sleepWithEventLoop(500);
     mVesc->reloadFirmware();
 
-    mVesc->emitMessageDialog(tr("Uninstall Package"),
-                             tr("Uninstallation Done!"),
+    mVesc->emitMessageDialog(tr("卸载包"),
+                             tr("卸载完成！"),
                              true);
 }
 
@@ -409,12 +407,12 @@ void PageVescPackage::on_installButton_clicked()
     }
 
     if (!mVesc->isPortConnected()) {
-        mVesc->emitMessageDialog(tr("Install Package"), tr("Not Connected"), false);
+        mVesc->emitMessageDialog(tr("安装包"), tr("未连接"), false);
         return;
     }
 
     if (mCurrentPkg.loadOk) {
-        QProgressDialog dialog(tr("Writing..."), QString(), 0, 0, this);
+        QProgressDialog dialog(tr("正在写入..."), QString(), 0, 0, this);
         dialog.setWindowModality(Qt::WindowModal);
         dialog.show();
 
@@ -430,12 +428,12 @@ void PageVescPackage::on_installButton_clicked()
 
         disconnect(conn1);
 
-        mVesc->emitMessageDialog(tr("Install Package"),
-                                 tr("Installation Done!"),
+        mVesc->emitMessageDialog(tr("安装包"),
+                                 tr("安装完成！"),
                                  true);
     } else {
-        mVesc->emitMessageDialog(tr("Install Package"),
-                                 tr("No package selected."),
+        mVesc->emitMessageDialog(tr("安装包"),
+                                 tr("未选择包。"),
                                  false, false);
     }
 }

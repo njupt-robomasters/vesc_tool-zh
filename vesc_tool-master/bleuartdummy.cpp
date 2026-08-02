@@ -27,7 +27,7 @@ BleUartDummy::BleUartDummy(QObject *parent)
 
 void BleUartDummy::startScan()
 {
-    emit bleError("Bluetooth is not supported in this build");
+    emit bleError("此版本不支持蓝牙");
 }
 
 void BleUartDummy::emitScanDone()

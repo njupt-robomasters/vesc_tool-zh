@@ -175,14 +175,14 @@ void Preferences::setUseGamepadControl(bool useControl)
         if (mGamepad) {
             mUseGamepadControl = useControl;
         } else {
-            mVesc->emitMessageDialog("Gamepad Control",
-                                     "No recognized gamepad is connected.",
+            mVesc->emitMessageDialog("游戏手柄控制",
+                                     "未检测到已识别的游戏手柄。",
                                      false, false);
         }
     } else if (mVesc) {
-        mVesc->emitMessageDialog("Gamepad Control",
-                                 "Gamepad control is not configured. Go to Settings->Gamepad to configure it.",
-                                 false, false);
+            mVesc->emitMessageDialog("游戏手柄控制",
+                                     "游戏手柄控制未配置。请前往 设置->游戏手柄 进行配置。",
+                                     false, false);
     }
 #else
     (void)useControl;
@@ -201,15 +201,15 @@ bool Preferences::isUsingGamepadControl()
 void Preferences::closeEvent(QCloseEvent *event)
 {
     if (Utility::isDarkMode() != mLastIsDark) {
-        mVesc->emitMessageDialog("Theme Changed",
-                                 "Please restart VESC Tool for the theme changes to take effect.",
+        mVesc->emitMessageDialog("主题已更改",
+                                 "请重启 VESC Tool 以使主题更改生效。",
                                  false, false);
     }
 
     if (!Utility::almostEqual(mLastScaling,
                               mSettings.value("app_scale_factor", 1.0).toDouble(), 0.001)) {
-        mVesc->emitMessageDialog("Scaling Changed",
-                                 "Please restart VESC Tool for the scaling change to take effect.",
+        mVesc->emitMessageDialog("缩放已更改",
+                                 "请重启 VESC Tool 以使缩放更改生效。",
                                  false, false);
     }
 

@@ -212,8 +212,8 @@ void PageLisp::setVesc(VescInterface *vesc)
 
     connect(mVesc->commands(), &Commands::lispRunningResRx, [this](bool ok) {
         if (!ok) {
-            mVesc->emitMessageDialog(tr("Start/Stop LispBM"),
-                                     tr("Start/Stop LispBM failed. Did you forget to upload the code?"), false);
+            mVesc->emitMessageDialog(tr("启动/停止 LispBM"),
+                                     tr("启动/停止 LispBM 失败。您是否忘记上传代码？"), false);
         }
     });
 
@@ -443,8 +443,8 @@ void PageLisp::removeEditor(ScriptEditor *editor)
         // Ask user for confirmation
         QMessageBox::StandardButton answer = QMessageBox::question(
              this,
-             tr("Delete the tab"),
-             tr("Do you want to delete the tab contents?"),
+             tr("删除标签页"),
+             tr("是否要删除标签页内容？"),
              QMessageBox::Yes | QMessageBox::No
         );
 
@@ -632,7 +632,7 @@ void PageLisp::on_stopButton_clicked()
 
 void PageLisp::on_uploadButton_clicked()
 {
-    QProgressDialog dialog(tr("Erasing..."), tr("Cancel"), 0, 0, this);
+    QProgressDialog dialog(tr("正在擦除..."), tr("取消"), 0, 0, this);
     dialog.setWindowModality(Qt::WindowModal);
     dialog.show();
 
@@ -643,9 +643,8 @@ void PageLisp::on_uploadButton_clicked()
 
     if (e == nullptr) {
         mVesc->emitMessageDialog(
-            tr("No tab is open"),
-            tr(""),
-            false);
+            tr("没有打开的标签页"),
+            tr(""), false);
         return;
     }
 
@@ -697,7 +696,7 @@ void PageLisp::on_uploadButton_clicked()
 
 void PageLisp::on_readExistingButton_clicked()
 {
-    QProgressDialog dialog(tr("Reading Code..."), tr("Cancel"), 0, 0, this);
+    QProgressDialog dialog(tr("正在读取代码..."), tr("取消"), 0, 0, this);
     dialog.setWindowModality(Qt::WindowModal);
     dialog.show();
 
@@ -782,7 +781,7 @@ void PageLisp::on_replHelpButton_clicked()
 
 void PageLisp::on_streamButton_clicked()
 {
-    QProgressDialog dialog(tr("Streaming..."), QString(), 0, 0, this);
+    QProgressDialog dialog(tr("正在流式传输..."), QString(), 0, 0, this);
     dialog.setWindowModality(Qt::WindowModal);
     dialog.show();
 
@@ -792,9 +791,8 @@ void PageLisp::on_streamButton_clicked()
 
     if (e == nullptr) {
         mVesc->emitMessageDialog(
-            tr("No tab is open"),
-            tr(""),
-            false);
+            tr("没有打开的标签页"),
+            tr(""), false);
         return;
     }
 
@@ -836,9 +834,8 @@ void PageLisp::on_infoButton_clicked()
 
     if (e == nullptr) {
         mVesc->emitMessageDialog(
-            tr("No tab is open"),
-            tr(""),
-            false);
+            tr("没有打开的标签页"),
+            tr(""), false);
         return;
     }
 

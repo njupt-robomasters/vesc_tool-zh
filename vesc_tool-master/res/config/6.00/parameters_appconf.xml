@@ -4382,7 +4382,7 @@ p, li { white-space: pre-wrap; }
                 </subgroupParams>
             </subgroup>
             <subgroup>
-                <subgroupName>映射</subgroupName>
+                <subgroupName>Mapping</subgroupName>
                 <subgroupParams>
                     <param>app_ppm_conf.pulse_start</param>
                     <param>app_ppm_conf.pulse_end</param>
@@ -4391,7 +4391,7 @@ p, li { white-space: pre-wrap; }
                 </subgroupParams>
             </subgroup>
             <subgroup>
-                <subgroupName>油门曲线</subgroupName>
+                <subgroupName>Throttle Curve</subgroupName>
                 <subgroupParams>
                     <param>app_ppm_conf.throttle_exp</param>
                     <param>app_ppm_conf.throttle_exp_brake</param>
@@ -4418,7 +4418,7 @@ p, li { white-space: pre-wrap; }
                 </subgroupParams>
             </subgroup>
             <subgroup>
-                <subgroupName>映射</subgroupName>
+                <subgroupName>Mapping</subgroupName>
                 <subgroupParams>
                     <param>app_adc_conf.hyst</param>
                     <param>::sep::ADC 1</param>
@@ -4435,7 +4435,7 @@ p, li { white-space: pre-wrap; }
                 </subgroupParams>
             </subgroup>
             <subgroup>
-                <subgroupName>油门曲线</subgroupName>
+                <subgroupName>Throttle Curve</subgroupName>
                 <subgroupParams>
                     <param>app_adc_conf.throttle_exp</param>
                     <param>app_adc_conf.throttle_exp_brake</param>
@@ -4472,7 +4472,7 @@ p, li { white-space: pre-wrap; }
                 </subgroupParams>
             </subgroup>
             <subgroup>
-                <subgroupName>油门曲线</subgroupName>
+                <subgroupName>Throttle Curve</subgroupName>
                 <subgroupParams>
                     <param>app_chuk_conf.throttle_exp</param>
                     <param>app_chuk_conf.throttle_exp_brake</param>

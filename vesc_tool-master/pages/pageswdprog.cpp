@@ -95,8 +95,8 @@ PageSwdProg::PageSwdProg(QWidget *parent) :
             if (mVesc) {
                 if (ui->targetLabel->text().isEmpty()) {
                     QMessageBox::information(this,
-                                             tr("Read UICR"),
-                                             tr("SWD must be connected for this command to work."));
+                                             tr("读取 UICR"),
+                                             tr("SWD 必须连接才能执行此命令。"));
                     return;
                 }
 
@@ -109,8 +109,8 @@ PageSwdProg::PageSwdProg(QWidget *parent) :
                                 arg(vb.vbPopFrontUint32(), 8, 16, QLatin1Char('0')).toUpper());
                 } else {
                     QMessageBox::information(this,
-                                             tr("Read UICR"),
-                                             tr("Could not read UICR."));
+                                             tr("读取 UICR"),
+                                             tr("无法读取 UICR。"));
                 }
             }
         });
@@ -124,8 +124,8 @@ PageSwdProg::PageSwdProg(QWidget *parent) :
             if (mVesc) {
                 if (ui->targetLabel->text().isEmpty()) {
                     QMessageBox::information(this,
-                                             tr("Write UICR"),
-                                             tr("SWD must be connected for this command to work."));
+                                             tr("写入 UICR"),
+                                             tr("SWD 必须连接才能执行此命令。"));
                     return;
                 }
 
@@ -147,13 +147,13 @@ PageSwdProg::PageSwdProg(QWidget *parent) :
 
                     if (res != 1) {
                         QMessageBox::warning(this,
-                                             tr("Write UICR"),
+                                             tr("写入 UICR"),
                                              QString("Unable to write UICR register. Res: %1").
                                              arg(res));
                     }
                 } else {
                     QMessageBox::warning(this,
-                                         tr("Write UICR"),
+                                         tr("写入 UICR"),
                                          QString("Unable to parse value for %1").
                                          arg(name));
                     return;
@@ -201,8 +201,8 @@ PageSwdProg::~PageSwdProg()
 void PageSwdProg::on_chooseButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File"), ".",
-                                                    tr("Firmware files (*.bin *.hex)"));
+                                                    tr("选择固件文件"), ".",
+                                                    tr("固件文件 (*.bin *.hex)"));
 
     if (filename.isNull()) {
         return;
@@ -214,8 +214,8 @@ void PageSwdProg::on_chooseButton_clicked()
 void PageSwdProg::on_choose2Button_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File 2"), ".",
-                                                    tr("Firmware files (*.bin *.hex)"));
+                                                    tr("选择固件文件 2"), ".",
+                                                    tr("固件文件 (*.bin *.hex)"));
 
     if (filename.isNull()) {
         return;
@@ -227,8 +227,8 @@ void PageSwdProg::on_choose2Button_clicked()
 void PageSwdProg::on_choose3Button_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File 3"), ".",
-                                                    tr("Firmware files (*.bin *.hex)"));
+                                                    tr("选择固件文件 3"), ".",
+                                                    tr("固件文件 (*.bin *.hex)"));
 
     if (filename.isNull()) {
         return;
@@ -240,8 +240,8 @@ void PageSwdProg::on_choose3Button_clicked()
 void PageSwdProg::on_choose4Button_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Choose Firmware File 4"), ".",
-                                                    tr("Firmware files (*.bin *.hex)"));
+                                                    tr("选择固件文件 4"), ".",
+                                                    tr("固件文件 (*.bin *.hex)"));
 
     if (filename.isNull()) {
         return;
@@ -266,8 +266,8 @@ void PageSwdProg::on_uploadButton_clicked()
     if (mVesc) {
         if (!mVesc->isPortConnected()) {
             QMessageBox::critical(this,
-                                  tr("Connection Error"),
-                                  tr("The VESC is not connected."));
+                                  tr("连接错误"),
+                                  tr("VESC 未连接。"));
             return;
         }
 
@@ -303,15 +303,15 @@ void PageSwdProg::on_uploadButton_clicked()
                 QFile file(fw.path);
                 if (!file.exists()) {
                     QMessageBox::critical(this,
-                                          tr("File Error"),
-                                          tr("The FW file does not exist."));
+                                          tr("文件错误"),
+                                          tr("固件文件不存在。"));
                     return;
                 }
 
                 if (!file.open(QIODevice::ReadOnly)) {
                     QMessageBox::critical(this,
-                                          tr("File Error"),
-                                          tr("Could not open firmware file."));
+                                          tr("文件错误"),
+                                          tr("无法打开固件文件。"));
                     return;
                 }
 
@@ -330,15 +330,15 @@ void PageSwdProg::on_uploadButton_clicked()
                     QFile file2(fw.bootloaderPath);
                     if (!file2.exists()) {
                         QMessageBox::critical(this,
-                                              tr("File Error"),
-                                              tr("The bootloader file does not exist."));
+                                              tr("文件错误"),
+                                              tr("引导程序文件不存在。"));
                         return;
                     }
 
                     if (!file2.open(QIODevice::ReadOnly)) {
                         QMessageBox::critical(this,
-                                              tr("File Error"),
-                                              tr("Could not open bootloader file."));
+                                              tr("文件错误"),
+                                              tr("无法打开引导程序文件。"));
                         return;
                     }
 
@@ -355,8 +355,8 @@ void PageSwdProg::on_uploadButton_clicked()
                 }
             } else {
                 QMessageBox::critical(this,
-                                      tr("Upload Error"),
-                                      tr("No firmware selected."));
+                                      tr("上传错误"),
+                                      tr("未选择固件。"));
                 return;
             }
         } else if (ui->tabWidget->currentIndex() == 1) {
@@ -376,14 +376,14 @@ void PageSwdProg::on_uploadButton_clicked()
 
             if (!file.exists()) {
                 QMessageBox::critical(this,
-                                      tr("File Error"),
-                                      tr("The FW file does not exist."));
+                                      tr("文件错误"),
+                                      tr("固件文件不存在。"));
                 return;
             }
             if (!file.open(QIODevice::ReadOnly)) {
                 QMessageBox::critical(this,
-                                      tr("File Error"),
-                                      tr("Could not open file. Make sure that the path is valid."));
+                                      tr("文件错误"),
+                                      tr("无法打开文件。请确保路径有效。"));
                 return;
             }
 
@@ -394,8 +394,8 @@ void PageSwdProg::on_uploadButton_clicked()
 
             if (!isHex && file.size() > (1024 * 1024 * 5)) {
                 QMessageBox::critical(this,
-                                      tr("Upload Error"),
-                                      tr("The selected file is too large to be a firmware."));
+                                      tr("上传错误"),
+                                      tr("所选文件太大，不是有效的固件。"));
                 return;
             }
             if (!mVesc->swdEraseFlash()) {
@@ -627,15 +627,15 @@ void PageSwdProg::on_eraseFlashButton_clicked()
     if (mVesc) {
         if (!mVesc->isPortConnected()) {
             QMessageBox::critical(this,
-                                  tr("Connection Error"),
-                                  tr("The VESC is not connected."));
+                                  tr("连接错误"),
+                                  tr("VESC 未连接。"));
             return;
         }
 
         if (mVesc->swdEraseFlash()) {
             QMessageBox::information(this,
-                                  tr("Erase Flash"),
-                                  tr("The flash memory on the target was erased successfully!"));
+                                  tr("擦除 Flash"),
+                                  tr("目标设备上的 Flash 存储器已成功擦除！"));
         }
     }
 }
@@ -656,8 +656,8 @@ void PageSwdProg::on_uicrReadButton_clicked()
     if (mVesc) {
         if (ui->targetLabel->text().isEmpty()) {
             QMessageBox::information(this,
-                                     tr("Read UICR"),
-                                     tr("SWD must be connected for this command to work."));
+                                     tr("读取 UICR"),
+                                     tr("SWD 必须连接才能执行此命令。"));
             return;
         }
 
@@ -678,8 +678,8 @@ void PageSwdProg::on_uicrReadButton_clicked()
             }
         } else {
             QMessageBox::warning(this,
-                                 tr("Read UICR"),
-                                 tr("Could not read UICR registers."));
+                                 tr("读取 UICR"),
+                                 tr("无法读取 UICR 寄存器。"));
         }
     }
 }
@@ -689,8 +689,8 @@ void PageSwdProg::on_uicrWriteButton_clicked()
     if (mVesc) {
         if (ui->targetLabel->text().isEmpty()) {
             QMessageBox::information(this,
-                                     tr("Write UICR"),
-                                     tr("SWD must be connected for this command to work."));
+                                     tr("写入 UICR"),
+                                     tr("SWD 必须连接才能执行此命令。"));
             return;
         }
 
@@ -711,7 +711,7 @@ void PageSwdProg::on_uicrWriteButton_clicked()
                     vb.vbAppendUint32(val);
                 } else {
                     QMessageBox::warning(this,
-                                         tr("Write UICR"),
+                                         tr("写入 UICR"),
                                          QString("Unable to parse value for %1").
                                          arg(ui->uicrTable->item(i, 0)->text()));
                     return;
@@ -729,7 +729,7 @@ void PageSwdProg::on_uicrWriteButton_clicked()
 
         if (res1 != 1 || res2 != 1) {
             QMessageBox::warning(this,
-                                 tr("Write UICR"),
+                                 tr("写入 UICR"),
                                  QString("Unable to write UICR registers. Res1: %1, Res2: %2").
                                  arg(res1).arg(res2));
         }
@@ -741,8 +741,8 @@ void PageSwdProg::on_uicrEraseButton_clicked()
     if (mVesc) {
         if (ui->targetLabel->text().isEmpty()) {
             QMessageBox::information(this,
-                                     tr("Write UICR"),
-                                     tr("SWD must be connected for this command to work."));
+                                     tr("写入 UICR"),
+                                     tr("SWD 必须连接才能执行此命令。"));
             return;
         }
 
@@ -755,8 +755,8 @@ void PageSwdProg::on_resetButton_clicked()
     if (mVesc) {
         if (ui->targetLabel->text().isEmpty()) {
             QMessageBox::information(this,
-                                     tr("Reset Target"),
-                                     tr("SWD must be connected for this command to work."));
+                                     tr("重置目标"),
+                                     tr("SWD 必须连接才能执行此命令。"));
             return;
         }
 

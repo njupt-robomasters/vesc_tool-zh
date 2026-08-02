@@ -128,7 +128,7 @@ void ParameterEditor::setParams(const ConfigParams *params)
 
     mParams.setUpdatesEnabled(false);
 
-    showStatusInfo(tr("Parameters Loaded"), true);
+    showStatusInfo(tr("参数已加载"), true);
 
     updateUi();
 }
@@ -216,14 +216,14 @@ void ParameterEditor::on_paramSaveButton_clicked()
 {
     if (ui->nameEdit->text().contains(" ")) {
         QMessageBox::warning(this,
-                             tr("Save Parameter"),
+                             tr("保存参数"),
                              tr("Spaces are not allowed in the name."));
         return;
     }
 
     if (ui->nameEdit->text().isEmpty()) {
         QMessageBox::warning(this,
-                             tr("Save Parameter"),
+                             tr("保存参数"),
                              tr("Name is empty."));
         return;
     }
@@ -325,8 +325,8 @@ void ParameterEditor::on_serAddButton_clicked()
 
     bool ok;
     QString name = QInputDialog::getText(this,
-                                         tr("Add to Serialization Order"),
-                                         tr("Parameter Name"),
+                                         tr("添加到序列化顺序"),
+                                         tr("参数名称"),
                                          QLineEdit::Normal,
                                          selected,
                                          &ok);
@@ -334,14 +334,14 @@ void ParameterEditor::on_serAddButton_clicked()
     if (ok) {
         if (name.contains(" ")) {
             QMessageBox::warning(this,
-                                 tr("Add"),
+                                 tr("添加"),
                                  tr("Spaces are not allowed in the name."));
             return;
         }
 
         if (name.isEmpty()) {
             QMessageBox::warning(this,
-                                 tr("Add"),
+                                 tr("添加"),
                                  tr("Name is empty."));
             return;
         }
@@ -407,7 +407,7 @@ void ParameterEditor::on_actionLoad_XML_triggered()
     path = QFileDialog::getOpenFileName(this,
                                         tr("Choose parameter file to load"),
                                         mLastXmlPath,
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     if (path.isNull()) {
         return;
@@ -417,7 +417,7 @@ void ParameterEditor::on_actionLoad_XML_triggered()
 
     if (!res) {
         QMessageBox::information(this,
-                                 tr("Load Parameters"),
+                                 tr("加载参数"),
                                  tr("Could not load parameters:<BR>"
                                     "%1").arg(mParams.xmlStatus()));
     } else {
@@ -434,7 +434,7 @@ void ParameterEditor::on_actionSave_XML_as_triggered()
     path = QFileDialog::getSaveFileName(this,
                                         tr("Choose where to save the parameter XML file"),
                                         mLastXmlPath,
-                                        tr("Xml files (*.xml)"));
+                                        tr("XML 文件 (*.xml)"));
 
     if (path.isNull()) {
         return;
@@ -448,7 +448,7 @@ void ParameterEditor::on_actionSave_XML_as_triggered()
 
     if (!res) {
         QMessageBox::information(this,
-                                 tr("Save Parameters"),
+                                 tr("保存参数"),
                                  tr("Could not save parameters:<BR>"
                                     "%1").arg(mParams.xmlStatus()));
     } else {
@@ -461,7 +461,7 @@ void ParameterEditor::on_actionDeleteAll_triggered()
 {
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this,
-                                  tr("Delete All"),
+                                  tr("删除全部"),
                                   tr("Are you sure that you want to delete all data?"),
                                   QMessageBox::Yes|QMessageBox::No);
 
@@ -799,7 +799,7 @@ void ParameterEditor::on_actionCalculatePacketSize_triggered()
     mParams.setUpdatesEnabled(updatesEnabledLast);
 
     QMessageBox::information(this,
-                             tr("Packet Size"),
+                             tr("数据包大小"),
                              tr("%1 Bytes").arg(bytes.size()));
 }
 
@@ -1103,7 +1103,7 @@ void ParameterEditor::on_actionCalculateCompressedCArraySize_triggered()
 {
     QByteArray compressed = mParams.getCompressedParamsXml();
     QMessageBox::information(this,
-                             tr("Compressed XML Size"),
+                             tr("压缩 XML 大小"),
                              tr("%1 Bytes").arg(compressed.size()));
 }
 

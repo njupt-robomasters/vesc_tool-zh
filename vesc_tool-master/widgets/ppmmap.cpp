@@ -76,26 +76,26 @@ void PpmMap::decodedPpmReceived(double value, double last_len)
         }
 
         ui->display->setValue(p);
-        ui->display->setText(tr("%1 ms (%2 %)").
+        ui->display->setText(tr("%1 ms（%2 %）").
                              arg(last_len, 0, 'f', 4).
                              arg(p, 0, 'f', 1));
 
         double p2 = value * 100.0;
         ui->displayVesc->setValue(p2);
-        ui->displayVesc->setText(tr("%1 ms (%2 %)").
+        ui->displayVesc->setText(tr("%1 ms（%2 %）").
                                  arg(last_len, 0, 'f', 4).
                                  arg(p2, 0, 'f', 1));
     } else {
         double p = Utility::map(last_len, min_now, max_now, 0.0, 100.0);
 
         ui->display->setValue(p);
-        ui->display->setText(tr("%1 ms (%2 %)").
+        ui->display->setText(tr("%1 ms（%2 %）").
                              arg(last_len, 0, 'f', 4).
                              arg(p, 0, 'f', 1));
 
         double p2 = (value + 1.0) * 50.0;
         ui->displayVesc->setValue(p2);
-        ui->displayVesc->setText(tr("%1 ms (%2 %)").
+        ui->displayVesc->setText(tr("%1 ms（%2 %）").
                              arg(last_len, 0, 'f', 4).
                              arg(p2, 0, 'f', 1));
     }
@@ -145,11 +145,11 @@ void PpmMap::on_applyButton_clicked()
             mVesc->appConfig()->updateParamDouble("app_ppm_conf.pulse_start", ui->minBox->value());
             mVesc->appConfig()->updateParamDouble("app_ppm_conf.pulse_end", ui->maxBox->value());
             mVesc->appConfig()->updateParamDouble("app_ppm_conf.pulse_center", ui->centerBox->value());
-            mVesc->emitStatusMessage(tr("Start, End and Center Pulselengths Applied"), true);
+            mVesc->emitStatusMessage(tr("起始、结束和中心脉冲长度已应用"), true);
         } else {
             mVesc->emitStatusMessage(tr("Applying Pulselengths Failed"), false);
             QMessageBox::warning(this,
-                                 tr("Apply Pulselengths"),
+                                 tr("应用脉冲长度"),
                                  tr("Please activate RT app data and measure the pulselengths first."));
         }
     }

@@ -173,6 +173,7 @@ android: {
 TEMPLATE = app
 
 release_win {
+    QMAKE_LFLAGS += -static-libstdc++ -static-libgcc -static -Wl,--dynamicbase,--nxcompat
     DESTDIR = build/win
     OBJECTS_DIR = build/win/obj
     MOC_DIR = build/win/obj
@@ -292,6 +293,8 @@ RESOURCES += res.qrc \
     res_lisp.qrc \
     res_qml.qrc
 RESOURCES += res/config/res_config.qrc
+
+RC_FILE = vesc_tool.rc
 
 RESOURCES += res_fw_bms.qrc
 

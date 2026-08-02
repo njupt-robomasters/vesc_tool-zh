@@ -39,6 +39,9 @@
 #include <QFontDatabase>
 #include <QPixmapCache>
 
+#include <QtPlugin>
+Q_IMPORT_PLUGIN(QSvgIconPlugin)
+
 #include "tcphub.h"
 
 #ifndef HAS_BLUETOOTH
@@ -159,7 +162,13 @@ static void addFonts() {
 
     QFontDatabase::addApplicationFont("://res/fonts/Exan-Regular.ttf");
 
-    qApp->setFont(QFont("Roboto", 12));
+#ifdef Q_OS_WIN
+    QFont font("Microsoft YaHei", 12);
+#else
+    QFont font("Roboto", 12);
+#endif
+    font.setStyleHint(QFont::SansSerif);
+    qApp->setFont(font);
 }
 
 int main(int argc, char *argv[])
@@ -1598,7 +1607,8 @@ int main(int argc, char *argv[])
         addFonts();
 
         // Style
-        qApp->setStyleSheet("QListView::item::selected {background: qlineargradient(x1: 1.0, y1: 0.0, x2: 0, y2: 0, stop: 0 " +
+        qApp->setStyleSheet("QComboBox, QPushButton, QLineEdit, QLabel, QCheckBox, QRadioButton, QGroupBox, QSpinBox, QDoubleSpinBox { font-family: 'Microsoft YaHei'; } "
+                            "QListView::item::selected {background: qlineargradient(x1: 1.0, y1: 0.0, x2: 0, y2: 0, stop: 0 " +
                             Utility::getAppHexColor("lightAccent") +
                             ", stop: 0.4 " + Utility::getAppHexColor("darkAccent") + ");" +
                             " border: none;} ");
@@ -1631,6 +1641,7 @@ int main(int argc, char *argv[])
             darkPalette.setColor(QPalette::LinkVisited, QColor(220,150,255));
             qApp->setPalette(darkPalette);
             qApp->setStyleSheet(
+                        "QComboBox, QPushButton, QLineEdit, QLabel, QCheckBox, QRadioButton, QGroupBox, QSpinBox, QDoubleSpinBox { font-family: 'Microsoft YaHei'; } "
                         "QTabBar::tab:selected, QTabBar::tab:hover {"
                         "    background: #3d3d3d;"
                         "    color: #eeeeee;"

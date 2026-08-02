@@ -207,11 +207,10 @@ void BleUart::deviceScanError(QBluetoothDeviceDiscoveryAgent::Error e)
     mDevs.clear();
     mScanFinished = true;
     emit scanDone(mDevs, true);
-    QString errorStr = tr("BLE Scan error: ") + Utility::QEnumToQString(e);
+    QString errorStr = tr("BLE 扫描错误: ") + Utility::QEnumToQString(e);
 
 #ifdef Q_OS_ANDROID
-    errorStr += ". If you are on Android 10, make sure that both bluetooth and the "
-                "location service are activated.";
+    errorStr += "。如果您使用的是 Android 10，请确保蓝牙和定位服务均已开启。";
 #endif
 
     mConnectTimeoutTimer.stop();
@@ -258,7 +257,7 @@ void BleUart::controllerError(QLowEnergyController::Error e)
     qWarning() << "BLE error:" << e;
     disconnectBle();
     mConnectTimeoutTimer.stop();
-    emit bleError(tr("BLE error: ") + Utility::QEnumToQString(e));
+    emit bleError(tr("BLE 错误: ") + Utility::QEnumToQString(e));
 }
 
 void BleUart::deviceConnected()
@@ -386,6 +385,6 @@ void BleUart::init()
     connect(&mConnectTimeoutTimer, &QTimer::timeout, [this]() {
         disconnectBle();
         qDebug() << "BLE connect timeout";
-        emit bleError(tr("BLE connect timed out."));
+        emit bleError(tr("BLE 连接超时。"));
     });
 }

@@ -84,12 +84,12 @@ MRichTextEdit::MRichTextEdit(QWidget *parent) : QWidget(parent) {
 
     // paragraph formatting
 
-    m_paragraphItems    << tr("Standard")
-                        << tr("Heading 1")
-                        << tr("Heading 2")
-                        << tr("Heading 3")
-                        << tr("Heading 4")
-                        << tr("Monospace");
+    m_paragraphItems    << tr("标准")
+                        << tr("标题 1")
+                        << tr("标题 2")
+                        << tr("标题 3")
+                        << tr("标题 4")
+                        << tr("等宽字体");
     f_paragraph->addItems(m_paragraphItems);
 
     connect(f_paragraph, SIGNAL(activated(int)),
@@ -155,16 +155,16 @@ MRichTextEdit::MRichTextEdit(QWidget *parent) : QWidget(parent) {
     connect(f_align_right, SIGNAL(clicked(bool)), this, SLOT(textAlignRight()));
     connect(f_align_justify, SIGNAL(clicked(bool)), this, SLOT(textAlignJustify()));
 
-    QAction *removeFormat = new QAction(tr("Remove character formatting"), this);
+    QAction *removeFormat = new QAction(tr("移除字符格式"), this);
     removeFormat->setShortcut(QKeySequence("CTRL+M"));
     connect(removeFormat, SIGNAL(triggered()), this, SLOT(textRemoveFormat()));
     f_textedit->addAction(removeFormat);
 
-    QAction *removeAllFormat = new QAction(tr("Remove all formatting"), this);
+    QAction *removeAllFormat = new QAction(tr("移除所有格式"), this);
     connect(removeAllFormat, SIGNAL(triggered()), this, SLOT(textRemoveAllFormat()));
     f_textedit->addAction(removeAllFormat);
 
-    QAction *textsource = new QAction(tr("Edit document source"), this);
+    QAction *textsource = new QAction(tr("编辑文档源代码"), this);
     textsource->setShortcut(QKeySequence("CTRL+O"));
     connect(textsource, SIGNAL(triggered()), this, SLOT(textSource()));
     f_textedit->addAction(textsource);
@@ -226,7 +226,7 @@ void MRichTextEdit::textSource() {
     pte->setPlainText( f_textedit->toHtml() );
     QGridLayout *gl = new QGridLayout(dialog);
     gl->addWidget(pte,0,0,1,1);
-    dialog->setWindowTitle(tr("Document source"));
+    dialog->setWindowTitle(tr("文档源代码"));
     dialog->setMinimumWidth (400);
     dialog->setMinimumHeight(600);
     dialog->exec();
@@ -319,8 +319,8 @@ void MRichTextEdit::textLink(bool checked) {
     if (checked) {
         QString url = f_textedit->currentCharFormat().anchorHref();
         bool ok;
-        QString newUrl = QInputDialog::getText(this, tr("Create a link"),
-                                               tr("Link URL:"), QLineEdit::Normal,
+        QString newUrl = QInputDialog::getText(this, tr("创建链接"),
+                                               tr("链接地址:"), QLineEdit::Normal,
                                                url,
                                                &ok);
         if (ok) {
@@ -721,9 +721,9 @@ void MRichTextEdit::insertImage() {
     QSettings s;
     QString attdir = s.value("general/filedialog-path").toString();
     QString file = QFileDialog::getOpenFileName(this,
-                                                tr("Select an image"),
+                                                tr("选择图像"),
                                                 attdir,
-                                                tr("Images (*.png *.xpm *.jpg *.gif *.bmp);; All (*)"));
+                                                tr("图像 (*.png *.xpm *.jpg *.gif *.bmp);; 所有 (*)"));
     if (!file.isEmpty()) {
         QImage image = QImageReader(file).read();
         f_textedit->dropImage(image, QFileInfo(file).suffix().toUpper().toLocal8Bit().data());

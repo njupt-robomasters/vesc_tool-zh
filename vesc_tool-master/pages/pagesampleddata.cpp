@@ -501,8 +501,8 @@ void PageSampledData::sampleGetTimerSlot()
 
     if (tmpSampleRetryCnt == 3) {
         if (mVesc) {
-            mVesc->emitMessageDialog(tr("Sampled Data"),
-                                     tr("Getting samples timed out"),
+            mVesc->emitMessageDialog(tr("采样数据"),
+                                     tr("获取采样数据超时"),
                                      false, false);
         }
         mSampleGetTimer->stop();
@@ -772,8 +772,8 @@ void PageSampledData::on_saveDataButton_clicked()
 {
     QString dirPath = QSettings().value("pagesampleddata/lastdir", "").toString();
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save CSV"), dirPath,
-                                                    tr("CSV Files (*.csv)"));
+                                                    tr("保存 CSV"), dirPath,
+                                                    tr("CSV 文件 (*.csv)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.toLower().endsWith(".csv")) {
@@ -829,8 +829,8 @@ void PageSampledData::on_loadDataButton_clicked()
 {
     QString dirPath = QSettings().value("pagesampleddata/lastdir", "").toString();
     QString fileName = QFileDialog::getOpenFileName(this,
-                                                    tr("Load CSV File"), dirPath,
-                                                    tr("CSV files (*.csv)"));
+                                                    tr("加载 CSV 文件"), dirPath,
+                                                    tr("CSV 文件 (*.csv)"));
 
     if (!fileName.isEmpty()) {
         QSettings().setValue("pagesampleddata/lastdir",

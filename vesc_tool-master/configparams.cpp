@@ -35,7 +35,7 @@
 ConfigParams::ConfigParams(QObject *parent) : QObject(parent)
 {
     mUpdateOnlyName.clear();
-    mXmlStatus = tr("OK");
+    mXmlStatus = tr("确定");
     mUpdatesEnabled = true;
     mConfigVersion = -1;
     mStoreConfigVersion = true;
@@ -1134,11 +1134,11 @@ bool ConfigParams::setXML(QXmlStreamReader &stream, QString configName)
             }
         }
 
-        mXmlStatus = tr("OK");
+        mXmlStatus = tr("确定");
         emit updated();
         return true;
     } else {
-        mXmlStatus = tr("tag <b>%1</b> not found").arg(configName);
+        mXmlStatus = tr("未找到标签 <b>%1</b>").arg(configName);
         qWarning() << mXmlStatus;
         return false;
     }
@@ -1152,7 +1152,7 @@ bool ConfigParams::saveXml(QString fileName, QString configName)
 
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly)) {
-        mXmlStatus = tr("Could not open %1 for writing").arg(fileName);
+        mXmlStatus = tr("无法打开 %1 进行写入").arg(fileName);
         qWarning() << mXmlStatus;
         return false;
     }
@@ -1166,7 +1166,7 @@ bool ConfigParams::saveXml(QString fileName, QString configName)
 
     file.close();
 
-    mXmlStatus = tr("OK");
+    mXmlStatus = tr("确定");
     return true;
 }
 
@@ -1178,7 +1178,7 @@ bool ConfigParams::loadXml(QString fileName, QString configName)
 
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)) {
-        mXmlStatus = tr("Could not open %1 for reading").arg(fileName);
+        mXmlStatus = tr("无法打开 %1 进行读取").arg(fileName);
         qWarning() << mXmlStatus;
         return false;
     }
@@ -1498,14 +1498,14 @@ bool ConfigParams::setParamsXML(QXmlStreamReader &stream)
         }
 
         if (ok && !stream.hasError()) {
-            mXmlStatus = tr("OK");
+    mXmlStatus = tr("确定");
             return true;
         } else {
-            mXmlStatus = tr("Error");
+            mXmlStatus = tr("错误");
             return false;
         }
     } else {
-        mXmlStatus = tr("tag <b>%1</b> not found").arg(configName);
+        mXmlStatus = tr("未找到标签 <b>%1</b>").arg(configName);
         qWarning() << mXmlStatus;
         return false;
     }
@@ -1515,7 +1515,7 @@ bool ConfigParams::saveParamsXml(QString fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly)) {
-        mXmlStatus = tr("Could not open %1 for writing").arg(fileName);
+        mXmlStatus = tr("无法打开 %1 进行写入").arg(fileName);
         qWarning() << mXmlStatus;
         return false;
     }
@@ -1528,7 +1528,7 @@ bool ConfigParams::saveParamsXml(QString fileName)
 
     file.close();
 
-    mXmlStatus = tr("OK");
+    mXmlStatus = tr("确定");
     return true;
 }
 
@@ -1536,7 +1536,7 @@ bool ConfigParams::loadParamsXml(QString fileName)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)) {
-        mXmlStatus = tr("Could not open %1 for reading").arg(fileName);
+        mXmlStatus = tr("无法打开 %1 进行读取").arg(fileName);
         qWarning() << mXmlStatus;
         return false;
     }
@@ -1571,7 +1571,7 @@ bool ConfigParams::saveCDefines(const QString &fileName, bool wrapIfdef)
 {
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly)) {
-        mXmlStatus = tr("Could not open %1 for writing").arg(fileName);
+        mXmlStatus = tr("无法打开 %1 进行写入").arg(fileName);
         qWarning() << mXmlStatus;
         return false;
     }

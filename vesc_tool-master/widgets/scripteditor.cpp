@@ -194,13 +194,13 @@ void ScriptEditor::on_openFileButton_clicked()
     }
 
     QString fileName = QFileDialog::getOpenFileName(this,
-                                                    tr("Open %1 File").arg(mIsModeLisp ? "LispBM" : "Qml"), path,
-                                                    mIsModeLisp ? tr("LispBM files (*.lbm *.lisp)") : tr("QML files (*.qml)"));
+                                                    tr("打开 %1 文件").arg(mIsModeLisp ? "LispBM" : "Qml"), path,
+                                                    mIsModeLisp ? tr("LispBM 文件 (*.lbm *.lisp)") : tr("QML 文件 (*.qml)"));
 
     if (!fileName.isEmpty()) {
         QFile file(fileName);
         if (!file.open(QIODevice::ReadOnly)) {
-            QMessageBox::critical(this, tr("Open %1 File").arg(mIsModeLisp ? "LispBM" : "Qml"),
+            QMessageBox::critical(this, tr("打开 %1 文件").arg(mIsModeLisp ? "LispBM" : "Qml"),
                                   "Could not open\n" + fileName + "\nfor reading");
             return;
         }
@@ -228,7 +228,7 @@ void ScriptEditor::on_saveButton_clicked()
 
     QFile file(fileName);
     if (!file.open(QIODevice::WriteOnly)) {
-        QMessageBox::critical(this, tr("Save %1 File").arg(mIsModeLisp ? "LispBM" : "Qml"),
+        QMessageBox::critical(this, tr("保存 %1 文件").arg(mIsModeLisp ? "LispBM" : "Qml"),
                               "Could not open\n" + fileName + "\nfor writing");
         return;
     }
@@ -248,7 +248,7 @@ void ScriptEditor::on_saveAsButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
                                                     tr("Save %1").arg(mIsModeLisp ? "LispBM" : "Qml"), fileNow(),
-                                                    mIsModeLisp ? tr("LispBM files (*.lbm *.lisp)") : tr("QML files (*.qml)"));
+                                                    mIsModeLisp ? tr("LispBM 文件 (*.lbm *.lisp)") : tr("QML 文件 (*.qml)"));
 
     if (!fileName.isEmpty()) {
         QString extension = mIsModeLisp ? ".lbm" : ".qml";
@@ -266,7 +266,7 @@ void ScriptEditor::on_saveAsButton_clicked()
 
         QFile file(fileName);
         if (!file.open(QIODevice::WriteOnly)) {
-            QMessageBox::critical(this, tr("Save %1 File").arg(mIsModeLisp ? "LispBM" : "Qml"),
+            QMessageBox::critical(this, tr("保存 %1 文件").arg(mIsModeLisp ? "LispBM" : "Qml"),
                                   "Could not open\n" + fileName + "\nfor writing");
             return;
         }
@@ -335,13 +335,13 @@ void ScriptEditor::on_refreshButton_clicked()
 
     QFileInfo fi(fileName);
     if (!fi.exists()) {
-        QMessageBox::warning(this, tr("Refresh File"), tr("No file is open."));
+        QMessageBox::warning(this, tr("刷新文件"), tr("No file is open."));
         return;
     }
 
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)) {
-        QMessageBox::critical(this, tr("Refresh File"),
+        QMessageBox::critical(this, tr("刷新文件"),
                               "Could not open\n" + fileName + "\nfor reading.");
         return;
     }

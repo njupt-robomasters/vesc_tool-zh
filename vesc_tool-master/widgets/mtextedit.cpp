@@ -65,8 +65,8 @@ QMimeData *MTextEdit::createMimeDataFromSelection() const {
 
 void MTextEdit::dropImage(const QImage& image, const QString& format) {
     bool ok;
-    int w = QInputDialog::getInt(this, tr("Insert Image"),
-                                 tr("Enter image width to use (source width: %1)").arg(image.width()),
+    int w = QInputDialog::getInt(this, tr("插入图像"),
+                                 tr("输入要使用的图像宽度（源宽度：%1）").arg(image.width()),
                                  400, 5, 1920, 20, &ok);
 
     if (ok) {

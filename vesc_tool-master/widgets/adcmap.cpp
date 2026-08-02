@@ -66,14 +66,14 @@ void AdcMap::decodedAdcReceived(double value, double voltage, double value2, dou
         double p = (value - 0.5) * 200.0;
 
         ui->displayCh1->setValue(p);
-        ui->displayCh1->setText(tr("%1 V (%2 %)").
+        ui->displayCh1->setText(tr("%1 V（%2 %）").
                                 arg(voltage, 0, 'f', 2).
                                 arg(p, 0, 'f', 1));
     } else {
         double p = value * 100.0;
 
         ui->displayCh1->setValue(p);
-        ui->displayCh1->setText(tr("%1 V (%2 %)").
+        ui->displayCh1->setText(tr("%1 V（%2 %）").
                                 arg(voltage, 0, 'f', 4).
                                 arg(p, 0, 'f', 1));
     }
@@ -82,14 +82,14 @@ void AdcMap::decodedAdcReceived(double value, double voltage, double value2, dou
         double p = (value2 - 0.5) * 200.0;
 
         ui->displayCh2->setValue(p);
-        ui->displayCh2->setText(tr("%1 V (%2 %)").
+        ui->displayCh2->setText(tr("%1 V（%2 %）").
                                 arg(voltage2, 0, 'f', 4).
                                 arg(p, 0, 'f', 1));
     } else {
         double p = value2 * 100.0;
 
         ui->displayCh2->setValue(p);
-        ui->displayCh2->setText(tr("%1 V (%2 %)").
+        ui->displayCh2->setText(tr("%1 V（%2 %）").
                                 arg(voltage2, 0, 'f', 4).
                                 arg(p, 0, 'f', 1));
     }
@@ -153,11 +153,11 @@ void AdcMap::on_applyButton_clicked()
             mVesc->appConfig()->updateParamDouble("app_adc_conf.voltage_center", ui->centerCh1Box->value());
             mVesc->appConfig()->updateParamDouble("app_adc_conf.voltage2_start", ui->minCh2Box->value());
             mVesc->appConfig()->updateParamDouble("app_adc_conf.voltage2_end", ui->maxCh2Box->value());
-            mVesc->emitStatusMessage(tr("Start, End and Center ADC Voltages Applied"), true);
+            mVesc->emitStatusMessage(tr("起始、结束和中心 ADC 电压已应用"), true);
         } else {
             mVesc->emitStatusMessage(tr("Applying Pulselengths Failed"), false);
             QMessageBox::warning(this,
-                                 tr("Apply Voltages"),
+                                 tr("应用电压"),
                                  tr("Please activate RT app data and measure the ADC voltages first."));
         }
     }

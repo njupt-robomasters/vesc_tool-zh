@@ -76,7 +76,7 @@ VescInterface::VescInterface(QObject *parent) : QObject(parent)
 
     mCancelSwdUpload = false;
     mCancelFwUpload = false;
-    mFwUploadStatus = "FW Upload Status";
+    mFwUploadStatus = "固件上传状态";
     mFwUploadProgress = -1.0;
     mFwIsBootloader = false;
 
@@ -372,11 +372,9 @@ VescInterface::VescInterface(QObject *parent) : QObject(parent)
 
         if ((mMcConfig->getParamDouble("l_current_max") * 1.3) > mMcConfig->getParamDouble("l_abs_current_max") ||
                 (fabs(mMcConfig->getParamDouble("l_current_min")) * 1.3) > mMcConfig->getParamDouble("l_abs_current_max")) {
-            notes += tr("<b>Current Checks</b><br>"
-                        "The absolute maximum current is set close to the maximum motor current. This can cause "
-                        "overcurrent faults and stop the motor when requesting high currents. Please check your configuration "
-                        "and make sure that it is correct. It is recommended to set the absolute maximum current to around 1.5 "
-                        "times the motor current (or braking current if it is higher).");
+            notes += tr("<b>电流检查</b><br>"
+                        "绝对最大电流设置接近电机最大电流。在高电流请求时可能导致过流故障并使电机停止。请检查配置并确保其正确。"
+                        "建议将绝对最大电流设置为电机电流（或制动电流，如果更高）的 1.5 倍左右。");
         }
 
         if (mMcConfig->getParamBool("l_slow_abs_current")) {
@@ -384,21 +382,18 @@ VescInterface::VescInterface(QObject *parent) : QObject(parent)
                 notes.append("<br><br>");
             }
 
-            notes += tr("<b>Limit Checks</b><br>"
-                        "Slow ABS Current Limit is set. This should generally not be done as it greatly increases the "
-                        "chance of permanently damaging the motor controller. Only change this setting if you know "
-                        "exactly what you are doing! In general ABS overcurrent faults indicate that something is "
-                        "wrong with the configuration or that the setup is pushed beyond reasonable limits.");
+            notes += tr("<b>限制检查</b><br>"
+                        "已设置慢速 ABS 电流限制。通常不应这样做，因为这会大大增加永久损坏电机控制器的可能性。"
+                        "请仅在完全了解操作的情况下更改此设置！通常情况下，ABS 过流故障表明配置存在问题或设置超出了合理限制。");
         }
 
         if (mMcConfig->hasParam("foc_overmod_factor") && mMcConfig->getParamDouble("foc_overmod_factor") >= 1.16) {
-            notes += tr("<b>Overmodulation Check</b><br>"
-                        "The FOC overmodulation factor is set to more than 1.15, which causes high distortion for minimal "
-                        "gain. It is best to leave it at 1.15 or less, which is similar to BLDC commutation.");
+            notes += tr("<b>过调制检查</b><br>"
+                        "FOC 过调制系数设置为超过 1.15，会导致高失真但增益极小。建议将其保持在 1.15 或以下，这与 BLDC 换向类似。");
         }
 
         if (!notes.isEmpty()) {
-            emitMessageDialog(tr("Potential Configuration Issues"), notes, false, true);
+            emitMessageDialog(tr("潜在配置问题"), notes, false, true);
         }
     });
 
@@ -557,16 +552,14 @@ VescInterface::VescInterface(QObject *parent) : QObject(parent)
             }
 
 #if VT_IS_TEST_VERSION
-            emitMessageDialog("Deserializing " + configName + " configuration failed",
-                              "Could not deserialize " + configName +
-                              " configuration. You probably need to update the VESC firmware, as "
-                              "a new iteration of the test version has been made.",
+            emitMessageDialog("反序列化 " + configName + " 配置失败",
+                              "无法反序列化 " + configName +
+                              " 配置。您可能需要更新 VESC 固件，因为测试版本已发布新迭代。",
                               false, false);
 #else
-            emitMessageDialog("Deserializing " + configName + " configuration failed",
-                              "Could not deserialize " + configName +
-                              " configuration. This probably means "
-                              "that something is wrong with your firmware, or this VESC Tool version.",
+            emitMessageDialog("反序列化 " + configName + " 配置失败",
+                              "无法反序列化 " + configName +
+                              " 配置。这可能意味着您的固件或此 VESC Tool 版本存在问题。",
                               false, false);
 #endif
         }
@@ -581,18 +574,17 @@ VescInterface::VescInterface(QObject *parent) : QObject(parent)
         if (custConf) {
             name = custConf->getLongName("hw_name");
         } else {
-            name = tr("Custom config %1").arg(confId);
+            name = tr("自定义配置 %1").arg(confId);
         }
-        emit ackReceived(tr("%1 write OK").arg(name));
+        emit ackReceived(tr("%1 写入成功").arg(name));
     });
 
 #if VT_IS_TEST_VERSION
     QTimer::singleShot(1000, [this]() {
         if (!mIgnoreTestVersion) {
-            emitMessageDialog("VESC Tool Test Version",
-                              "Warning: This is a test version of VESC Tool. The included firmwares are NOT compatible with "
-                              "released firmwares and should only be used with this test version. When using a release version "
-                              "of VESC Tool, the firmware must be upgraded even if the version number is the same.",
+            emitMessageDialog("VESC Tool 测试版本",
+                              "警告：这是 VESC Tool 的测试版本。内含固件与发布版固件不兼容，仅应与本测试版一起使用。"
+                              "使用发布版 VESC Tool 时，即使版本号相同也必须升级固件。",
                               false);
         }
     });
@@ -963,15 +955,15 @@ bool VescInterface::addPairedUuid(QString uuid)
 
     QRegularExpressionMatch match = hexMatcher.match(uuid);
     if (!match.hasMatch()) {
-        emitMessageDialog("Add VESC",
-                          "The UUID must consist of 24 hexadecimal characters.",
+        emitMessageDialog("添加 VESC",
+                          "UUID 必须由 24 个十六进制字符组成。",
                           false, false);
         return false;
     }
 
     if (hasPairedUuid(uuid)) {
-        emitMessageDialog("Add VESC",
-                          "This VESC already is in your paired UUID list.",
+        emitMessageDialog("添加 VESC",
+                          "此 VESC 已在您的配对 UUID 列表中。",
                           true, false);
     } else {
         mPairedUuids.append(uuid);
@@ -1096,28 +1088,28 @@ bool VescInterface::swdEraseFlash()
     };
 
     mCommands->bmEraseFlashAll();
-    emit fwUploadStatus("Erasing flash...", 0.0, true);
+    emit fwUploadStatus("正在擦除 Flash...", 0.0, true);
     int erRes = waitBmEraseRes();
     if (erRes != 1) {
-        QString msg = "Unknown failure";
+        QString msg = "未知故障";
 
         if (erRes == -10) {
-            msg = "Erase timed out";
+            msg = "擦除超时";
         } else if (erRes == -3) {
-            msg = "Erase failed";
+            msg = "擦除失败";
         } else if (erRes == -2) {
-            msg = "Could not recognize target";
+            msg = "无法识别目标";
         } else if (erRes == -1) {
-            msg = "Not connected to target";
+            msg = "未连接到目标";
         }
 
-        emitMessageDialog("SWD Upload", msg, false, false);
+        emitMessageDialog("SWD 上传", msg, false, false);
         emit fwUploadStatus(msg, 0.0, false);
 
         return false;
     }
 
-    emit fwUploadStatus("Erase done", 0.0, false);
+    emit fwUploadStatus("擦除完成", 0.0, false);
 
     return true;
 }
@@ -1224,30 +1216,30 @@ bool VescInterface::swdUploadFw(QByteArray newFirmware, uint32_t startAddr,
         addr += sz;
 
         if (res == 1) {
-            emit fwUploadStatus("Uploading firmware over SWD", double(addr - startAddr) / double(szTot), true);
+            emit fwUploadStatus("正在通过 SWD 上传固件", double(addr - startAddr) / double(szTot), true);
         } else {
-            QString msg = "Unknown failure";
+            QString msg = "未知故障";
 
             if (res == -20) {
-                msg = "Timed out";
+                msg = "超时";
             } else if (res == -2) {
-                msg = "Write failed";
+                msg = "写入失败";
             } else if (res == -1) {
-                msg = "Not connected to target";
+                msg = "未连接到目标";
             } else if (res == -11) {
-                msg = "Verification failed (-11)";
+                msg = "验证失败 (-11)";
             } else if (res == -12) {
-                msg = "Verification failed (-12)";
+                msg = "验证失败 (-12)";
             }
 
-            emitMessageDialog("SWD Upload", msg, false, false);
+            emitMessageDialog("SWD 上传", msg, false, false);
             emit fwUploadStatus(msg, 0.0, false);
 
             return false;
         }
 
         if (mCancelSwdUpload) {
-            emit fwUploadStatus("Upload cancelled", 0.0, false);
+            emit fwUploadStatus("上传已取消", 0.0, false);
             return false;
         }
     }
@@ -1258,7 +1250,7 @@ bool VescInterface::swdUploadFw(QByteArray newFirmware, uint32_t startAddr,
                  << "Incompressible chunks:" << nonCompChunks;
     }
 
-    emit fwUploadStatus("Upload done", 1.0, false);
+    emit fwUploadStatus("上传完成", 1.0, false);
 
     return true;
 }
@@ -1292,17 +1284,17 @@ bool VescInterface::swdReboot()
     mCommands->bmReboot();
     int res = waitBmReboot();
     if (res == -10) {
-        QString msg = "Reboot: Unknown failure";
+        QString msg = "重启：未知故障";
 
         if (res == -10) {
-            msg = "Reboot: Timed out";
+            msg = "重启：超时";
         } else if (res == -1) {
-            msg = "Reboot: Not connected to target";
+            msg = "重启：未连接到目标";
         } else if (res == -2) {
-            msg = "Reboot: Flash done failed";
+            msg = "重启：Flash 完成失败";
         }
 
-        emitMessageDialog("SWD Upload", msg, false, false);
+        emitMessageDialog("SWD 上传", msg, false, false);
         emit fwUploadStatus(msg, 1.0, false);
 
         return false;
@@ -1334,24 +1326,24 @@ bool VescInterface::fwEraseNewApp(bool fwdCan, quint32 fwSize)
     };
 
     mCommands->eraseNewApp(fwdCan, fwSize, mLastFwParams.hwType, mLastFwParams.hw);
-    emit fwUploadStatus("Erasing buffer", 0.0, true);
+    emit fwUploadStatus("正在擦除缓冲区", 0.0, true);
     int erRes = waitEraseRes();
     if (erRes != 1) {
-        QString msg = QString("Unknown failure: %1").arg(erRes);
+        QString msg = QString("未知故障：%1").arg(erRes);
 
         if (erRes == -10) {
-            msg = "Erase timed out";
+            msg = "擦除超时";
         } else if (erRes == -1) {
-            msg = "Erasing buffer failed";
+            msg = "擦除缓冲区失败";
         }
 
-        emitMessageDialog("Firmware Upload", msg, false, false);
+        emitMessageDialog("固件上传", msg, false, false);
         emit fwUploadStatus(msg, 0.0, false);
 
         return false;
     }
 
-    emit fwUploadStatus("Erase done", 0.0, false);
+    emit fwUploadStatus("擦除完成", 0.0, false);
 
     return true;
 }
@@ -1379,24 +1371,24 @@ bool VescInterface::fwEraseBootloader(bool fwdCan)
     };
 
     mCommands->eraseBootloader(fwdCan, mLastFwParams.hwType, mLastFwParams.hw);
-    emit fwUploadStatus("Erasing bootloader...", 0.0, true);
+    emit fwUploadStatus("正在擦除引导程序...", 0.0, true);
     int erRes = waitEraseRes();
     if (erRes != 1) {
-        QString msg = "Unknown failure";
+        QString msg = "未知故障";
 
         if (erRes == -10) {
-            msg = "Erase timed out";
+            msg = "擦除超时";
         } else if (erRes == -1) {
-            msg = "Erasing bootloader failed";
+            msg = "擦除引导程序失败";
         }
 
-        emitMessageDialog("Firmware Upload", msg, false, false);
+        emitMessageDialog("固件上传", msg, false, false);
         emit fwUploadStatus(msg, 0.0, false);
 
         return false;
     }
 
-    emit fwUploadStatus("Erase done", 0.0, false);
+    emit fwUploadStatus("擦除完成", 0.0, false);
 
     return true;
 }
@@ -1413,8 +1405,8 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
         FW_RX_PARAMS fwParamsLocal;
         Utility::getFwVersionBlocking(this, &fwParamsLocal);
         if (fwParamsLocal.hw.isEmpty()) {
-            emitMessageDialog("Firmware Upload", "Could not read hardware version", false, false);
-            mFwUploadStatus = "Read HW version failed";
+            emitMessageDialog("固件上传", "无法读取硬件版本", false, false);
+            mFwUploadStatus = "读取硬件版本失败";
             mFwUploadProgress = -1.0;
             emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, false);
             return false;
@@ -1422,16 +1414,15 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
 
         if (fwParamsLocal.hwType == HW_TYPE_VESC) {
             if (mCommands->getSendCan()) {
-                emitMessageDialog("Firmware Upload",
-                                  "CAN forwarding must be disabled when uploading firmware to "
-                                  "all VESCs at the same time.", false, false);
-                mFwUploadStatus = "CAN check failed";
+                emitMessageDialog("固件上传",
+                                  "同时向所有 VESC 上传固件时必须禁用 CAN 转发。", false, false);
+                mFwUploadStatus = "CAN 检查失败";
                 mFwUploadProgress = -1.0;
                 emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, false);
                 return false;
             }
 
-            mFwUploadStatus = "Scanning CAN bus...";
+            mFwUploadStatus = "正在扫描 CAN 总线...";
             emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, true);
             auto devs = scanCan();
 
@@ -1443,14 +1434,13 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
                 FW_RX_PARAMS fwParamsCan;
                 Utility::getFwVersionBlocking(this, &fwParamsCan);
                 if (fwParamsCan.hwType == HW_TYPE_VESC && fwParamsLocal.hw != fwParamsCan.hw) {
-                    emitMessageDialog("Firmware Upload",
-                                      "All VESCs on the CAN-bus must have the same hardware version to upload "
-                                      "firmware to all of them at the same time. You must update them individually.",
+                    emitMessageDialog("固件上传",
+                                      "CAN 总线上的所有 VESC 必须具有相同的硬件版本才能同时上传固件。您必须单独更新它们。",
                                       false, false);
                     mCommands->setSendCan(false);
                     mIgnoreCanChange = ignoreBefore;
 
-                    mFwUploadStatus = "CAN check failed";
+                    mFwUploadStatus = "CAN 检查失败";
                     mFwUploadProgress = -1.0;
                     emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, false);
 
@@ -1465,20 +1455,20 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
 
     if (isBootloader) {
         if (mCommands->getLimitedSupportsEraseBootloader()) {
-            mFwUploadStatus = "Erasing bootloader";
+            mFwUploadStatus = "正在擦除引导程序";
             emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, true);
             if (!fwEraseBootloader(fwdCan)) {
-                mFwUploadStatus = "Erasing bootloader failed";
+                mFwUploadStatus = "擦除引导程序失败";
                 mFwUploadProgress = -1.0;
                 emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, false);
                 return false;
             }
         }
     } else {
-        mFwUploadStatus = "Erasing buffer";
+        mFwUploadStatus = "正在擦除缓冲区";
         emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, true);
         if (!fwEraseNewApp(fwdCan, quint32(newFirmware.size()))) {
-            mFwUploadStatus = "Erasing buffer failed";
+            mFwUploadStatus = "擦除缓冲区失败";
             mFwUploadProgress = -1.0;
             emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, false);
             return false;
@@ -1570,7 +1560,7 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
         supportsLzo = false;
 
         if (szTot > 393208) {
-            emitMessageDialog(tr("Firmware too big"),
+            emitMessageDialog(tr("固件过大"),
                               tr("The firmware you are trying to upload is too large for the "
                                  "bootloader even after compression."), false);
             return false;
@@ -1578,7 +1568,7 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
     }
 
     if (szTot > 8000000) {
-        emitMessageDialog(tr("Firmware too big"),
+        emitMessageDialog(tr("固件过大"),
                           tr("The firmware you are trying to upload is unreasonably "
                              "large, most likely it is an invalid file"), false);
         return false;
@@ -1605,7 +1595,7 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
     while (newFirmware.size() > 0) {
         if (mCancelFwUpload) {
             mFwUploadProgress = -1.0;
-            mFwUploadStatus = "Upload cancelled";
+            mFwUploadStatus = "上传已取消";
             emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, false);
             return false;
         }
@@ -1673,23 +1663,23 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
 
         if (res == 1) {
             mFwUploadProgress = double(addr - startAddr) / double(szTot);
-            mFwUploadStatus = "Uploading ";
+            mFwUploadStatus = "正在上传 ";
             if (isBootloader) {
-                mFwUploadStatus += "Bootloader";
+                mFwUploadStatus += "引导程序";
             } else {
-                mFwUploadStatus += "Firmware";
+                mFwUploadStatus += "固件";
             }
             emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, true);
         } else {
-            QString msg = QString("Unknown failure: %1").arg(res);
+            QString msg = QString("未知故障：%1").arg(res);
 
             if (res == -20) {
-                msg = "Firmware upload timed out";
+                msg = "固件上传超时";
             } else if (res == -2) {
-                msg = "Write failed";
+                msg = "写入失败";
             }
 
-            emitMessageDialog("Firmware Upload", msg, false, false);
+            emitMessageDialog("固件上传", msg, false, false);
             mFwUploadProgress = -1.0;
             mFwUploadStatus = msg;
             emit fwUploadStatus(mFwUploadStatus, mFwUploadProgress, false);
@@ -1698,7 +1688,7 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
     }
 
     mFwUploadProgress = -1.0;
-    mFwUploadStatus = "Upload done";
+    mFwUploadStatus = "上传完成";
     emit fwUploadStatus(mFwUploadStatus, 1.0, false);
 
     if (supportsLzo && isLzo) {
@@ -2401,12 +2391,12 @@ bool VescInterface::autoconnect()
 
 QString VescInterface::getConnectedPortName()
 {
-    QString res = tr("Not connected");
+    QString res = tr("未连接");
     bool connected = false;
 
 #ifdef HAS_SERIALPORT
     if (mSerialPort->isOpen()) {
-        res = tr("Connected (serial) to %1").arg(mSerialPort->portName());
+        res = tr("已连接（串口）到 %1").arg(mSerialPort->portName());
         connected = true;
     }
 #endif
@@ -2464,7 +2454,7 @@ bool VescInterface::connectSerial(QString port, int baudrate)
     }
 
     if (!found) {
-        emit statusMessage(tr("Invalid serial port: %1").arg(port), false);
+        emit statusMessage(tr("无效串口：%1").arg(port), false);
         return false;
     }
 
@@ -3285,15 +3275,13 @@ void VescInterface::timerSlot()
             if (fwStatus.compare("FW Upload Done") == 0) {
                 emit fwUploadStatus(fwStatus, 1.0, false);
                 if (mIsLastFwBootloader) {
-                    emitMessageDialog("Bootloader Upload",
-                                      "Bootloader upload finished! You can now upload new firmware "
-                                      "to the VESC.",
+                    emitMessageDialog("引导程序上传",
+                                      "引导程序上传完成！您现在可以向 VESC 上传新固件。",
                                       true, false);
                 } else {
                     disconnectPort();
-                    emitMessageDialog("Firmware Upload",
-                                      "Firmware upload finished! Give the VESC around 10 "
-                                      "seconds to apply the firmware and reboot, then reconnect.",
+                    emitMessageDialog("固件上传",
+                                      "固件上传完成！请等待约 10 秒让 VESC 应用固件并重启，然后重新连接。",
                                       true, false);
                 }
             } else {
@@ -3527,7 +3515,7 @@ void VescInterface::fwVersionReceived(FW_RX_PARAMS params)
     }
 
     if (fwPairs.isEmpty()) {
-        emit messageDialog(tr("No Supported Firmwares"),
+        emit messageDialog(tr("无支持的固件"),
                            tr("This version of VESC Tool does not seem to have any supported "
                               "firmwares. Something is probably wrong with the motor configuration "
                               "file."),
@@ -3793,7 +3781,7 @@ void VescInterface::fwVersionReceived(FW_RX_PARAMS params)
             if (!wasReceived) {
                 if (mFwSupportsConfiguration) {
                     if (params.hwType == HW_TYPE_VESC && mSettings.value("showFwUpdateAvailable", true).toBool()) {
-                        emit messageDialog(tr("Firmware Update Available"),
+                        emit messageDialog(tr("固件更新可用"),
                                            tr("The connected VESC-based ESC has old, but mostly compatible firmware. This is "
                                               "fine if your setup works properly.<br><br>"
                                               "Check out the firmware changelog (from the help menu or firmware page) to decide "
@@ -4165,12 +4153,12 @@ void VescInterface::fwVersionReceived(FW_RX_PARAMS params)
 
 void VescInterface::appconfUpdated()
 {
-    emit statusMessage(tr("App config updated"), true);
+    emit statusMessage(tr("应用配置已更新"), true);
 }
 
 void VescInterface::mcconfUpdated()
 {
-    emit statusMessage(tr("Motor config updated"), true);
+    emit statusMessage(tr("电机配置已更新"), true);
 
     if (isPortConnected() && fwRx()) {
         QPair<int, int> fw_connected = qMakePair(mLastFwParams.major, mLastFwParams.minor);
@@ -4204,8 +4192,8 @@ void VescInterface::customConfigRx(int confId, QByteArray data)
             params->updateDone();
             emitStatusMessage(tr("%1 updated").arg(params->getLongName("hw_name")), true);
         } else {
-            emitMessageDialog(tr("Custom Configuration"),
-                              tr("Could not deserialize custom config %1").arg(confId),
+            emitMessageDialog(tr("自定义配置"),
+                              tr("无法反序列化自定义配置 %1").arg(confId),
                               false, false);
         }
     }

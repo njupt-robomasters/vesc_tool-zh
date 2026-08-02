@@ -206,7 +206,7 @@ void ExperimentPlot::setVesc(VescInterface *newVesc)
 void ExperimentPlot::on_experimentLoadXmlButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
-                                                    tr("Load Plot"), "",
+                                                    tr("加载图表"), "",
                                                     tr("Xml files (*.xml)"));
 
     if (!filename.isEmpty()) {
@@ -296,7 +296,7 @@ void ExperimentPlot::on_experimentLoadXmlButton_clicked()
 void ExperimentPlot::on_experimentSaveXmlButton_clicked()
 {
     QString filename = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Plot"), "",
+                                                    tr("保存图表"), "",
                                                     tr("Xml files (*.xml)"));
 
     if (filename.isEmpty()) {
@@ -343,7 +343,7 @@ void ExperimentPlot::on_experimentSaveXmlButton_clicked()
 void ExperimentPlot::on_experimentSavePngButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Image"), "",
+                                                    tr("保存图像"), "",
                                                     tr("PNG Files (*.png)"));
 
     if (!fileName.isEmpty()) {
@@ -361,7 +361,7 @@ void ExperimentPlot::on_experimentSavePngButton_clicked()
 void ExperimentPlot::on_experimentSavePdfButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save PDF"), "",
+                                                    tr("保存 PDF"), "",
                                                     tr("PDF Files (*.pdf)"));
 
     if (!fileName.isEmpty()) {
@@ -387,7 +387,7 @@ void ExperimentPlot::on_experimentClearDataButton_clicked()
 void ExperimentPlot::on_experimentSaveCsvButton_clicked()
 {
     QString filename = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Plot"), "",
+                                                    tr("保存图表"), "",
                                                     tr("Csv files (*.csv)"));
 
     if (filename.isEmpty()) {

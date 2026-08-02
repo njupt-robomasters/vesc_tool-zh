@@ -137,18 +137,16 @@ void PageFoc::on_offsetMeasureButton_clicked()
     if (mVesc) {
         if (!mVesc->isPortConnected()) {
             QMessageBox::critical(this,
-                                  tr("Connection Error"),
-                                  tr("The VESC is not connected. Please connect it."));
+                                         tr("连接错误"),
+                                         tr("VESC 未连接。请先连接。"));
             return;
         }
 
         QMessageBox::StandardButton reply;
         reply = QMessageBox::information(this,
-                                         tr("Measure Offsets"),
-                                         tr("This is going to measure and store all offsets. Make sure "
-                                            "that the motor is not moving or disconnected. Motor rotation "
-                                            "during the measurement will cause an invalid result. Do you "
-                                            "want to continue?"),
+                                         tr("测量偏移"),
+                                         tr("这将测量并存储所有偏移。请确保电机未转动或已断开连接。"
+                                            "测量期间电机旋转将导致无效结果。是否继续？"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
         if (reply == QMessageBox::Yes) {

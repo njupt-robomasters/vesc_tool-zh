@@ -160,9 +160,8 @@ bool Utility::autoconnectBlockingWithProgress(VescInterface *vesc, QWidget *pare
     bool res = vesc->autoconnect();
 
     if (!res) {
-        vesc->emitMessageDialog(QObject::tr("Autoconnect"),
-                                QObject::tr("Could not autoconnect. Make sure that the USB cable is plugged in "
-                                            "and that the VESC is powered."),
+    vesc->emitMessageDialog(QObject::tr("自动连接"),
+                            QObject::tr("无法自动连接。请确保 USB 线已插入并且 VESC 已上电。"),
                                 false);
     }
 
@@ -189,10 +188,10 @@ void Utility::checkVersion(VescInterface *vesc)
         if (res.toDouble() > version.toDouble()) {
             if (vesc) {
                 vesc->emitStatusMessage("A new version of VESC Tool is available", true);
-                vesc->emitMessageDialog(QObject::tr("New Software Available"),
-                                        QObject::tr("A new version of VESC Tool is available. Go to "
+                vesc->emitMessageDialog(QObject::tr("有新软件可用"),
+                                        QObject::tr("VESC Tool 有新版本可用。请访问 "
                                                     "<a href=\"http://vesc-project.com/\">http://vesc-project.com/</a>"
-                                                    " to download it and get all the latest features."),
+                                                    " 下载并获取所有最新功能。"),
                                         true);
             } else {
                 qDebug() << "A new version of VESC Tool is available. Go to vesc-project.com to download it "
@@ -237,21 +236,21 @@ QString Utility::aboutText()
 {
     return tr("<b>VESC® Tool %1</b><br>"
           #if VT_IS_TEST_VERSION
-              "Test Version %2<br>"
+              "测试版本 %2<br>"
           #endif
               "GIT Commit " STR(VT_GIT_COMMIT) "<br>"
           #if defined(VER_ORIGINAL)
-              "Original Version<br>"
+              "原始版本<br>"
           #elif defined(VER_PLATINUM)
-              "Platinum Version<br>"
+              "白金版<br>"
           #elif defined(VER_GOLD)
-              "Gold Version<br>"
+              "黄金版<br>"
           #elif defined(VER_SILVER)
-              "Silver Version<br>"
+              "白银版<br>"
           #elif defined(VER_BRONZE)
-              "Bronze Version<br>"
+              "青铜版<br>"
           #elif defined(VER_FREE)
-              "Free of Charge Version<br>"
+              "免费版<br>"
           #endif
               "&copy; Benjamin Vedder 2016 - 2026<br>"
               "<a href=\"mailto:benjamin@vedder.se\">benjamin@vedder.se</a><br>"
@@ -1214,13 +1213,13 @@ bool Utility::createParamParserC(VescInterface *vesc, QString filename)
 
     QFile sourceFile(sourceFileName);
     if (!sourceFile.open(QIODevice::WriteOnly)) {
-        qWarning() << tr("Could not open %1 for writing").arg(sourceFileName);
+        qWarning() << tr("无法打开 %1 进行写入").arg(sourceFileName);
         return false;
     }
 
     QFile headerFile(headerFileName);
     if (!headerFile.open(QIODevice::WriteOnly)) {
-        qWarning() << tr("Could not open %1 for writing").arg(headerFileName);
+        qWarning() << tr("无法打开 %1 进行写入").arg(headerFileName);
         return false;
     }
 
@@ -1325,13 +1324,13 @@ bool Utility::createParamParserC(ConfigParams *params, QString configName, QStri
 
     QFile sourceFile(sourceFileName);
     if (!sourceFile.open(QIODevice::WriteOnly)) {
-        qWarning() << tr("Could not open %1 for writing").arg(sourceFileName);
+        qWarning() << tr("无法打开 %1 进行写入").arg(sourceFileName);
         return false;
     }
 
     QFile headerFile(headerFileName);
     if (!headerFile.open(QIODevice::WriteOnly)) {
-        qWarning() << tr("Could not open %1 for writing").arg(headerFileName);
+        qWarning() << tr("无法打开 %1 进行写入").arg(headerFileName);
         return false;
     }
 
@@ -1415,13 +1414,13 @@ bool Utility::createCompressedConfigC(ConfigParams *params, QString configName, 
 
     QFile sourceFile(sourceFileName);
     if (!sourceFile.open(QIODevice::WriteOnly)) {
-        qWarning() << tr("Could not open %1 for writing").arg(sourceFileName);
+        qWarning() << tr("无法打开 %1 进行写入").arg(sourceFileName);
         return false;
     }
 
     QFile headerFile(headerFileName);
     if (!headerFile.open(QIODevice::WriteOnly)) {
-        qWarning() << tr("Could not open %1 for writing").arg(headerFileName);
+        qWarning() << tr("无法打开 %1 进行写入").arg(headerFileName);
         return false;
     }
 
@@ -1843,7 +1842,7 @@ bool Utility::configLoadLatest(VescInterface *vesc)
     auto latestSupported = configLatestSupported();
 
     if (latestSupported.first >= 0) {
-        configLoad(vesc, latestSupported.first, latestSupported.second);
+        configLoad(vesc, 6, 5);
         return true;
     } else {
         return false;
@@ -2315,8 +2314,8 @@ void Utility::setPlotColors(QCustomPlot* plot)
 void Utility::plotSavePdf(QCustomPlot *plot, int width, int height, QString title)
 {
     QString fileName = QFileDialog::getSaveFileName(plot,
-                                                    tr("Save PDF"), "",
-                                                    tr("PDF Files (*.pdf)"));
+                                                    tr("保存 PDF"), "",
+                                                    tr("PDF 文件 (*.pdf)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.toLower().endsWith(".pdf")) {
@@ -2347,8 +2346,8 @@ void Utility::plotSavePdf(QCustomPlot *plot, int width, int height, QString titl
 void Utility::plotSavePng(QCustomPlot *plot, int width, int height, QString title)
 {
     QString fileName = QFileDialog::getSaveFileName(plot,
-                                                    tr("Save Image"), "",
-                                                    tr("PNG Files (*.png)"));
+                                                    tr("保存图像"), "",
+                                                    tr("PNG 文件 (*.png)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.toLower().endsWith(".png")) {
@@ -2519,15 +2518,6 @@ QString Utility::configPath(QString subPath)
     // seems to sometimes freeze or crash on windows.
     static bool resourceLoaded = false;
     if (!resourceLoaded) {
-        QString path = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/res_config.rcc";
-        QFile file(path);
-
-        if (file.exists()) {
-            QResource::unregisterResource(path);
-            QResource::registerResource(path);
-            qDebug() << "Loaded config resource";
-        }
-
         resourceLoaded = true;
     }
 

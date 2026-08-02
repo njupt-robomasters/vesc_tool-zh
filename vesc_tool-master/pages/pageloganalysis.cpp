@@ -607,8 +607,8 @@ void PageLogAnalysis::loadVescLog(QVector<LOG_DATA> log)
     mLogHeader.append(LOG_HEADER("fault", "Fault Code", "", 0));
     mLogHeader.append(LOG_HEADER("v_in", "Input Voltage", "V"));
     mLogHeader.append(LOG_HEADER("soc", "Battery Level", "%", 1));
-    mLogHeader.append(LOG_HEADER("t_mosfet", "Temp MOSFET", "°C", 1));
-    mLogHeader.append(LOG_HEADER("t_motor", "Temp Motor", "°C", 1));
+    mLogHeader.append(LOG_HEADER("t_mosfet", "Temp MOSFET", "\u00b0C", 1));
+    mLogHeader.append(LOG_HEADER("t_motor", "Temp Motor", "\u00b0C", 1));
     mLogHeader.append(LOG_HEADER("cnt_ah", "Ah Used", "Ah", 3));
     mLogHeader.append(LOG_HEADER("cnt_ah_chg", "Ah Charged", "Ah", 3));
     mLogHeader.append(LOG_HEADER("cnt_wh", "Wh Used", "Wh", 3));
@@ -617,27 +617,27 @@ void PageLogAnalysis::loadVescLog(QVector<LOG_DATA> log)
     mLogHeader.append(LOG_HEADER("iq", "iq", "A"));
     mLogHeader.append(LOG_HEADER("vd", "vd", "V"));
     mLogHeader.append(LOG_HEADER("vq", "vq", "V"));
-    mLogHeader.append(LOG_HEADER("t_mosfet_1", "Temp MOSFET 1", "°C", 1));
-    mLogHeader.append(LOG_HEADER("t_mosfet_2", "Temp MOSFET 2", "°C", 1));
-    mLogHeader.append(LOG_HEADER("t_mosfet_3", "Temp MOSFET 3", "°C", 1));
-    mLogHeader.append(LOG_HEADER("position", "Motor Pos", "°", 1));
+    mLogHeader.append(LOG_HEADER("t_mosfet_1", "Temp MOSFET 1", "\u00b0C", 1));
+    mLogHeader.append(LOG_HEADER("t_mosfet_2", "Temp MOSFET 2", "\u00b0C", 1));
+    mLogHeader.append(LOG_HEADER("t_mosfet_3", "Temp MOSFET 3", "\u00b0C", 1));
+    mLogHeader.append(LOG_HEADER("position", "Motor Pos", "\u00b0", 1));
     mLogHeader.append(LOG_HEADER("roll", "Roll", "rad", 3));
     mLogHeader.append(LOG_HEADER("pitch", "Pitch", "rad", 3));
     mLogHeader.append(LOG_HEADER("yaw", "Yaw", "rad", 3));
     mLogHeader.append(LOG_HEADER("acc_x", "Accel X", "G"));
     mLogHeader.append(LOG_HEADER("acc_y", "Accel Y", "G"));
     mLogHeader.append(LOG_HEADER("acc_z", "Accel Z", "G"));
-    mLogHeader.append(LOG_HEADER("gyro_x", "Gyro X", "°/s", 1));
-    mLogHeader.append(LOG_HEADER("gyro_y", "Gyro Y", "°/s", 1));
-    mLogHeader.append(LOG_HEADER("gyro_z", "Gyro Z", "°/s", 1));
+    mLogHeader.append(LOG_HEADER("gyro_x", "Gyro X", "\u00b0/s", 1));
+    mLogHeader.append(LOG_HEADER("gyro_y", "Gyro Y", "\u00b0/s", 1));
+    mLogHeader.append(LOG_HEADER("gyro_z", "Gyro Z", "\u00b0/s", 1));
     mLogHeader.append(LOG_HEADER("v1_curr_motor", "V1 Current", "A"));
     mLogHeader.append(LOG_HEADER("v1_curr_battery", "V1 Current Battery", "A"));
     mLogHeader.append(LOG_HEADER("v1_cnt_ah", "V1 Ah Used", "Ah", 3));
     mLogHeader.append(LOG_HEADER("v1_cnt_ah_chg", "V1 Ah Charged", "Ah", 3));
     mLogHeader.append(LOG_HEADER("v1_cnt_wh", "V1 Wh Used", "Wh", 3));
     mLogHeader.append(LOG_HEADER("v1_cnt_wh_chg", "V1 Wh Charged", "Wh", 3));
-    mLogHeader.append(LOG_HEADER("gnss_lat", "Latitude", "°", 6));
-    mLogHeader.append(LOG_HEADER("gnss_lon", "Longitude", "°", 6));
+    mLogHeader.append(LOG_HEADER("gnss_lat", "Latitude", "\u00b0", 6));
+    mLogHeader.append(LOG_HEADER("gnss_lon", "Longitude", "\u00b0", 6));
     mLogHeader.append(LOG_HEADER("gnss_alt", "Altitude", "m"));
     mLogHeader.append(LOG_HEADER("gnss_v_vel", "V. Speed GNSS", "km/h"));
     mLogHeader.append(LOG_HEADER("gnss_h_acc", "H. Accuracy GNSS", "m"));
@@ -782,8 +782,8 @@ void PageLogAnalysis::on_openCsvButton_clicked()
     if (mVesc) {
         QString dirPath = QSettings().value("pageloganalysis/lastdir", "").toString();
         QString fileName = QFileDialog::getOpenFileName(this,
-                                                        tr("Load CSV File"), dirPath,
-                                                        tr("CSV files (*.csv)"));
+                                                        tr("加载 CSV 文件"), dirPath,
+                                                        tr("CSV 文件 (*.csv)"));
 
         if (!fileName.isEmpty()) {
             QSettings().setValue("pageloganalysis/lastdir",
@@ -1096,7 +1096,7 @@ void PageLogAnalysis::updateSelectedDataItems()
             scaleLayout->setContentsMargins(2, 0, 2, 0);
             scaleLayout->setSpacing(4);
 
-            auto scaleLabel = new QLabel(QString::fromUtf8("×"), scaleWidget);
+            auto scaleLabel = new QLabel(QString::fromUtf8("\u00d7"), scaleWidget);
             scaleLabel->setAlignment(Qt::AlignCenter);
             scaleLabel->setFixedWidth(10);
 
@@ -1243,7 +1243,7 @@ void PageLogAnalysis::updateSelectedDataItems()
 
         auto removeButton = new QToolButton(ui->selectedDataItems);
         removeButton->setObjectName("removeSeriesButton");
-        removeButton->setText("×");
+        removeButton->setText("\u00d7");
         removeButton->setAutoRaise(true);
         removeButton->setToolTip("Remove this data series");
 
@@ -2091,8 +2091,8 @@ void PageLogAnalysis::setFileButtonsEnabled(bool en)
 void PageLogAnalysis::on_saveMapPdfButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save PDF"), "",
-                                                    tr("PDF Files (*.pdf)"));
+                                                    tr("保存 PDF"), "",
+                                                    tr("PDF 文件 (*.pdf)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.toLower().endsWith(".pdf")) {
@@ -2108,8 +2108,8 @@ void PageLogAnalysis::on_saveMapPdfButton_clicked()
 void PageLogAnalysis::on_saveMapPngButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Image"), "",
-                                                    tr("PNG Files (*.png)"));
+                                                    tr("保存图像"), "",
+                                                    tr("PNG 文件 (*.png)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.toLower().endsWith(".png")) {
@@ -2302,9 +2302,9 @@ void PageLogAnalysis::on_vescSaveAsButton_clicked()
             }
 
             QString fileName = QFileDialog::getSaveFileName(this,
-                                                            tr("Save Log File"),
+                                                            tr("保存日志文件"),
                                                             path,
-                                                            tr("CSV files (*.csv)"));
+                                                            tr("CSV 文件 (*.csv)"));
 
             if (!fileName.isEmpty()) {
                 if (!fileName.endsWith(".csv", Qt::CaseInsensitive)) {
@@ -2330,10 +2330,10 @@ void PageLogAnalysis::on_vescSaveAsButton_clicked()
             }
         } else {
             QString path = QFileDialog::getExistingDirectory(this,
-                                                             tr("Choose Destination"),
-                                                             mLastSaveAsPath,
-                                                             QFileDialog::ShowDirsOnly |
-                                                             QFileDialog::DontResolveSymlinks);
+                                                             tr("选择目标位置"),
+                                                              mLastSaveAsPath,
+                                                              QFileDialog::ShowDirsOnly |
+                                                              QFileDialog::DontResolveSymlinks);
             if (!path.isEmpty()) {
                 setFileButtonsEnabled(false);
 
@@ -2383,19 +2383,19 @@ void PageLogAnalysis::on_vescLogDeleteButton_clicked()
 
         if (fe.isDir) {
             ret = QMessageBox::warning(this,
-                                       tr("Delete Directory"),
-                                       tr("This is going to delete %1 and its content permanently. Are you sure?").arg(fe.name),
+                                       tr("删除目录"),
+                                       tr("此操作将永久删除 %1 及其内容。确定吗？").arg(fe.name),
                                        QMessageBox::Yes | QMessageBox::Cancel);
         } else {
             ret = QMessageBox::warning(this,
-                                       tr("Delete File"),
-                                       tr("This is going to delete %1 permanently. Are you sure?").arg(fe.name),
+                                       tr("删除文件"),
+                                       tr("此操作将永久删除 %1。确定吗？").arg(fe.name),
                                        QMessageBox::Yes | QMessageBox::Cancel);
         }
     } else {
         ret = QMessageBox::warning(this,
-                                   tr("Delete"),
-                                   tr("This is going to delete the selected files and directories. Are you sure?"),
+                                   tr("删除"),
+                                   tr("此操作将永久删除选中的文件和目录。确定吗？"),
                                    QMessageBox::Yes | QMessageBox::Cancel);
     }
 
@@ -2423,8 +2423,8 @@ void PageLogAnalysis::on_vescLogDeleteButton_clicked()
 void PageLogAnalysis::on_saveCsvButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Log File"), mLastSaveCsvPath,
-                                                    tr("CSV files (*.csv)"));
+                                                    tr("保存日志文件"), mLastSaveCsvPath,
+                                                    tr("CSV 文件 (*.csv)"));
 
     if (!fileName.isEmpty()) {
         saveCsv(fileName);
@@ -2490,8 +2490,8 @@ void PageLogAnalysis::on_logLocalDeleteButton_clicked()
     int ret = QMessageBox::Cancel;
     if (items.size() > 0) {
         ret = QMessageBox::warning(this,
-                                   tr("Delete File(s)"),
-                                   tr("This is going to delete the selected file(s) permanently. Are you sure?"),
+                                   tr("删除文件"),
+                                   tr("此操作将永久删除选中的文件。确定吗？"),
                                    QMessageBox::Yes | QMessageBox::Cancel);
 
         if (ret == QMessageBox::Yes) {

@@ -438,7 +438,7 @@
          <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
         </property>
         <property name="prefix">
-         <string>Observer Gain (x1M): </string>
+         <string>观测器增益(x1M)：</string>
         </property>
         <property name="suffix">
          <string/>

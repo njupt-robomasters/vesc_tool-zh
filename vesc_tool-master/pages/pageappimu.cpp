@@ -104,20 +104,20 @@ PageAppImu::PageAppImu(QWidget *parent) :
     ui->accelPlot->legend->setVisible(true);
     ui->accelPlot->legend->setFont(legendFont);
     ui->accelPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight|Qt::AlignBottom);
-    ui->accelPlot->xAxis->setLabel("Seconds (s)");
-    ui->accelPlot->yAxis->setLabel("Acceleration (G)");
+    ui->accelPlot->xAxis->setLabel(tr("时间 (s)"));
+    ui->accelPlot->yAxis->setLabel(tr("加速度 (G)"));
 
     ui->rpyPlot->legend->setVisible(true);
     ui->rpyPlot->legend->setFont(legendFont);
     ui->rpyPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight|Qt::AlignBottom);
-    ui->rpyPlot->xAxis->setLabel("Seconds (s)");
-    ui->rpyPlot->yAxis->setLabel("Angle (Deg)");
+    ui->rpyPlot->xAxis->setLabel(tr("时间 (s)"));
+    ui->rpyPlot->yAxis->setLabel(tr("角度 (°)"));
 
     ui->gyroPlot->legend->setVisible(true);
     ui->gyroPlot->legend->setFont(legendFont);
     ui->gyroPlot->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignRight|Qt::AlignBottom);
-    ui->gyroPlot->xAxis->setLabel("Seconds (s)");
-    ui->gyroPlot->yAxis->setLabel("Angular Velocity (Deg/s)");
+    ui->gyroPlot->xAxis->setLabel(tr("时间 (s)"));
+    ui->gyroPlot->yAxis->setLabel(tr("角速度 (°/s)"));
 
     m3dView = new Vesc3DView(this);
     m3dView->setMinimumWidth(200);

@@ -91,8 +91,8 @@ void NrfPair::nrfPairingRes(int res)
         ui->countLabel->setText(tr("%1").arg(mPairCnt, 0, 'f', 1));
         mVesc->emitStatusMessage("Pairing NRF Sucessful", true);
         QMessageBox::information(this,
-                                 tr("NRF Pairing"),
-                                 tr("Pairing was successful."));
+                                 tr("NRF 配对"),
+                                 tr("配对成功。"));
         mRunning = false;
         break;
 
@@ -105,8 +105,8 @@ void NrfPair::nrfPairingRes(int res)
 
         QMessageBox::StandardButton reply;
         reply = QMessageBox::warning(this,
-                             tr("NRF Pairing"),
-                             tr("Pairing timed out. Make sure to put your device (e.g. NRF nunchuk) "
+                             tr("NRF 配对"),
+                             tr("配对超时。请确保将设备（例如 NRF Nunchuk）"
                                 "in pairing mode before the time runs out."
                                 "<br><br>"
                                 "To put the NRF nunchuk in "

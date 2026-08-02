@@ -642,8 +642,8 @@ void PageExperiments::on_zoomVButton_toggled(bool checked)
 void PageExperiments::on_openButton_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
-                                                    tr("Load CSV File"), "",
-                                                    tr("CSV files (*.csv)"));
+                                                    tr("加载 CSV 文件"), "",
+                                                    tr("CSV 文件 (*.csv)"));
 
     if (!fileName.isEmpty()) {
         QFile file(fileName);
@@ -692,8 +692,8 @@ void PageExperiments::on_openButton_clicked()
 void PageExperiments::on_saveCsvButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save CSV"), "",
-                                                    tr("CSV Files (*.csv)"));
+                                                    tr("保存 CSV"), "",
+                                                    tr("CSV 文件 (*.csv)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.toLower().endsWith(".csv")) {
@@ -736,8 +736,8 @@ void PageExperiments::on_saveCsvButton_clicked()
 void PageExperiments::on_savePdfButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save PDF"), "",
-                                                    tr("PDF Files (*.pdf)"));
+                                                    tr("保存 PDF"), "",
+                                                    tr("PDF 文件 (*.pdf)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.toLower().endsWith(".pdf")) {
@@ -774,8 +774,8 @@ void PageExperiments::on_savePdfButton_clicked()
 void PageExperiments::on_savePngButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save Image"), "",
-                                                    tr("PNG Files (*.png)"));
+                                                    tr("保存图像"), "",
+                                                    tr("PNG 文件 (*.png)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.toLower().endsWith(".png")) {
@@ -901,8 +901,8 @@ void PageExperiments::victronDataAvailable()
 void PageExperiments::on_openCompButton_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
-                                                    tr("Load Comparison CSV File"), "",
-                                                    tr("CSV files (*.csv)"));
+                                                    tr("加载对比 CSV 文件"), "",
+                                                    tr("CSV 文件 (*.csv)"));
 
     if (!fileName.isEmpty()) {
         QFile file(fileName);

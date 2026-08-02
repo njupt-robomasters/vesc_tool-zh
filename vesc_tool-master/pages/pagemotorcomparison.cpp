@@ -140,9 +140,9 @@ PageMotorComparison::PageMotorComparison(QWidget *parent) :
 
     connect(ui->m1ConfChooseButton, &QPushButton::clicked, [this]() {
         QString fileName = QFileDialog::getOpenFileName(this,
-                                                        tr("McConf XML File"),
+                                                        tr("McConf XML 文件"),
                                                         QFileInfo(ui->m1ConfFileEdit->text()).canonicalFilePath(),
-                                                        tr("XML files (*.xml)"));
+                                                        tr("XML 文件 (*.xml)"));
 
         if (!fileName.isEmpty()) {
             ui->m1ConfFileEdit->setText(fileName);
@@ -153,9 +153,9 @@ PageMotorComparison::PageMotorComparison(QWidget *parent) :
 
     connect(ui->m2ConfChooseButton, &QPushButton::clicked, [this]() {
         QString fileName = QFileDialog::getOpenFileName(this,
-                                                        tr("McConf XML File"),
+                                                        tr("McConf XML 文件"),
                                                         QFileInfo(ui->m2ConfFileEdit->text()).canonicalFilePath(),
-                                                        tr("XML files (*.xml)"));
+                                                        tr("XML 文件 (*.xml)"));
 
         if (!fileName.isEmpty()) {
             ui->m2ConfFileEdit->setText(fileName);
@@ -169,9 +169,8 @@ PageMotorComparison::PageMotorComparison(QWidget *parent) :
         if (res) {
             mVesc->emitStatusMessage("Loaded motor configuration", true);
         } else {
-            mVesc->emitMessageDialog(tr("Load motor configuration"),
-                              tr("Could not load motor configuration:<BR>"
-                                 "%1").arg(mVesc->mcConfig()->xmlStatus()), false, false);
+            mVesc->emitMessageDialog(tr("加载电机配置"),
+                              tr("无法加载电机配置:<BR>%1").arg(mVesc->mcConfig()->xmlStatus()), false, false);
         }
     });
     connect(ui->m2LoadConfButton, &QPushButton::clicked, [this]() {
@@ -179,9 +178,8 @@ PageMotorComparison::PageMotorComparison(QWidget *parent) :
         if (res) {
             mVesc->emitStatusMessage("Loaded motor configuration", true);
         } else {
-            mVesc->emitMessageDialog(tr("Load motor configuration"),
-                              tr("Could not load motor configuration:<BR>"
-                                 "%1").arg(mVesc->mcConfig()->xmlStatus()), false, false);
+            mVesc->emitMessageDialog(tr("加载电机配置"),
+                              tr("无法加载电机配置:<BR>%1").arg(mVesc->mcConfig()->xmlStatus()), false, false);
         }
     });
 
@@ -1193,9 +1191,9 @@ void PageMotorComparison::on_testRunButton_clicked()
 void PageMotorComparison::on_qmlChooseButton_clicked()
 {
     QString fileName = QFileDialog::getOpenFileName(this,
-                                                    tr("QML File"),
+                                                    tr("QML 文件"),
                                                     QFileInfo(ui->qmlFileEdit->text()).canonicalFilePath(),
-                                                    tr("QML files (*.qml)"));
+                                                    tr("QML 文件 (*.qml)"));
 
     if (!fileName.isEmpty()) {
         ui->qmlFileEdit->setText(fileName);
@@ -1207,7 +1205,7 @@ void PageMotorComparison::on_qmlRunButton_clicked()
     QFile file(ui->qmlFileEdit->text());
     QFileInfo fi(ui->qmlFileEdit->text());
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        mVesc->emitMessageDialog(tr("Open QML"), tr("Could not open file."), false, false);
+        mVesc->emitMessageDialog(tr("打开 QML"), tr("无法打开文件。"), false, false);
         return;
     }
 

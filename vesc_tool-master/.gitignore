@@ -1,20 +1,21 @@
-# C++ objects and libs
-*.slo
-*.lo
+# Build outputs
+build/
+Build/
 *.o
+*.obj
+*.elf
+*.hex
+*.bin
 *.a
 *.la
 *.lai
 *.so
 *.dll
 *.dylib
+*.slo
+*.lo
 
-# Qt-es
-object_script.*.Release
-object_script.*.Debug
-*_plugin_import.cpp
-/.qmake.cache
-/.qmake.stash
+# Qt
 *.pro.user
 *.pro.user.*
 *.qbs.user
@@ -28,28 +29,34 @@ ui_*.h
 *.jsc
 Makefile*
 *build-*
+object_script.*.Release
+object_script.*.Debug
+*_plugin_import.cpp
 
-# Qt unit tests
-target_wrapper.*
-
-# QtCreator
+# IDE
+.vscode/
+.project
+.cproject
+.settings/
+*.code-workspace
 *.autosave
 
-# QtCreator Qml
-*.qmlproject.user
-*.qmlproject.user.*
-
-# QtCreator CMake
-CMakeLists.txt.user*
-
-# Other
-android-libvesc_tool.so-deployment-settings.json
-android_release_vesctool.keystore
-build_android_signed
-*.DS_Store
-
-res/firmwares/*/
-/build
-
-# Nix output
+# Nix
 /result
+/.cache
+compile_commands.json
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# Archives
+*.zip
+*.7z
+*.tar.gz
+*.rar
+
+# Misc
+.dep/
+*.keystore
