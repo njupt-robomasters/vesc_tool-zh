@@ -53,7 +53,7 @@ void PageAppGeneral::reloadParams()
 {
     if (mVesc) {
         ui->appTab->clearParams();
-        ui->appTab->addParamSubgroup(mVesc->appConfig(), "通用", tr("通用"));
+        ui->appTab->addParamSubgroup(mVesc->appConfig(), "general", "general");
     }
 }
 

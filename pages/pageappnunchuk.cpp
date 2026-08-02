@@ -76,8 +76,8 @@ void PageAppNunchuk::reloadParams()
         ui->generalTab->clearParams();
         ui->throttleCurveTab->clearParams();
 
-        ui->generalTab->addParamSubgroup(mVesc->appConfig(), "VESC 遥控器", tr("通用"));
-        ui->throttleCurveTab->addParamSubgroup(mVesc->appConfig(), "VESC 遥控器", tr("油门曲线"));
+        ui->generalTab->addParamSubgroup(mVesc->appConfig(), "vesc remote", "general");
+        ui->throttleCurveTab->addParamSubgroup(mVesc->appConfig(), "vesc remote", "throttle curve");
     }
 }
 

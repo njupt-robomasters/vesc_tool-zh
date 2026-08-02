@@ -74,9 +74,9 @@ void PageAppPpm::reloadParams()
         ui->mappingTab->clearParams();
         ui->throttleCurveTab->clearParams();
 
-        ui->generalTab->addParamSubgroup(mVesc->appConfig(), "ppm", tr("通用"));
-        ui->mappingTab->addParamSubgroup(mVesc->appConfig(), "ppm", tr("映射"));
-        ui->throttleCurveTab->addParamSubgroup(mVesc->appConfig(), "ppm", tr("油门曲线"));
+        ui->generalTab->addParamSubgroup(mVesc->appConfig(), "ppm", "general");
+        ui->mappingTab->addParamSubgroup(mVesc->appConfig(), "ppm", "mapping");
+        ui->throttleCurveTab->addParamSubgroup(mVesc->appConfig(), "ppm", "throttle curve");
     }
 }
 

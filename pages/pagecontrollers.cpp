@@ -55,7 +55,7 @@ void PageControllers::reloadParams()
 {
     if (mVesc) {
         ui->paramTab->clearParams();
-        ui->paramTab->addParamSubgroup(mVesc->mcConfig(), "pid controllers", tr("通用"));
+        ui->paramTab->addParamSubgroup(mVesc->mcConfig(), "pid controllers", "general");
     }
 }
 

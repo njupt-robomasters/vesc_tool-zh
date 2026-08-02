@@ -2518,8 +2518,6 @@ QString Utility::configPath(QString subPath)
     // seems to sometimes freeze or crash on windows.
     static bool resourceLoaded = false;
     if (!resourceLoaded) {
-        QResource::registerResource(":/res_config.rcc");
-
         resourceLoaded = true;
     }
 

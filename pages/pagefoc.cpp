@@ -67,16 +67,16 @@ void PageFoc::reloadParams()
         ui->fwTab->clearParams();
         ui->advancedTab->clearParams();
 
-        ui->generalTab->addParamSubgroup(mVesc->mcConfig(), "foc", tr("通用"));
-        ui->sensorlessTab->addParamSubgroup(mVesc->mcConfig(), "foc", tr("无感"));
-        ui->hallTab->addParamSubgroup(mVesc->mcConfig(), "foc", tr("霍尔传感器"));
-        ui->encoderTab->addParamSubgroup(mVesc->mcConfig(), "foc", tr("编码器"));
+        ui->generalTab->addParamSubgroup(mVesc->mcConfig(), "foc", "general");
+        ui->sensorlessTab->addParamSubgroup(mVesc->mcConfig(), "foc", "sensorless");
+        ui->hallTab->addParamSubgroup(mVesc->mcConfig(), "foc", "hall sensors");
+        ui->encoderTab->addParamSubgroup(mVesc->mcConfig(), "foc", "encoder");
         ui->hfiTab->addParamSubgroup(mVesc->mcConfig(), "foc", "hfi");
         ui->vssTab->addParamSubgroup(mVesc->mcConfig(), "foc", "vss");
-        ui->filterTab->addParamSubgroup(mVesc->mcConfig(), "foc", tr("滤波器"));
-        ui->offsetTab->addParamSubgroup(mVesc->mcConfig(), "foc", tr("偏移"));
-        ui->fwTab->addParamSubgroup(mVesc->mcConfig(), "foc", tr("弱磁"));
-        ui->advancedTab->addParamSubgroup(mVesc->mcConfig(), "foc", tr("高级"));
+        ui->filterTab->addParamSubgroup(mVesc->mcConfig(), "foc", "filters");
+        ui->offsetTab->addParamSubgroup(mVesc->mcConfig(), "foc", "offsets");
+        ui->fwTab->addParamSubgroup(mVesc->mcConfig(), "foc", "field weakening");
+        ui->advancedTab->addParamSubgroup(mVesc->mcConfig(), "foc", "advanced");
     }
 }
 

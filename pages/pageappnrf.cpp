@@ -53,6 +53,6 @@ void PageAppNrf::reloadParams()
 {
     if (mVesc) {
         ui->generalTab->clearParams();
-        ui->generalTab->addParamSubgroup(mVesc->appConfig(), "nrf", tr("通用"));
+        ui->generalTab->addParamSubgroup(mVesc->appConfig(), "nrf", "general");
     }
 }

@@ -63,13 +63,13 @@ void PageMotor::reloadParams()
     ui->bmsTab->clearParams();
     ui->advancedTab->clearParams();
 
-    ui->motorTab->addParamSubgroup(mVesc->mcConfig(), "通用", tr("通用"));
-    ui->sensorsTab->addParamSubgroup(mVesc->mcConfig(), "通用", tr("传感器"));
-    ui->currentTab->addParamSubgroup(mVesc->mcConfig(), "通用", tr("电流"));
-    ui->voltageTab->addParamSubgroup(mVesc->mcConfig(), "通用", tr("电压"));
-        ui->rpmTab->addParamSubgroup(mVesc->mcConfig(), "通用", "RPM");
-    ui->wattageTab->addParamSubgroup(mVesc->mcConfig(), "通用", tr("功率"));
-    ui->tempTab->addParamSubgroup(mVesc->mcConfig(), "通用", tr("温度"));
-        ui->bmsTab->addParamSubgroup(mVesc->mcConfig(), "通用", "BMS");
-    ui->advancedTab->addParamSubgroup(mVesc->mcConfig(), "通用", tr("高级"));
+    ui->motorTab->addParamSubgroup(mVesc->mcConfig(), "general", "general");
+    ui->sensorsTab->addParamSubgroup(mVesc->mcConfig(), "general", "sensors");
+    ui->currentTab->addParamSubgroup(mVesc->mcConfig(), "general", "current");
+    ui->voltageTab->addParamSubgroup(mVesc->mcConfig(), "general", "voltage");
+        ui->rpmTab->addParamSubgroup(mVesc->mcConfig(), "general", "rpm");
+    ui->wattageTab->addParamSubgroup(mVesc->mcConfig(), "general", "wattage");
+    ui->tempTab->addParamSubgroup(mVesc->mcConfig(), "general", "temperature");
+        ui->bmsTab->addParamSubgroup(mVesc->mcConfig(), "general", "bms");
+    ui->advancedTab->addParamSubgroup(mVesc->mcConfig(), "general", "advanced");
 }
