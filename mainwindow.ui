@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Roboto</family>
+    <family>Microsoft YaHei</family>
    </font>
   </property>
   <property name="windowTitle">
@@ -112,7 +112,7 @@
            </property>
            <property name="font">
             <font>
-             <family>Roboto</family>
+             <family>Microsoft YaHei</family>
             </font>
            </property>
            <property name="editTriggers">
@@ -137,7 +137,7 @@
              <widget class="QLabel" name="label">
               <property name="font">
                <font>
-                <family>Roboto</family>
+                <family>Microsoft YaHei</family>
                 <bold>true</bold>
                </font>
               </property>
@@ -159,7 +159,7 @@
               </property>
               <property name="font">
                <font>
-                <family>Roboto</family>
+                <family>Microsoft YaHei</family>
                </font>
               </property>
               <property name="editTriggers">
@@ -199,7 +199,7 @@
        <widget class="QStackedWidget" name="pageWidget">
         <property name="font">
          <font>
-          <family>Roboto</family>
+          <family>Microsoft YaHei</family>
          </font>
         </property>
         <property name="currentIndex">
@@ -678,7 +678,7 @@
    <widget class="QMenu" name="menuCommands">
     <property name="font">
      <font>
-      <family>Roboto</family>
+      <family>Microsoft YaHei</family>
      </font>
     </property>
     <property name="title">

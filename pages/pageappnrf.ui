@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>PageAppNrf</class>
  <widget class="QWidget" name="PageAppNrf">
@@ -12,7 +12,7 @@
   </property>
   <property name="font">
    <font>
-    <family>Roboto</family>
+    <family>Microsoft YaHei</family>
    </font>
   </property>
   <property name="windowTitle">
