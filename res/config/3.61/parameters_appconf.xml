@@ -1517,7 +1517,7 @@ p, li { white-space: pre-wrap; }
             <enumNames>-12 dBm</enumNames>
             <enumNames>-6 dBm</enumNames>
             <enumNames>0 dBm</enumNames>
-            <enumNames>IMU_TYPE_OFF</enumNames>
+            <enumNames>OFF</enumNames>
         </app_nrf_conf.power>
         <app_nrf_conf.crc_type>
             <longName>CRC</longName>

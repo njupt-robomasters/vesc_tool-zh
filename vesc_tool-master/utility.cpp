@@ -1794,6 +1794,8 @@ bool Utility::configCheckCompatibility(int fwMajor, int fwMinor)
 
 bool Utility::configLoad(VescInterface *vesc, int fwMajor, int fwMinor)
 {
+    qWarning() << "configLoad: searching for fw" << fwMajor << "." << fwMinor;
+
     QDirIterator it(Utility::configPath(""));
 
     while (it.hasNext()) {
@@ -1815,6 +1817,9 @@ bool Utility::configLoad(VescInterface *vesc, int fwMajor, int fwMinor)
                             vesc->mcConfig()->loadParamsXml(fMc.absoluteFilePath());
                             vesc->appConfig()->loadParamsXml(fApp.absoluteFilePath());
                             vesc->infoConfig()->loadParamsXml(fInfo.absoluteFilePath());
+                            qWarning() << "configLoad: fw" << fwMajor << fwMinor
+                                       << "mcSig:" << vesc->mcConfig()->getSignature()
+                                       << "appSig:" << vesc->appConfig()->getSignature();
                             vesc->emitConfigurationChanged();
                             return true;
                         } else {

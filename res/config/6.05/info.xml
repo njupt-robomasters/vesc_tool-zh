@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ConfigParams>
     <Params>
         <fw_version>
@@ -1197,4 +1197,3 @@ p, li { white-space: pre-wrap; }
     <SerOrder/>
     <Grouping/>
 </ConfigParams>
-

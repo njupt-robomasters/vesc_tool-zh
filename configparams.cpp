@@ -1005,9 +1005,12 @@ void ConfigParams::serialize(VByteArray &vb)
 bool ConfigParams::deSerialize(VByteArray &vb)
 {
     auto signature = vb.vbPopFrontUint32();
+    quint32 localSig = getSignature();
 
-    if (signature != getSignature()) {
-        qWarning() << "Invalid signature";
+    if (signature != localSig) {
+        qWarning() << "deSerialize MISMATCH: fw=" << signature
+                   << "local=" << localSig
+                   << "serCount=" << mSerializeOrder.size();
         return false;
     }
 

@@ -38,6 +38,9 @@
 #include <QDesktopWidget>
 #include <QFontDatabase>
 #include <QPixmapCache>
+#include <QStandardPaths>
+#include <QFile>
+#include <QTextStream>
 
 #include <QtPlugin>
 Q_IMPORT_PLUGIN(QSvgIconPlugin)
@@ -173,6 +176,18 @@ static void addFonts() {
 
 int main(int argc, char *argv[])
 {
+    qInstallMessageHandler([](QtMsgType, const QMessageLogContext &, const QString &msg) {
+        static QFile f(QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/vesc_tool_debug.log");
+        static bool first = true;
+        if (first) {
+            f.open(QIODevice::WriteOnly | QIODevice::Append);
+            first = false;
+        }
+        QTextStream ts(&f);
+        ts << msg << "\n";
+        ts.flush();
+    });
+
     // Settings
     QCoreApplication::setOrganizationName("VESC");
     QCoreApplication::setOrganizationDomain("vesc-project.com");
