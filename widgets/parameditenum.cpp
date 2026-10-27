@@ -20,6 +20,7 @@
 #include "parameditenum.h"
 #include "ui_parameditenum.h"
 #include <QDebug>
+#include "enumtranslations.h"
 #include "helpdialog.h"
 #include "utility.h"
 
@@ -51,7 +52,11 @@ void ParamEditEnum::setConfig(ConfigParams *config)
         ui->readDefaultButton->setVisible(param->transmittable);
 
         int val = param->valInt;
-        ui->valueBox->insertItems(0, param->enumNames);
+        QStringList shown;
+        for (const QString &n : param->enumNames) {
+            shown.append(EnumTranslations::display(n));
+        }
+        ui->valueBox->insertItems(0, shown);
         if (val >= 0 && val < param->enumNames.size()) {
             ui->valueBox->setCurrentIndex(val);
         }

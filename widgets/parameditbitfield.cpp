@@ -21,6 +21,7 @@
 #include "ui_parameditbitfield.h"
 #include "utility.h"
 #include "helpdialog.h"
+#include "enumtranslations.h"
 
 ParamEditBitfield::ParamEditBitfield(QWidget *parent) :
     QWidget(parent),
@@ -62,17 +63,18 @@ void ParamEditBitfield::setConfig(ConfigParams *config)
         ui->readDefaultButton->setVisible(param->transmittable);
         setBits(param->valInt);
 
-        if (param->enumNames.size() > 0) ui->b0Box->setText(param->enumNames.at(0));
-        if (param->enumNames.size() > 1) ui->b1Box->setText(param->enumNames.at(1));
-        if (param->enumNames.size() > 2) ui->b2Box->setText(param->enumNames.at(2));
-        if (param->enumNames.size() > 3) ui->b3Box->setText(param->enumNames.at(3));
-        if (param->enumNames.size() > 4) ui->b4Box->setText(param->enumNames.at(4));
-        if (param->enumNames.size() > 5) ui->b5Box->setText(param->enumNames.at(5));
-        if (param->enumNames.size() > 6) ui->b6Box->setText(param->enumNames.at(6));
-        if (param->enumNames.size() > 7) ui->b7Box->setText(param->enumNames.at(7));
+        if (param->enumNames.size() > 0) ui->b0Box->setText(EnumTranslations::display(param->enumNames.at(0)));
+        if (param->enumNames.size() > 1) ui->b1Box->setText(EnumTranslations::display(param->enumNames.at(1)));
+        if (param->enumNames.size() > 2) ui->b2Box->setText(EnumTranslations::display(param->enumNames.at(2)));
+        if (param->enumNames.size() > 3) ui->b3Box->setText(EnumTranslations::display(param->enumNames.at(3)));
+        if (param->enumNames.size() > 4) ui->b4Box->setText(EnumTranslations::display(param->enumNames.at(4)));
+        if (param->enumNames.size() > 5) ui->b5Box->setText(EnumTranslations::display(param->enumNames.at(5)));
+        if (param->enumNames.size() > 6) ui->b6Box->setText(EnumTranslations::display(param->enumNames.at(6)));
+        if (param->enumNames.size() > 7) ui->b7Box->setText(EnumTranslations::display(param->enumNames.at(7)));
 
         auto isUnused = [](const QString &t) {
-            return t.toLower() == "unused" || t == "未使用";
+            const QString l = t.toLower();
+            return l == "unused" || l.startsWith("unused (") || t == "未使用";
         };
 
         ui->b0Box->setVisible(!isUnused(ui->b0Box->text()));

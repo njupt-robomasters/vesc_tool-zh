@@ -558,7 +558,7 @@ void PageLogAnalysis::setVesc(VescInterface *vesc)
 
                 LocPoint p2;
                 p2.setXY(0, 0);
-                p2.setInfo(tr("Hdop %1").arg(val.hdop));
+                p2.setInfo(tr("HDOP(水平精度因子) %1").arg(val.hdop));
 
                 if (p2.getDistanceTo(p) > 10000) {
                     ui->map->setEnuRef(llh[0], llh[1], llh[2]);

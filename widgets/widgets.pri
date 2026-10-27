@@ -29,6 +29,7 @@ HEADERS += \
     $$PWD/parameditbool.h \
     $$PWD/parameditdouble.h \
     $$PWD/parameditenum.h \
+    $$PWD/enumtranslations.h \
     $$PWD/parameditint.h \
     $$PWD/displaybar.h \
     $$PWD/displaypercentage.h \
@@ -67,6 +68,7 @@ SOURCES += \
     $$PWD/parameditbool.cpp \
     $$PWD/parameditdouble.cpp \
     $$PWD/parameditenum.cpp \
+    $$PWD/enumtranslations.cpp \
     $$PWD/parameditint.cpp \
     $$PWD/displaybar.cpp \
     $$PWD/displaypercentage.cpp \
