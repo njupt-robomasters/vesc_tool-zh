@@ -24,7 +24,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>General</string>
+       <string>通用</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -34,7 +34,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Mapping</string>
+       <string>映射</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -47,7 +47,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Throttle Curve</string>
+       <string>油门曲线</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>

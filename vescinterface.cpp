@@ -559,7 +559,7 @@ VescInterface::VescInterface(QObject *parent) : QObject(parent)
 #else
             emitMessageDialog("反序列化 " + configName + " 配置失败",
                               "无法反序列化 " + configName +
-                              " 配置。这可能意味着您的固件或此 VESC Tool 版本存在问题。",
+                              " 配置。这可能意味着您的固件或此 VESC Tool 版本存在问题。\n固件签名: 0x" + QString::number((isMc ? mMcConfig : mAppConfig)->lastRxSignature(), 16) + "，本地签名: 0x" + QString::number((isMc ? mMcConfig : mAppConfig)->getSignature(), 16) + "，固件: " + mFwTxt,
                               false, false);
 #endif
         }
@@ -1561,16 +1561,14 @@ bool VescInterface::fwUpload(QByteArray &newFirmware, bool isBootloader, bool fw
 
         if (szTot > 393208) {
             emitMessageDialog(tr("固件过大"),
-                              tr("The firmware you are trying to upload is too large for the "
-                                 "bootloader even after compression."), false);
+                              tr("您尝试上传的固件即使经过压缩，对于引导程序来说仍然过大。"), false);
             return false;
         }
     }
 
     if (szTot > 8000000) {
         emitMessageDialog(tr("固件过大"),
-                          tr("The firmware you are trying to upload is unreasonably "
-                             "large, most likely it is an invalid file"), false);
+                          tr("您尝试上传的固件大得不合理，很可能是无效文件"), false);
         return false;
     }
 
@@ -2303,13 +2301,12 @@ bool VescInterface::reconnectLastPort()
         if (!ports.isEmpty()) {
             return connectSerial(ports.first().value<VSerialInfo_t>().systemPath);
         } else  {
-            emit messageDialog(tr("Reconnect"), tr("No ports found"), false, false);
+            emit messageDialog(tr("重新连接"), tr("未找到端口"), false, false);
             return false;
         }
 #else
-        emit messageDialog(tr("Reconnect"),
-                           tr("Please specify the connection manually "
-                              "the first time you are connecting."),
+        emit messageDialog(tr("重新连接"),
+                           tr("首次连接时请手动指定连接方式。"),
                            false, false);
         return false;
 #endif
@@ -2403,18 +2400,18 @@ QString VescInterface::getConnectedPortName()
 
 #ifdef HAS_CANBUS
     if (isCANbusConnected()) {
-        res = tr("Connected (CAN bus) to %1").arg(mLastCanDeviceInterface);
+        res = tr("已连接（CAN 总线）到 %1").arg(mLastCanDeviceInterface);
         connected = true;
     }
 #endif
 
     if (mTcpConnected) {
-        res = tr("Connected (TCP) to %1:%2").arg(mLastTcpServer).arg(mLastTcpPort);
+        res = tr("已连接（TCP）到 %1:%2").arg(mLastTcpServer).arg(mLastTcpPort);
         connected = true;
     }
 
     if (mUdpConnected) {
-        res = tr("Connected (UDP) to %1:%2").arg(mLastUdpServer.toString()).arg(mLastUdpPort);
+        res = tr("已连接（UDP）到 %1:%2").arg(mLastUdpServer.toString()).arg(mLastUdpPort);
         connected = true;
     }
 
@@ -2423,16 +2420,16 @@ QString VescInterface::getConnectedPortName()
 #if  defined(Q_OS_IOS)|defined(Q_OS_MACX)
         QStringList ids = mLastBleAddr.split('-');
         QString id = ids[0].left(3) + '-' + ids[1].left(2) + '-' + ids[2].left(2) + '-' + ids[3].left(2) + '-' + ids[4].right(3);
-        res = tr("Connected (BLE) to %1").arg(id);
+        res = tr("已连接（BLE）到 %1").arg(id);
 #else
-        res = tr("Connected (BLE) to %1").arg(mLastBleAddr);
+        res = tr("已连接（BLE）到 %1").arg(mLastBleAddr);
 #endif
         connected = true;
     }
 #endif
 
     if (connected && mCommands->isLimitedMode()) {
-        res += tr(", limited mode");
+        res += tr("，受限模式");
     }
 
     return res;
@@ -2464,7 +2461,7 @@ bool VescInterface::connectSerial(QString port, int baudrate)
         QFileInfo fi(port);
         if (fi.exists()) {
             if (!fi.isWritable()) {
-                emit statusMessage(tr("Serial port is not writable"), false);
+                emit statusMessage(tr("串口不可写"), false);
                 emit serialPortNotWritable(port);
                 return false;
             }
@@ -2494,9 +2491,8 @@ bool VescInterface::connectSerial(QString port, int baudrate)
 #else
     (void)port;
     (void)baudrate;
-    emit messageDialog(tr("Connect serial"),
-                       tr("Serial port support is not enabled in this build "
-                          "of VESC Tool."),
+    emit messageDialog(tr("连接串口"),
+                       tr("此版本的 VESC Tool 未启用串口支持。"),
                        false, false);
     return false;
 #endif
@@ -2571,7 +2567,7 @@ bool VescInterface::connectCANbus(QString backend, QString ifName, int bitrate)
     mCANbusScanning = false;
     mCanDevice = QCanBus::instance()->createDevice(backend, ifName, &errorString);
     if (!mCanDevice) {
-        QString msg = tr("Error creating device '%1' using backend '%2', reason: '%3'").arg(mLastCanDeviceInterface).arg(mLastCanBackend).arg(errorString);
+        QString msg = tr("使用后端“%2”创建设备“%1”时出错，原因：“%3”").arg(mLastCanDeviceInterface).arg(mLastCanBackend).arg(errorString);
         emit statusMessage(msg, false);
         qWarning() << msg;
         return false;
@@ -2589,7 +2585,7 @@ bool VescInterface::connectCANbus(QString backend, QString ifName, int bitrate)
     mCanDevice->setConfigurationParameter(QCanBusDevice::ReceiveOwnKey, false);
 
     if (!mCanDevice->connectDevice()) {
-        QString msg = tr("Connection error: %1").arg(mCanDevice->errorString());
+        QString msg = tr("连接错误：%1").arg(mCanDevice->errorString());
         emit statusMessage(msg, false);
         qWarning() << msg;
 
@@ -2614,9 +2610,8 @@ bool VescInterface::connectCANbus(QString backend, QString ifName, int bitrate)
     (void)backend;
     (void)ifName;
     (void)bitrate;
-    emit messageDialog(tr("Connect serial"),
-                       tr("CAN bus support is not enabled in this build "
-                          "of VESC Tool."),
+    emit messageDialog(tr("连接串口"),
+                       tr("此版本的 VESC Tool 未启用 CAN 总线支持。"),
                        false, false);
     return false;
 #endif
@@ -3173,7 +3168,7 @@ void VescInterface::tcpInputError(QAbstractSocket::SocketError socketError)
     (void)socketError;
 
     QString errorStr = mTcpSocket->errorString();
-    emit statusMessage(tr("TCP Error") + errorStr, false);
+    emit statusMessage(tr("TCP 错误") + errorStr, false);
     mTcpSocket->close();
     updateFwRx(false);
 }
@@ -3183,7 +3178,7 @@ void VescInterface::udpInputError(QAbstractSocket::SocketError socketError)
     (void)socketError;
 
     QString errorStr = mUdpSocket->errorString();
-    emit statusMessage(tr("UDP Error") + errorStr, false);
+    emit statusMessage(tr("UDP 错误") + errorStr, false);
     mUdpSocket->close();
     mUdpConnected = false;
     updateFwRx(false);
@@ -3241,13 +3236,9 @@ void VescInterface::timerSlot()
 
                     // Timeout if the firmware cannot be read
                     if (mFwRetries >= 25) {
-                        emit statusMessage(tr("No firmware read response"), false);
-                        emit messageDialog(tr("Read Firmware Version"),
-                                           tr("Could not read firmware version. Make sure that "
-                                              "the selected port really belongs to the VESC. If "
-                                              "you are using UART, make sure that the port is enabled, "
-                                              "connected correctly (rx to tx and tx to rx) and uses "
-                                              "the correct baudrate"),
+                        emit statusMessage(tr("读取固件无响应"), false);
+                        emit messageDialog(tr("读取固件版本"),
+                                           tr("无法读取固件版本。请确认所选端口确实属于 VESC。如果使用 UART，请确认该端口已启用、接线正确（rx 接 tx，tx 接 rx）且波特率正确"),
                                            false, false);
                         disconnectPort();
                     }
@@ -3516,9 +3507,7 @@ void VescInterface::fwVersionReceived(FW_RX_PARAMS params)
 
     if (fwPairs.isEmpty()) {
         emit messageDialog(tr("无支持的固件"),
-                           tr("This version of VESC Tool does not seem to have any supported "
-                              "firmwares. Something is probably wrong with the motor configuration "
-                              "file."),
+                           tr("此版本的 VESC Tool 似乎没有任何受支持的固件。电机配置文件可能有问题。"),
                            false, false);
         updateFwRx(false);
         mFwRetries = 0;
@@ -3762,17 +3751,12 @@ void VescInterface::fwVersionReceived(FW_RX_PARAMS params)
         updateFwRx(false);
         mFwRetries = 0;
         disconnectPort();
-        emit messageDialog(tr("Error"), tr("The firmware on the connected device is too old. Please "
-                                           "update it using a programmer."), false, false);
+        emit messageDialog(tr("错误"), tr("已连接设备的固件过旧。请使用编程器更新。"), false, false);
     } else if (fw_connected > highest_supported) {
         mCommands->setLimitedMode(true);
         updateFwRx(true);
         if (!wasReceived) {
-            emit messageDialog(tr("Warning"), tr("The connected device has newer firmware than this version of "
-                                                "VESC Tool supports. It is recommended that you update VESC "
-                                                "Tool to the latest version. Alternatively, the firmware on "
-                                                "the connected device can be downgraded in the firmware page. "
-                                                "Until then, limited communication mode will be used."), false, false);
+            emit messageDialog(tr("警告"), tr("已连接设备的固件比此版本 VESC Tool 支持的更新。建议将 VESC Tool 更新到最新版本；也可以在固件页面降级已连接设备的固件。在此之前将使用受限通信模式。"), false, false);
         }
     } else if (!fwPairs.contains(fw_connected)) {
         if (fw_connected >= qMakePair(1, 1)) {
@@ -3782,22 +3766,12 @@ void VescInterface::fwVersionReceived(FW_RX_PARAMS params)
                 if (mFwSupportsConfiguration) {
                     if (params.hwType == HW_TYPE_VESC && mSettings.value("showFwUpdateAvailable", true).toBool()) {
                         emit messageDialog(tr("固件更新可用"),
-                                           tr("The connected VESC-based ESC has old, but mostly compatible firmware. This is "
-                                              "fine if your setup works properly.<br><br>"
-                                              "Check out the firmware changelog (from the help menu or firmware page) to decide "
-                                              "if you want to use some of the new features that have been added after your "
-                                              "firmware version was released. Keep in mind that you only should upgrade firmware "
-                                              "if you have time to test it after the upgrade and carefully make sure that "
-                                              "everything works as expected.<br><br>"
-                                              "This message can be disabled from the settings."),
+                                           tr("已连接的基于 VESC 的电调固件较旧，但基本兼容。如果您的系统运行正常，这是没有问题的。<br><br>请查看固件更新日志（在帮助菜单或固件页面中），以决定是否使用固件发布之后新增的某些功能。请注意，只有在您有时间在升级后进行测试，并仔细确认一切正常时，才应升级固件。<br><br>可在设置中关闭此消息。"),
                                            false, false);
                     }
                 } else {
                     if (params.hwType == HW_TYPE_VESC) {
-                        emit messageDialog(tr("Warning"), tr("The connected VESC-based ESC has too old firmware. Since the "
-                                                             "connected VESC has firmware with bootloader support, it can be "
-                                                             "updated from the Firmware page. "
-                                                             "Until then, limited communication mode will be used."), false, false);
+                        emit messageDialog(tr("警告"), tr("已连接的 VESC 电调固件过旧。由于其固件支持引导程序，可在固件页面更新。在此之前将使用受限通信模式。"), false, false);
                     }
                 }
             }
@@ -3806,16 +3780,14 @@ void VescInterface::fwVersionReceived(FW_RX_PARAMS params)
             mFwRetries = 0;
             disconnectPort();
             if (!wasReceived) {
-                emit messageDialog(tr("Error"), tr("The firmware on the connected device is too old. Please "
-                                                   "update it using a programmer."), false, false);
+                emit messageDialog(tr("错误"), tr("已连接设备的固件过旧。请使用编程器更新。"), false, false);
             }
         }
     } else {
         updateFwRx(true);
         if (fw_connected < highest_supported) {
             if (!wasReceived) {
-                emit messageDialog(tr("Warning"), tr("The connected device has compatible, but old "
-                                                    "firmware. It is recommended that you update it."), false, false);
+                emit messageDialog(tr("警告"), tr("已连接设备的固件兼容但较旧。建议更新。"), false, false);
             }
         }
 
@@ -4190,7 +4162,7 @@ void VescInterface::customConfigRx(int confId, QByteArray data)
         auto vb = VByteArray(data);
         if (params->deSerialize(vb)) {
             params->updateDone();
-            emitStatusMessage(tr("%1 updated").arg(params->getLongName("hw_name")), true);
+            emitStatusMessage(tr("%1 已更新").arg(params->getLongName("hw_name")), true);
         } else {
             emitMessageDialog(tr("自定义配置"),
                               tr("无法反序列化自定义配置 %1").arg(confId),

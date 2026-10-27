@@ -40,7 +40,7 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Send help command to VESC</string>
+        <string>向 VESC 发送 help 命令</string>
        </property>
        <property name="text">
         <string/>
@@ -63,7 +63,7 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Send command</string>
+        <string>发送命令</string>
        </property>
        <property name="text">
         <string/>
@@ -83,7 +83,7 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Clear terminal</string>
+        <string>清除终端</string>
        </property>
        <property name="text">
         <string/>

@@ -1006,6 +1006,7 @@ bool ConfigParams::deSerialize(VByteArray &vb)
 {
     auto signature = vb.vbPopFrontUint32();
     quint32 localSig = getSignature();
+    mLastRxSignature = signature;
 
     if (signature != localSig) {
         qWarning() << "deSerialize MISMATCH: fw=" << signature

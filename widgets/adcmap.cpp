@@ -155,10 +155,10 @@ void AdcMap::on_applyButton_clicked()
             mVesc->appConfig()->updateParamDouble("app_adc_conf.voltage2_end", ui->maxCh2Box->value());
             mVesc->emitStatusMessage(tr("起始、结束和中心 ADC 电压已应用"), true);
         } else {
-            mVesc->emitStatusMessage(tr("Applying Pulselengths Failed"), false);
+            mVesc->emitStatusMessage(tr("应用脉宽失败"), false);
             QMessageBox::warning(this,
                                  tr("应用电压"),
-                                 tr("Please activate RT app data and measure the ADC voltages first."));
+                                 tr("请先激活实时应用数据并测量 ADC 电压。"));
         }
     }
 }

@@ -1847,7 +1847,7 @@ bool Utility::configLoadLatest(VescInterface *vesc)
     auto latestSupported = configLatestSupported();
 
     if (latestSupported.first >= 0) {
-        configLoad(vesc, 6, 5);
+        configLoad(vesc, latestSupported.first, latestSupported.second);
         return true;
     } else {
         return false;

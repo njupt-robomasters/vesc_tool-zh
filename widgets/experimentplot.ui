@@ -50,7 +50,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
-          <string>Settings</string>
+          <string>设置</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <property name="leftMargin">
@@ -77,7 +77,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Enable Horizontal Zoom</string>
+             <string>启用水平缩放</string>
             </property>
             <property name="text">
              <string/>
@@ -99,7 +99,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Enable Vertical Zoom</string>
+             <string>启用垂直缩放</string>
             </property>
             <property name="text">
              <string/>
@@ -121,7 +121,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Auto-Scale Plot when samples are received</string>
+             <string>收到采样时自动缩放图表</string>
             </property>
             <property name="text">
              <string/>
@@ -137,10 +137,10 @@
           <item row="0" column="0" colspan="6">
            <widget class="QSpinBox" name="experimentHistoryBox">
             <property name="toolTip">
-             <string>Drop old samples when the plot grows larger than this</string>
+             <string>图表超过此大小时丢弃旧采样</string>
             </property>
             <property name="prefix">
-             <string>History: </string>
+             <string>历史：</string>
             </property>
             <property name="minimum">
              <number>2</number>
@@ -171,7 +171,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Show this graph</string>
+             <string>显示此图表</string>
             </property>
             <property name="text">
              <string/>
@@ -193,7 +193,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Use Scatterplot</string>
+             <string>使用散点图</string>
             </property>
             <property name="text">
              <string/>
@@ -218,7 +218,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Show this graph</string>
+             <string>显示此图表</string>
             </property>
             <property name="text">
              <string/>
@@ -246,7 +246,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Show this graph</string>
+             <string>显示此图表</string>
             </property>
             <property name="text">
              <string/>
@@ -274,7 +274,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Show this graph</string>
+             <string>显示此图表</string>
             </property>
             <property name="text">
              <string/>
@@ -334,7 +334,7 @@
              </size>
             </property>
             <property name="toolTip">
-             <string>Clear data from plots</string>
+             <string>清除图表数据</string>
             </property>
             <property name="text">
              <string/>
@@ -369,7 +369,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Import</string>
+          <string>导入</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <property name="spacing">
@@ -400,7 +400,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
-          <string>Export</string>
+          <string>导出</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
           <property name="leftMargin">
@@ -421,7 +421,7 @@
           <item row="0" column="1">
            <widget class="QSpinBox" name="experimentHBox">
             <property name="toolTip">
-             <string>Export Height</string>
+             <string>导出高度</string>
             </property>
             <property name="prefix">
              <string>H: </string>
@@ -444,7 +444,7 @@
           <item row="0" column="0">
            <widget class="QSpinBox" name="experimentWBox">
             <property name="toolTip">
-             <string>Export Width</string>
+             <string>导出宽度</string>
             </property>
             <property name="prefix">
              <string>W: </string>
@@ -481,10 +481,10 @@
           <item row="1" column="0" colspan="2">
            <widget class="QDoubleSpinBox" name="experimentScaleBox">
             <property name="toolTip">
-             <string>Export Scale</string>
+             <string>导出缩放</string>
             </property>
             <property name="prefix">
-             <string>Scale: </string>
+             <string>缩放：</string>
             </property>
             <property name="singleStep">
              <double>0.100000000000000</double>

@@ -53,7 +53,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Paragraph formatting</string>
+         <string>段落格式</string>
         </property>
         <property name="editable">
          <bool>true</bool>
@@ -76,7 +76,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Undo (CTRL+Z)</string>
+         <string>撤销 (CTRL+Z)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -95,7 +95,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Redo</string>
+         <string>重做</string>
         </property>
         <property name="iconSize">
          <size>
@@ -111,7 +111,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Cut (CTRL+X)</string>
+         <string>剪切 (CTRL+X)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -127,7 +127,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Copy (CTRL+C)</string>
+         <string>复制 (CTRL+C)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -143,7 +143,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Paste (CTRL+V)</string>
+         <string>粘贴 (CTRL+V)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -166,7 +166,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Link (CTRL+L)</string>
+         <string>链接 (CTRL+L)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -198,7 +198,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Font size</string>
+         <string>字号</string>
         </property>
         <property name="editable">
          <bool>true</bool>
@@ -215,7 +215,7 @@
       <item>
        <widget class="QToolButton" name="f_image">
         <property name="toolTip">
-         <string>Insert image...</string>
+         <string>插入图片...</string>
         </property>
        </widget>
       </item>
@@ -235,7 +235,7 @@
       <item>
        <widget class="QToolButton" name="f_menu">
         <property name="toolTip">
-         <string>Menu</string>
+         <string>菜单</string>
         </property>
         <property name="text">
          <string>...</string>
@@ -305,7 +305,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Italic (CTRL+I)</string>
+         <string>斜体 (CTRL+I)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -324,7 +324,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Underline (CTRL+U)</string>
+         <string>下划线 (CTRL+U)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -350,7 +350,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Bullet list (CTRL+-)</string>
+         <string>项目符号列表 (CTRL+-)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -369,7 +369,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Ordered list (CTRL+=)</string>
+         <string>有序列表 (CTRL+=)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -395,7 +395,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Decrease indentation (CTRL+,)</string>
+         <string>减少缩进 (CTRL+,)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -411,7 +411,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Increase indentation (CTRL+.)</string>
+         <string>增加缩进 (CTRL+.)</string>
         </property>
         <property name="iconSize">
          <size>
@@ -434,7 +434,7 @@
          <enum>Qt::ClickFocus</enum>
         </property>
         <property name="toolTip">
-         <string>Text background color</string>
+         <string>文本背景色</string>
         </property>
         <property name="text">
          <string/>
@@ -456,7 +456,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Text color</string>
+         <string>文本颜色</string>
         </property>
         <property name="text">
          <string/>
@@ -473,7 +473,7 @@
       <item>
        <widget class="QToolButton" name="f_align_left">
         <property name="toolTip">
-         <string>Align Left</string>
+         <string>左对齐</string>
         </property>
         <property name="text">
          <string/>
@@ -486,7 +486,7 @@
       <item>
        <widget class="QToolButton" name="f_align_center">
         <property name="toolTip">
-         <string>Align Center</string>
+         <string>居中对齐</string>
         </property>
         <property name="text">
          <string/>
@@ -499,7 +499,7 @@
       <item>
        <widget class="QToolButton" name="f_align_right">
         <property name="toolTip">
-         <string>Align Right</string>
+         <string>右对齐</string>
         </property>
         <property name="text">
          <string/>
@@ -512,7 +512,7 @@
       <item>
        <widget class="QToolButton" name="f_align_justify">
         <property name="toolTip">
-         <string>Align Justify</string>
+         <string>两端对齐</string>
         </property>
         <property name="text">
          <string/>

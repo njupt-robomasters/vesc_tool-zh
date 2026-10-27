@@ -41,7 +41,7 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>Read current setting</string>
+      <string>读取当前设置</string>
      </property>
      <property name="text">
       <string/>
@@ -57,7 +57,7 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>Read default setting</string>
+      <string>读取默认设置</string>
      </property>
      <property name="text">
       <string/>
@@ -73,7 +73,7 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>Show help</string>
+      <string>显示帮助</string>
      </property>
      <property name="text">
       <string/>

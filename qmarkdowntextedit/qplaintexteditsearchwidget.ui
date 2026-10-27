@@ -29,14 +29,14 @@
    <item row="0" column="3">
     <widget class="QLineEdit" name="searchLineEdit">
      <property name="placeholderText">
-      <string>Find in text</string>
+      <string>在文本中查找</string>
      </property>
     </widget>
    </item>
    <item row="1" column="3" colspan="2">
     <widget class="QLineEdit" name="replaceLineEdit">
      <property name="placeholderText">
-      <string>Replace with</string>
+      <string>替换为</string>
      </property>
     </widget>
    </item>
@@ -50,7 +50,7 @@
    <item row="0" column="1">
     <widget class="QLabel" name="searchLabel">
      <property name="text">
-      <string>Find:</string>
+      <string>查找：</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -60,7 +60,7 @@
    <item row="0" column="6">
     <widget class="QPushButton" name="searchUpButton">
      <property name="toolTip">
-      <string>Search backward</string>
+      <string>向后搜索</string>
      </property>
      <property name="text">
       <string/>
@@ -77,7 +77,7 @@
    <item row="1" column="0" colspan="2">
     <widget class="QLabel" name="replaceLabel">
      <property name="text">
-      <string>Replace:</string>
+      <string>替换：</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -87,7 +87,7 @@
    <item row="0" column="0">
     <widget class="QPushButton" name="closeButton">
      <property name="toolTip">
-      <string>Close search</string>
+      <string>关闭搜索</string>
      </property>
      <property name="text">
       <string/>
@@ -104,7 +104,7 @@
    <item row="0" column="7">
     <widget class="QPushButton" name="replaceToggleButton">
      <property name="toolTip">
-      <string>Advanced search / replace text</string>
+      <string>高级查找/替换文本</string>
      </property>
      <property name="text">
       <string/>
@@ -124,7 +124,7 @@
    <item row="0" column="5">
     <widget class="QPushButton" name="searchDownButton">
      <property name="toolTip">
-      <string>Search forward</string>
+      <string>向前搜索</string>
      </property>
      <property name="text">
       <string/>
@@ -141,7 +141,7 @@
    <item row="1" column="5">
     <widget class="QPushButton" name="matchCaseSensitiveButton">
      <property name="toolTip">
-      <string>Match case sensitive</string>
+      <string>区分大小写</string>
      </property>
      <property name="text">
       <string/>
@@ -161,7 +161,7 @@
    <item row="2" column="0" colspan="2">
     <widget class="QLabel" name="modeLabel">
      <property name="text">
-      <string>Mode:</string>
+      <string>模式：</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -190,17 +190,17 @@
        <widget class="QComboBox" name="modeComboBox">
         <item>
          <property name="text">
-          <string>Plain text</string>
+          <string>纯文本</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Whole words</string>
+          <string>全字匹配</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Regular expression</string>
+          <string>正则表达式</string>
          </property>
         </item>
        </widget>
@@ -221,10 +221,10 @@
       <item>
        <widget class="QPushButton" name="replaceButton">
         <property name="toolTip">
-         <string>Replace one text occurrence</string>
+         <string>替换一处匹配文本</string>
         </property>
         <property name="text">
-         <string>Replace</string>
+         <string>替换</string>
         </property>
         <property name="flat">
          <bool>false</bool>
@@ -234,10 +234,10 @@
       <item>
        <widget class="QPushButton" name="replaceAllButton">
         <property name="toolTip">
-         <string>Replace all text occurrences</string>
+         <string>替换所有匹配文本</string>
         </property>
         <property name="text">
-         <string>Replace all</string>
+         <string>全部替换</string>
         </property>
         <property name="flat">
          <bool>false</bool>

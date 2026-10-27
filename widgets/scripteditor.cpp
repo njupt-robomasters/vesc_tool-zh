@@ -247,7 +247,7 @@ void ScriptEditor::on_saveButton_clicked()
 void ScriptEditor::on_saveAsButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save %1").arg(mIsModeLisp ? "LispBM" : "Qml"), fileNow(),
+                                                    tr("保存 %1").arg(mIsModeLisp ? "LispBM" : "Qml"), fileNow(),
                                                     mIsModeLisp ? tr("LispBM 文件 (*.lbm *.lisp)") : tr("QML 文件 (*.qml)"));
 
     if (!fileName.isEmpty()) {
@@ -335,7 +335,7 @@ void ScriptEditor::on_refreshButton_clicked()
 
     QFileInfo fi(fileName);
     if (!fi.exists()) {
-        QMessageBox::warning(this, tr("刷新文件"), tr("No file is open."));
+        QMessageBox::warning(this, tr("刷新文件"), tr("没有打开的文件。"));
         return;
     }
 

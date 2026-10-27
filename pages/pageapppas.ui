@@ -29,7 +29,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>General</string>
+       <string>通用</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>

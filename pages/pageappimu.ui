@@ -45,7 +45,7 @@
          </widget>
          <widget class="QWidget" name="tab_3">
           <attribute name="title">
-           <string>Accel</string>
+           <string>加速度计</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
@@ -55,7 +55,7 @@
          </widget>
          <widget class="QWidget" name="tab_2">
           <attribute name="title">
-           <string>Gyro</string>
+           <string>陀螺仪</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>

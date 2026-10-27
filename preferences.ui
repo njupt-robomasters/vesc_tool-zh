@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Preferences</string>
+   <string>偏好设置</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <property name="spacing">
@@ -38,14 +38,14 @@
          <item row="3" column="1">
           <widget class="QCheckBox" name="useImperialBox">
            <property name="text">
-            <string>Use Imperial Units</string>
+            <string>使用英制单位</string>
            </property>
           </widget>
          </item>
          <item row="2" column="0">
           <widget class="QCheckBox" name="loadQmlUiConnectBox">
            <property name="text">
-            <string>Load Hardware Qml UI on Connect</string>
+            <string>连接时加载硬件 QML 界面</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -55,7 +55,7 @@
          <item row="4" column="0">
           <widget class="QCheckBox" name="reconnectCanBox">
            <property name="text">
-            <string>Reconnect Last CAN UUID</string>
+            <string>重连上次的 CAN UUID</string>
            </property>
           </widget>
          </item>
@@ -68,14 +68,14 @@
             </size>
            </property>
            <property name="text">
-            <string>UI Scale Factor (restart required)</string>
+            <string>界面缩放系数（需重启）</string>
            </property>
           </widget>
          </item>
          <item row="3" column="0">
           <widget class="QCheckBox" name="darkModeBox">
            <property name="text">
-            <string>Dark Mode</string>
+            <string>夜间模式</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -88,7 +88,7 @@
          <item row="2" column="1">
           <widget class="QCheckBox" name="qmlUiAskBox">
            <property name="text">
-            <string>Ask before loading QML UI</string>
+            <string>加载 QML 界面前询问</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -104,14 +104,14 @@
             </size>
            </property>
            <property name="text">
-            <string>Plot Line Width</string>
+            <string>图表线宽</string>
            </property>
           </widget>
          </item>
          <item row="0" column="1">
           <widget class="QDoubleSpinBox" name="uiScaleBox">
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scale the user intefrace with this factor. Useful for high resolution monitors. VESC Tool must be restarted for this setting to take effect.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;按此系数缩放用户界面，适用于高分辨率显示器。需要重启 VESC Tool 后此设置才会生效。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="minimum">
             <double>1.000000000000000</double>
@@ -127,7 +127,7 @@
          <item row="1" column="1">
           <widget class="QDoubleSpinBox" name="uiPlotWidthBox">
            <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Line thickness for the graphs in plots.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;图表中曲线的线条粗细。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="minimum">
             <double>1.000000000000000</double>
@@ -143,21 +143,21 @@
          <item row="4" column="1">
           <widget class="QCheckBox" name="showFwUpdateBox">
            <property name="text">
-            <string>Show firmware update message</string>
+            <string>显示固件更新提示</string>
            </property>
           </widget>
          </item>
          <item row="5" column="0">
           <widget class="QLabel" name="label_13">
            <property name="text">
-            <string>Emergency Stop Time</string>
+            <string>急停时间</string>
            </property>
           </widget>
          </item>
          <item row="5" column="1">
           <widget class="QSpinBox" name="estopTimeBox">
            <property name="toolTip">
-            <string>Time to disable all motor commands after using the stop button or the ESC key.</string>
+            <string>使用停止按钮或 ESC 键后禁用所有电机命令的时长。</string>
            </property>
            <property name="suffix">
             <string> ms</string>
@@ -192,20 +192,20 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Data Polling</string>
+       <string>数据轮询</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_5" rowstretch="0,0,0,0,0,1" columnstretch="0,0,1" columnminimumwidth="0,0,1">
        <item row="2" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>IMU Data Poll Rate</string>
+          <string>IMU 数据轮询频率</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>RT Data Poll Rate</string>
+          <string>实时数据轮询频率</string>
          </property>
         </widget>
        </item>
@@ -231,7 +231,7 @@
        <item row="3" column="0">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>BMS Data Poll Rate</string>
+          <string>BMS 数据轮询频率</string>
          </property>
         </widget>
        </item>
@@ -270,7 +270,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>App Data Poll Rate</string>
+          <string>应用数据轮询频率</string>
          </property>
         </widget>
        </item>
@@ -328,7 +328,7 @@
        <item row="4" column="0" colspan="2">
         <widget class="QPushButton" name="pollRestoreButton">
          <property name="text">
-          <string>Restore Defaults</string>
+          <string>恢复默认值</string>
          </property>
          <property name="icon">
           <iconset resource="res.qrc">
@@ -340,7 +340,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Paths</string>
+       <string>路径</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1">
        <item>
@@ -369,7 +369,7 @@
          <item row="1" column="2">
           <widget class="QPushButton" name="pathScriptInputChooseButton">
            <property name="toolTip">
-            <string>Choose output directory</string>
+            <string>选择输出目录</string>
            </property>
            <property name="text">
             <string/>
@@ -383,14 +383,14 @@
          <item row="1" column="0">
           <widget class="QLabel" name="label_7">
            <property name="text">
-            <string>Script Input Files</string>
+            <string>脚本输入文件</string>
            </property>
           </widget>
          </item>
          <item row="2" column="2">
           <widget class="QPushButton" name="pathScriptOutputChooseButton">
            <property name="toolTip">
-            <string>Choose output directory</string>
+            <string>选择输出目录</string>
            </property>
            <property name="text">
             <string/>
@@ -404,14 +404,14 @@
          <item row="2" column="0">
           <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>Script Output Files</string>
+            <string>脚本输出文件</string>
            </property>
           </widget>
          </item>
          <item row="0" column="2">
           <widget class="QPushButton" name="pathRtLogChooseButton">
            <property name="toolTip">
-            <string>Choose output directory</string>
+            <string>选择输出目录</string>
            </property>
            <property name="text">
             <string/>
@@ -425,14 +425,14 @@
          <item row="0" column="0">
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>RT Data Log</string>
+            <string>实时数据日志</string>
            </property>
           </widget>
          </item>
          <item row="3" column="0">
           <widget class="QLabel" name="label_15">
            <property name="text">
-            <string>Local Logs</string>
+            <string>本地日志</string>
            </property>
           </widget>
          </item>
@@ -469,13 +469,13 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Gamepad</string>
+       <string>游戏手柄</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,1">
        <item>
         <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
-          <string>Axis Monitoring and Configuration</string>
+          <string>轴监控与配置</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
           <property name="leftMargin">
@@ -546,21 +546,21 @@
             <item row="0" column="0">
              <widget class="QLabel" name="label_2">
               <property name="text">
-               <string>Axis 1</string>
+               <string>轴 1</string>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="label_3">
               <property name="text">
-               <string>Axis 2</string>
+               <string>轴 2</string>
               </property>
              </widget>
             </item>
             <item row="3" column="0">
              <widget class="QLabel" name="label_5">
               <property name="text">
-               <string>Axis 4</string>
+               <string>轴 4</string>
               </property>
              </widget>
             </item>
@@ -583,14 +583,14 @@
             <item row="2" column="0">
              <widget class="QLabel" name="label_4">
               <property name="text">
-               <string>Axis 3</string>
+               <string>轴 3</string>
               </property>
              </widget>
             </item>
             <item row="0" column="2">
              <widget class="QPushButton" name="jsConf1Button">
               <property name="text">
-               <string>Configure</string>
+               <string>配置</string>
               </property>
               <property name="icon">
                <iconset resource="res.qrc">
@@ -601,7 +601,7 @@
             <item row="1" column="2">
              <widget class="QPushButton" name="jsConf2Button">
               <property name="text">
-               <string>Configure</string>
+               <string>配置</string>
               </property>
               <property name="icon">
                <iconset resource="res.qrc">
@@ -612,7 +612,7 @@
             <item row="2" column="2">
              <widget class="QPushButton" name="jsConf3Button">
               <property name="text">
-               <string>Configure</string>
+               <string>配置</string>
               </property>
               <property name="icon">
                <iconset resource="res.qrc">
@@ -623,7 +623,7 @@
             <item row="3" column="2">
              <widget class="QPushButton" name="jsConf4Button">
               <property name="text">
-               <string>Configure</string>
+               <string>配置</string>
               </property>
               <property name="icon">
                <iconset resource="res.qrc">
@@ -641,7 +641,7 @@
             <item row="1" column="1">
              <widget class="QPushButton" name="jsConnectButton">
               <property name="text">
-               <string>Connect</string>
+               <string>连接</string>
               </property>
               <property name="icon">
                <iconset resource="res.qrc">
@@ -652,7 +652,7 @@
             <item row="1" column="0">
              <widget class="QPushButton" name="jsScanButton">
               <property name="text">
-               <string>Scan</string>
+               <string>扫描</string>
               </property>
               <property name="icon">
                <iconset resource="res.qrc">
@@ -679,7 +679,7 @@
             <item row="2" column="0" colspan="2">
              <widget class="QPushButton" name="jsResetConfigButton">
               <property name="text">
-               <string>Reset Configuration</string>
+               <string>重置配置</string>
               </property>
               <property name="icon">
                <iconset resource="res.qrc">
@@ -695,7 +695,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Interpretation</string>
+          <string>解释方式</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
           <property name="leftMargin">
@@ -732,7 +732,7 @@
           <item row="4" column="1">
            <widget class="QDoubleSpinBox" name="jsErpmMaxBox">
             <property name="prefix">
-             <string>最大 ERPM: </string>
+             <string>最大 ERPM：</string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -748,7 +748,7 @@
           <item row="2" column="0">
            <widget class="QCheckBox" name="jsBidirectionalBox">
             <property name="text">
-             <string>Bidirectional</string>
+             <string>双向</string>
             </property>
            </widget>
           </item>
@@ -756,27 +756,27 @@
            <widget class="QComboBox" name="jsControlTypeBox">
             <item>
              <property name="text">
-              <string>Current Control</string>
+              <string>电流控制</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Current Control Brake</string>
+              <string>电流控制刹车</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Duty Control</string>
+              <string>占空比控制</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Speed Control</string>
+              <string>速度控制</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Position Control</string>
+              <string>位置控制</string>
              </property>
             </item>
            </widget>
@@ -784,7 +784,7 @@
           <item row="4" column="0">
            <widget class="QDoubleSpinBox" name="jsErpmMinBox">
             <property name="prefix">
-             <string>最小 ERPM: </string>
+             <string>最小 ERPM：</string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -822,14 +822,14 @@
           <item row="2" column="1">
            <widget class="QCheckBox" name="jsInvertedBox">
             <property name="text">
-             <string>Inverted</string>
+             <string>反向</string>
             </property>
            </widget>
           </item>
           <item row="5" column="0">
            <widget class="QCheckBox" name="jsConfigOkBox">
             <property name="text">
-             <string>Configuration is OK (check this box manually when done)</string>
+             <string>配置正常（完成后手动勾选）</string>
             </property>
            </widget>
           </item>
@@ -879,22 +879,22 @@
            <widget class="QComboBox" name="jseAxisBox">
             <item>
              <property name="text">
-              <string>Use Axis 1</string>
+              <string>使用轴 1</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Use Axis 2</string>
+              <string>使用轴 2</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Use Axis 3</string>
+              <string>使用轴 3</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Use Axis 4</string>
+              <string>使用轴 4</string>
              </property>
             </item>
            </widget>
@@ -919,22 +919,22 @@
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
-       <string>Scripting</string>
+       <string>脚本</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0,1">
        <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
-          <string>Upload/Stream/Run</string>
+          <string>上传/流式传输/运行</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
            <widget class="QRadioButton" name="uploadContentEditorButton">
             <property name="toolTip">
-             <string>Use editor content when uploading/streaming/running code.</string>
+             <string>上传/流式传输/运行代码时使用编辑器内容。</string>
             </property>
             <property name="text">
-             <string>Use Editor Content</string>
+             <string>使用编辑器内容</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -944,10 +944,10 @@
           <item>
            <widget class="QRadioButton" name="uploadContentFileButton">
             <property name="toolTip">
-             <string>Use file content when uploading/streaming/running code. If the content is not saved and a file path does not exist the editor content will be used instead.</string>
+             <string>上传/流式传输/运行代码时使用文件内容。若内容未保存且文件路径不存在，则改用编辑器内容。</string>
             </property>
             <property name="text">
-             <string>Use File Content</string>
+             <string>使用文件内容</string>
             </property>
            </widget>
           </item>
@@ -957,23 +957,23 @@
        <item>
         <widget class="QGroupBox" name="groupBox_4">
          <property name="toolTip">
-          <string>Remove comments, spaces and imports on upload. This saves space, but makes the code less readable when reading it back.</string>
+          <string>上传时移除注释、空格和导入。可节省空间，但回读时代码可读性会降低。</string>
          </property>
          <property name="title">
-          <string>LispBM Editor</string>
+          <string>LispBM 编辑器</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_6">
           <item row="1" column="0">
            <widget class="QLabel" name="label_14">
             <property name="text">
-             <string>REPL Max Line Count</string>
+             <string>REPL 最大行数</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
            <widget class="QSpinBox" name="replMaxLineBox">
             <property name="toolTip">
-             <string>Maximum number of lines to show in REPL. Reducing this number improves performance when printing things fast.</string>
+             <string>REPL 中显示的最大行数。减小此数值可在快速打印时提升性能。</string>
             </property>
             <property name="minimum">
              <number>20</number>
@@ -989,7 +989,7 @@
           <item row="2" column="0">
            <widget class="QCheckBox" name="reduceLispBox">
             <property name="text">
-             <string>Reduce Code on Upload</string>
+             <string>上传时精简代码</string>
             </property>
            </widget>
           </item>

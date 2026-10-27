@@ -24,7 +24,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>General</string>
+       <string>通用</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -37,7 +37,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Sensorless</string>
+       <string>无感</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -46,7 +46,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Openloop Presets</string>
+          <string>开环预设</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
           <property name="leftMargin">
@@ -67,35 +67,35 @@
           <item row="1" column="0">
            <widget class="QPushButton" name="openloopGenericButton">
             <property name="text">
-             <string>Generic</string>
+             <string>通用</string>
             </property>
            </widget>
           </item>
           <item row="0" column="0">
            <widget class="QPushButton" name="openloopOldButton">
             <property name="text">
-             <string>Same as FW &lt; 5.02</string>
+             <string>与固件 &lt; 5.02 相同</string>
             </property>
            </widget>
           </item>
           <item row="2" column="0">
            <widget class="QPushButton" name="openloopFastStartButton">
             <property name="text">
-             <string>Fast Start</string>
+             <string>快速启动</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
            <widget class="QPushButton" name="openloopPropellerButton">
             <property name="text">
-             <string>Propeller</string>
+             <string>螺旋桨</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
            <widget class="QPushButton" name="openloopHeavyInertialButton">
             <property name="text">
-             <string>Heavy Inertial Load</string>
+             <string>大惯量负载</string>
             </property>
            </widget>
           </item>
@@ -106,7 +106,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Hall Sensors</string>
+       <string>霍尔传感器</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -119,7 +119,7 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Encoder</string>
+       <string>编码器</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
@@ -152,7 +152,7 @@
      </widget>
      <widget class="QWidget" name="tab_8">
       <attribute name="title">
-       <string>Filters</string>
+       <string>滤波器</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_9">
        <item>
@@ -162,7 +162,7 @@
      </widget>
      <widget class="QWidget" name="tab_7">
       <attribute name="title">
-       <string>Offsets</string>
+       <string>偏移量</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_8">
        <item>
@@ -171,7 +171,7 @@
        <item>
         <widget class="QPushButton" name="offsetMeasureButton">
          <property name="text">
-          <string>Measure Offsets</string>
+          <string>测量偏移</string>
          </property>
         </widget>
        </item>
@@ -179,7 +179,7 @@
      </widget>
      <widget class="QWidget" name="tab_9">
       <attribute name="title">
-       <string>Field Weakening</string>
+       <string>弱磁</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_10">
        <item>
@@ -189,7 +189,7 @@
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
-       <string>Advanced</string>
+       <string>高级</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>

@@ -24,7 +24,7 @@
      </property>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Setup</string>
+       <string>设置</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
@@ -34,7 +34,7 @@
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Motor General</string>
+       <string>电机通用</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -44,7 +44,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Description</string>
+       <string>描述</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -89,7 +89,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Quality</string>
+       <string>质量</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>

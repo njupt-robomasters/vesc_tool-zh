@@ -22,7 +22,7 @@
      <item>
       <widget class="QLabel" name="currentLog">
        <property name="text">
-        <string>No log opened</string>
+        <string>未打开日志</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -56,7 +56,7 @@
          <item>
           <widget class="QCheckBox" name="gridBox">
            <property name="text">
-            <string>Grid</string>
+            <string>网格</string>
            </property>
            <property name="checked">
             <bool>false</bool>
@@ -66,40 +66,40 @@
          <item>
           <widget class="QCheckBox" name="followBox">
            <property name="toolTip">
-            <string>Follow log position on map</string>
+            <string>在地图上跟随日志位置</string>
            </property>
            <property name="text">
-            <string>Follow</string>
+            <string>跟随</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QCheckBox" name="autoZoomBox">
            <property name="toolTip">
-            <string>Zoom in on trajectory when zooming in on data.</string>
+            <string>放大数据时同时放大轨迹。</string>
            </property>
            <property name="text">
-            <string>AutoZoom</string>
+            <string>自动缩放</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QCheckBox" name="pollGnssBox">
            <property name="toolTip">
-            <string>Poll realtime GNSS-data from the connected device.</string>
+            <string>从已连接设备轮询实时 GNSS 数据。</string>
            </property>
            <property name="text">
-            <string>Poll GNSS</string>
+            <string>轮询 GNSS</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QCheckBox" name="updateRtBox">
            <property name="toolTip">
-            <string>Update plots while receiving data</string>
+            <string>接收数据时更新图表</string>
            </property>
            <property name="text">
-            <string>Update RT</string>
+            <string>更新实时数据</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -111,7 +111,7 @@
            <item>
             <widget class="QRadioButton" name="tilesOsmButton">
              <property name="toolTip">
-              <string>Use tiles from https://www.openstreetmap.org</string>
+              <string>使用来自 https://www.openstreetmap.org 的地图瓦片</string>
              </property>
              <property name="text">
               <string>OSM</string>
@@ -124,10 +124,10 @@
            <item>
             <widget class="QRadioButton" name="tilesHiResButton">
              <property name="toolTip">
-              <string>Use tiles from https://www.fau.de/</string>
+              <string>使用来自 https://www.fau.de/ 的地图瓦片</string>
              </property>
              <property name="text">
-              <string>HiRes</string>
+              <string>高分辨率</string>
              </property>
              <property name="checked">
               <bool>false</bool>
@@ -145,7 +145,7 @@
             </sizepolicy>
            </property>
            <property name="title">
-            <string>Filter Outliers</string>
+            <string>过滤异常值</string>
            </property>
            <property name="checkable">
             <bool>true</bool>
@@ -172,7 +172,7 @@
             <item>
              <widget class="QDoubleSpinBox" name="filterhAccBox">
               <property name="toolTip">
-               <string>Worst horizontal accuracy for points</string>
+               <string>各点最差水平精度</string>
               </property>
               <property name="prefix">
                <string>hAcc: </string>
@@ -191,7 +191,7 @@
             <item>
              <widget class="QDoubleSpinBox" name="filterdMaxBox">
               <property name="toolTip">
-               <string>Maximum distance from origin</string>
+               <string>距原点的最大距离</string>
               </property>
               <property name="prefix">
                <string>dMax: </string>
@@ -232,7 +232,7 @@
          <item>
           <widget class="QPushButton" name="centerButton">
            <property name="toolTip">
-            <string>Zoom in on trace</string>
+            <string>放大轨迹</string>
            </property>
            <property name="text">
             <string/>
@@ -246,7 +246,7 @@
          <item>
           <widget class="QPushButton" name="playButton">
            <property name="toolTip">
-            <string>Play log in real time</string>
+            <string>实时回放日志</string>
            </property>
            <property name="text">
             <string/>
@@ -288,10 +288,10 @@
        </property>
        <widget class="QWidget" name="tab_4">
         <attribute name="title">
-         <string>Source</string>
+         <string>来源</string>
         </attribute>
         <attribute name="toolTip">
-         <string>Browse directory of last log file.</string>
+         <string>浏览最近日志文件所在目录。</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_7">
          <property name="spacing">
@@ -312,7 +312,7 @@
          <item>
           <widget class="QTabWidget" name="browseTabWidget">
            <property name="toolTip">
-            <string>Logs created from LispBM and sent to local VESC Tool.</string>
+            <string>由 LispBM 创建并发送到本地 VESC Tool 的日志。</string>
            </property>
            <property name="tabPosition">
             <enum>QTabWidget::TabPosition::North</enum>
@@ -325,7 +325,7 @@
            </property>
            <widget class="QWidget" name="vescLogTab">
             <attribute name="title">
-             <string>Connected Device</string>
+             <string>已连接设备</string>
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_9">
              <property name="spacing">
@@ -359,12 +359,12 @@
                </attribute>
                <column>
                 <property name="text">
-                 <string>Name</string>
+                 <string>名称</string>
                 </property>
                </column>
                <column>
                 <property name="text">
-                 <string>Size</string>
+                 <string>大小</string>
                 </property>
                </column>
               </widget>
@@ -387,7 +387,7 @@
                <item>
                 <widget class="QPushButton" name="vescLogCancelButton">
                  <property name="text">
-                  <string>Cancel</string>
+                  <string>取消</string>
                  </property>
                 </widget>
                </item>
@@ -427,14 +427,14 @@
                 <item>
                  <widget class="QPushButton" name="vescSaveAsButton">
                   <property name="text">
-                   <string>Save as...</string>
+                   <string>另存为...</string>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QPushButton" name="vescLogDeleteButton">
                   <property name="text">
-                   <string>Delete</string>
+                   <string>删除</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../res.qrc">
@@ -445,7 +445,7 @@
                 <item>
                  <widget class="QPushButton" name="vescLogListOpenButton">
                   <property name="text">
-                   <string>Open</string>
+                   <string>打开</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../res.qrc">
@@ -456,7 +456,7 @@
                 <item>
                  <widget class="QPushButton" name="vescLogListRefreshButton">
                   <property name="text">
-                   <string>Refresh</string>
+                   <string>刷新</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../res.qrc">
@@ -467,10 +467,10 @@
                 <item>
                  <widget class="QPushButton" name="vescUpButton">
                   <property name="toolTip">
-                   <string>Go up one directory</string>
+                   <string>返回上一级目录</string>
                   </property>
                   <property name="text">
-                   <string>Up</string>
+                   <string>上</string>
                   </property>
                   <property name="icon">
                    <iconset resource="../res.qrc">
@@ -485,7 +485,7 @@
            </widget>
            <widget class="QWidget" name="tab_5">
             <attribute name="title">
-             <string>Filesystem</string>
+             <string>文件系统</string>
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_8">
              <property name="spacing">
@@ -522,12 +522,12 @@
                </attribute>
                <column>
                 <property name="text">
-                 <string>Name</string>
+                 <string>名称</string>
                 </property>
                </column>
                <column>
                 <property name="text">
-                 <string>Size</string>
+                 <string>大小</string>
                 </property>
                </column>
               </widget>
@@ -550,10 +550,10 @@
                <item>
                 <widget class="QPushButton" name="openCsvButton">
                  <property name="toolTip">
-                  <string>Open CSV file...</string>
+                  <string>打开 CSV 文件...</string>
                  </property>
                  <property name="text">
-                  <string>Browse...</string>
+                  <string>浏览...</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -577,7 +577,7 @@
                <item>
                 <widget class="QPushButton" name="logListOpenButton">
                  <property name="text">
-                  <string>Open Selected</string>
+                  <string>打开所选</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -588,7 +588,7 @@
                <item>
                 <widget class="QPushButton" name="logListRefreshButton">
                  <property name="text">
-                  <string>Refresh</string>
+                  <string>刷新</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -599,7 +599,7 @@
                <item>
                 <widget class="QPushButton" name="logListUpButton">
                  <property name="text">
-                  <string>Up</string>
+                  <string>上</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -613,7 +613,7 @@
            </widget>
            <widget class="QWidget" name="tab_7">
             <attribute name="title">
-             <string>Realtime</string>
+             <string>实时</string>
             </attribute>
             <layout class="QHBoxLayout" name="horizontalLayout_9">
              <item>
@@ -621,10 +621,10 @@
                <item>
                 <widget class="QPushButton" name="openCurrentButton">
                  <property name="toolTip">
-                  <string>Open log from RT data page</string>
+                  <string>从实时数据页打开日志</string>
                  </property>
                  <property name="text">
-                  <string>Open current</string>
+                  <string>打开当前</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -651,7 +651,7 @@
            </widget>
            <widget class="QWidget" name="tab_8">
             <attribute name="title">
-             <string>Local Logs</string>
+             <string>本地日志</string>
             </attribute>
             <layout class="QVBoxLayout" name="verticalLayout_12">
              <property name="spacing">
@@ -688,12 +688,12 @@
                </attribute>
                <column>
                 <property name="text">
-                 <string>Name</string>
+                 <string>名称</string>
                 </property>
                </column>
                <column>
                 <property name="text">
-                 <string>Size</string>
+                 <string>大小</string>
                 </property>
                </column>
               </widget>
@@ -719,7 +719,7 @@
                <item>
                 <widget class="QPushButton" name="logLocalDeleteButton">
                  <property name="text">
-                  <string>Delete</string>
+                  <string>删除</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -730,7 +730,7 @@
                <item>
                 <widget class="QPushButton" name="logLocalOpenButton">
                  <property name="text">
-                  <string>Open Selected</string>
+                  <string>打开所选</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -741,7 +741,7 @@
                <item>
                 <widget class="QPushButton" name="logLocalRefreshButton">
                  <property name="text">
-                  <string>Refresh</string>
+                  <string>刷新</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -759,7 +759,7 @@
        </widget>
        <widget class="QWidget" name="tab">
         <attribute name="title">
-         <string>Data</string>
+         <string>数据</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_17">
          <property name="spacing">
@@ -836,32 +836,32 @@
                    </attribute>
                    <column>
                     <property name="text">
-                     <string>Color</string>
+                     <string>颜色</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Series</string>
+                     <string>数据系列</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Value</string>
+                     <string>值</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Scale</string>
+                     <string>缩放</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Axis</string>
+                     <string>轴</string>
                     </property>
                    </column>
                    <column>
                     <property name="text">
-                     <string>Remove</string>
+                     <string>移除</string>
                     </property>
                    </column>
                   </widget>
@@ -890,12 +890,12 @@
             </attribute>
             <column>
              <property name="text">
-              <string>Name</string>
+              <string>名称</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Value</string>
+              <string>值</string>
              </property>
             </column>
             <column>
@@ -908,17 +908,17 @@
               <string>Y2</string>
              </property>
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show this data series on the second Y axis to the right&lt;/p&gt;&lt;p&gt;Y axes will be autoscaled independently&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将此数据系列显示在右侧的第二条 Y 轴上&lt;/p&gt;&lt;p&gt;各 Y 轴将独立自动缩放&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Scale</string>
+              <string>缩放</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Plot</string>
+              <string>图表</string>
              </property>
             </column>
            </widget>
@@ -928,7 +928,7 @@
        </widget>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
-         <string>Stats</string>
+         <string>统计</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <property name="leftMargin">
@@ -962,12 +962,12 @@
            </attribute>
            <column>
             <property name="text">
-             <string>Name</string>
+             <string>名称</string>
             </property>
            </column>
            <column>
             <property name="text">
-             <string>Value</string>
+             <string>值</string>
             </property>
            </column>
           </widget>
@@ -982,13 +982,13 @@
        </widget>
        <widget class="QWidget" name="tab_6">
         <attribute name="title">
-         <string>Export</string>
+         <string>导出</string>
         </attribute>
         <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="0,0,1">
          <item>
           <widget class="QGroupBox" name="groupBox">
            <property name="title">
-            <string>Image</string>
+            <string>图像</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_14" stretch="0,0,0,0,1">
             <item>
@@ -1038,7 +1038,7 @@
               <item>
                <widget class="QPushButton" name="saveMapPdfButton">
                 <property name="toolTip">
-                 <string>Save map as PDF image</string>
+                 <string>将地图保存为 PDF 图像</string>
                 </property>
                 <property name="text">
                  <string>PDF</string>
@@ -1052,7 +1052,7 @@
               <item>
                <widget class="QPushButton" name="saveMapPngButton">
                 <property name="toolTip">
-                 <string>Save map as Png image</string>
+                 <string>将地图保存为 PNG 图像</string>
                 </property>
                 <property name="text">
                  <string>PNG</string>
@@ -1070,7 +1070,7 @@
               <item>
                <widget class="QPushButton" name="savePlotPdfButton">
                 <property name="toolTip">
-                 <string>Save plot as PDF image</string>
+                 <string>将图表保存为 PDF 图像</string>
                 </property>
                 <property name="text">
                  <string>PDF</string>
@@ -1084,7 +1084,7 @@
               <item>
                <widget class="QPushButton" name="savePlotPngButton">
                 <property name="toolTip">
-                 <string>Save plot as PNG image</string>
+                 <string>将图表保存为 PNG 图像</string>
                 </property>
                 <property name="text">
                  <string>PNG</string>
@@ -1100,7 +1100,7 @@
             <item>
              <widget class="QCheckBox" name="showLegendBox">
               <property name="text">
-               <string>Show Legend</string>
+               <string>显示图例</string>
               </property>
              </widget>
             </item>
@@ -1123,13 +1123,13 @@
          <item>
           <widget class="QGroupBox" name="groupBox_2">
            <property name="title">
-            <string>All Data</string>
+            <string>全部数据</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_15" stretch="0,1">
             <item>
              <widget class="QPushButton" name="saveCsvButton">
               <property name="toolTip">
-               <string>Save all data as CSV-file...</string>
+               <string>将所有数据保存为 CSV 文件...</string>
               </property>
               <property name="text">
                <string>CSV</string>

@@ -34,56 +34,56 @@
      <item row="0" column="0">
       <widget class="QCheckBox" name="b0Box">
        <property name="text">
-        <string>Unused</string>
+        <string>未使用</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
       <widget class="QCheckBox" name="b1Box">
        <property name="text">
-        <string>Unused</string>
+        <string>未使用</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
       <widget class="QCheckBox" name="b2Box">
        <property name="text">
-        <string>Unused</string>
+        <string>未使用</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
       <widget class="QCheckBox" name="b3Box">
        <property name="text">
-        <string>Unused</string>
+        <string>未使用</string>
        </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QCheckBox" name="b4Box">
        <property name="text">
-        <string>Unused</string>
+        <string>未使用</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
       <widget class="QCheckBox" name="b5Box">
        <property name="text">
-        <string>Unused</string>
+        <string>未使用</string>
        </property>
       </widget>
      </item>
      <item row="3" column="0">
       <widget class="QCheckBox" name="b6Box">
        <property name="text">
-        <string>Unused</string>
+        <string>未使用</string>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
       <widget class="QCheckBox" name="b7Box">
        <property name="text">
-        <string>Unused</string>
+        <string>未使用</string>
        </property>
       </widget>
      </item>
@@ -98,7 +98,7 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>Read current setting</string>
+      <string>读取当前设置</string>
      </property>
      <property name="text">
       <string/>
@@ -114,7 +114,7 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>Read default setting</string>
+      <string>读取默认设置</string>
      </property>
      <property name="text">
       <string/>
@@ -130,7 +130,7 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>Show help</string>
+      <string>显示帮助</string>
      </property>
      <property name="text">
       <string/>

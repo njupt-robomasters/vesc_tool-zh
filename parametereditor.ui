@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>VESC Parameter Editor</string>
+   <string>VESC 参数编辑器</string>
   </property>
   <property name="windowIcon">
    <iconset resource="res.qrc">
@@ -29,7 +29,7 @@
       <item>
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Parameter&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;参数&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -70,7 +70,7 @@
         <item>
          <widget class="QPushButton" name="paramRemoveButton">
           <property name="toolTip">
-           <string>Delete</string>
+           <string>删除</string>
           </property>
           <property name="text">
            <string/>
@@ -84,7 +84,7 @@
         <item>
          <widget class="QPushButton" name="paramDownButton">
           <property name="toolTip">
-           <string>Move down</string>
+           <string>下移</string>
           </property>
           <property name="text">
            <string/>
@@ -98,7 +98,7 @@
         <item>
          <widget class="QPushButton" name="paramUpButton">
           <property name="toolTip">
-           <string>Move up</string>
+           <string>上移</string>
           </property>
           <property name="text">
            <string/>
@@ -112,7 +112,7 @@
         <item>
          <widget class="QPushButton" name="paramOpenButton">
           <property name="toolTip">
-           <string>Open in editor</string>
+           <string>在编辑器中打开</string>
           </property>
           <property name="text">
            <string/>
@@ -153,7 +153,7 @@
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
-        <string>Properties</string>
+        <string>属性</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,0">
         <item>
@@ -161,7 +161,7 @@
           <item>
            <widget class="QLabel" name="label_16">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Editor&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;编辑器&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -175,7 +175,7 @@
             </property>
             <widget class="QWidget" name="tab">
              <attribute name="title">
-              <string>Parameter</string>
+              <string>参数</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_6">
               <item>
@@ -183,14 +183,14 @@
                 <item row="2" column="0">
                  <widget class="QLabel" name="label_5">
                   <property name="text">
-                   <string>Type</string>
+                   <string>类型</string>
                   </property>
                  </widget>
                 </item>
                 <item row="1" column="0">
                  <widget class="QLabel" name="label_4">
                   <property name="text">
-                   <string>Long Name</string>
+                   <string>长名称</string>
                   </property>
                  </widget>
                 </item>
@@ -204,37 +204,37 @@
                  <widget class="QComboBox" name="typeBox">
                   <item>
                    <property name="text">
-                    <string>Undefined</string>
+                    <string>未定义</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>Double</string>
+                    <string>双精度</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>Int</string>
+                    <string>整数</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>String</string>
+                    <string>字符串</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>Enum</string>
+                    <string>枚举</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>Bool</string>
+                    <string>布尔</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>Bitfield</string>
+                    <string>位域</string>
                    </property>
                   </item>
                  </widget>
@@ -242,14 +242,14 @@
                 <item row="0" column="0">
                  <widget class="QLabel" name="label_3">
                   <property name="text">
-                   <string>Name</string>
+                   <string>名称</string>
                   </property>
                  </widget>
                 </item>
                 <item row="3" column="0">
                  <widget class="QLabel" name="label_13">
                   <property name="text">
-                   <string>Transmittable</string>
+                   <string>可传输</string>
                   </property>
                  </widget>
                 </item>
@@ -257,12 +257,12 @@
                  <widget class="QComboBox" name="transmittableBox">
                   <item>
                    <property name="text">
-                    <string>True</string>
+                    <string>真</string>
                    </property>
                   </item>
                   <item>
                    <property name="text">
-                    <string>False</string>
+                    <string>假</string>
                    </property>
                   </item>
                  </widget>
@@ -285,7 +285,7 @@
                     <item row="5" column="0">
                      <widget class="QLabel" name="label_27">
                       <property name="text">
-                       <string>Editor Decimals</string>
+                       <string>编辑器小数位数</string>
                       </property>
                      </widget>
                     </item>
@@ -308,14 +308,14 @@
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_6">
                       <property name="text">
-                       <string>Default Value</string>
+                       <string>默认值</string>
                       </property>
                      </widget>
                     </item>
                     <item row="1" column="0">
                      <widget class="QLabel" name="label_7">
                       <property name="text">
-                       <string>Maximum Value</string>
+                       <string>最大值</string>
                       </property>
                      </widget>
                     </item>
@@ -386,21 +386,21 @@
                     <item row="4" column="0">
                      <widget class="QLabel" name="label_10">
                       <property name="text">
-                       <string>Editor Scale</string>
+                       <string>编辑器缩放</string>
                       </property>
                      </widget>
                     </item>
                     <item row="7" column="0">
                      <widget class="QLabel" name="label_12">
                       <property name="text">
-                       <string>TX Type</string>
+                       <string>发送类型</string>
                       </property>
                      </widget>
                     </item>
                     <item row="8" column="0">
                      <widget class="QLabel" name="doubleTxScaleLabel">
                       <property name="text">
-                       <string>TX  Scale</string>
+                       <string>发送缩放</string>
                       </property>
                      </widget>
                     </item>
@@ -433,21 +433,21 @@
                     <item row="3" column="0">
                      <widget class="QLabel" name="label_9">
                       <property name="text">
-                       <string>Editor Step</string>
+                       <string>编辑器步进</string>
                       </property>
                      </widget>
                     </item>
                     <item row="2" column="0">
                      <widget class="QLabel" name="label_8">
                       <property name="text">
-                       <string>Minimum Value</string>
+                       <string>最小值</string>
                       </property>
                      </widget>
                     </item>
                     <item row="6" column="0">
                      <widget class="QLabel" name="label_11">
                       <property name="text">
-                       <string>Suffix</string>
+                       <string>后缀</string>
                       </property>
                      </widget>
                     </item>
@@ -467,7 +467,7 @@
                     <item row="4" column="2" colspan="2">
                      <widget class="QCheckBox" name="doubleEditPercentageBox">
                       <property name="text">
-                       <string>Edit as Percentage</string>
+                       <string>以百分比编辑</string>
                       </property>
                      </widget>
                     </item>
@@ -487,7 +487,7 @@
                     <item row="3" column="2" colspan="2">
                      <widget class="QCheckBox" name="doubleShowDisplayBox">
                       <property name="text">
-                       <string>Show Display</string>
+                       <string>显示屏幕</string>
                       </property>
                      </widget>
                     </item>
@@ -525,7 +525,7 @@
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_21">
                       <property name="text">
-                       <string>Default Value</string>
+                       <string>默认值</string>
                       </property>
                      </widget>
                     </item>
@@ -542,7 +542,7 @@
                     <item row="1" column="0">
                      <widget class="QLabel" name="label_22">
                       <property name="text">
-                       <string>Max</string>
+                       <string>最大</string>
                       </property>
                      </widget>
                     </item>
@@ -562,7 +562,7 @@
                     <item row="2" column="0">
                      <widget class="QLabel" name="label_19">
                       <property name="text">
-                       <string>Min</string>
+                       <string>最小</string>
                       </property>
                      </widget>
                     </item>
@@ -582,35 +582,35 @@
                     <item row="3" column="0">
                      <widget class="QLabel" name="label_20">
                       <property name="text">
-                       <string>Editor Step</string>
+                       <string>编辑器步进</string>
                       </property>
                      </widget>
                     </item>
                     <item row="4" column="0">
                      <widget class="QLabel" name="label_18">
                       <property name="text">
-                       <string>Editor Scale</string>
+                       <string>编辑器缩放</string>
                       </property>
                      </widget>
                     </item>
                     <item row="4" column="2">
                      <widget class="QCheckBox" name="intEditPercentageBox">
                       <property name="text">
-                       <string>Edit as Percentage</string>
+                       <string>以百分比编辑</string>
                       </property>
                      </widget>
                     </item>
                     <item row="5" column="0">
                      <widget class="QLabel" name="label_15">
                       <property name="text">
-                       <string>Suffix</string>
+                       <string>后缀</string>
                       </property>
                      </widget>
                     </item>
                     <item row="6" column="0">
                      <widget class="QLabel" name="label_17">
                       <property name="text">
-                       <string>TX Type</string>
+                       <string>发送类型</string>
                       </property>
                      </widget>
                     </item>
@@ -667,7 +667,7 @@
                     <item row="3" column="2">
                      <widget class="QCheckBox" name="intShowDisplayBox">
                       <property name="text">
-                       <string>Show Display</string>
+                       <string>显示屏幕</string>
                       </property>
                      </widget>
                     </item>
@@ -708,7 +708,7 @@
                     <item row="0" column="0">
                      <widget class="QLabel" name="label_23">
                       <property name="text">
-                       <string>Default Value</string>
+                       <string>默认值</string>
                       </property>
                      </widget>
                     </item>
@@ -718,7 +718,7 @@
                     <item row="1" column="0">
                      <widget class="QLabel" name="label_30">
                       <property name="text">
-                       <string>Max Length</string>
+                       <string>最大长度</string>
                       </property>
                      </widget>
                     </item>
@@ -772,7 +772,7 @@
                     <item>
                      <widget class="QPushButton" name="enumRemoveButton">
                       <property name="toolTip">
-                       <string>Delete</string>
+                       <string>删除</string>
                       </property>
                       <property name="text">
                        <string/>
@@ -786,7 +786,7 @@
                     <item>
                      <widget class="QPushButton" name="enumMoveDownButton">
                       <property name="toolTip">
-                       <string>Move down</string>
+                       <string>下移</string>
                       </property>
                       <property name="text">
                        <string/>
@@ -800,7 +800,7 @@
                     <item>
                      <widget class="QPushButton" name="enumMoveUpButton">
                       <property name="toolTip">
-                       <string>Move up</string>
+                       <string>上移</string>
                       </property>
                       <property name="text">
                        <string/>
@@ -814,7 +814,7 @@
                     <item>
                      <widget class="QPushButton" name="enumAddButton">
                       <property name="toolTip">
-                       <string>Add new</string>
+                       <string>新增</string>
                       </property>
                       <property name="text">
                        <string/>
@@ -849,7 +849,7 @@
                     <item>
                      <widget class="QLabel" name="label_24">
                       <property name="text">
-                       <string>Default Value</string>
+                       <string>默认值</string>
                       </property>
                      </widget>
                     </item>
@@ -857,12 +857,12 @@
                      <widget class="QComboBox" name="boolBox">
                       <item>
                        <property name="text">
-                        <string>False</string>
+                        <string>假</string>
                        </property>
                       </item>
                       <item>
                        <property name="text">
-                        <string>True</string>
+                        <string>真</string>
                        </property>
                       </item>
                      </widget>
@@ -889,7 +889,7 @@
                   <item>
                    <widget class="QSpinBox" name="bitfieldValBox">
                     <property name="prefix">
-                     <string>Value: </string>
+                     <string>值：</string>
                     </property>
                     <property name="maximum">
                      <number>255</number>
@@ -972,7 +972,7 @@
             </widget>
             <widget class="QWidget" name="tab_2">
              <attribute name="title">
-              <string>Description</string>
+              <string>描述</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_3">
               <item>
@@ -982,7 +982,7 @@
             </widget>
             <widget class="QWidget" name="tab_3">
              <attribute name="title">
-              <string>Misc</string>
+              <string>杂项</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <item>
@@ -990,7 +990,7 @@
                 <item row="0" column="0">
                  <widget class="QLabel" name="label_25">
                   <property name="text">
-                   <string>C Define</string>
+                   <string>C 宏定义</string>
                   </property>
                  </widget>
                 </item>
@@ -1016,13 +1016,13 @@
             </widget>
             <widget class="QWidget" name="tab_4">
              <attribute name="title">
-              <string>Preview</string>
+              <string>预览</string>
              </attribute>
              <layout class="QVBoxLayout" name="verticalLayout_9">
               <item>
                <widget class="QLabel" name="label_26">
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is what the editor of this parameter is going to look like. This preview is updated when a parameter is opened for editing, and when changes are saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;此处显示该参数编辑器的外观预览。打开参数进行编辑以及保存更改时，预览会随之更新。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -1063,7 +1063,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Reset editor</string>
+               <string>重置编辑器</string>
               </property>
               <property name="text">
                <string/>
@@ -1083,7 +1083,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Save changes (or make new parameter if this name does not exist)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;保存更改（如果该名称不存在，则新建参数）&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="text">
                <string/>
@@ -1119,7 +1119,7 @@
           <item>
            <widget class="QLabel" name="label_2">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Serialization Order&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;序列化顺序&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -1160,7 +1160,7 @@
             <item>
              <widget class="QPushButton" name="serRemoveButton">
               <property name="toolTip">
-               <string>Delete</string>
+               <string>删除</string>
               </property>
               <property name="text">
                <string/>
@@ -1174,7 +1174,7 @@
             <item>
              <widget class="QPushButton" name="serDownButton">
               <property name="toolTip">
-               <string>Move down</string>
+               <string>下移</string>
               </property>
               <property name="text">
                <string/>
@@ -1188,7 +1188,7 @@
             <item>
              <widget class="QPushButton" name="serUpButton">
               <property name="toolTip">
-               <string>Move up</string>
+               <string>上移</string>
               </property>
               <property name="text">
                <string/>
@@ -1202,7 +1202,7 @@
             <item>
              <widget class="QPushButton" name="serAddButton">
               <property name="toolTip">
-               <string>Add new</string>
+               <string>新增</string>
               </property>
               <property name="text">
                <string/>
@@ -1234,7 +1234,7 @@
       </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
-        <string>Grouping</string>
+        <string>分组</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_12">
         <item>
@@ -1242,7 +1242,7 @@
           <item>
            <widget class="QLabel" name="label_14">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Groups&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;分组&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -1270,7 +1270,7 @@
             <item>
              <widget class="QPushButton" name="groupRemoveButton">
               <property name="toolTip">
-               <string>Delete</string>
+               <string>删除</string>
               </property>
               <property name="text">
                <string/>
@@ -1284,7 +1284,7 @@
             <item>
              <widget class="QPushButton" name="groupDownButton">
               <property name="toolTip">
-               <string>Move down</string>
+               <string>下移</string>
               </property>
               <property name="text">
                <string/>
@@ -1298,7 +1298,7 @@
             <item>
              <widget class="QPushButton" name="groupUpButton">
               <property name="toolTip">
-               <string>Move up</string>
+               <string>上移</string>
               </property>
               <property name="text">
                <string/>
@@ -1318,7 +1318,7 @@
                </size>
               </property>
               <property name="toolTip">
-               <string>Add group</string>
+               <string>添加分组</string>
               </property>
               <property name="text">
                <string/>
@@ -1362,7 +1362,7 @@
           <item>
            <widget class="QLabel" name="label_28">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Subgroups&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;子分组&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -1390,7 +1390,7 @@
             <item>
              <widget class="QPushButton" name="subgroupRemoveButton">
               <property name="toolTip">
-               <string>Delete</string>
+               <string>删除</string>
               </property>
               <property name="text">
                <string/>
@@ -1404,7 +1404,7 @@
             <item>
              <widget class="QPushButton" name="subgroupDownButton">
               <property name="toolTip">
-               <string>Move down</string>
+               <string>下移</string>
               </property>
               <property name="text">
                <string/>
@@ -1418,7 +1418,7 @@
             <item>
              <widget class="QPushButton" name="subgroupUpButton">
               <property name="toolTip">
-               <string>Move up</string>
+               <string>上移</string>
               </property>
               <property name="text">
                <string/>
@@ -1438,7 +1438,7 @@
                </size>
               </property>
               <property name="toolTip">
-               <string>Add group</string>
+               <string>添加分组</string>
               </property>
               <property name="text">
                <string/>
@@ -1482,7 +1482,7 @@
           <item>
            <widget class="QLabel" name="label_29">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Parameters&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;参数&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -1514,7 +1514,7 @@
             <item>
              <widget class="QPushButton" name="groupParamRemoveButton">
               <property name="toolTip">
-               <string>Delete</string>
+               <string>删除</string>
               </property>
               <property name="text">
                <string/>
@@ -1528,7 +1528,7 @@
             <item>
              <widget class="QPushButton" name="groupParamDownButton">
               <property name="toolTip">
-               <string>Move down</string>
+               <string>下移</string>
               </property>
               <property name="text">
                <string/>
@@ -1542,7 +1542,7 @@
             <item>
              <widget class="QPushButton" name="groupParamUpButton">
               <property name="toolTip">
-               <string>Move up</string>
+               <string>上移</string>
               </property>
               <property name="text">
                <string/>
@@ -1556,7 +1556,7 @@
             <item>
              <widget class="QPushButton" name="groupParamAddButton">
               <property name="toolTip">
-               <string>Add new</string>
+               <string>新增</string>
               </property>
               <property name="text">
                <string/>
@@ -1612,7 +1612,7 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>文件</string>
     </property>
     <addaction name="actionLoad_XML"/>
     <addaction name="actionSave_XML_as"/>
@@ -1621,13 +1621,13 @@
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Edit</string>
+     <string>编辑</string>
     </property>
     <addaction name="actionDeleteAll"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
-     <string>Tools</string>
+     <string>工具</string>
     </property>
     <addaction name="actionCalculatePacketSize"/>
     <addaction name="actionCalculateCompressedCArraySize"/>
@@ -1646,7 +1646,7 @@
      <normaloff>:/res/icons/Open Folder-96.png</normaloff>:/res/icons/Open Folder-96.png</iconset>
    </property>
    <property name="text">
-    <string>Load XML</string>
+    <string>加载 XML</string>
    </property>
   </action>
   <action name="actionSave_XML_as">
@@ -1655,7 +1655,7 @@
      <normaloff>:/res/icons/Save as-96.png</normaloff>:/res/icons/Save as-96.png</iconset>
    </property>
    <property name="text">
-    <string>Save XML as...</string>
+    <string>另存 XML 为...</string>
    </property>
   </action>
   <action name="actionDeleteAll">
@@ -1664,7 +1664,7 @@
      <normaloff>:/res/icons/Delete-96.png</normaloff>:/res/icons/Delete-96.png</iconset>
    </property>
    <property name="text">
-    <string>Delete All Data</string>
+    <string>删除所有数据</string>
    </property>
   </action>
   <action name="actionCalculatePacketSize">
@@ -1673,7 +1673,7 @@
      <normaloff>:/res/icons/Calculator-96.png</normaloff>:/res/icons/Calculator-96.png</iconset>
    </property>
    <property name="text">
-    <string>Calculate Packet Size</string>
+    <string>计算数据包大小</string>
    </property>
   </action>
   <action name="actionExportConfigurationParser">
@@ -1682,7 +1682,7 @@
      <normaloff>:/res/icons/Save as-96.png</normaloff>:/res/icons/Save as-96.png</iconset>
    </property>
    <property name="text">
-    <string>Export Configuration Parser</string>
+    <string>导出配置解析器</string>
    </property>
   </action>
   <action name="actionSave_Configuration_C_Header_as">
@@ -1691,7 +1691,7 @@
      <normaloff>:/res/icons/Save as-96.png</normaloff>:/res/icons/Save as-96.png</iconset>
    </property>
    <property name="text">
-    <string>Save Configuration C Header as...</string>
+    <string>另存配置 C 头文件为...</string>
    </property>
   </action>
   <action name="actionSave_Configuration_C_Header_ifdef_wrapped_as">
@@ -1700,10 +1700,10 @@
      <normaloff>:/res/icons/Save as-96.png</normaloff>:/res/icons/Save as-96.png</iconset>
    </property>
    <property name="text">
-    <string>Save Configuration C Header (ifdef wrapped) as...</string>
+    <string>另存配置 C 头文件（含 ifdef）为...</string>
    </property>
    <property name="toolTip">
-    <string>Save Configuration C Header (ifdef wrapped) as</string>
+    <string>另存配置 C 头文件（含 ifdef）为</string>
    </property>
   </action>
   <action name="actionExportCompressedCArray">
@@ -1712,7 +1712,7 @@
      <normaloff>:/res/icons/Save as-96.png</normaloff>:/res/icons/Save as-96.png</iconset>
    </property>
    <property name="text">
-    <string>Export Compressed C Array</string>
+    <string>导出压缩 C 数组</string>
    </property>
   </action>
   <action name="actionCalculateCompressedCArraySize">
@@ -1721,7 +1721,7 @@
      <normaloff>:/res/icons/Calculator-96.png</normaloff>:/res/icons/Calculator-96.png</iconset>
    </property>
    <property name="text">
-    <string>Calculate Compressed C Array Size</string>
+    <string>计算压缩 C 数组大小</string>
    </property>
   </action>
   <action name="actionSave_XML_and_export_config_parser_and_compressed_C_array">
@@ -1730,7 +1730,7 @@
      <normaloff>:/res/icons/Save as-96.png</normaloff>:/res/icons/Save as-96.png</iconset>
    </property>
    <property name="text">
-    <string>Save XML and export config, parser and compressed C array</string>
+    <string>保存 XML 并导出配置、解析器和压缩 C 数组</string>
    </property>
   </action>
  </widget>

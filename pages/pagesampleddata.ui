@@ -24,7 +24,7 @@
      </property>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Current</string>
+       <string>电流</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,0">
        <item>
@@ -93,7 +93,7 @@
                <item>
                 <widget class="QCheckBox" name="showMcTotalCurrentBox">
                  <property name="text">
-                  <string>MC total</string>
+                  <string>电机总计</string>
                  </property>
                  <property name="checked">
                   <bool>true</bool>
@@ -103,7 +103,7 @@
                <item>
                 <widget class="QCheckBox" name="showPosCurrentBox">
                  <property name="text">
-                  <string>Position</string>
+                  <string>位置</string>
                  </property>
                  <property name="checked">
                   <bool>true</bool>
@@ -113,10 +113,10 @@
                <item>
                 <widget class="QCheckBox" name="showPhaseBox">
                  <property name="toolTip">
-                  <string>Show FOC motor phase</string>
+                  <string>显示 FOC 电机相位</string>
                  </property>
                  <property name="text">
-                  <string>Phase</string>
+                  <string>相位</string>
                  </property>
                  <property name="checked">
                   <bool>true</bool>
@@ -169,7 +169,7 @@
                <item>
                 <widget class="QCheckBox" name="filterLogScaleBox">
                  <property name="text">
-                  <string>Logscale</string>
+                  <string>对数刻度</string>
                  </property>
                 </widget>
                </item>
@@ -183,7 +183,7 @@
                <item>
                 <widget class="QCheckBox" name="filterScatterBox">
                  <property name="text">
-                  <string>Scatterplot</string>
+                  <string>散点图</string>
                  </property>
                 </widget>
                </item>
@@ -200,21 +200,21 @@
          <item>
           <widget class="QComboBox" name="plotModeBox">
            <property name="toolTip">
-            <string>Select what to plot</string>
+            <string>选择要绘制的内容</string>
            </property>
            <item>
             <property name="text">
-             <string>Time Plot</string>
+             <string>时间图</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>FFT Plot</string>
+             <string>FFT 图</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Filter Plot</string>
+             <string>滤波图</string>
             </property>
            </item>
           </widget>
@@ -222,7 +222,7 @@
          <item>
           <widget class="QGroupBox" name="groupBox">
            <property name="title">
-            <string>Filter Data</string>
+            <string>过滤数据</string>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
             <property name="leftMargin">
@@ -241,17 +241,17 @@
              <widget class="QComboBox" name="filterBox">
               <item>
                <property name="text">
-                <string>No Filter</string>
+                <string>无滤波</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>FIR Filter</string>
+                <string>FIR 滤波器</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>Mean Filter</string>
+                <string>均值滤波</string>
                </property>
               </item>
              </widget>
@@ -259,7 +259,7 @@
             <item>
              <widget class="QDoubleSpinBox" name="currentFilterFreqBox">
               <property name="toolTip">
-               <string>FIR filter stop frequency</string>
+               <string>FIR 滤波器截止频率</string>
               </property>
               <property name="prefix">
                <string>截止频率：</string>
@@ -281,7 +281,7 @@
             <item>
              <widget class="QSpinBox" name="currentFilterTapBox">
               <property name="toolTip">
-               <string>FIR filter taps</string>
+               <string>FIR 滤波器阶数</string>
               </property>
               <property name="prefix">
                <string>抽头数：</string>
@@ -300,10 +300,10 @@
             <item>
              <widget class="QCheckBox" name="compDelayBox">
               <property name="toolTip">
-               <string>Compensate for filter delay</string>
+               <string>补偿滤波器延迟</string>
               </property>
               <property name="text">
-               <string>Delay Comp</string>
+               <string>延迟补偿</string>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -313,10 +313,10 @@
             <item>
              <widget class="QCheckBox" name="hammingBox">
               <property name="toolTip">
-               <string>Use Hamming window</string>
+               <string>使用汉明窗</string>
               </property>
               <property name="text">
-               <string>Hamming</string>
+               <string>汉明窗</string>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -329,7 +329,7 @@
          <item>
           <widget class="QSpinBox" name="fftFreqBox">
            <property name="toolTip">
-            <string>Sampling frequency to calculate FFT time axis at</string>
+            <string>计算 FFT 时间轴所用的采样频率</string>
            </property>
            <property name="prefix">
             <string>采样率：</string>
@@ -367,7 +367,7 @@
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>BEMF</string>
+       <string>反电动势</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -415,7 +415,7 @@
          <item>
           <widget class="QCheckBox" name="showVirtualGndBox">
            <property name="text">
-            <string>Virtual Ground</string>
+            <string>虚拟地</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -425,7 +425,7 @@
          <item>
           <widget class="QCheckBox" name="showPosVoltageBox">
            <property name="text">
-            <string>Position</string>
+            <string>位置</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -435,10 +435,10 @@
          <item>
           <widget class="QCheckBox" name="showPhaseVoltageBox">
            <property name="toolTip">
-            <string>Show FOC motor phase</string>
+            <string>显示 FOC 电机相位</string>
            </property>
            <property name="text">
-            <string>Phase</string>
+            <string>相位</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -461,10 +461,10 @@
          <item>
           <widget class="QCheckBox" name="truncateBox">
            <property name="toolTip">
-            <string>Truncate conducting phases</string>
+            <string>截断导通相</string>
            </property>
            <property name="text">
-            <string>Truncate</string>
+            <string>截断</string>
            </property>
           </widget>
          </item>
@@ -482,7 +482,7 @@
      <item>
       <widget class="QPushButton" name="sampleNowButton">
        <property name="toolTip">
-        <string>Sample now</string>
+        <string>立即采样</string>
        </property>
        <property name="text">
         <string/>
@@ -492,7 +492,7 @@
      <item>
       <widget class="QPushButton" name="sampleStartButton">
        <property name="toolTip">
-        <string>Sample when the motor starts</string>
+        <string>电机启动时采样</string>
        </property>
        <property name="text">
         <string/>
@@ -508,7 +508,7 @@
      <item>
       <widget class="QPushButton" name="sampleTriggerStartButton">
        <property name="toolTip">
-        <string>Triggered sampling when the motor starts</string>
+        <string>电机启动时触发采样</string>
        </property>
        <property name="text">
         <string/>
@@ -527,7 +527,7 @@
      <item>
       <widget class="QPushButton" name="sampleTriggerFaultButton">
        <property name="toolTip">
-        <string>Triggered sampling at fault codes</string>
+        <string>故障码触发采样</string>
        </property>
        <property name="text">
         <string/>
@@ -543,7 +543,7 @@
      <item>
       <widget class="QPushButton" name="sampleTriggerStartNosendButton">
        <property name="toolTip">
-        <string>Triggered sampling when the motor starts without sending the samples automatically</string>
+        <string>电机启动时触发采样，不自动发送采样数据</string>
        </property>
        <property name="text">
         <string/>
@@ -559,7 +559,7 @@
      <item>
       <widget class="QPushButton" name="sampleTriggerFaultNosendButton">
        <property name="toolTip">
-        <string>Triggered sampling at fault codes without sending the samples automatically</string>
+        <string>故障码触发采样，不自动发送采样数据</string>
        </property>
        <property name="text">
         <string/>
@@ -575,7 +575,7 @@
      <item>
       <widget class="QPushButton" name="sampleLastButton">
        <property name="toolTip">
-        <string>Read last samples</string>
+        <string>读取最近的采样</string>
        </property>
        <property name="text">
         <string/>
@@ -585,7 +585,7 @@
      <item>
       <widget class="QPushButton" name="sampleStopButton">
        <property name="toolTip">
-        <string>Stop sampling</string>
+        <string>停止采样</string>
        </property>
        <property name="text">
         <string/>
@@ -595,10 +595,10 @@
      <item>
       <widget class="QCheckBox" name="rawBox">
        <property name="toolTip">
-        <string>Use raw ADC values instead of scaled voltages and currents.</string>
+        <string>使用原始 ADC 值，而非换算后的电压和电流。</string>
        </property>
        <property name="text">
-        <string>Raw</string>
+        <string>原始</string>
        </property>
       </widget>
      </item>
@@ -618,7 +618,7 @@
      <item>
       <widget class="QPushButton" name="loadDataButton">
        <property name="toolTip">
-        <string>Load samples from CSV-file</string>
+        <string>从 CSV 文件加载采样</string>
        </property>
        <property name="text">
         <string/>
@@ -634,7 +634,7 @@
         </sizepolicy>
        </property>
        <property name="toolTip">
-        <string>Save samples to CSV file...</string>
+        <string>将采样保存到 CSV 文件...</string>
        </property>
        <property name="text">
         <string/>
@@ -651,10 +651,10 @@
      <item>
       <widget class="QSpinBox" name="samplesBox">
        <property name="toolTip">
-        <string>Number of samples total, or number of samples before trigger in triggered modes</string>
+        <string>采样总数；在触发模式下为触发前的采样数</string>
        </property>
        <property name="prefix">
-        <string>Samp: </string>
+        <string>采样：</string>
        </property>
        <property name="maximum">
         <number>1000</number>
@@ -670,10 +670,10 @@
      <item>
       <widget class="QSpinBox" name="decimationBox">
        <property name="toolTip">
-        <string>Decimation (skip samples to fit more data)</string>
+        <string>抽取（跳过部分采样以容纳更多数据）</string>
        </property>
        <property name="prefix">
-        <string>Dec: </string>
+        <string>抽取：</string>
        </property>
        <property name="minimum">
         <number>1</number>
@@ -704,7 +704,7 @@
         </font>
        </property>
        <property name="toolTip">
-        <string>Enable horizontal zoom</string>
+        <string>启用水平缩放</string>
        </property>
        <property name="text">
         <string/>
@@ -737,7 +737,7 @@
         </font>
        </property>
        <property name="toolTip">
-        <string>Enable vertical zoom</string>
+        <string>启用垂直缩放</string>
        </property>
        <property name="text">
         <string/>
@@ -759,7 +759,7 @@
      <item>
       <widget class="QToolButton" name="rescaleButton">
        <property name="toolTip">
-        <string>Rescale plots to fit</string>
+        <string>重新缩放图表以适应</string>
        </property>
        <property name="text">
         <string/>

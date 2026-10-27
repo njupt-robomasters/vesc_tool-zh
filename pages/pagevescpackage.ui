@@ -36,7 +36,7 @@
      </property>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Package Store</string>
+       <string>软件包商店</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
@@ -57,7 +57,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Applications</string>
+              <string>应用程序</string>
              </property>
             </widget>
            </item>
@@ -89,7 +89,7 @@
               </font>
              </property>
              <property name="text">
-              <string>Libraries</string>
+              <string>库</string>
              </property>
             </widget>
            </item>
@@ -119,10 +119,10 @@
          <item>
           <widget class="QPushButton" name="installButton">
            <property name="toolTip">
-            <string>Uninstall current package and install the selected package to the connected VESC</string>
+            <string>卸载当前软件包，并将所选软件包安装到已连接的 VESC</string>
            </property>
            <property name="text">
-            <string>Install</string>
+            <string>安装</string>
            </property>
           </widget>
          </item>
@@ -132,13 +132,13 @@
      </widget>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Load Custom</string>
+       <string>加载自定义</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
         <widget class="QGroupBox" name="lispBox_3">
          <property name="title">
-          <string>Load Package</string>
+          <string>加载软件包</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_4">
           <property name="spacing">
@@ -168,7 +168,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Choose file...</string>
+             <string>选择文件...</string>
             </property>
             <property name="text">
              <string/>
@@ -193,10 +193,10 @@
           <item>
            <widget class="QPushButton" name="writeButton">
             <property name="toolTip">
-             <string>Uninstall current package and install the selected package to the connected VESC</string>
+             <string>卸载当前软件包，并将所选软件包安装到已连接的 VESC</string>
             </property>
             <property name="text">
-             <string>Install</string>
+             <string>安装</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -214,7 +214,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Create Package</string>
+       <string>创建软件包</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -255,7 +255,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Choose file...</string>
+               <string>选择文件...</string>
               </property>
               <property name="text">
                <string/>
@@ -302,7 +302,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Choose file...</string>
+               <string>选择文件...</string>
               </property>
               <property name="text">
                <string/>
@@ -319,7 +319,7 @@
             <item row="1" column="0">
              <widget class="QCheckBox" name="qmlFullscreenBox">
               <property name="text">
-               <string>Fullscreen</string>
+               <string>全屏</string>
               </property>
              </widget>
             </item>
@@ -333,7 +333,7 @@
          <item>
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>Package Name</string>
+            <string>软件包名称</string>
            </property>
           </widget>
          </item>
@@ -360,7 +360,7 @@
        <item>
         <widget class="QGroupBox" name="lispBox_2">
          <property name="title">
-          <string>Output</string>
+          <string>输出</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <property name="spacing">
@@ -401,7 +401,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Choose file...</string>
+             <string>选择文件...</string>
             </property>
             <property name="text">
              <string/>
@@ -415,7 +415,7 @@
           <item>
            <widget class="QPushButton" name="saveButton">
             <property name="text">
-             <string>Save Package</string>
+             <string>保存软件包</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -458,14 +458,14 @@
       <item>
        <widget class="QPushButton" name="dlArchiveButton">
         <property name="text">
-         <string>Update Archive</string>
+         <string>更新归档</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="uninstallButton">
         <property name="text">
-         <string>Uninstall Current</string>
+         <string>卸载当前</string>
         </property>
        </widget>
       </item>

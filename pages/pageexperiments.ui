@@ -27,7 +27,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Setup</string>
+       <string>设置</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <property name="leftMargin">
@@ -61,7 +61,7 @@
        <item row="0" column="1">
         <widget class="QGroupBox" name="groupBox_2">
          <property name="title">
-          <string>Current Sweep</string>
+          <string>电流扫描</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <property name="leftMargin">
@@ -82,7 +82,7 @@
           <item row="0" column="0">
            <widget class="QDoubleSpinBox" name="currentFromBox">
             <property name="prefix">
-             <string>From: </string>
+             <string>从：</string>
             </property>
             <property name="minimum">
              <double>-1000.000000000000000</double>
@@ -98,7 +98,7 @@
           <item row="0" column="1">
            <widget class="QDoubleSpinBox" name="currentToBox">
             <property name="prefix">
-             <string>To: </string>
+             <string>到：</string>
             </property>
             <property name="minimum">
              <double>-1000.000000000000000</double>
@@ -117,7 +117,7 @@
           <item row="1" column="0">
            <widget class="QDoubleSpinBox" name="currentStepBox">
             <property name="prefix">
-             <string>Step: </string>
+             <string>步进：</string>
             </property>
             <property name="maximum">
              <double>1000.000000000000000</double>
@@ -130,7 +130,7 @@
           <item row="1" column="1">
            <widget class="QDoubleSpinBox" name="currentStepTimeBox">
             <property name="prefix">
-             <string>TS: </string>
+             <string>时间步：</string>
             </property>
             <property name="suffix">
              <string> s</string>
@@ -146,7 +146,7 @@
           <item row="2" column="0" colspan="2">
            <widget class="QPushButton" name="currentRunButton">
             <property name="text">
-             <string>Run</string>
+             <string>运行</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -163,7 +163,7 @@
           <string> ms</string>
          </property>
          <property name="prefix">
-          <string>Sample Interval: </string>
+          <string>采样间隔：</string>
          </property>
          <property name="minimum">
           <number>5</number>
@@ -179,7 +179,7 @@
        <item row="0" column="0">
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
-          <string>Duty Sweep</string>
+          <string>占空比扫描</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
           <property name="leftMargin">
@@ -200,7 +200,7 @@
           <item row="0" column="0">
            <widget class="QDoubleSpinBox" name="dutyFromBox">
             <property name="prefix">
-             <string>From: </string>
+             <string>从：</string>
             </property>
             <property name="minimum">
              <double>-1.000000000000000</double>
@@ -216,7 +216,7 @@
           <item row="0" column="1">
            <widget class="QDoubleSpinBox" name="dutyToBox">
             <property name="prefix">
-             <string>To: </string>
+             <string>到：</string>
             </property>
             <property name="minimum">
              <double>-1.000000000000000</double>
@@ -235,7 +235,7 @@
           <item row="1" column="0">
            <widget class="QDoubleSpinBox" name="dutyStepBox">
             <property name="prefix">
-             <string>Step: </string>
+             <string>步进：</string>
             </property>
             <property name="value">
              <double>0.020000000000000</double>
@@ -245,7 +245,7 @@
           <item row="1" column="1">
            <widget class="QDoubleSpinBox" name="dutyStepTimeBox">
             <property name="prefix">
-             <string>TS: </string>
+             <string>时间步：</string>
             </property>
             <property name="suffix">
              <string> s</string>
@@ -261,7 +261,7 @@
           <item row="2" column="0" colspan="2">
            <widget class="QPushButton" name="dutyRunButton">
             <property name="text">
-             <string>Run</string>
+             <string>运行</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -275,7 +275,7 @@
        <item row="2" column="0">
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
-          <string>ERPM Sweep</string>
+          <string>ERPM 扫描</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
           <property name="leftMargin">
@@ -296,7 +296,7 @@
           <item row="0" column="1">
            <widget class="QDoubleSpinBox" name="rpmToBox">
             <property name="prefix">
-             <string>To: </string>
+             <string>到：</string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -318,7 +318,7 @@
           <item row="1" column="0">
            <widget class="QDoubleSpinBox" name="rpmStepBox">
             <property name="prefix">
-             <string>Step: </string>
+             <string>步进：</string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -337,7 +337,7 @@
           <item row="0" column="0">
            <widget class="QDoubleSpinBox" name="rpmFromBox">
             <property name="prefix">
-             <string>From: </string>
+             <string>从：</string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -356,7 +356,7 @@
           <item row="1" column="1">
            <widget class="QDoubleSpinBox" name="rpmStepTimeBox">
             <property name="prefix">
-             <string>TS: </string>
+             <string>时间步：</string>
             </property>
             <property name="suffix">
              <string> s</string>
@@ -372,7 +372,7 @@
           <item row="2" column="0" colspan="3">
            <widget class="QPushButton" name="rpmRunButton">
             <property name="text">
-             <string>Run</string>
+             <string>运行</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -383,7 +383,7 @@
           <item row="0" column="2">
            <widget class="QDoubleSpinBox" name="rpmEndBox">
             <property name="prefix">
-             <string>End: </string>
+             <string>结束：</string>
             </property>
             <property name="suffix">
              <string/>
@@ -408,7 +408,7 @@
           <item row="1" column="2">
            <widget class="QCheckBox" name="keepRPMcheckBox">
             <property name="text">
-             <string>Keep End Speed</string>
+             <string>保持结束速度</string>
             </property>
             <property name="checked">
              <bool>false</bool>
@@ -422,7 +422,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Plot</string>
+       <string>图表</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_5">
        <property name="spacing">
@@ -453,7 +453,7 @@
            <item>
             <widget class="QLineEdit" name="titleEdit">
              <property name="text">
-              <string>Graph Title</string>
+              <string>图表标题</string>
              </property>
             </widget>
            </item>
@@ -529,7 +529,7 @@
              </font>
             </property>
             <property name="toolTip">
-             <string>Autoscale plots with incoming samples</string>
+             <string>随新采样自动缩放图表</string>
             </property>
             <property name="text">
              <string/>
@@ -567,7 +567,7 @@
              </font>
             </property>
             <property name="toolTip">
-             <string>Enable horizontal zoom</string>
+             <string>启用水平缩放</string>
             </property>
             <property name="text">
              <string/>
@@ -605,7 +605,7 @@
              </font>
             </property>
             <property name="toolTip">
-             <string>Enable vertical zoom</string>
+             <string>启用垂直缩放</string>
             </property>
             <property name="text">
              <string/>
@@ -632,7 +632,7 @@
           <item>
            <widget class="QToolButton" name="rescaleButton">
             <property name="toolTip">
-             <string>Rescale plots to fit</string>
+             <string>重新缩放图表以适应</string>
             </property>
             <property name="text">
              <string/>
@@ -671,7 +671,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show power</string>
+             <string>显示功率</string>
             </property>
             <property name="text">
              <string>P</string>
@@ -693,7 +693,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show duty cycle</string>
+             <string>显示占空比</string>
             </property>
             <property name="text">
              <string>D</string>
@@ -715,7 +715,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show motor temperature</string>
+             <string>显示电机温度</string>
             </property>
             <property name="text">
              <string>TM</string>
@@ -737,7 +737,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show MOSFET temperature</string>
+             <string>显示 MOSFET 温度</string>
             </property>
             <property name="text">
              <string>TF</string>
@@ -759,7 +759,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show individual MOSFET temperatures</string>
+             <string>显示各 MOSFET 温度</string>
             </property>
             <property name="text">
              <string>TFI</string>
@@ -778,7 +778,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show input voltage</string>
+             <string>显示输入电压</string>
             </property>
             <property name="text">
              <string>U</string>
@@ -800,7 +800,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show motor current</string>
+             <string>显示电机电流</string>
             </property>
             <property name="text">
              <string>IM</string>
@@ -822,7 +822,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show input current</string>
+             <string>显示输入电流</string>
             </property>
             <property name="text">
              <string>II</string>
@@ -880,7 +880,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Close comparison graphs</string>
+             <string>关闭对比图</string>
             </property>
             <property name="text">
              <string>X</string>
@@ -909,7 +909,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show power</string>
+             <string>显示功率</string>
             </property>
             <property name="text">
              <string>P</string>
@@ -931,7 +931,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show duty cycle</string>
+             <string>显示占空比</string>
             </property>
             <property name="text">
              <string>D</string>
@@ -953,7 +953,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show motor temperature</string>
+             <string>显示电机温度</string>
             </property>
             <property name="text">
              <string>TM</string>
@@ -975,7 +975,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show MOSFET temperature</string>
+             <string>显示 MOSFET 温度</string>
             </property>
             <property name="text">
              <string>TF</string>
@@ -997,7 +997,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show individual MOSFET temperatures</string>
+             <string>显示各 MOSFET 温度</string>
             </property>
             <property name="text">
              <string>TFI</string>
@@ -1016,7 +1016,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show input voltage</string>
+             <string>显示输入电压</string>
             </property>
             <property name="text">
              <string>U</string>
@@ -1038,7 +1038,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show motor current</string>
+             <string>显示电机电流</string>
             </property>
             <property name="text">
              <string>IM</string>
@@ -1060,7 +1060,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Show input current</string>
+             <string>显示输入电流</string>
             </property>
             <property name="text">
              <string>II</string>
@@ -1080,7 +1080,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>EXT Monitor</string>
+       <string>外部监视</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
@@ -1143,7 +1143,7 @@
           <item>
            <widget class="QPushButton" name="victronConnectButton">
             <property name="text">
-             <string>Connect</string>
+             <string>连接</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -1154,7 +1154,7 @@
           <item>
            <widget class="QPushButton" name="victronDisconnectButton">
             <property name="text">
-             <string>Disconnect</string>
+             <string>断开连接</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -1188,7 +1188,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Voltage:</string>
+          <string>电压：</string>
          </property>
         </widget>
        </item>
@@ -1202,7 +1202,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Current:</string>
+          <string>电流：</string>
          </property>
         </widget>
        </item>
@@ -1231,7 +1231,7 @@
      <item>
       <widget class="QPushButton" name="stopButton">
        <property name="text">
-        <string>Stop</string>
+        <string>停止</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -1255,7 +1255,7 @@
      <item>
       <widget class="QPushButton" name="openButton">
        <property name="text">
-        <string>Open</string>
+        <string>打开</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -1266,7 +1266,7 @@
      <item>
       <widget class="QPushButton" name="openCompButton">
        <property name="text">
-        <string>Compare</string>
+        <string>对比</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">

@@ -211,8 +211,8 @@ QByteArray CodeLoader::lispPackImports(QString codeStr, QString editorPath, bool
 
             if (getImportFromLine(line, path, tag, isInvalid)) {
                 if (isInvalid) {
-                    dbg(tr("Append Imports"),
-                        tr("Line: %1: Invalid import tag.").arg(line_num),
+                    dbg(tr("追加导入"),
+                        tr("第 %1 行：导入标签无效。").arg(line_num),
                         false);
                     return QByteArray();
                 }
@@ -231,8 +231,8 @@ QByteArray CodeLoader::lispPackImports(QString codeStr, QString editorPath, bool
                         pkgImportName = path.mid(0, atInd);
                         path.remove(0, atInd + 1);
                     } else {
-                        dbg(tr("Append Imports"),
-                            tr("Line: %1: Invalid import tag.").arg(line_num),
+                        dbg(tr("追加导入"),
+                            tr("第 %1 行：导入标签无效。").arg(line_num),
                             false);
                         return QByteArray();
                     }
@@ -274,8 +274,8 @@ QByteArray CodeLoader::lispPackImports(QString codeStr, QString editorPath, bool
                                 }
 
                                 if (!found) {
-                                    mVesc->emitMessageDialog(tr("Append Imports"),
-                                                             tr("Tag %1 not found in package %2. %3").
+                                    mVesc->emitMessageDialog(tr("追加导入"),
+                                                             tr("在软件包 %2 中未找到标签 %1。%3").
                                                              arg(pkgImportName).arg(path).arg(pkgErrorMsg),
                                                              false);
                                     return QByteArray();
@@ -291,14 +291,14 @@ QByteArray CodeLoader::lispPackImports(QString codeStr, QString editorPath, bool
                             files.append(qMakePair(tag, fileData));
                         }
                     } else {
-                        dbg(tr("Append Imports"),
-                            tr("Line: %1: Imported file cannot be opened.").arg(line_num),
+                        dbg(tr("追加导入"),
+                            tr("第 %1 行：无法打开导入的文件。").arg(line_num),
                             false);
                         return QByteArray();
                     }
                 } else {
-                    dbg(tr("Append Imports"),
-                        tr("Line: %1: Imported file not found: %2. %3").
+                    dbg(tr("追加导入"),
+                        tr("第 %1 行：未找到导入的文件：%2。%3").
                         arg(line_num).arg(fi.absoluteFilePath()).arg(pkgErrorMsg),
                         false);
                     return QByteArray();
@@ -591,8 +591,8 @@ QString CodeLoader::lispRead(QWidget *parent, QString &lispPath)
 
             if (num_imports > 0) {
                 auto reply = QMessageBox::warning(parent,
-                                                  tr("Imports"),
-                                                  tr("%1 imports found. Do you want to save them as files?").arg(num_imports),
+                                                  tr("导入"),
+                                                  tr("发现 %1 个导入。是否将其保存为文件？").arg(num_imports),
                                                   QMessageBox::Yes | QMessageBox::No);
 
                 QMap<QString, QString> importPaths;
@@ -608,7 +608,7 @@ QString CodeLoader::lispRead(QWidget *parent, QString &lispPath)
                 }
 
                 if (reply == QMessageBox::Yes) {
-                    QString dirName = QFileDialog::getExistingDirectory(parent, tr("Choose Directory"));
+                    QString dirName = QFileDialog::getExistingDirectory(parent, tr("选择目录"));
 
                     if (!dirName.isEmpty()) {
                         QFile fileLisp(dirName + "/From VESC.lbm");
@@ -640,8 +640,8 @@ QString CodeLoader::lispRead(QWidget *parent, QString &lispPath)
 
                             if (file.exists()) {
                                 auto reply = QMessageBox::question(parent,
-                                                                   tr("Replace File"),
-                                                                   tr("File %1 exists. Do you want to replace it?").arg(i.first));
+                                                                   tr("替换文件"),
+                                                                   tr("文件 %1 已存在。是否替换？").arg(i.first));
 
                                 if (reply != QMessageBox::Yes) {
                                     continue;
@@ -649,7 +649,7 @@ QString CodeLoader::lispRead(QWidget *parent, QString &lispPath)
                             }
 
                             if (!file.open(QIODevice::WriteOnly)) {
-                                QMessageBox::critical(parent, tr("Save Import"),
+                                QMessageBox::critical(parent, tr("保存导入"),
                                                       "Could not open\n" + file.fileName() + "\nfor writing");
                                 return QByteArray();
                             }
@@ -947,8 +947,8 @@ VescPackage CodeLoader::unpackVescPackageFromPath(QString path)
     QFile f(path);
     if (!f.open(QIODevice::ReadOnly)) {
         if (mVesc) {
-            mVesc->emitMessageDialog(tr("Unpack VESC Package"),
-                                     tr("Could not open package file for reading."),
+            mVesc->emitMessageDialog(tr("解包 VESC 软件包"),
+                                     tr("无法打开软件包文件进行读取。"),
                                      false, false);
         }
 
@@ -959,8 +959,8 @@ VescPackage CodeLoader::unpackVescPackageFromPath(QString path)
 
     if (!pkg.loadOk) {
         if (mVesc) {
-            mVesc->emitMessageDialog(tr("Unpack VESC Package"),
-                                     tr("Invalid package file."),
+            mVesc->emitMessageDialog(tr("解包 VESC 软件包"),
+                                     tr("软件包文件无效。"),
                                      false, false);
         }
     }
@@ -971,7 +971,7 @@ VescPackage CodeLoader::unpackVescPackageFromPath(QString path)
 bool CodeLoader::installVescPackage(VescPackage pkg)
 {
     if (!pkg.loadOk) {
-        mVesc->emitMessageDialog(tr("Write Package"), tr("Package is not valid."), false);
+        mVesc->emitMessageDialog(tr("写入软件包"), tr("软件包无效。"), false);
         return false;
     }
 
@@ -1026,8 +1026,8 @@ bool CodeLoader::installVescPackageFromPath(QString path)
 
     QFile f(path);
     if (!f.open(QIODevice::ReadOnly)) {
-        mVesc->emitMessageDialog(tr("Write Package"),
-                                 tr("Could not open package file for reading."),
+        mVesc->emitMessageDialog(tr("写入软件包"),
+                                 tr("无法打开软件包文件进行读取。"),
                                  false, false);
         return false;
     }

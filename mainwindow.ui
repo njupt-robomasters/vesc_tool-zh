@@ -142,7 +142,7 @@
                </font>
               </property>
               <property name="text">
-               <string>CAN-Devices</string>
+               <string>CAN 设备</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -189,7 +189,7 @@
            </size>
           </property>
           <property name="text">
-           <string>Scan CAN</string>
+           <string>扫描 CAN</string>
           </property>
          </widget>
         </item>
@@ -238,10 +238,10 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Brake current</string>
+         <string>刹车电流</string>
         </property>
         <property name="prefix">
-         <string>IB </string>
+         <string>制动电流</string>
         </property>
         <property name="suffix">
          <string> A</string>
@@ -263,7 +263,7 @@
       <item row="1" column="1">
        <widget class="QPushButton" name="currentButton">
         <property name="toolTip">
-         <string>Current</string>
+         <string>电流</string>
         </property>
         <property name="text">
          <string/>
@@ -273,7 +273,7 @@
       <item row="0" column="5">
        <widget class="QPushButton" name="brakeCurrentButton">
         <property name="toolTip">
-         <string>Brake current</string>
+         <string>刹车电流</string>
         </property>
         <property name="text">
          <string/>
@@ -283,7 +283,7 @@
       <item row="1" column="5">
        <widget class="QPushButton" name="handbrakeButton">
         <property name="toolTip">
-         <string>Handbrake current</string>
+         <string>手刹电流</string>
         </property>
         <property name="text">
          <string/>
@@ -293,7 +293,7 @@
       <item row="0" column="3">
        <widget class="QPushButton" name="speedButton">
         <property name="toolTip">
-         <string>Speed</string>
+         <string>速度</string>
         </property>
         <property name="text">
          <string/>
@@ -309,7 +309,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Switch off</string>
+         <string>关闭</string>
         </property>
         <property name="text">
          <string/>
@@ -331,7 +331,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Full brake</string>
+         <string>全刹车</string>
         </property>
         <property name="text">
          <string/>
@@ -377,7 +377,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Speed</string>
+         <string>速度</string>
         </property>
         <property name="prefix">
          <string>ω </string>
@@ -410,10 +410,10 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Handbrake current</string>
+         <string>手刹电流</string>
         </property>
         <property name="prefix">
-         <string>HB </string>
+         <string>手刹</string>
         </property>
         <property name="suffix">
          <string> A</string>
@@ -440,7 +440,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Duty cycle</string>
+         <string>占空比</string>
         </property>
         <property name="wrapping">
          <bool>false</bool>
@@ -468,7 +468,7 @@
       <item row="1" column="3">
        <widget class="QPushButton" name="posButton">
         <property name="toolTip">
-         <string>Position</string>
+         <string>位置</string>
         </property>
         <property name="text">
          <string/>
@@ -478,7 +478,7 @@
       <item row="0" column="1">
        <widget class="QPushButton" name="dutyButton">
         <property name="toolTip">
-         <string>Duty cycle</string>
+         <string>占空比</string>
         </property>
         <property name="text">
          <string/>
@@ -496,7 +496,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Position</string>
+         <string>位置</string>
         </property>
         <property name="prefix">
          <string>P </string>
@@ -523,7 +523,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Current</string>
+         <string>电流</string>
         </property>
         <property name="frame">
          <bool>true</bool>
@@ -609,7 +609,7 @@
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>文件</string>
     </property>
     <addaction name="actionSaveMotorConfXml"/>
     <addaction name="actionLoadMotorConfXml"/>
@@ -630,7 +630,7 @@
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>Help</string>
+     <string>帮助</string>
     </property>
     <addaction name="separator"/>
     <addaction name="actionVESCProjectForums"/>
@@ -649,7 +649,7 @@
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
-     <string>Developer</string>
+     <string>开发者</string>
     </property>
     <addaction name="actionParameterEditorMcconf"/>
     <addaction name="actionParameterEditorAppconf"/>
@@ -661,7 +661,7 @@
    </widget>
    <widget class="QMenu" name="menuTerminal">
     <property name="title">
-     <string>Terminal</string>
+     <string>终端</string>
     </property>
     <addaction name="actionTerminalShowHelp"/>
     <addaction name="actionTerminalPrintFaults"/>
@@ -682,13 +682,13 @@
      </font>
     </property>
     <property name="title">
-     <string>Edit</string>
+     <string>编辑</string>
     </property>
     <addaction name="actionPreferences"/>
    </widget>
    <widget class="QMenu" name="menuWizards">
     <property name="title">
-     <string>Wizards</string>
+     <string>向导</string>
     </property>
     <addaction name="actionAutoSetupFOC"/>
     <addaction name="actionSetupMotorsFOCQuick"/>
@@ -697,7 +697,7 @@
    </widget>
    <widget class="QMenu" name="menuTools_2">
     <property name="title">
-     <string>ConfBackup</string>
+     <string>配置备份</string>
     </property>
     <addaction name="actionBackupConfiguration"/>
     <addaction name="actionBackupConfigurationsCAN"/>
@@ -718,7 +718,7 @@
     <string>readMcconf</string>
    </property>
    <property name="toolTip">
-    <string>Read motor Configuration</string>
+    <string>读取电机配置</string>
    </property>
   </action>
   <action name="actionReadMcconfDefault">
@@ -726,7 +726,7 @@
     <string>readMcconfDefault</string>
    </property>
    <property name="toolTip">
-    <string>Read default motor configuration</string>
+    <string>读取默认电机配置</string>
    </property>
   </action>
   <action name="actionWriteMcconf">
@@ -734,17 +734,17 @@
     <string>writeMcconf</string>
    </property>
    <property name="toolTip">
-    <string>Write motor configuration</string>
+    <string>写入电机配置</string>
    </property>
   </action>
   <action name="actionSaveMotorConfXml">
    <property name="text">
-    <string>Save Motor Configuration XML as...</string>
+    <string>另存电机配置 XML 为...</string>
    </property>
   </action>
   <action name="actionLoadMotorConfXml">
    <property name="text">
-    <string>Load Motor Configuration XML</string>
+    <string>加载电机配置 XML</string>
    </property>
   </action>
   <action name="actionDisconnect">
@@ -752,23 +752,23 @@
     <string>disconnect</string>
    </property>
    <property name="toolTip">
-    <string>Disconnect</string>
+    <string>断开连接</string>
    </property>
   </action>
   <action name="actionReboot">
    <property name="text">
-    <string>Reboot</string>
+    <string>重启</string>
    </property>
    <property name="toolTip">
-    <string>Reboot via CPU reset</string>
+    <string>通过 CPU 复位重启</string>
    </property>
   </action>
   <action name="actionShutdown">
    <property name="text">
-    <string>Shutdown</string>
+    <string>关机</string>
    </property>
    <property name="toolTip">
-    <string>Shutdown (for controllers with auto-shutdown support only)</string>
+    <string>关机（仅适用于支持自动关机的控制器）</string>
    </property>
   </action>
   <action name="actionCanFwd">
@@ -779,7 +779,7 @@
     <string>canFwd</string>
    </property>
    <property name="toolTip">
-    <string>Forward communication over CAN-bus</string>
+    <string>通过 CAN 总线转发通信</string>
    </property>
   </action>
   <action name="actionReconnect">
@@ -787,7 +787,7 @@
     <string>reconnect</string>
    </property>
    <property name="toolTip">
-    <string>Reconnect last connection</string>
+    <string>重新连接上次的连接</string>
    </property>
   </action>
   <action name="actionRtData">
@@ -798,7 +798,7 @@
     <string>rtData</string>
    </property>
    <property name="toolTip">
-    <string>Stream realtime data</string>
+    <string>流式传输实时数据</string>
    </property>
   </action>
   <action name="actionReadAppconf">
@@ -806,7 +806,7 @@
     <string>readAppconf</string>
    </property>
    <property name="toolTip">
-    <string>Read app configuration</string>
+    <string>读取应用配置</string>
    </property>
   </action>
   <action name="actionReadAppconfDefault">
@@ -814,7 +814,7 @@
     <string>readAppconfDefault</string>
    </property>
    <property name="toolTip">
-    <string>Read default app configuration</string>
+    <string>读取默认应用配置</string>
    </property>
   </action>
   <action name="actionWriteAppconf">
@@ -822,27 +822,27 @@
     <string>writeAppconf</string>
    </property>
    <property name="toolTip">
-    <string>Write app configuration</string>
+    <string>写入应用配置</string>
    </property>
   </action>
   <action name="actionSaveAppconfXml">
    <property name="text">
-    <string>Save App Configuration XML as...</string>
+    <string>另存应用配置 XML 为...</string>
    </property>
   </action>
   <action name="actionLoadAppconfXml">
    <property name="text">
-    <string>Load App Configuration XML</string>
+    <string>加载应用配置 XML</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>Exit</string>
+    <string>退出</string>
    </property>
   </action>
   <action name="actionAbout">
    <property name="text">
-    <string>About VESC Tool</string>
+    <string>关于 VESC Tool</string>
    </property>
   </action>
   <action name="actionKeyboardControl">
@@ -856,51 +856,51 @@
     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Roboto'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;Enable keyboard control.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Roboto';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;Key functions:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Roboto'; font-weight:600;&quot;&gt;Up and Down Arrow Keys&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;Current control using the current value in the lower&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;left corner.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Roboto';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto'; font-weight:600;&quot;&gt;Right and Left Arrow Keys&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;Duty cycle control. Slowly ramps up and down the duty&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;cycle. When e.g. starting with right and then also holding&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;left, the duty cycle is ramped higher.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Roboto';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto'; font-weight:600;&quot;&gt;Page Down&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Roboto';&quot;&gt;Brake with the current set in the lower left corner.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Microsoft YaHei'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;启用键盘控制。&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Microsoft YaHei';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;按键功能：&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Microsoft YaHei'; font-weight:600;&quot;&gt;上、下方向键&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;使用左下角设定的&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;电流值进行电流控制。&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Microsoft YaHei';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei'; font-weight:600;&quot;&gt;左、右方向键&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;占空比控制。缓慢地增大和减小&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;占空比。例如先按住右键，再同时按住&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;左键，占空比将被升得更高。&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Microsoft YaHei';&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei'; font-weight:600;&quot;&gt;Page Down 键&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Microsoft YaHei';&quot;&gt;使用左下角设定的电流进行刹车。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </action>
   <action name="actionParameterEditorMcconf">
    <property name="text">
-    <string>Parameter Editor Mcconf</string>
+    <string>参数编辑器（电机配置）</string>
    </property>
   </action>
   <action name="actionParameterEditorAppconf">
    <property name="text">
-    <string>Parameter Editor Appconf</string>
+    <string>参数编辑器（应用配置）</string>
    </property>
   </action>
   <action name="actionSaveAppConfigurationHeader">
    <property name="text">
-    <string>Save App Configuration C Header as...</string>
+    <string>另存应用配置 C 头文件为...</string>
    </property>
   </action>
   <action name="actionSaveMotorConfigurationHeader">
    <property name="text">
-    <string>Save Motor Configuration C Header as...</string>
+    <string>另存电机配置 C 头文件为...</string>
    </property>
   </action>
   <action name="actionSaveAppConfigurationHeaderWrap">
    <property name="text">
-    <string>Save App Configuration C Header (ifdef wrapped) as...</string>
+    <string>另存应用配置 C 头文件（含 ifdef）为...</string>
    </property>
   </action>
   <action name="actionSaveMotorConfigurationHeaderWrap">
    <property name="text">
-    <string>Save Motor Configuration C Header (ifdef wrapped) as...</string>
+    <string>另存电机配置 C 头文件（含 ifdef）为...</string>
    </property>
   </action>
   <action name="actionRtDataApp">
@@ -911,33 +911,33 @@ p, li { white-space: pre-wrap; }
     <string>rtDataApp</string>
    </property>
    <property name="toolTip">
-    <string>Stream realtime app data</string>
+    <string>流式传输应用实时数据</string>
    </property>
   </action>
   <action name="actionTerminalPrintFaults">
    <property name="text">
-    <string>Print Faults</string>
+    <string>打印故障</string>
    </property>
    <property name="toolTip">
-    <string>Print Faults</string>
+    <string>打印故障</string>
    </property>
   </action>
   <action name="actionTerminalShowHelp">
    <property name="text">
-    <string>Show Help</string>
+    <string>显示帮助</string>
    </property>
   </action>
   <action name="actionTerminalClear">
    <property name="text">
-    <string>Clear Terminal</string>
+    <string>清除终端</string>
    </property>
   </action>
   <action name="actionTerminalPrintThreads">
    <property name="text">
-    <string>Print Threads</string>
+    <string>打印线程</string>
    </property>
    <property name="toolTip">
-    <string>Print Threads</string>
+    <string>打印线程</string>
    </property>
   </action>
   <action name="actionSendAlive">
@@ -945,23 +945,23 @@ p, li { white-space: pre-wrap; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Send Alive Commands</string>
+    <string>发送保活命令</string>
    </property>
    <property name="toolTip">
-    <string>Send alive packets periodically to prevent timeout</string>
+    <string>定期发送保活包以防止超时</string>
    </property>
   </action>
   <action name="actionLibrariesUsed">
    <property name="text">
-    <string>About Libraries Used</string>
+    <string>关于所用的库</string>
    </property>
   </action>
   <action name="actionMotorSetupWizard">
    <property name="text">
-    <string>Setup Other Motors</string>
+    <string>设置其他电机</string>
    </property>
    <property name="toolTip">
-    <string>Start the Motor Setup Wizard</string>
+    <string>启动电机设置向导</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -969,10 +969,10 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionAppSetupWizard">
    <property name="text">
-    <string>Setup Input</string>
+    <string>设置输入</string>
    </property>
    <property name="toolTip">
-    <string>Start the App Setup Wizard</string>
+    <string>启动应用设置向导</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -980,58 +980,58 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionAboutQt">
    <property name="text">
-    <string>About Qt</string>
+    <string>关于 Qt</string>
    </property>
    <property name="toolTip">
-    <string>Show the Qt library's About box</string>
+    <string>显示 Qt 库的“关于”对话框</string>
    </property>
   </action>
   <action name="actionParameterEditorInfo">
    <property name="text">
-    <string>Parameter Editor Info</string>
+    <string>参数编辑器（信息）</string>
    </property>
   </action>
   <action name="actionSafetyInformation">
    <property name="text">
-    <string>Safety Information</string>
+    <string>安全信息</string>
    </property>
   </action>
   <action name="actionWarrantyStatement">
    <property name="text">
-    <string>Limited Warranty Statement</string>
+    <string>有限保修声明</string>
    </property>
    <property name="toolTip">
-    <string>Limited Warranty Statement</string>
+    <string>有限保修声明</string>
    </property>
   </action>
   <action name="actionVESCToolChangelog">
    <property name="text">
-    <string>VESC Tool Changelog</string>
+    <string>VESC Tool 更新日志</string>
    </property>
   </action>
   <action name="actionTerminalDRVResetLatchedFaults">
    <property name="text">
-    <string>DRV Reset Latched Faults</string>
+    <string>DRV 复位锁存故障</string>
    </property>
   </action>
   <action name="actionVESCProjectForums">
    <property name="text">
-    <string>VESC Project Forums</string>
+    <string>VESC 项目论坛</string>
    </property>
   </action>
   <action name="actionFirmwareChangelog">
    <property name="text">
-    <string>Firmware Changelog</string>
+    <string>固件更新日志</string>
    </property>
   </action>
   <action name="actionLicense">
    <property name="text">
-    <string>License</string>
+    <string>许可证</string>
    </property>
   </action>
   <action name="actionAutoSetupFOC">
    <property name="text">
-    <string>Setup Motors FOC</string>
+    <string>设置电机 FOC</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -1039,7 +1039,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionExportConfigurationParser">
    <property name="text">
-    <string>Export Configuration Parser</string>
+    <string>导出配置解析器</string>
    </property>
   </action>
   <action name="actionIMU">
@@ -1050,7 +1050,7 @@ p, li { white-space: pre-wrap; }
     <string>IMU</string>
    </property>
    <property name="toolTip">
-    <string>Activate IMU Sampling</string>
+    <string>启用 IMU 采样</string>
    </property>
   </action>
   <action name="actionLoadFirmwareConfigs">
@@ -1059,33 +1059,33 @@ p, li { white-space: pre-wrap; }
      <normaloff>:/res/icons/Electronics-96.png</normaloff>:/res/icons/Electronics-96.png</iconset>
    </property>
    <property name="text">
-    <string>Load Firmware Configs</string>
+    <string>加载固件配置</string>
    </property>
   </action>
   <action name="actionBackupConfiguration">
    <property name="text">
-    <string>Backup Configuration</string>
+    <string>备份配置</string>
    </property>
    <property name="toolTip">
-    <string>Backup Configuration (no CAN)</string>
+    <string>备份配置（不含 CAN）</string>
    </property>
   </action>
   <action name="actionRestoreConfiguration">
    <property name="text">
-    <string>Restore Configuration</string>
+    <string>恢复配置</string>
    </property>
    <property name="toolTip">
-    <string>Restore Configuration</string>
+    <string>恢复配置</string>
    </property>
   </action>
   <action name="actionClearConfigurationBackups">
    <property name="text">
-    <string>Clear Configuration Backups</string>
+    <string>清除配置备份</string>
    </property>
   </action>
   <action name="actionParameterEditorFW">
    <property name="text">
-    <string>Parameter Editor FW</string>
+    <string>参数编辑器（固件）</string>
    </property>
    <property name="font">
     <font/>
@@ -1093,12 +1093,12 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionBackupConfigurationsCAN">
    <property name="text">
-    <string>Backup Configurations (Including CAN)</string>
+    <string>备份配置（含 CAN）</string>
    </property>
   </action>
   <action name="actionRestoreConfigurationsCAN">
    <property name="text">
-    <string>Restore Configurations (Including CAN)</string>
+    <string>恢复配置（含 CAN）</string>
    </property>
   </action>
   <action name="actionrtDataBms">
@@ -1109,7 +1109,7 @@ p, li { white-space: pre-wrap; }
     <string>rtDataBms</string>
    </property>
    <property name="toolTip">
-    <string>Stream BMS realtime data</string>
+    <string>流式传输 BMS 实时数据</string>
    </property>
   </action>
   <action name="actionGamepadControl">
@@ -1117,20 +1117,20 @@ p, li { white-space: pre-wrap; }
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>Gamepad Control</string>
+    <string>游戏手柄控制</string>
    </property>
    <property name="toolTip">
-    <string>Use Gamepad Control</string>
+    <string>使用游戏手柄控制</string>
    </property>
   </action>
   <action name="actionParameterEditorCustomConf0">
    <property name="text">
-    <string>Parameter Editor Custom Conf 0</string>
+    <string>参数编辑器（自定义配置 0）</string>
    </property>
   </action>
   <action name="actionSetupMotorsFOCQuick">
    <property name="text">
-    <string>Setup Motors FOC (old)</string>
+    <string>设置电机 FOC（旧版）</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -1138,7 +1138,7 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionPreferences">
    <property name="text">
-    <string>Preferences</string>
+    <string>偏好设置</string>
    </property>
    <property name="shortcutVisibleInContextMenu">
     <bool>false</bool>
@@ -1146,27 +1146,27 @@ p, li { white-space: pre-wrap; }
   </action>
   <action name="actionLaunchBoardConfigurator">
    <property name="text">
-    <string>Restart + Launch Board Configurator</string>
+    <string>重启并启动主板配置器</string>
    </property>
   </action>
   <action name="actionLaunchMobileTool">
    <property name="text">
-    <string>Restart + Launch Mobile Tool</string>
+    <string>重启并启动移动端工具</string>
    </property>
   </action>
   <action name="actionRestartLispBM">
    <property name="text">
-    <string>Restart LispBM</string>
+    <string>重启 LispBM</string>
    </property>
   </action>
   <action name="actionVESC_Discord">
    <property name="text">
-    <string>VESC Discord</string>
+    <string>VESC Discord 社区</string>
    </property>
   </action>
   <action name="actionRemoveDownloadedConfigs">
    <property name="text">
-    <string>Remove Downloaded Configs</string>
+    <string>移除已下载的配置</string>
    </property>
   </action>
  </widget>

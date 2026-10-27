@@ -24,7 +24,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Roll/Pitch/Yaw</string>
+       <string>横滚/俯仰/偏航</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -34,7 +34,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Accel/Gyro/Mag</string>
+       <string>加速度计/陀螺仪/磁力计</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -51,13 +51,13 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>3D Plot</string>
+       <string>3D 图</string>
       </attribute>
       <layout class="QVBoxLayout" name="layout3d">
        <item>
         <widget class="QCheckBox" name="useYawBox">
          <property name="text">
-          <string>Use Yaw (will drift)</string>
+          <string>使用偏航角（会漂移）</string>
          </property>
         </widget>
        </item>

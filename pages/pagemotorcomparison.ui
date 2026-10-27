@@ -41,7 +41,7 @@
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
-         <string>Custom</string>
+         <string>自定义</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <property name="spacing">
@@ -64,7 +64,7 @@
            <item row="0" column="1">
             <widget class="QRadioButton" name="testModeRpmButton">
              <property name="toolTip">
-              <string>Sweep from 0 to the end RPM at the set torque.</string>
+              <string>在设定扭矩下，从 0 扫描到结束 RPM。</string>
              </property>
              <property name="text">
               <string>RPM</string>
@@ -77,7 +77,7 @@
            <item row="1" column="2">
             <widget class="QRadioButton" name="testModeVBFWButton">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Torque-sweep at fixed RPM and limited bus voltage. Uses field weakening according to the current in the FW-box.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在固定 RPM 和受限母线电压下进行扭矩扫描。弱磁电流按 FW 输入框中的值使用。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
               <string>VB+FW</string>
@@ -87,20 +87,20 @@
            <item row="1" column="1">
             <widget class="QRadioButton" name="testModeExpButton">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Torque + RPM Exponential mode. Sweep from 0 to end RPM and use the base torque + exponent on the RPM to derive the power requirement. The test will be scaled such that the specified power is at the full RPM. The power for the base torque will be required in addition to that.&lt;/p&gt;&lt;p&gt;Propellers and impellers in air and water usually just have the exponent while traction vehicles have a base torque from the rolling resistance + an exponent from wind resistance.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;扭矩 + RPM 指数模式。从 0 扫描到结束 RPM，并使用基础扭矩加上 RPM 的指数来推导功率需求。测试会按比例缩放，使指定功率出现在满转速处。基础扭矩所需的功率需另行叠加。&lt;/p&gt;&lt;p&gt;空气和水中的螺旋桨与叶轮通常只有指数项，而牵引类车辆的基础扭矩来自滚动阻力，指数项则来自风阻。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
-              <string>Exp</string>
+              <string>指数</string>
              </property>
             </widget>
            </item>
            <item row="0" column="0">
             <widget class="QRadioButton" name="testModeTorqueButton">
              <property name="toolTip">
-              <string>Sweep from 0 to the set torque at the set RPM.</string>
+              <string>在设定 RPM 下，从 0 扫描到设定扭矩。</string>
              </property>
              <property name="text">
-              <string>Torque</string>
+              <string>扭矩</string>
              </property>
              <property name="checked">
               <bool>true</bool>
@@ -110,17 +110,17 @@
            <item row="1" column="0">
             <widget class="QRadioButton" name="testModeRpmPowerButton">
              <property name="toolTip">
-              <string>Sweep from the start RPM to the end RPM at the set Power.</string>
+              <string>在设定功率下，从起始 RPM 扫描到结束 RPM。</string>
              </property>
              <property name="text">
-              <string>RPM/Power</string>
+              <string>RPM/功率</string>
              </property>
             </widget>
            </item>
            <item row="0" column="2">
             <widget class="QRadioButton" name="testModeVbusButton">
              <property name="toolTip">
-              <string>Torque sweep while keeping the bus voltage constant.</string>
+              <string>保持母线电压恒定的扭矩扫描。</string>
              </property>
              <property name="text">
               <string>VBus</string>
@@ -130,7 +130,7 @@
            <item row="2" column="0">
             <widget class="QRadioButton" name="testModeVBRPMButton">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;RPM sweep while limiting the torque by the bus voltage.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;在由母线电压限制扭矩的条件下进行 RPM 扫描。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
               <string>VB+RPM</string>
@@ -150,7 +150,7 @@
               <bool>false</bool>
              </property>
              <property name="toolTip">
-              <string>Start RPM</string>
+              <string>起始 RPM</string>
              </property>
              <property name="prefix">
               <string/>
@@ -181,7 +181,7 @@
               <bool>false</bool>
              </property>
              <property name="toolTip">
-              <string>Base Torque</string>
+              <string>基础扭矩</string>
              </property>
              <property name="prefix">
               <string>B: </string>
@@ -256,7 +256,7 @@
            <item row="1" column="1">
             <widget class="QDoubleSpinBox" name="testRpmBox">
              <property name="toolTip">
-              <string>End RPM</string>
+              <string>结束 RPM</string>
              </property>
              <property name="prefix">
               <string/>
@@ -284,7 +284,7 @@
               <bool>false</bool>
              </property>
              <property name="toolTip">
-              <string>RPM exponent</string>
+              <string>RPM 指数</string>
              </property>
              <property name="prefix">
               <string>指数：</string>
@@ -306,10 +306,10 @@
            <item row="3" column="0">
             <widget class="QCheckBox" name="testNegativeBox">
              <property name="toolTip">
-              <string>Include negative RPM and Torque in tests.</string>
+              <string>测试中包含负转速和负扭矩。</string>
              </property>
              <property name="text">
-              <string>Negative</string>
+              <string>负向</string>
              </property>
             </widget>
            </item>
@@ -339,7 +339,7 @@
            <item>
             <widget class="QPushButton" name="testRunButton">
              <property name="text">
-              <string>Run</string>
+              <string>运行</string>
              </property>
              <property name="icon">
               <iconset resource="../res.qrc">
@@ -350,10 +350,10 @@
            <item>
             <widget class="QCheckBox" name="testLiveUpdateBox">
              <property name="toolTip">
-              <string>Re-run tests any time settings are changed.</string>
+              <string>设置更改时自动重新运行测试。</string>
              </property>
              <property name="text">
-              <string>Live Update</string>
+              <string>实时更新</string>
              </property>
              <property name="checked">
               <bool>true</bool>
@@ -379,7 +379,7 @@
        </widget>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
-         <string>Custom</string>
+         <string>自定义</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_7">
          <property name="spacing">
@@ -463,28 +463,28 @@
           <item>
            <widget class="QLineEdit" name="titleEdit">
             <property name="text">
-             <string>Graph Title</string>
+             <string>图表标题</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QLineEdit" name="compAEdit">
             <property name="text">
-             <string>Motor A</string>
+             <string>电机 A</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QLineEdit" name="compBEdit">
             <property name="text">
-             <string>Motor B</string>
+             <string>电机 B</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QDoubleSpinBox" name="pointsBox">
             <property name="prefix">
-             <string>Plot Points: </string>
+             <string>绘图点数：</string>
             </property>
             <property name="decimals">
              <number>0</number>
@@ -506,7 +506,7 @@
           <item>
            <widget class="QCheckBox" name="scatterPlotBox">
             <property name="text">
-             <string>ScatterPlot</string>
+             <string>散点图</string>
             </property>
            </widget>
           </item>
@@ -533,7 +533,7 @@
           <item>
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>Export</string>
+             <string>导出</string>
             </property>
            </widget>
           </item>
@@ -578,7 +578,7 @@
           <item>
            <widget class="QPushButton" name="savePlotPdfButton">
             <property name="toolTip">
-             <string>Save plot as PDF image</string>
+             <string>将图表保存为 PDF 图像</string>
             </property>
             <property name="text">
              <string>PDF</string>
@@ -592,7 +592,7 @@
           <item>
            <widget class="QPushButton" name="savePlotPngButton">
             <property name="toolTip">
-             <string>Save plot as PNG image</string>
+             <string>将图表保存为 PNG 图像</string>
             </property>
             <property name="text">
              <string>PNG</string>
@@ -661,7 +661,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>Autoscale plots after updates.</string>
+                <string>更新后自动缩放图表。</string>
                </property>
                <property name="text">
                 <string/>
@@ -699,7 +699,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>Enable horizontal zoom</string>
+                <string>启用水平缩放</string>
                </property>
                <property name="text">
                 <string/>
@@ -737,7 +737,7 @@
                 </font>
                </property>
                <property name="toolTip">
-                <string>Enable vertical zoom</string>
+                <string>启用垂直缩放</string>
                </property>
                <property name="text">
                 <string/>
@@ -764,7 +764,7 @@
              <item>
               <widget class="QToolButton" name="rescaleButton">
                <property name="toolTip">
-                <string>Rescale plots to fit</string>
+                <string>重新缩放图表以适应</string>
                </property>
                <property name="text">
                 <string/>
@@ -808,7 +808,7 @@
       </property>
       <widget class="QGroupBox" name="groupBox">
        <property name="title">
-        <string>Motor A</string>
+        <string>电机 A</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -830,7 +830,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Get gearing from config</string>
+               <string>从配置获取传动比</string>
               </property>
               <property name="text">
                <string/>
@@ -844,7 +844,7 @@
             <item row="3" column="0" colspan="4">
              <widget class="QDoubleSpinBox" name="m1TempIncBox">
               <property name="prefix">
-               <string>Temp Increase: </string>
+               <string>温升：</string>
               </property>
               <property name="suffix">
                <string> °C</string>
@@ -863,10 +863,10 @@
             <item row="2" column="0">
              <widget class="QDoubleSpinBox" name="m1MotorNumBox">
               <property name="toolTip">
-               <string>Number of motors in parallel</string>
+               <string>并联电机数量</string>
               </property>
               <property name="prefix">
-               <string>Motors: </string>
+               <string>电机数：</string>
               </property>
               <property name="decimals">
                <number>0</number>
@@ -879,7 +879,7 @@
             <item row="1" column="0">
              <widget class="QDoubleSpinBox" name="m1GearEfficiencyBox">
               <property name="prefix">
-               <string>Gear Eff: </string>
+               <string>齿轮效率：</string>
               </property>
               <property name="suffix">
                <string> %</string>
@@ -910,10 +910,10 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Gear Ratio</string>
+               <string>齿轮比</string>
               </property>
               <property name="prefix">
-               <string>Gearing: </string>
+               <string>传动比：</string>
               </property>
               <property name="decimals">
                <number>3</number>
@@ -935,10 +935,10 @@
             <item row="2" column="1" colspan="3">
              <widget class="QDoubleSpinBox" name="m1FwBox">
               <property name="toolTip">
-               <string>Field Weakening Current</string>
+               <string>弱磁电流</string>
               </property>
               <property name="prefix">
-               <string>FW: </string>
+               <string>固件：</string>
               </property>
               <property name="suffix">
                <string> A</string>
@@ -951,10 +951,10 @@
             <item row="1" column="1" colspan="3">
              <widget class="QDoubleSpinBox" name="m1MaxRpmBox">
               <property name="toolTip">
-               <string>Maximum motor shaft RPM</string>
+               <string>电机轴最大转速</string>
               </property>
               <property name="prefix">
-               <string>Max RPM: </string>
+               <string>最大 RPM：</string>
               </property>
               <property name="decimals">
                <number>0</number>
@@ -979,7 +979,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_2">
             <property name="title">
-             <string>Motor Configuration</string>
+             <string>电机配置</string>
             </property>
             <layout class="QGridLayout" name="gridLayout">
              <property name="spacing">
@@ -988,10 +988,10 @@
              <item row="0" column="0">
               <widget class="QRadioButton" name="m1ConfLocalButton">
                <property name="toolTip">
-                <string>Use mcconf from connected VESC</string>
+                <string>使用已连接 VESC 的电机配置</string>
                </property>
                <property name="text">
-                <string>Local</string>
+                <string>本地</string>
                </property>
                <property name="checked">
                 <bool>true</bool>
@@ -1015,7 +1015,7 @@
              <item row="1" column="0">
               <widget class="QRadioButton" name="m1ConfFileButton">
                <property name="text">
-                <string>File</string>
+                <string>文件</string>
                </property>
               </widget>
              </item>
@@ -1028,7 +1028,7 @@
                 </sizepolicy>
                </property>
                <property name="toolTip">
-                <string>Load selected motor configuration in VESC Tool</string>
+                <string>在 VESC Tool 中加载所选电机配置</string>
                </property>
                <property name="text">
                 <string/>
@@ -1076,17 +1076,17 @@
           </attribute>
           <column>
            <property name="text">
-            <string>Name</string>
+            <string>名称</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Value</string>
+            <string>值</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Plot Scale</string>
+            <string>图表缩放</string>
            </property>
           </column>
          </widget>
@@ -1095,7 +1095,7 @@
       </widget>
       <widget class="QGroupBox" name="m2Box">
        <property name="title">
-        <string>Motor B</string>
+        <string>电机 B</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -1120,10 +1120,10 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Gear Ratio</string>
+               <string>齿轮比</string>
               </property>
               <property name="prefix">
-               <string>Gearing: </string>
+               <string>传动比：</string>
               </property>
               <property name="decimals">
                <number>3</number>
@@ -1145,10 +1145,10 @@
             <item row="1" column="1" colspan="3">
              <widget class="QDoubleSpinBox" name="m2MaxRpmBox">
               <property name="toolTip">
-               <string>Maximum motor shaft RPM</string>
+               <string>电机轴最大转速</string>
               </property>
               <property name="prefix">
-               <string>Max RPM: </string>
+               <string>最大 RPM：</string>
               </property>
               <property name="decimals">
                <number>0</number>
@@ -1164,10 +1164,10 @@
             <item row="2" column="1" colspan="3">
              <widget class="QDoubleSpinBox" name="m2FwBox">
               <property name="toolTip">
-               <string>Field Weakening Current</string>
+               <string>弱磁电流</string>
               </property>
               <property name="prefix">
-               <string>FW: </string>
+               <string>固件：</string>
               </property>
               <property name="suffix">
                <string> A</string>
@@ -1180,7 +1180,7 @@
             <item row="3" column="0" colspan="4">
              <widget class="QDoubleSpinBox" name="m2TempIncBox">
               <property name="prefix">
-               <string>Temp Increase: </string>
+               <string>温升：</string>
               </property>
               <property name="suffix">
                <string> °C</string>
@@ -1202,7 +1202,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Get gearing from config</string>
+               <string>从配置获取传动比</string>
               </property>
               <property name="text">
                <string/>
@@ -1216,10 +1216,10 @@
             <item row="2" column="0">
              <widget class="QDoubleSpinBox" name="m2MotorNumBox">
               <property name="toolTip">
-               <string>Number of motors in parallel</string>
+               <string>并联电机数量</string>
               </property>
               <property name="prefix">
-               <string>Motors: </string>
+               <string>电机数：</string>
               </property>
               <property name="decimals">
                <number>0</number>
@@ -1232,7 +1232,7 @@
             <item row="1" column="0">
              <widget class="QDoubleSpinBox" name="m2GearEfficiencyBox">
               <property name="prefix">
-               <string>Gear Eff: </string>
+               <string>齿轮效率：</string>
               </property>
               <property name="suffix">
                <string> %</string>
@@ -1266,7 +1266,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_4">
             <property name="title">
-             <string>Motor Configuration</string>
+             <string>电机配置</string>
             </property>
             <layout class="QGridLayout" name="gridLayout_2">
              <property name="spacing">
@@ -1289,10 +1289,10 @@
              <item row="0" column="0">
               <widget class="QRadioButton" name="m2ConfLocalButton">
                <property name="toolTip">
-                <string>Use mcconf from connected VESC</string>
+                <string>使用已连接 VESC 的电机配置</string>
                </property>
                <property name="text">
-                <string>Local</string>
+                <string>本地</string>
                </property>
                <property name="checked">
                 <bool>true</bool>
@@ -1302,7 +1302,7 @@
              <item row="1" column="0">
               <widget class="QRadioButton" name="m2ConfFileButton">
                <property name="text">
-                <string>File</string>
+                <string>文件</string>
                </property>
               </widget>
              </item>
@@ -1315,7 +1315,7 @@
                 </sizepolicy>
                </property>
                <property name="toolTip">
-                <string>Load selected motor configuration in VESC Tool</string>
+                <string>在 VESC Tool 中加载所选电机配置</string>
                </property>
                <property name="text">
                 <string/>
@@ -1363,17 +1363,17 @@
           </attribute>
           <column>
            <property name="text">
-            <string>Name</string>
+            <string>名称</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Value</string>
+            <string>值</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Plot Scale</string>
+            <string>图表缩放</string>
            </property>
           </column>
          </widget>

@@ -102,7 +102,7 @@
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
-         <string>Controls</string>
+         <string>控制</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout">
          <property name="spacing">
@@ -123,7 +123,7 @@
          <item>
           <widget class="QSpinBox" name="imgScaleBox">
            <property name="prefix">
-            <string>Preview Scale: </string>
+            <string>预览缩放：</string>
            </property>
            <property name="minimum">
             <number>1</number>
@@ -139,24 +139,24 @@
          <item>
           <widget class="QPushButton" name="helpButton">
            <property name="toolTip">
-            <string>Show Instructions</string>
+            <string>显示指令</string>
            </property>
            <property name="text">
-            <string>Help</string>
+            <string>帮助</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="clearButton">
            <property name="text">
-            <string>Clear Screen</string>
+            <string>清屏</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="clearLayer2Button">
            <property name="text">
-            <string>Clear Layer 2</string>
+            <string>清除第 2 层</string>
            </property>
           </widget>
          </item>
@@ -195,7 +195,7 @@
        </widget>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
-         <string>Load/Save</string>
+         <string>加载/保存</string>
         </attribute>
         <layout class="QGridLayout" name="gridLayout">
          <property name="leftMargin">
@@ -216,17 +216,17 @@
          <item row="1" column="0">
           <widget class="QPushButton" name="saveCButton">
            <property name="text">
-            <string>Export Bin</string>
+            <string>导出 Bin</string>
            </property>
           </widget>
          </item>
          <item row="3" column="0" colspan="2">
           <widget class="QDoubleSpinBox" name="loadScaleSpinBox">
            <property name="toolTip">
-            <string>Scale colors when loading image. Useful if the loaded image becomes too dark or too bright.</string>
+            <string>加载图像时缩放颜色。当加载的图像过暗或过亮时很有用。</string>
            </property>
            <property name="prefix">
-            <string>Load Color Scale: </string>
+            <string>加载颜色缩放：</string>
            </property>
            <property name="singleStep">
             <double>0.010000000000000</double>
@@ -242,24 +242,24 @@
             <string/>
            </property>
            <property name="text">
-            <string>Load Image</string>
+            <string>加载图像</string>
            </property>
           </widget>
          </item>
          <item row="2" column="0">
           <widget class="QPushButton" name="savePngButton">
            <property name="toolTip">
-            <string>Save image, as seen above, to PNG file.</string>
+            <string>将上方图像保存为 PNG 文件。</string>
            </property>
            <property name="text">
-            <string>Save PNG</string>
+            <string>保存 PNG</string>
            </property>
           </widget>
          </item>
          <item row="5" column="0" colspan="2">
           <widget class="QCheckBox" name="antialiasBox">
            <property name="text">
-            <string>Antialias when loading</string>
+            <string>加载时抗锯齿</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -272,7 +272,7 @@
             <string/>
            </property>
            <property name="text">
-            <string>Show Layer 2</string>
+            <string>显示第 2 层</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -283,17 +283,17 @@
           <widget class="QComboBox" name="formatBox">
            <item>
             <property name="text">
-             <string>Indexed 2</string>
+             <string>索引 2</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Indexed 4</string>
+             <string>索引 4</string>
             </property>
            </item>
            <item>
             <property name="text">
-             <string>Indexed 16</string>
+             <string>索引 16</string>
             </property>
            </item>
            <item>
@@ -316,14 +316,14 @@
          <item row="1" column="1">
           <widget class="QPushButton" name="loadCButton">
            <property name="text">
-            <string>Import Bin</string>
+            <string>导入 Bin</string>
            </property>
           </widget>
          </item>
          <item row="4" column="0" colspan="2">
           <widget class="QCheckBox" name="ditherBox">
            <property name="text">
-            <string>Dither when loading</string>
+            <string>加载时抖动</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -339,7 +339,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>Format</string>
+            <string>格式</string>
            </property>
           </widget>
          </item>

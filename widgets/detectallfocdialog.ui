@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Detect FOC Parameters on all VESCs</string>
+   <string>检测所有 VESC 的 FOC 参数</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
@@ -31,7 +31,7 @@
         <normaloff>:/res/icons/Wizard-96.png</normaloff>:/res/icons/Wizard-96.png</iconset>
       </attribute>
       <attribute name="title">
-       <string>Simple</string>
+       <string>简易</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -76,7 +76,7 @@
              <item>
               <widget class="QPushButton" name="nextMotorButton">
                <property name="text">
-                <string>Next</string>
+                <string>下一步</string>
                </property>
               </widget>
              </item>
@@ -118,14 +118,14 @@
              <item>
               <widget class="QPushButton" name="prevBattButton">
                <property name="text">
-                <string>Previous</string>
+                <string>上一步</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="nextBattButton">
                <property name="text">
-                <string>Next</string>
+                <string>下一步</string>
                </property>
               </widget>
              </item>
@@ -149,20 +149,20 @@
            <item>
             <widget class="QGroupBox" name="groupBox">
              <property name="title">
-              <string>Gear Ratio</string>
+              <string>齿轮比</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_7">
               <item>
                <widget class="QCheckBox" name="directDriveBox">
                 <property name="text">
-                 <string>Direct Drive</string>
+                 <string>直驱</string>
                 </property>
                </widget>
               </item>
               <item>
                <widget class="QSpinBox" name="pulleyMotorBox">
                 <property name="prefix">
-                 <string>Motor Pulley: </string>
+                 <string>电机皮带轮：</string>
                 </property>
                 <property name="minimum">
                  <number>1</number>
@@ -178,7 +178,7 @@
               <item>
                <widget class="QSpinBox" name="pulleyWheelBox">
                 <property name="prefix">
-                 <string>Wheel Pulley: </string>
+                 <string>车轮皮带轮：</string>
                 </property>
                 <property name="minimum">
                  <number>1</number>
@@ -197,7 +197,7 @@
            <item>
             <widget class="QGroupBox" name="wheelDiameterBox">
              <property name="title">
-              <string>Wheel Diameter</string>
+              <string>轮径</string>
              </property>
             </widget>
            </item>
@@ -232,14 +232,14 @@
              <item>
               <widget class="QPushButton" name="prevSetupButton">
                <property name="text">
-                <string>Previous</string>
+                <string>上一步</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="runNoCanButton">
                <property name="text">
-                <string>Run Detection (no CAN)</string>
+                <string>运行检测（不含 CAN）</string>
                </property>
               </widget>
              </item>
@@ -301,14 +301,14 @@
              <item>
               <widget class="QPushButton" name="prevDirButton">
                <property name="text">
-                <string>Previous</string>
+                <string>上一步</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QPushButton" name="finishButton">
                <property name="text">
-                <string>Finish</string>
+                <string>完成</string>
                </property>
               </widget>
              </item>
@@ -326,7 +326,7 @@
         <normaloff>:/res/icons/Horizontal Settings Mixer-96.png</normaloff>:/res/icons/Horizontal Settings Mixer-96.png</iconset>
       </attribute>
       <attribute name="title">
-       <string>Advanced</string>
+       <string>高级</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -350,10 +350,10 @@
           <item>
            <widget class="QDoubleSpinBox" name="maxPowerLossBox">
             <property name="toolTip">
-             <string>Acceptable motor power loss to derive current limits from.</string>
+             <string>用于推导电流限制的可接受电机功率损耗。</string>
             </property>
             <property name="prefix">
-             <string>Max Power Loss: </string>
+             <string>最大功率损耗：</string>
             </property>
             <property name="suffix">
              <string> W</string>
@@ -372,7 +372,7 @@
           <item>
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Note&lt;/span&gt;: Leave below parameters at 0 for default values&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;注意&lt;/span&gt;：下方参数保持为 0 即使用默认值&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -382,7 +382,7 @@
              <bool>true</bool>
             </property>
             <property name="prefix">
-             <string>Current In Min: </string>
+             <string>最小输入电流：</string>
             </property>
             <property name="suffix">
              <string> A</string>
@@ -404,7 +404,7 @@
              <bool>true</bool>
             </property>
             <property name="prefix">
-             <string>Current In Max: </string>
+             <string>最大输入电流：</string>
             </property>
             <property name="suffix">
              <string> A</string>
@@ -423,7 +423,7 @@
              <bool>true</bool>
             </property>
             <property name="prefix">
-             <string>Openloop ERPM: </string>
+             <string>开环 ERPM：</string>
             </property>
             <property name="decimals">
              <number>1</number>
@@ -439,7 +439,7 @@
              <bool>true</bool>
             </property>
             <property name="prefix">
-             <string>Sensorless ERPM: </string>
+             <string>无感 ERPM：</string>
             </property>
             <property name="decimals">
              <number>1</number>
@@ -485,7 +485,7 @@
      <item>
       <widget class="QPushButton" name="closeButton">
        <property name="text">
-        <string>Close</string>
+        <string>关闭</string>
        </property>
       </widget>
      </item>

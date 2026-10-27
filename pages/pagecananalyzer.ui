@@ -17,13 +17,13 @@
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>Update CAN Baudrate</string>
+      <string>更新 CAN 波特率</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QLabel" name="label_11">
         <property name="text">
-         <string>KBits/sec</string>
+         <string>Kbit/s</string>
         </property>
        </widget>
       </item>
@@ -79,7 +79,7 @@
       <item>
        <widget class="QPushButton" name="updateCanBaudButton">
         <property name="text">
-         <string>Start Update</string>
+         <string>开始更新</string>
         </property>
        </widget>
       </item>
@@ -119,7 +119,7 @@
      </attribute>
      <column>
       <property name="text">
-       <string>Ext</string>
+       <string>扩展</string>
       </property>
      </column>
      <column>
@@ -129,7 +129,7 @@
      </column>
      <column>
       <property name="text">
-       <string>Len</string>
+       <string>长度</string>
       </property>
      </column>
      <column>
@@ -185,7 +185,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>Clear</string>
+        <string>清除</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -196,7 +196,7 @@
      <item>
       <widget class="QCheckBox" name="autoScrollBox">
        <property name="text">
-        <string>Autoscroll</string>
+        <string>自动滚动</string>
        </property>
        <property name="checked">
         <bool>true</bool>
@@ -208,7 +208,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Send Frame</string>
+      <string>发送帧</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <property name="leftMargin">
@@ -344,7 +344,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Extended</string>
+         <string>扩展帧</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -380,7 +380,7 @@
       <item row="1" column="10">
        <widget class="QPushButton" name="sendButton">
         <property name="text">
-         <string>Send</string>
+         <string>发送</string>
         </property>
         <property name="icon">
          <iconset resource="../res.qrc">
@@ -452,12 +452,12 @@
        <widget class="QComboBox" name="sendExtBox">
         <item>
          <property name="text">
-          <string>False</string>
+          <string>假</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>True</string>
+          <string>真</string>
          </property>
         </item>
        </widget>

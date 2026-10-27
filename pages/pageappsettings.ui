@@ -20,7 +20,7 @@
    <item>
     <widget class="QPushButton" name="appWizardButton">
      <property name="text">
-      <string>Input Setup Wizard</string>
+      <string>输入设置向导</string>
      </property>
      <property name="icon">
       <iconset resource="../res.qrc">

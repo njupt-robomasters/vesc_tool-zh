@@ -17,7 +17,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Detect BLDC Parameters</string>
+      <string>检测 BLDC 参数</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
@@ -33,7 +33,7 @@
            </font>
           </property>
           <property name="toolTip">
-           <string>Duty cycle to measure BEMF coupling at</string>
+           <string>测量反电动势耦合时使用的占空比</string>
           </property>
           <property name="prefix">
            <string>D: </string>
@@ -60,7 +60,7 @@
            </font>
           </property>
           <property name="toolTip">
-           <string>Current to use for spinning up the motor</string>
+           <string>用于带动电机旋转的电流</string>
           </property>
           <property name="prefix">
            <string>I </string>
@@ -79,7 +79,7 @@
         <item row="2" column="0">
          <widget class="QPushButton" name="applyButton">
           <property name="toolTip">
-           <string>Apply detection results</string>
+           <string>应用检测结果</string>
           </property>
           <property name="text">
            <string/>
@@ -100,7 +100,7 @@
            </font>
           </property>
           <property name="toolTip">
-           <string>Min ERPM setting for delay commutation mode to use</string>
+           <string>延迟换相模式使用的最小 ERPM 设置</string>
           </property>
           <property name="prefix">
            <string>ω </string>
@@ -122,7 +122,7 @@
         <item row="0" column="0">
          <widget class="QPushButton" name="helpButton">
           <property name="toolTip">
-           <string>Show help</string>
+           <string>显示帮助</string>
           </property>
           <property name="text">
            <string/>
@@ -132,7 +132,7 @@
         <item row="1" column="0">
          <widget class="QPushButton" name="runButton">
           <property name="toolTip">
-           <string>Start detection</string>
+           <string>开始检测</string>
           </property>
           <property name="text">
            <string/>

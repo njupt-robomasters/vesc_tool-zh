@@ -33,10 +33,10 @@
           <item>
            <widget class="QPushButton" name="eraseButton">
             <property name="toolTip">
-             <string>Erase LispBM application from VESC. This will also prevent it from starting on next boot (as expected).</string>
+             <string>从 VESC 擦除 LispBM 应用。这也会阻止其在下次启动时运行（符合预期）。</string>
             </property>
             <property name="text">
-             <string>Erase</string>
+             <string>擦除</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -46,10 +46,10 @@
           <item>
            <widget class="QPushButton" name="uploadButton">
             <property name="toolTip">
-             <string>Upload code to flash. This is persistent and starts the code on every boot.</string>
+             <string>将代码上传到 Flash。此方式持久保存，并在每次启动时运行。</string>
             </property>
             <property name="text">
-             <string>Upload</string>
+             <string>上传</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -59,10 +59,10 @@
           <item>
            <widget class="QPushButton" name="streamButton">
             <property name="toolTip">
-             <string>Stream code. This is faster and not persistent, but does not work with imports.</string>
+             <string>流式传输代码。速度更快但不会持久保存，且不支持导入。</string>
             </property>
             <property name="text">
-             <string>Stream</string>
+             <string>流式传输</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -72,10 +72,10 @@
           <item>
            <widget class="QPushButton" name="readExistingButton">
             <property name="toolTip">
-             <string>Read LispBM code from connected VESC</string>
+             <string>从已连接的 VESC 读取 LispBM 代码</string>
             </property>
             <property name="text">
-             <string>Read</string>
+             <string>读取</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -85,7 +85,7 @@
           <item>
            <widget class="QPushButton" name="infoButton">
             <property name="text">
-             <string>Info</string>
+             <string>信息</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -95,10 +95,10 @@
           <item>
            <widget class="QPushButton" name="helpButton">
             <property name="toolTip">
-             <string>Show help</string>
+             <string>显示帮助</string>
             </property>
             <property name="text">
-             <string>Help</string>
+             <string>帮助</string>
             </property>
             <property name="flat">
              <bool>true</bool>
@@ -145,10 +145,10 @@
           <item>
            <widget class="QRadioButton" name="pollOffButton">
             <property name="toolTip">
-             <string>Data polling disabled</string>
+             <string>数据轮询已禁用</string>
             </property>
             <property name="text">
-             <string>Poll Off</string>
+             <string>关闭轮询</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -158,20 +158,20 @@
           <item>
            <widget class="QRadioButton" name="pollVtButton">
             <property name="toolTip">
-             <string>Poll variables starting with vt only</string>
+             <string>仅轮询以 vt 开头的变量</string>
             </property>
             <property name="text">
-             <string>Poll VT</string>
+             <string>轮询 VT</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QRadioButton" name="pollAllButton">
             <property name="toolTip">
-             <string>Poll all variables</string>
+             <string>轮询所有变量</string>
             </property>
             <property name="text">
-             <string>Poll All</string>
+             <string>全部轮询</string>
             </property>
            </widget>
           </item>
@@ -191,7 +191,7 @@
           <item>
            <widget class="QSpinBox" name="pollRateBox">
             <property name="toolTip">
-             <string>Poll Rate</string>
+             <string>轮询频率</string>
             </property>
             <property name="suffix">
              <string> Hz</string>
@@ -211,14 +211,14 @@
           <item row="2" column="0">
            <widget class="QLabel" name="label_4">
             <property name="text">
-             <string>Mem</string>
+             <string>内存</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="label_3">
             <property name="text">
-             <string>Heap</string>
+             <string>堆</string>
             </property>
            </widget>
           </item>
@@ -271,12 +271,12 @@
           </attribute>
           <column>
            <property name="text">
-            <string>Binding</string>
+            <string>绑定</string>
            </property>
           </column>
           <column>
            <property name="text">
-            <string>Value</string>
+            <string>值</string>
            </property>
           </column>
          </widget>
@@ -286,10 +286,10 @@
           <item>
            <widget class="QPushButton" name="runButton">
             <property name="toolTip">
-             <string>Run or re-run evaluator</string>
+             <string>运行或重新运行求值器</string>
             </property>
             <property name="text">
-             <string>Run</string>
+             <string>运行</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -303,10 +303,10 @@
           <item>
            <widget class="QPushButton" name="stopButton">
             <property name="toolTip">
-             <string>Stop evaluator</string>
+             <string>停止求值器</string>
             </property>
             <property name="text">
-             <string>Stop</string>
+             <string>停止</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -333,10 +333,10 @@
           <item>
            <widget class="QCheckBox" name="autoRunBox">
             <property name="toolTip">
-             <string>Automatically run program on upload</string>
+             <string>上传后自动运行程序</string>
             </property>
             <property name="text">
-             <string>AutoRun</string>
+             <string>自动运行</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -348,7 +348,7 @@
         <item>
          <widget class="QComboBox" name="streamModeBox">
           <property name="toolTip">
-           <string>Stream Mode</string>
+           <string>流式传输模式</string>
           </property>
           <property name="currentIndex">
            <number>1</number>
@@ -358,17 +358,17 @@
           </property>
           <item>
            <property name="text">
-            <string>After Stream: Load on top</string>
+            <string>流式传输后：在顶部加载</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>After Stream: Reset &amp; Load</string>
+            <string>流式传输后：重置并加载</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>After Stream: Reload Flash &amp; Load</string>
+            <string>流式传输后：重新加载 Flash 并加载</string>
            </property>
           </item>
          </widget>
@@ -388,7 +388,7 @@
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
-        <string>Console/REPL</string>
+        <string>控制台/REPL</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,0">
         <item>
@@ -419,7 +419,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Print available commands</string>
+               <string>打印可用命令</string>
               </property>
               <property name="text">
                <string/>
@@ -475,7 +475,7 @@
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
-        <string>Recent</string>
+        <string>最近</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,0">
         <item>
@@ -491,7 +491,7 @@
             <item>
              <widget class="QLabel" name="label_2">
               <property name="text">
-               <string>Filter</string>
+               <string>过滤</string>
               </property>
              </widget>
             </item>
@@ -501,7 +501,7 @@
             <item>
              <widget class="QPushButton" name="recentFilterClearButton">
               <property name="toolTip">
-               <string>Clear Filter Text</string>
+               <string>清除过滤文本</string>
               </property>
               <property name="text">
                <string/>
@@ -527,10 +527,10 @@
           <item>
            <widget class="QPushButton" name="openRecentButton">
             <property name="toolTip">
-             <string>Open selected recent file</string>
+             <string>打开所选的最近文件</string>
             </property>
             <property name="text">
-             <string>Open</string>
+             <string>打开</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -541,10 +541,10 @@
           <item>
            <widget class="QPushButton" name="removeSelectedButton">
             <property name="toolTip">
-             <string>Remove selected recent file from list (file will not be deleted from file system)</string>
+             <string>从列表中移除所选的最近文件（不会删除文件系统中的文件）</string>
             </property>
             <property name="text">
-             <string>Remove</string>
+             <string>移除</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -555,10 +555,10 @@
           <item>
            <widget class="QPushButton" name="clearRecentButton">
             <property name="toolTip">
-             <string>Clear recent file list (nothing will be deleted from file system)</string>
+             <string>清除最近文件列表（不会删除文件系统中的文件）</string>
             </property>
             <property name="text">
-             <string>Clear</string>
+             <string>清除</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -585,7 +585,7 @@
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
-        <string>Examples</string>
+        <string>示例</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="1,0">
         <item>
@@ -601,7 +601,7 @@
             <item>
              <widget class="QLabel" name="label_5">
               <property name="text">
-               <string>Filter</string>
+               <string>过滤</string>
               </property>
              </widget>
             </item>
@@ -611,7 +611,7 @@
             <item>
              <widget class="QPushButton" name="exampleFilterClearButton">
               <property name="toolTip">
-               <string>Clear Filter Text</string>
+               <string>清除过滤文本</string>
               </property>
               <property name="text">
                <string/>
@@ -634,7 +634,7 @@
           <item>
            <widget class="QPushButton" name="openExampleButton">
             <property name="text">
-             <string>Open</string>
+             <string>打开</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -661,7 +661,7 @@
       </widget>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
-        <string>Binding Plot</string>
+        <string>绑定图表</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
         <item>
@@ -711,7 +711,7 @@
               </font>
              </property>
              <property name="toolTip">
-              <string>Autoscale plots with incoming samples</string>
+              <string>随新采样自动缩放图表</string>
              </property>
              <property name="text">
               <string/>
@@ -749,7 +749,7 @@
               </font>
              </property>
              <property name="toolTip">
-              <string>Enable horizontal zoom</string>
+              <string>启用水平缩放</string>
              </property>
              <property name="text">
               <string/>
@@ -787,7 +787,7 @@
               </font>
              </property>
              <property name="toolTip">
-              <string>Enable vertical zoom</string>
+              <string>启用垂直缩放</string>
              </property>
              <property name="text">
               <string/>
@@ -814,7 +814,7 @@
            <item>
             <widget class="QToolButton" name="rescaleButton">
              <property name="toolTip">
-              <string>Rescale plots to fit</string>
+              <string>重新缩放图表以适应</string>
              </property>
              <property name="text">
               <string/>
@@ -851,7 +851,7 @@
       </widget>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
-        <string>Experiment Plot</string>
+        <string>实验图表</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>

@@ -144,6 +144,7 @@ public:
 
     bool getStoreConfigVersion() const;
     void setStoreConfigVersion(bool storeConfigVersion);
+    quint32 lastRxSignature() const { return mLastRxSignature; }
 
     int updateCnt() const;
 
@@ -181,6 +182,7 @@ private:
     QList<QPair<QString, QList<QPair<QString, QStringList>>>> mParamGrouping;
     int mConfigVersion;
     bool mStoreConfigVersion;
+    quint32 mLastRxSignature = 0;
     int mUpdateCnt;
 
     bool almostEqual(float A, float B, float eps);

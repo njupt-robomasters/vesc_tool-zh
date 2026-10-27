@@ -40,7 +40,7 @@
          <item>
           <widget class="QPushButton" name="addSetupButton">
            <property name="text">
-            <string>Add Setup</string>
+            <string>添加配置</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -51,7 +51,7 @@
          <item>
           <widget class="QPushButton" name="removeSetupButton">
            <property name="text">
-            <string>Remove Setup</string>
+            <string>移除配置</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">

@@ -24,7 +24,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Included Firmwares</string>
+       <string>内置固件</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -36,7 +36,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Connect to see relevant firmwares</string>
+          <string>连接后可查看相关固件</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -53,7 +53,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Custom File</string>
+       <string>自定义文件</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -61,7 +61,7 @@
          <item>
           <widget class="QRadioButton" name="useFw1Button">
            <property name="text">
-            <string>Use</string>
+            <string>使用</string>
            </property>
            <property name="checked">
             <bool>true</bool>
@@ -80,7 +80,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Choose file...</string>
+            <string>选择文件...</string>
            </property>
            <property name="text">
             <string/>
@@ -98,7 +98,7 @@
          <item>
           <widget class="QRadioButton" name="useFw2Button">
            <property name="text">
-            <string>Use</string>
+            <string>使用</string>
            </property>
           </widget>
          </item>
@@ -114,7 +114,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Choose file...</string>
+            <string>选择文件...</string>
            </property>
            <property name="text">
             <string/>
@@ -132,7 +132,7 @@
          <item>
           <widget class="QRadioButton" name="useFw3Button">
            <property name="text">
-            <string>Use</string>
+            <string>使用</string>
            </property>
           </widget>
          </item>
@@ -148,7 +148,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Choose file...</string>
+            <string>选择文件...</string>
            </property>
            <property name="text">
             <string/>
@@ -166,7 +166,7 @@
          <item>
           <widget class="QRadioButton" name="useFw4Button">
            <property name="text">
-            <string>Use</string>
+            <string>使用</string>
            </property>
           </widget>
          </item>
@@ -182,7 +182,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Choose file...</string>
+            <string>选择文件...</string>
            </property>
            <property name="text">
             <string/>
@@ -222,27 +222,27 @@
          </attribute>
          <column>
           <property name="text">
-           <string>Name</string>
+           <string>名称</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Offset</string>
+           <string>偏移</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Value</string>
+           <string>值</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Read</string>
+           <string>读取</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Write</string>
+           <string>写入</string>
           </property>
          </column>
         </widget>
@@ -252,7 +252,7 @@
          <item>
           <widget class="QPushButton" name="uicrReadButton">
            <property name="text">
-            <string>Read All</string>
+            <string>全部读取</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -263,7 +263,7 @@
          <item>
           <widget class="QPushButton" name="uicrWriteButton">
            <property name="text">
-            <string>Write All</string>
+            <string>全部写入</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -274,7 +274,7 @@
          <item>
           <widget class="QPushButton" name="uicrEraseButton">
            <property name="text">
-            <string>Erase</string>
+            <string>擦除</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -291,7 +291,7 @@
    <item>
     <widget class="QCheckBox" name="verifyBox">
      <property name="text">
-      <string>Verify flash while programming</string>
+      <string>编程时校验 Flash</string>
      </property>
      <property name="checked">
       <bool>false</bool>
@@ -312,7 +312,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Target:</string>
+        <string>目标：</string>
        </property>
       </widget>
      </item>
@@ -332,10 +332,10 @@
      <item>
       <widget class="QPushButton" name="connectButton">
        <property name="toolTip">
-        <string>Connect to external MCU over SWD.</string>
+        <string>通过 SWD 连接外部 MCU。</string>
        </property>
        <property name="text">
-        <string>Connect</string>
+        <string>连接</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -346,10 +346,10 @@
      <item>
       <widget class="QPushButton" name="connectNrf5xButton">
        <property name="toolTip">
-        <string>Connect to internal NRF5x MCU</string>
+        <string>连接内部 NRF5x MCU</string>
        </property>
        <property name="text">
-        <string>Connect Internal</string>
+        <string>连接内部</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -360,7 +360,7 @@
      <item>
       <widget class="QPushButton" name="disconnectButton">
        <property name="text">
-        <string>Disconnect</string>
+        <string>断开连接</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -388,7 +388,7 @@
      <item>
       <widget class="QPushButton" name="resetButton">
        <property name="text">
-        <string>Reset</string>
+        <string>复位</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -399,7 +399,7 @@
      <item>
       <widget class="QPushButton" name="eraseFlashButton">
        <property name="text">
-        <string>Erase Only</string>
+        <string>仅擦除</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -410,7 +410,7 @@
      <item>
       <widget class="QPushButton" name="uploadButton">
        <property name="text">
-        <string>Erase &amp;&amp; Upload</string>
+        <string>擦除并上传</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -421,7 +421,7 @@
      <item>
       <widget class="QPushButton" name="cancelButton">
        <property name="text">
-        <string>Cancel</string>
+        <string>取消</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">

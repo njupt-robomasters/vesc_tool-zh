@@ -22,7 +22,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>ADC Voltage Mapping</string>
+      <string>ADC 电压映射</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -30,10 +30,10 @@
         <item>
          <widget class="QCheckBox" name="dualBox">
           <property name="toolTip">
-           <string>Show centered graph, which is how the centered control modes interpret the throttle.</string>
+           <string>显示居中图，即居中控制模式解释油门的方式。</string>
           </property>
           <property name="text">
-           <string>Use Centered Control</string>
+           <string>使用中心控制</string>
           </property>
          </widget>
         </item>
@@ -46,10 +46,10 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Show help</string>
+           <string>显示帮助</string>
           </property>
           <property name="text">
-           <string>Help</string>
+           <string>帮助</string>
           </property>
          </widget>
         </item>
@@ -62,10 +62,10 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Reset min and max</string>
+           <string>重置最小值和最大值</string>
           </property>
           <property name="text">
-           <string>Reset</string>
+           <string>复位</string>
           </property>
          </widget>
         </item>
@@ -78,10 +78,10 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Apply min and max to configuration</string>
+           <string>将最小值和最大值应用到配置</string>
           </property>
           <property name="text">
-           <string>Apply</string>
+           <string>应用</string>
           </property>
           <property name="iconSize">
            <size>
@@ -101,7 +101,7 @@
         <item row="1" column="2">
          <widget class="QDoubleSpinBox" name="maxCh2Box">
           <property name="toolTip">
-           <string>Measured maximum voltage</string>
+           <string>测得的最大电压</string>
           </property>
           <property name="readOnly">
            <bool>true</bool>
@@ -110,7 +110,7 @@
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
           <property name="prefix">
-           <string>Max: </string>
+           <string>最大：</string>
           </property>
           <property name="suffix">
            <string/>
@@ -139,7 +139,7 @@
         <item row="0" column="1">
          <widget class="QDoubleSpinBox" name="minCh1Box">
           <property name="toolTip">
-           <string>Measured minimum voltage</string>
+           <string>测得的最小电压</string>
           </property>
           <property name="readOnly">
            <bool>true</bool>
@@ -148,7 +148,7 @@
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
           <property name="prefix">
-           <string>Min: </string>
+           <string>最小：</string>
           </property>
           <property name="suffix">
            <string/>
@@ -167,7 +167,7 @@
         <item row="0" column="2">
          <widget class="QDoubleSpinBox" name="maxCh1Box">
           <property name="toolTip">
-           <string>Measured maximum voltage</string>
+           <string>测得的最大电压</string>
           </property>
           <property name="readOnly">
            <bool>true</bool>
@@ -176,7 +176,7 @@
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
           <property name="prefix">
-           <string>Max: </string>
+           <string>最大：</string>
           </property>
           <property name="suffix">
            <string/>
@@ -219,7 +219,7 @@
         <item row="1" column="1">
          <widget class="QDoubleSpinBox" name="minCh2Box">
           <property name="toolTip">
-           <string>Measured minimum voltage</string>
+           <string>测得的最小电压</string>
           </property>
           <property name="readOnly">
            <bool>true</bool>
@@ -228,7 +228,7 @@
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
           <property name="prefix">
-           <string>Min: </string>
+           <string>最小：</string>
           </property>
           <property name="suffix">
            <string/>
@@ -253,7 +253,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Measured minimum voltage</string>
+           <string>测得的最小电压</string>
           </property>
           <property name="readOnly">
            <bool>true</bool>
@@ -262,7 +262,7 @@
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
           <property name="prefix">
-           <string>Center: </string>
+           <string>中心：</string>
           </property>
           <property name="suffix">
            <string/>

@@ -207,7 +207,7 @@ void ExperimentPlot::on_experimentLoadXmlButton_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,
                                                     tr("加载图表"), "",
-                                                    tr("Xml files (*.xml)"));
+                                                    tr("XML 文件 (*.xml)"));
 
     if (!filename.isEmpty()) {
         QFile file(filename);
@@ -297,7 +297,7 @@ void ExperimentPlot::on_experimentSaveXmlButton_clicked()
 {
     QString filename = QFileDialog::getSaveFileName(this,
                                                     tr("保存图表"), "",
-                                                    tr("Xml files (*.xml)"));
+                                                    tr("XML 文件 (*.xml)"));
 
     if (filename.isEmpty()) {
         return;
@@ -344,7 +344,7 @@ void ExperimentPlot::on_experimentSavePngButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
                                                     tr("保存图像"), "",
-                                                    tr("PNG Files (*.png)"));
+                                                    tr("PNG 文件 (*.png)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.endsWith(".png", Qt::CaseInsensitive)) {
@@ -362,7 +362,7 @@ void ExperimentPlot::on_experimentSavePdfButton_clicked()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
                                                     tr("保存 PDF"), "",
-                                                    tr("PDF Files (*.pdf)"));
+                                                    tr("PDF 文件 (*.pdf)"));
 
     if (!fileName.isEmpty()) {
         if (!fileName.endsWith(".pdf", Qt::CaseInsensitive)) {
@@ -388,7 +388,7 @@ void ExperimentPlot::on_experimentSaveCsvButton_clicked()
 {
     QString filename = QFileDialog::getSaveFileName(this,
                                                     tr("保存图表"), "",
-                                                    tr("Csv files (*.csv)"));
+                                                    tr("CSV 文件 (*.csv)"));
 
     if (filename.isEmpty()) {
         return;

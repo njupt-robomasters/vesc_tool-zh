@@ -66,43 +66,43 @@ DetectAllFocDialog::DetectAllFocDialog(VescInterface *vesc, QWidget *parent) :
     ui->motorList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("Medium Outrunner (~750 g)"));
+    item->setText(tr("中型外转子 (~750 g)"));
     item->setIcon(QIcon("://res/images/motors/6374.jpg"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(120, 700, 4000, 14)));
     ui->motorList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("Large Outrunner (~2000 g)"));
+    item->setText(tr("大型外转子 (~2000 g)"));
     item->setIcon(Utility::getIcon("icons/motor.png"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(400, 700, 4000, 14)));
     ui->motorList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("Small Inrunner (~200 g)"));
+    item->setText(tr("小型内转子 (~200 g)"));
     item->setIcon(QIcon("://res/images/motors/inrunner_small.jpg"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(50, 1400, 4000, 2)));
     ui->motorList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("Medium Inrunner (~750 g)"));
+    item->setText(tr("中型内转子 (~750 g)"));
     item->setIcon(QIcon("://res/images/motors/inrunner_medium.jpg"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(140, 1400, 4000, 4)));
     ui->motorList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("Large Inrunner (~2000 g)"));
+    item->setText(tr("大型内转子 (~2000 g)"));
     item->setIcon(Utility::getIcon("icons/motor.png"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(400, 1000, 4000, 4)));
     ui->motorList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("E-Bike DD hub motor (~6 kg)"));
+    item->setText(tr("电动自行车直驱轮毂电机 (~6 kg)"));
     item->setIcon(QIcon("://res/images/motors/ebike_dd_1kw.jpg"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(150, 300, 2000, 46)));
     ui->motorList->addItem(item);
 
     item = new QListWidgetItem;
-    item->setText(tr("EDF Inrunner Small (~200 g)"));
+    item->setText(tr("涵道风扇内转子（小型）(~200 g)"));
     item->setIcon(QIcon("://res/images/motors/edf_small.jpg"));
     item->setData(Qt::UserRole, QVariant::fromValue(MotorData(110, 1400, 4000, 6)));
     ui->motorList->addItem(item);
@@ -251,9 +251,7 @@ void DetectAllFocDialog::runDetect(bool can)
     QMessageBox::StandardButton reply;
     reply = QMessageBox::warning(this,
                                  tr("警告"),
-                                 tr("<font color=\"red\">Warning: </font>"
-                                    "This is going to spin up all motors connected on "
-                                    "the CAN-bus. Make sure that nothing is in the way."),
+                                 tr("<font color=\"red\">警告：</font>此操作将使 CAN 总线上连接的所有电机旋转。请确保周围没有障碍物。"),
                                  QMessageBox::Ok | QMessageBox::Cancel);
 
     if (reply != QMessageBox::Ok) {

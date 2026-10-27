@@ -17,7 +17,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Connection</string>
+      <string>连接</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
@@ -25,7 +25,7 @@
         <item>
          <widget class="QLabel" name="label_2">
           <property name="text">
-           <string>Port</string>
+           <string>端口</string>
           </property>
          </widget>
         </item>
@@ -38,7 +38,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Serial port</string>
+           <string>串口</string>
           </property>
          </widget>
         </item>
@@ -51,7 +51,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Refresh serial port list</string>
+           <string>刷新串口列表</string>
           </property>
           <property name="text">
            <string/>
@@ -71,7 +71,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Disconnect</string>
+           <string>断开连接</string>
           </property>
           <property name="text">
            <string/>
@@ -91,7 +91,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Connect</string>
+           <string>连接</string>
           </property>
           <property name="text">
            <string/>
@@ -117,7 +117,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Included</string>
+       <string>内置</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
@@ -131,7 +131,7 @@
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
-       <string>Custom</string>
+       <string>自定义</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,1">
        <item>
@@ -139,7 +139,7 @@
          <item row="0" column="0">
           <widget class="QLabel" name="label">
            <property name="text">
-            <string>Bootloader</string>
+            <string>引导程序</string>
            </property>
           </widget>
          </item>
@@ -155,7 +155,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Choose file...</string>
+            <string>选择文件...</string>
            </property>
            <property name="text">
             <string/>
@@ -169,7 +169,7 @@
          <item row="1" column="0">
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>Partition Table</string>
+            <string>分区表</string>
            </property>
           </widget>
          </item>
@@ -185,7 +185,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Choose file...</string>
+            <string>选择文件...</string>
            </property>
            <property name="text">
             <string/>
@@ -199,7 +199,7 @@
          <item row="2" column="0">
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>Application</string>
+            <string>应用</string>
            </property>
           </widget>
          </item>
@@ -215,7 +215,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Choose file...</string>
+            <string>选择文件...</string>
            </property>
            <property name="text">
             <string/>
@@ -248,7 +248,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="title">
-      <string>Flash</string>
+      <string>烧录</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
@@ -285,14 +285,14 @@
         <item>
          <widget class="QPushButton" name="cancelButton">
           <property name="text">
-           <string>Cancel</string>
+           <string>取消</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="flashButton">
           <property name="text">
-           <string>Flash using USB</string>
+           <string>通过 USB 烧录</string>
           </property>
           <property name="icon">
            <iconset resource="../res.qrc">
@@ -303,24 +303,24 @@
         <item>
          <widget class="QPushButton" name="flashBlButton">
           <property name="toolTip">
-           <string>Flash using the bootloader. Requires that the vesc-firmware alredy is present.</string>
+           <string>通过引导程序烧录。要求 VESC 固件已存在。</string>
           </property>
           <property name="text">
-           <string>Flash using Bootloader</string>
+           <string>通过引导程序烧录</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="eraseLispButton">
           <property name="text">
-           <string>Erase LispBM</string>
+           <string>擦除 LispBM</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="eraseQmlButton">
           <property name="text">
-           <string>Erase QML</string>
+           <string>擦除 QML</string>
           </property>
          </widget>
         </item>

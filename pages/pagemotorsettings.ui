@@ -20,7 +20,7 @@
    <item>
     <widget class="QPushButton" name="motorSetupWizardButton">
      <property name="text">
-      <string>Motor Setup Wizard</string>
+      <string>电机设置向导</string>
      </property>
      <property name="icon">
       <iconset resource="../res.qrc">

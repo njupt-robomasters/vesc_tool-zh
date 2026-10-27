@@ -34,7 +34,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Battery Cutoff Calculator</string>
+      <string>电池截止电压计算器</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
@@ -46,7 +46,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Type</string>
+         <string>类型</string>
         </property>
        </widget>
       </item>
@@ -59,7 +59,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Apply calculated limits</string>
+         <string>应用计算出的限制</string>
         </property>
         <property name="text">
          <string/>
@@ -82,7 +82,7 @@
         </property>
         <item>
          <property name="text">
-          <string>Lithium Ion (full at 4.2V/cell)</string>
+          <string>锂离子（单体满电 4.2V）</string>
          </property>
         </item>
        </widget>
@@ -97,7 +97,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Cells</string>
+         <string>串数</string>
         </property>
        </widget>
       </item>
@@ -126,7 +126,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Show help</string>
+         <string>显示帮助</string>
         </property>
         <property name="text">
          <string/>

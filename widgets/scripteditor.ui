@@ -50,7 +50,7 @@
       <item>
        <widget class="QLabel" name="fileChangedLabel">
         <property name="text">
-         <string>This file has been changed on the filesystem.</string>
+         <string>此文件已在文件系统中被修改。</string>
         </property>
        </widget>
       </item>
@@ -70,7 +70,7 @@
       <item>
        <widget class="QPushButton" name="fileChangedReloadButton">
         <property name="text">
-         <string>Reload</string>
+         <string>重新加载</string>
         </property>
         <property name="flat">
          <bool>true</bool>
@@ -80,7 +80,7 @@
       <item>
        <widget class="QPushButton" name="fileChangeIgnoreButton">
         <property name="text">
-         <string>Ignore</string>
+         <string>忽略</string>
         </property>
         <property name="flat">
          <bool>true</bool>
@@ -124,21 +124,21 @@
       <item>
        <widget class="QPushButton" name="searchPrevButton">
         <property name="text">
-         <string>Previous</string>
+         <string>上一步</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="searchNextButton">
         <property name="text">
-         <string>Next</string>
+         <string>下一步</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QCheckBox" name="searchCaseSensitiveBox">
         <property name="text">
-         <string>Case Sensitive</string>
+         <string>区分大小写</string>
         </property>
        </widget>
       </item>
@@ -148,21 +148,21 @@
       <item>
        <widget class="QPushButton" name="replaceThisButton">
         <property name="text">
-         <string>Replace</string>
+         <string>替换</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="replaceAllButton">
         <property name="text">
-         <string>Replace All</string>
+         <string>全部替换</string>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QPushButton" name="searchHideButton">
         <property name="toolTip">
-         <string>Cancel Search</string>
+         <string>取消搜索</string>
         </property>
         <property name="text">
          <string/>
@@ -196,7 +196,7 @@
      <item>
       <widget class="QPushButton" name="openFileButton">
        <property name="toolTip">
-        <string>Open file...</string>
+        <string>打开文件...</string>
        </property>
        <property name="text">
         <string/>
@@ -209,7 +209,7 @@
      <item>
       <widget class="QPushButton" name="saveButton">
        <property name="toolTip">
-        <string>Save file</string>
+        <string>保存文件</string>
        </property>
        <property name="text">
         <string/>
@@ -222,7 +222,7 @@
      <item>
       <widget class="QPushButton" name="saveAsButton">
        <property name="toolTip">
-        <string>Save file as...</string>
+        <string>文件另存为...</string>
        </property>
        <property name="text">
         <string/>
@@ -235,7 +235,7 @@
      <item>
       <widget class="QPushButton" name="refreshButton">
        <property name="toolTip">
-        <string>Refresh editor with file content. Warning: This will replace unsaved changes in the editor.</string>
+        <string>用文件内容刷新编辑器。警告：这将覆盖编辑器中未保存的更改。</string>
        </property>
        <property name="text">
         <string/>

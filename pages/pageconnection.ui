@@ -27,7 +27,7 @@
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>(USB-)Serial</string>
+       <string>(USB-)串口</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
@@ -35,7 +35,7 @@
          <item>
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>Port</string>
+            <string>端口</string>
            </property>
           </widget>
          </item>
@@ -48,20 +48,20 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Serial port</string>
+            <string>串口</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QSpinBox" name="serialBaudBox">
            <property name="toolTip">
-            <string>Baudrate</string>
+            <string>波特率</string>
            </property>
            <property name="suffix">
             <string> bps</string>
            </property>
            <property name="prefix">
-            <string>Baud: </string>
+            <string>波特率：</string>
            </property>
            <property name="maximum">
             <number>3000000</number>
@@ -80,7 +80,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Refresh serial port list</string>
+            <string>刷新串口列表</string>
            </property>
            <property name="text">
             <string/>
@@ -100,7 +100,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Disconnect</string>
+            <string>断开连接</string>
            </property>
            <property name="text">
             <string/>
@@ -120,7 +120,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Connect</string>
+            <string>连接</string>
            </property>
            <property name="text">
             <string/>
@@ -150,7 +150,7 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>CAN bus</string>
+       <string>CAN 总线</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_7">
        <item>
@@ -158,14 +158,14 @@
          <item>
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>Interface</string>
+            <string>接口</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QComboBox" name="CANbusInterfaceBox">
            <property name="toolTip">
-            <string>CAN bus interfaces detected</string>
+            <string>检测到的 CAN 总线接口</string>
            </property>
            <property name="editable">
             <bool>false</bool>
@@ -191,7 +191,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Discovered VESC nodes in the bus</string>
+            <string>总线上已发现的 VESC 节点</string>
            </property>
           </widget>
          </item>
@@ -204,13 +204,13 @@
             <enum>Qt::WheelFocus</enum>
            </property>
            <property name="toolTip">
-            <string>This configuration is not supported by the socketcan backend. However it is possible to set the rate when configuring the CAN network interface using the ip link command.</string>
+            <string>socketcan 后端不支持此配置。不过，可以在使用 ip link 命令配置 CAN 网络接口时设置速率。</string>
            </property>
            <property name="suffix">
             <string> kbit/s</string>
            </property>
            <property name="prefix">
-            <string>Bit rate: </string>
+            <string>比特率：</string>
            </property>
            <property name="maximum">
             <number>1000</number>
@@ -229,10 +229,10 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Discover VESC nodes in the CAN bus</string>
+            <string>发现 CAN 总线上的 VESC 节点</string>
            </property>
            <property name="text">
-            <string>Scan</string>
+            <string>扫描</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -249,7 +249,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Disconnect</string>
+            <string>断开连接</string>
            </property>
            <property name="text">
             <string/>
@@ -272,7 +272,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Connect to a VESC node</string>
+            <string>连接到 VESC 节点</string>
            </property>
            <property name="text">
             <string/>
@@ -308,7 +308,7 @@
        <item>
         <widget class="QGroupBox" name="groupBox_3">
          <property name="title">
-          <string>TCP Client</string>
+          <string>TCP 客户端</string>
          </property>
          <layout class="QGridLayout" name="gridLayout">
           <property name="leftMargin">
@@ -338,7 +338,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Disconnect</string>
+             <string>断开连接</string>
             </property>
             <property name="text">
              <string/>
@@ -379,7 +379,7 @@
           <item row="0" column="0">
            <widget class="QLabel" name="label">
             <property name="text">
-             <string>Address</string>
+             <string>地址</string>
             </property>
            </widget>
           </item>
@@ -392,7 +392,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Connect</string>
+             <string>连接</string>
             </property>
             <property name="text">
              <string/>
@@ -406,14 +406,14 @@
           <item row="1" column="0">
            <widget class="QLabel" name="label_8">
             <property name="text">
-             <string>Detected Devices</string>
+             <string>已检测到的设备</string>
             </property>
            </widget>
           </item>
           <item row="0" column="2">
            <widget class="QSpinBox" name="tcpPortBox">
             <property name="prefix">
-             <string>Port: </string>
+             <string>端口：</string>
             </property>
             <property name="maximum">
              <number>65535</number>
@@ -446,7 +446,7 @@
        <item>
         <widget class="QGroupBox" name="tcpServerBox">
          <property name="title">
-          <string>TCP Server</string>
+          <string>TCP 服务器</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -460,7 +460,7 @@
             <item>
              <widget class="QCheckBox" name="tcpServerEnableBox">
               <property name="text">
-               <string>Enable TCP Server</string>
+               <string>启用 TCP 服务器</string>
               </property>
              </widget>
             </item>
@@ -473,7 +473,7 @@
                </sizepolicy>
               </property>
               <property name="prefix">
-               <string>TCP Port: </string>
+               <string>TCP 端口：</string>
               </property>
               <property name="maximum">
                <number>65535</number>
@@ -516,13 +516,13 @@
        <item>
         <widget class="QGroupBox" name="groupBox_4">
          <property name="title">
-          <string>UDP Client</string>
+          <string>UDP 客户端</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_10">
           <item>
            <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Address</string>
+             <string>地址</string>
             </property>
            </widget>
           </item>
@@ -536,7 +536,7 @@
           <item>
            <widget class="QSpinBox" name="udpPortBox">
             <property name="prefix">
-             <string>Port: </string>
+             <string>端口：</string>
             </property>
             <property name="maximum">
              <number>65535</number>
@@ -555,7 +555,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Disconnect</string>
+             <string>断开连接</string>
             </property>
             <property name="text">
              <string/>
@@ -575,7 +575,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Connect</string>
+             <string>连接</string>
             </property>
             <property name="text">
              <string/>
@@ -592,7 +592,7 @@
        <item>
         <widget class="QGroupBox" name="tcpServerBox_2">
          <property name="title">
-          <string>UDP Server</string>
+          <string>UDP 服务器</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -606,7 +606,7 @@
             <item>
              <widget class="QCheckBox" name="udpServerEnableBox">
               <property name="text">
-               <string>Enable UDP Server</string>
+               <string>启用 UDP 服务器</string>
               </property>
              </widget>
             </item>
@@ -619,7 +619,7 @@
                </sizepolicy>
               </property>
               <property name="prefix">
-               <string>UDP Port: </string>
+               <string>UDP 端口：</string>
               </property>
               <property name="maximum">
                <number>65535</number>
@@ -656,7 +656,7 @@
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
-       <string>Bluetooth LE</string>
+       <string>低功耗蓝牙</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -664,7 +664,7 @@
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>BLE Device</string>
+            <string>BLE 设备</string>
            </property>
           </widget>
          </item>
@@ -687,7 +687,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Refresh serial port list</string>
+            <string>刷新串口列表</string>
            </property>
            <property name="text">
             <string/>
@@ -707,7 +707,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Disconnect</string>
+            <string>断开连接</string>
            </property>
            <property name="text">
             <string/>
@@ -727,7 +727,7 @@
             </sizepolicy>
            </property>
            <property name="toolTip">
-            <string>Connect</string>
+            <string>连接</string>
            </property>
            <property name="text">
             <string/>
@@ -745,7 +745,7 @@
          <item>
           <widget class="QLabel" name="label_4">
            <property name="text">
-            <string>Set Device Name</string>
+            <string>设置设备名称</string>
            </property>
           </widget>
          </item>
@@ -755,7 +755,7 @@
          <item>
           <widget class="QPushButton" name="bleSetNameButton">
            <property name="text">
-            <string>Set</string>
+            <string>设置</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -774,7 +774,7 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>VESC Devices</string>
+          <string>VESC 设备</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_6">
           <item>
@@ -790,10 +790,10 @@
               <item>
                <widget class="QPushButton" name="pairConnectedButton">
                 <property name="toolTip">
-                 <string>Pair the connected VESC</string>
+                 <string>配对已连接的 VESC</string>
                 </property>
                 <property name="text">
-                 <string>Pair</string>
+                 <string>配对</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
@@ -804,10 +804,10 @@
               <item>
                <widget class="QPushButton" name="addConnectedButton">
                 <property name="toolTip">
-                 <string>Add the connected VESC without pairing it.</string>
+                 <string>添加已连接的 VESC，无需配对。</string>
                 </property>
                 <property name="text">
-                 <string>Add</string>
+                 <string>添加</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
@@ -818,10 +818,10 @@
               <item>
                <widget class="QPushButton" name="addUuidButton">
                 <property name="toolTip">
-                 <string>Manuallt add UUID to this instance of VESC Tool</string>
+                 <string>手动将 UUID 添加到此 VESC Tool 实例</string>
                 </property>
                 <property name="text">
-                 <string>Add UUID</string>
+                 <string>添加 UUID</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
@@ -835,10 +835,10 @@
               <item>
                <widget class="QPushButton" name="unpairButton">
                 <property name="toolTip">
-                 <string>Unpair this VESC, and make it possible to connect to it from any VESC Tool instance.</string>
+                 <string>取消此 VESC 的配对，使其可从任意 VESC Tool 实例连接。</string>
                 </property>
                 <property name="text">
-                 <string>Unpair</string>
+                 <string>取消配对</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
@@ -852,7 +852,7 @@
                  <string/>
                 </property>
                 <property name="text">
-                 <string>Delete</string>
+                 <string>删除</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
@@ -863,7 +863,7 @@
               <item>
                <widget class="QPushButton" name="clearPairedButton">
                 <property name="text">
-                 <string>Clear</string>
+                 <string>清除</string>
                 </property>
                 <property name="icon">
                  <iconset resource="../res.qrc">
@@ -895,13 +895,13 @@
      </widget>
      <widget class="QWidget" name="tab_6">
       <attribute name="title">
-       <string>TCP Hub</string>
+       <string>TCP 集线器</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_11">
        <item>
         <widget class="QGroupBox" name="groupBox_5">
          <property name="title">
-          <string>Login Details</string>
+          <string>登录信息</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <property name="leftMargin">
@@ -925,7 +925,7 @@
           <item row="1" column="3" colspan="3">
            <widget class="QRadioButton" name="hubClientButton">
             <property name="text">
-             <string>Client</string>
+             <string>客户端</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -935,7 +935,7 @@
           <item row="0" column="0">
            <widget class="QLabel" name="label_9">
             <property name="text">
-             <string>Address</string>
+             <string>地址</string>
             </property>
            </widget>
           </item>
@@ -948,7 +948,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Connect</string>
+             <string>连接</string>
             </property>
             <property name="text">
              <string/>
@@ -962,7 +962,7 @@
           <item row="2" column="3" colspan="3">
            <widget class="QRadioButton" name="hubServerButton">
             <property name="text">
-             <string>Server</string>
+             <string>服务器</string>
             </property>
            </widget>
           </item>
@@ -975,7 +975,7 @@
              </sizepolicy>
             </property>
             <property name="toolTip">
-             <string>Disconnect</string>
+             <string>断开连接</string>
             </property>
             <property name="text">
              <string/>
@@ -989,7 +989,7 @@
           <item row="0" column="3">
            <widget class="QSpinBox" name="tcpHubPortBox">
             <property name="prefix">
-             <string>Port: </string>
+             <string>端口：</string>
             </property>
             <property name="maximum">
              <number>65535</number>
@@ -1009,7 +1009,7 @@
           <item row="2" column="0">
            <widget class="QLabel" name="label_11">
             <property name="text">
-             <string>Password</string>
+             <string>密码</string>
             </property>
            </widget>
           </item>
@@ -1023,7 +1023,7 @@
           <item row="0" column="2">
            <widget class="QPushButton" name="hubDefaultButton">
             <property name="toolTip">
-             <string>Restore default</string>
+             <string>恢复默认</string>
             </property>
             <property name="text">
              <string/>
@@ -1063,7 +1063,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>CAN Forward</string>
+      <string>CAN 转发</string>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
@@ -1075,10 +1075,10 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Populate box without scanning, in case there are problems with scanning or the firmware does not support it.</string>
+         <string>不扫描直接填充列表，适用于扫描出现问题或固件不支持扫描的情况。</string>
         </property>
         <property name="text">
-         <string>Manual</string>
+         <string>手动</string>
         </property>
         <property name="icon">
          <iconset resource="../res.qrc">
@@ -1095,10 +1095,10 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Scan for CAN devices</string>
+         <string>扫描 CAN 设备</string>
         </property>
         <property name="text">
-         <string>Scan</string>
+         <string>扫描</string>
         </property>
         <property name="icon">
          <iconset resource="../res.qrc">
@@ -1118,7 +1118,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Show help</string>
+         <string>显示帮助</string>
         </property>
         <property name="text">
          <string/>
@@ -1138,7 +1138,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Forward communication over CAN-bus</string>
+         <string>通过 CAN 总线转发通信</string>
         </property>
         <property name="text">
          <string/>
@@ -1159,10 +1159,10 @@
    <item>
     <widget class="QPushButton" name="autoConnectButton">
      <property name="toolTip">
-      <string>Try to automatically connect using the USB connection</string>
+      <string>尝试通过 USB 连接自动连接</string>
      </property>
      <property name="text">
-      <string>Autoconnect</string>
+      <string>自动连接</string>
      </property>
      <property name="icon">
       <iconset resource="../res.qrc">

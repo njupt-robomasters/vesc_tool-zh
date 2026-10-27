@@ -148,11 +148,8 @@ void PageCanAnalyzer::on_updateCanBaudButton_clicked()
     if (mVesc) {
         QMessageBox::StandardButton reply;
         reply = QMessageBox::information(this,
-                                         tr("Update CAN Baudrate"),
-                                         tr("This is going to update the CAN-bus baudrate on all connected "
-                                            "VESC-based devices. This is only supported in firmware 6.06 or "
-                                            "later. If the update fails the CAN-bus might become unusable until "
-                                            "it is reconfigured manually. Do you want to continue?"),
+                                         tr("更新 CAN 波特率"),
+                                         tr("此操作将更新所有已连接的 VESC 设备的 CAN 总线波特率，仅支持固件 6.06 或更高版本。如果更新失败，CAN 总线可能无法使用，直到手动重新配置。是否继续？"),
                                          QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
         if (reply == QMessageBox::Yes) {

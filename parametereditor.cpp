@@ -217,14 +217,14 @@ void ParameterEditor::on_paramSaveButton_clicked()
     if (ui->nameEdit->text().contains(" ")) {
         QMessageBox::warning(this,
                              tr("保存参数"),
-                             tr("Spaces are not allowed in the name."));
+                             tr("名称中不允许包含空格。"));
         return;
     }
 
     if (ui->nameEdit->text().isEmpty()) {
         QMessageBox::warning(this,
                              tr("保存参数"),
-                             tr("Name is empty."));
+                             tr("名称为空。"));
         return;
     }
 
@@ -235,7 +235,7 @@ void ParameterEditor::on_paramSaveButton_clicked()
 
     if (mParams.hasParam(name)) {
         *mParams.getParam(name) = p;
-        showStatusInfo(tr("Parameter updated: %1").arg(name), true);
+        showStatusInfo(tr("参数已更新：%1").arg(name), true);
     } else {
         mParams.addParam(name, p);
 
@@ -255,7 +255,7 @@ void ParameterEditor::on_paramSaveButton_clicked()
         updateUi();
 
         ui->paramList->setCurrentRow(row);
-        showStatusInfo(tr("New parameter added: %1").arg(name), true);
+        showStatusInfo(tr("已添加新参数：%1").arg(name), true);
     }
 
     if (ui->previewTable->rowCount() > 0) {
@@ -335,14 +335,14 @@ void ParameterEditor::on_serAddButton_clicked()
         if (name.contains(" ")) {
             QMessageBox::warning(this,
                                  tr("添加"),
-                                 tr("Spaces are not allowed in the name."));
+                                 tr("名称中不允许包含空格。"));
             return;
         }
 
         if (name.isEmpty()) {
             QMessageBox::warning(this,
                                  tr("添加"),
-                                 tr("Name is empty."));
+                                 tr("名称为空。"));
             return;
         }
 
@@ -367,7 +367,7 @@ void ParameterEditor::on_paramList_doubleClicked(const QModelIndex &index)
 
 void ParameterEditor::on_enumAddButton_clicked()
 {
-    addEnum(tr("<double-click to edit>"));
+    addEnum(tr("<双击编辑>"));
 }
 
 void ParameterEditor::on_enumRemoveButton_clicked()
@@ -405,7 +405,7 @@ void ParameterEditor::on_actionLoad_XML_triggered()
 {
     QString path;
     path = QFileDialog::getOpenFileName(this,
-                                        tr("Choose parameter file to load"),
+                                        tr("选择要加载的参数文件"),
                                         mLastXmlPath,
                                         tr("XML 文件 (*.xml)"));
 
@@ -418,10 +418,9 @@ void ParameterEditor::on_actionLoad_XML_triggered()
     if (!res) {
         QMessageBox::information(this,
                                  tr("加载参数"),
-                                 tr("Could not load parameters:<BR>"
-                                    "%1").arg(mParams.xmlStatus()));
+                                 tr("无法加载参数：<BR>%1").arg(mParams.xmlStatus()));
     } else {
-        showStatusInfo(tr("Configuration Loaded"), true);
+        showStatusInfo(tr("配置已加载"), true);
         mLastXmlPath = path;
     }
 
@@ -432,7 +431,7 @@ void ParameterEditor::on_actionSave_XML_as_triggered()
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the parameter XML file"),
+                                        tr("选择参数 XML 文件的保存位置"),
                                         mLastXmlPath,
                                         tr("XML 文件 (*.xml)"));
 
@@ -449,10 +448,9 @@ void ParameterEditor::on_actionSave_XML_as_triggered()
     if (!res) {
         QMessageBox::information(this,
                                  tr("保存参数"),
-                                 tr("Could not save parameters:<BR>"
-                                    "%1").arg(mParams.xmlStatus()));
+                                 tr("无法保存参数：<BR>%1").arg(mParams.xmlStatus()));
     } else {
-        showStatusInfo(tr("Configuration Saved"), true);
+        showStatusInfo(tr("配置已保存"), true);
         mLastXmlPath = path;
     }
 }
@@ -462,13 +460,13 @@ void ParameterEditor::on_actionDeleteAll_triggered()
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this,
                                   tr("删除全部"),
-                                  tr("Are you sure that you want to delete all data?"),
+                                  tr("确定要删除所有数据吗？"),
                                   QMessageBox::Yes|QMessageBox::No);
 
     if (reply == QMessageBox::Yes) {
         mParams.clearAll();
         updateUi();
-        showStatusInfo(tr("Configuration Deleted"), true);
+        showStatusInfo(tr("配置已删除"), true);
     }
 }
 
@@ -705,17 +703,17 @@ void ParameterEditor::saveParamFileDialog(bool wrapIfdef)
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the configuration header file"),
+                                        tr("选择配置头文件的保存位置"),
                                         ".",
-                                        tr("h files (*.h)"));
+                                        tr("h 头文件 (*.h)"));
 
     if (path.isNull()) {
         return;
     }
 
     if (path.contains(" ")) {
-        QMessageBox::warning(this, tr("Save header"),
-                          tr("Spaces are not allowed in the filename."));
+        QMessageBox::warning(this, tr("保存头文件"),
+                          tr("文件名中不允许包含空格。"));
         return;
     }
 
@@ -728,8 +726,8 @@ void ParameterEditor::saveParamFileDialog(bool wrapIfdef)
     if (res) {
         showStatusInfo("Saved C header", true);
     } else {
-        QMessageBox::warning(this, tr("Save header"),
-                          tr("Could not save header"));
+        QMessageBox::warning(this, tr("保存头文件"),
+                          tr("无法保存头文件"));
     }
 }
 
@@ -800,7 +798,7 @@ void ParameterEditor::on_actionCalculatePacketSize_triggered()
 
     QMessageBox::information(this,
                              tr("数据包大小"),
-                             tr("%1 Bytes").arg(bytes.size()));
+                             tr("%1 字节").arg(bytes.size()));
 }
 
 void ParameterEditor::on_groupRemoveButton_clicked()
@@ -1033,9 +1031,9 @@ void ParameterEditor::on_actionExportConfigurationParser_triggered()
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the parser C source and header file"),
+                                        tr("选择解析器 C 源文件和头文件的保存位置"),
                                         ".",
-                                        tr("C Source/Header files (*.c *.h)"));
+                                        tr("C 源文件/头文件 (*.c *.h)"));
 
     if (path.isNull()) {
         return;
@@ -1073,9 +1071,9 @@ void ParameterEditor::on_actionExportCompressedCArray_triggered()
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose where to save the config C source and header file"),
+                                        tr("选择配置 C 源文件和头文件的保存位置"),
                                         ".",
-                                        tr("C Source/Header files (*.c *.h)"));
+                                        tr("C 源文件/头文件 (*.c *.h)"));
 
     if (path.isNull()) {
         return;
@@ -1104,17 +1102,16 @@ void ParameterEditor::on_actionCalculateCompressedCArraySize_triggered()
     QByteArray compressed = mParams.getCompressedParamsXml();
     QMessageBox::information(this,
                              tr("压缩 XML 大小"),
-                             tr("%1 Bytes").arg(compressed.size()));
+                             tr("%1 字节").arg(compressed.size()));
 }
 
 void ParameterEditor::on_actionSave_XML_and_export_config_parser_and_compressed_C_array_triggered()
 {
     QString path;
     path = QFileDialog::getSaveFileName(this,
-                                        tr("Choose the XML file or one of the C files. All files will be created with default "
-                                           "names and/or overwritten if they already exist in the directory."),
+                                        tr("选择 XML 文件或其中一个 C 文件。所有文件将使用默认名称创建，若目录中已存在同名文件则会被覆盖。"),
                                         mLastXmlPath,
-                                        tr("C Source/Header files (*.c *.h *.xml)"));
+                                        tr("C 源文件/头文件 (*.c *.h *.xml)"));
 
     if (path.isNull()) {
         return;

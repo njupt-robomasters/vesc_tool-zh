@@ -147,10 +147,10 @@ void PpmMap::on_applyButton_clicked()
             mVesc->appConfig()->updateParamDouble("app_ppm_conf.pulse_center", ui->centerBox->value());
             mVesc->emitStatusMessage(tr("起始、结束和中心脉冲长度已应用"), true);
         } else {
-            mVesc->emitStatusMessage(tr("Applying Pulselengths Failed"), false);
+            mVesc->emitStatusMessage(tr("应用脉宽失败"), false);
             QMessageBox::warning(this,
                                  tr("应用脉冲长度"),
-                                 tr("Please activate RT app data and measure the pulselengths first."));
+                                 tr("请先激活实时应用数据并测量脉宽。"));
         }
     }
 }

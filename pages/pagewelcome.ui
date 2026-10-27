@@ -35,7 +35,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Welcome to &lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;VESC® Tool&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;To get started, you can use the &lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-style:italic;&quot;&gt;Setup Wizards&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; to configure the motor and app settings respectively. Otherwise, you can connect to your VESC in the &lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-style:italic;&quot;&gt;Connection&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; page and go through the motor and app configuration pages manually.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;欢迎使用&lt;/span&gt;&lt;span style=&quot; font-size:20pt; font-weight:600;&quot;&gt;VESC® Tool&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;开始使用时，可以通过&lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-style:italic;&quot;&gt;设置向导&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;分别配置电机和应用设置。或者，您也可以在&lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-style:italic;&quot;&gt;连接&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; 页面连接 VESC，然后手动完成电机和应用配置页面的设置。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
@@ -51,13 +51,13 @@
             </sizepolicy>
            </property>
            <property name="title">
-            <string>Quick Configuration</string>
+            <string>快速配置</string>
            </property>
            <layout class="QGridLayout" name="gridLayout">
             <item row="2" column="1">
              <widget class="QPushButton" name="wizardAppButton">
               <property name="text">
-               <string>Setup Input</string>
+               <string>设置输入</string>
               </property>
               <property name="icon">
                <iconset resource="../res.qrc">
@@ -77,7 +77,7 @@
             <item row="3" column="0">
              <widget class="QPushButton" name="multiSettingButton">
               <property name="text">
-               <string>Multi Settings</string>
+               <string>多项设置</string>
               </property>
               <property name="icon">
                <iconset resource="../res.qrc">
@@ -94,7 +94,7 @@
             <item row="4" column="1">
              <widget class="QPushButton" name="invertDirButton">
               <property name="text">
-               <string>Invert Motor Directions</string>
+               <string>反转电机方向</string>
               </property>
               <property name="icon">
                <iconset resource="../res.qrc">
@@ -111,7 +111,7 @@
             <item row="4" column="0">
              <widget class="QPushButton" name="setupBluetoothButton">
               <property name="text">
-               <string>Setup Bluetooth Module</string>
+               <string>设置蓝牙模块</string>
               </property>
               <property name="icon">
                <iconset resource="../res.qrc">
@@ -128,7 +128,7 @@
             <item row="3" column="1">
              <widget class="QPushButton" name="nrfPairButton">
               <property name="text">
-               <string>NRF Quick Pair</string>
+               <string>NRF 快速配对</string>
               </property>
               <property name="icon">
                <iconset resource="../res.qrc">
@@ -145,10 +145,10 @@
             <item row="0" column="0">
              <widget class="QPushButton" name="autoConnectButton">
               <property name="toolTip">
-               <string>Automatically connect to the VESC using the USB connection.</string>
+               <string>通过 USB 连接自动连接 VESC。</string>
               </property>
               <property name="text">
-               <string>AutoConnect</string>
+               <string>自动连接</string>
               </property>
               <property name="icon">
                <iconset resource="../res.qrc">
@@ -165,10 +165,10 @@
             <item row="0" column="1">
              <widget class="QPushButton" name="wizardFocSimpleButton">
               <property name="toolTip">
-               <string>Simple FOC setup for all VESCs on CAN-bus</string>
+               <string>CAN 总线上所有 VESC 的简易 FOC 设置</string>
               </property>
               <property name="text">
-               <string>Setup Motors FOC</string>
+               <string>设置电机 FOC</string>
               </property>
               <property name="icon">
                <iconset resource="../res.qrc">
@@ -188,7 +188,7 @@
             <item row="2" column="0">
              <widget class="QPushButton" name="wizardIMUButton">
               <property name="text">
-               <string>Setup IMU</string>
+               <string>设置 IMU</string>
               </property>
               <property name="icon">
                <iconset resource="../res.qrc">

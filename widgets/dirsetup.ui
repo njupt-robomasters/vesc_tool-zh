@@ -23,7 +23,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Select which VESCs have inverted motor direction. Press the FWD or REV button to try.</string>
+      <string>选择哪些 VESC 的电机方向需要反向。按下 FWD 或 REV 按钮进行尝试。</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -48,7 +48,7 @@
      <item>
       <widget class="QPushButton" name="refreshButton">
        <property name="text">
-        <string>Refresh</string>
+        <string>刷新</string>
        </property>
       </widget>
      </item>

@@ -42,10 +42,10 @@
           <item>
            <widget class="QPushButton" name="runButton">
             <property name="toolTip">
-             <string>Run in panel.</string>
+             <string>在面板中运行。</string>
             </property>
             <property name="text">
-             <string>Run</string>
+             <string>运行</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -59,10 +59,10 @@
           <item>
            <widget class="QPushButton" name="runWindowButton">
             <property name="toolTip">
-             <string>Run in Window</string>
+             <string>在窗口中运行</string>
             </property>
             <property name="text">
-             <string>Window</string>
+             <string>窗口</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -76,10 +76,10 @@
           <item>
            <widget class="QPushButton" name="reloadAndRunButton">
             <property name="toolTip">
-             <string>Reload file from filesystem and run in panel. Warning: This will replace the editor content if it is unsaved.</string>
+             <string>从文件系统重新加载文件并在面板中运行。警告：若编辑器内容未保存，将被覆盖。</string>
             </property>
             <property name="text">
-             <string>Reload &amp;&amp; Run</string>
+             <string>重新加载并运行</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -93,10 +93,10 @@
           <item>
            <widget class="QPushButton" name="fullscreenButton">
             <property name="toolTip">
-             <string>Toggle fullscreen in running window.</string>
+             <string>切换运行窗口的全屏。</string>
             </property>
             <property name="text">
-             <string>Fullscreen</string>
+             <string>全屏</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -110,7 +110,7 @@
           <item>
            <widget class="QPushButton" name="stopButton">
             <property name="text">
-             <string>Stop</string>
+             <string>停止</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -124,10 +124,10 @@
           <item>
            <widget class="QPushButton" name="helpButton">
             <property name="toolTip">
-             <string>Show help</string>
+             <string>显示帮助</string>
             </property>
             <property name="text">
-             <string>Help</string>
+             <string>帮助</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -191,7 +191,7 @@
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
-        <string>Console</string>
+        <string>控制台</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0">
         <item>
@@ -238,7 +238,7 @@
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
-        <string>Recent</string>
+        <string>最近</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,0">
         <item>
@@ -254,7 +254,7 @@
             <item>
              <widget class="QLabel" name="label">
               <property name="text">
-               <string>Filter</string>
+               <string>过滤</string>
               </property>
              </widget>
             </item>
@@ -264,7 +264,7 @@
             <item>
              <widget class="QPushButton" name="recentFilterClearButton">
               <property name="toolTip">
-               <string>Clear Filter Text</string>
+               <string>清除过滤文本</string>
               </property>
               <property name="text">
                <string/>
@@ -290,10 +290,10 @@
           <item>
            <widget class="QPushButton" name="openRecentButton">
             <property name="toolTip">
-             <string>Open selected recent file</string>
+             <string>打开所选的最近文件</string>
             </property>
             <property name="text">
-             <string>Open</string>
+             <string>打开</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -304,10 +304,10 @@
           <item>
            <widget class="QPushButton" name="removeSelectedButton">
             <property name="toolTip">
-             <string>Remove selected recent file from list (file will not be deleted from file system)</string>
+             <string>从列表中移除所选的最近文件（不会删除文件系统中的文件）</string>
             </property>
             <property name="text">
-             <string>Remove</string>
+             <string>移除</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -318,10 +318,10 @@
           <item>
            <widget class="QPushButton" name="clearRecentButton">
             <property name="toolTip">
-             <string>Clear recent file list (nothing will be deleted from file system)</string>
+             <string>清除最近文件列表（不会删除文件系统中的文件）</string>
             </property>
             <property name="text">
-             <string>Clear</string>
+             <string>清除</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -348,7 +348,7 @@
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
-        <string>Examples</string>
+        <string>示例</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,0">
         <item>
@@ -364,7 +364,7 @@
             <item>
              <widget class="QLabel" name="label_2">
               <property name="text">
-               <string>Filter</string>
+               <string>过滤</string>
               </property>
              </widget>
             </item>
@@ -374,7 +374,7 @@
             <item>
              <widget class="QPushButton" name="exampleFilterClearButton">
               <property name="toolTip">
-               <string>Clear Filter Text</string>
+               <string>清除过滤文本</string>
               </property>
               <property name="text">
                <string/>
@@ -397,7 +397,7 @@
           <item>
            <widget class="QPushButton" name="openExampleButton">
             <property name="text">
-             <string>Open</string>
+             <string>打开</string>
             </property>
             <property name="icon">
              <iconset resource="../res.qrc">
@@ -424,7 +424,7 @@
       </widget>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
-        <string>Tools</string>
+        <string>工具</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
@@ -432,7 +432,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox">
             <property name="title">
-             <string>Export C Array</string>
+             <string>导出 C 数组</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_5" stretch="0,0,0,1">
              <property name="spacing">
@@ -441,7 +441,7 @@
              <item>
               <widget class="QPushButton" name="exportCArrayHwButton">
                <property name="text">
-                <string>Export Array HW</string>
+                <string>导出硬件数组</string>
                </property>
                <property name="icon">
                 <iconset resource="../res.qrc">
@@ -452,7 +452,7 @@
              <item>
               <widget class="QPushButton" name="exportCArrayAppButton">
                <property name="text">
-                <string>Export Array App</string>
+                <string>导出应用数组</string>
                </property>
                <property name="icon">
                 <iconset resource="../res.qrc">
@@ -463,10 +463,10 @@
              <item>
               <widget class="QPushButton" name="calcSizeButton">
                <property name="toolTip">
-                <string>Calculate compressed QML size</string>
+                <string>计算压缩后的 QML 大小</string>
                </property>
                <property name="text">
-                <string>Calculate Size</string>
+                <string>计算大小</string>
                </property>
                <property name="icon">
                 <iconset resource="../res.qrc">
@@ -493,7 +493,7 @@
           <item>
            <widget class="QGroupBox" name="groupBox_2">
             <property name="title">
-             <string>Connected VESC</string>
+             <string>已连接的 VESC</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0,0,1">
              <property name="spacing">
@@ -502,7 +502,7 @@
              <item>
               <widget class="QPushButton" name="openQmluiHwButton">
                <property name="text">
-                <string>Open Qmlui HW</string>
+                <string>打开 QML 硬件界面</string>
                </property>
                <property name="icon">
                 <iconset resource="../res.qrc">
@@ -513,7 +513,7 @@
              <item>
               <widget class="QPushButton" name="openQmluiAppButton">
                <property name="text">
-                <string>Open Qmlui App</string>
+                <string>打开 QML 应用界面</string>
                </property>
                <property name="icon">
                 <iconset resource="../res.qrc">
@@ -546,7 +546,7 @@
              </sizepolicy>
             </property>
             <property name="title">
-             <string>QML Upload</string>
+             <string>QML 上传</string>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,1">
              <item>
@@ -557,7 +557,7 @@
                <item>
                 <widget class="QPushButton" name="uploadButton">
                  <property name="text">
-                  <string>Erase &amp;&amp; Upload</string>
+                  <string>擦除并上传</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -568,7 +568,7 @@
                <item>
                 <widget class="QPushButton" name="eraseOnlyButton">
                  <property name="text">
-                  <string>Erase Only</string>
+                  <string>仅擦除</string>
                  </property>
                  <property name="icon">
                   <iconset resource="../res.qrc">
@@ -579,10 +579,10 @@
                <item>
                 <widget class="QCheckBox" name="uploadFullscreenBox">
                  <property name="toolTip">
-                  <string>Run uploaded UI in fullscreen mode.</string>
+                  <string>以全屏模式运行已上传的界面。</string>
                  </property>
                  <property name="text">
-                  <string>Fullscreen</string>
+                  <string>全屏</string>
                  </property>
                 </widget>
                </item>
@@ -602,7 +602,7 @@
                <item>
                 <widget class="QPushButton" name="clearUploadTextButton">
                  <property name="toolTip">
-                  <string>Clear text below</string>
+                  <string>清除下方文本</string>
                  </property>
                  <property name="text">
                   <string/>

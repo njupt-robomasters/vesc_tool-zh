@@ -94,23 +94,19 @@ void DetectFoc::on_lambdaButton_clicked()
         if (ui->currentBox->value() > 0.001) {
             if (ui->resistanceBox->value() < 1e-10) {
                 QMessageBox::critical(this,
-                                      tr("Measure Error"),
+                                      tr("测量错误"),
                                       tr("电阻为 0。请先测量。"));
                 return;
             }
 
             reply = QMessageBox::warning(this,
                                          tr("警告"),
-                                         tr("<font color=\"red\">Warning: </font>"
-                                            "This is going to spin up the motor. Make "
-                                            "sure that nothing is in the way."),
+                                         tr("<font color=\"red\">警告：</font>此操作将使电机旋转。请确保周围没有障碍物。"),
                                          QMessageBox::Ok | QMessageBox::Cancel);
         } else {
             reply = QMessageBox::warning(this,
                                          tr("警告"),
-                                         tr("As the current is 0 this is going to perform passive flux "
-                                            "linkage measurement. Make sure that the motor is driven "
-                                            "externally."),
+                                         tr("由于电流为 0，将执行被动磁链测量。请确保电机由外部驱动。"),
                                          QMessageBox::Ok | QMessageBox::Cancel);
         }
 
@@ -248,21 +244,21 @@ void DetectFoc::on_applyAllButton_clicked()
 
         if (r < 1e-10) {
             QMessageBox::critical(this,
-                                  tr("Apply Error"),
+                                  tr("应用错误"),
                                   tr("电阻为 0。请先测量。"));
             return;
         }
 
         if (l < 1e-10) {
             QMessageBox::critical(this,
-                                  tr("Apply Error"),
-                                  tr("L is 0. Please measure it first."));
+                                  tr("应用错误"),
+                                  tr("L 为 0。请先测量 L。"));
             return;
         }
 
         if (lambda < 1e-10) {
             QMessageBox::critical(this,
-                                  tr("Apply Error"),
+                                  tr("应用错误"),
                                   tr(u8"\u03BB is 0. Please measure it first."));
             return;
         }
@@ -276,7 +272,7 @@ void DetectFoc::on_applyAllButton_clicked()
 
         if (mTempMotorLast > -10.0) {
             mVesc->mcConfig()->updateParamDouble("foc_temp_comp_base_temp", mTempMotorLast);
-            mVesc->emitStatusMessage(tr("Temp comp base temp applied"), true);
+            mVesc->emitStatusMessage(tr("温度补偿基准温度已应用"), true);
         }
 
         on_calcKpKiButton_clicked();
@@ -296,7 +292,7 @@ void DetectFoc::on_applyAllButton_clicked()
                 mVesc->emitStatusMessage(tr("编码器参数已应用"), true);
             }
         } else {
-            mVesc->emitStatusMessage(tr("Apply Parameters Failed"), false);
+            mVesc->emitStatusMessage(tr("应用参数失败"), false);
         }
     }
 }
@@ -362,15 +358,15 @@ void DetectFoc::on_calcKpKiButton_clicked()
 
     if (r < 1e-10) {
         QMessageBox::critical(this,
-                              tr("Calculate Error"),
+                              tr("计算错误"),
                               tr("电阻为 0。请先测量。"));
         return;
     }
 
     if (l < 1e-10) {
         QMessageBox::critical(this,
-                              tr("Calculate Error"),
-                              tr("L is 0. Please measure it first."));
+                              tr("计算错误"),
+                              tr("L 为 0。请先测量 L。"));
         return;
     }
 
@@ -397,7 +393,7 @@ void DetectFoc::on_calcGainButton_clicked()
 
     if (lambda < 1e-10) {
         QMessageBox::critical(this,
-                              tr("Calculate Error"),
+                              tr("计算错误"),
                               tr(u8"\u03BB is 0. Please measure it first."));
         return;
     }
@@ -413,12 +409,8 @@ void DetectFoc::on_calcApplyLocalButton_clicked()
 {
     QMessageBox::StandardButton reply;
     reply = QMessageBox::information(this,
-                                     tr("Calculate"),
-                                     tr("This is going to calculate KP, KI and the observer "
-                                        "gain from the old settings and the time constant, and "
-                                        "apply them. This is useful for manually entering parameters, "
-                                        "of for changing time constant without running detection. Do "
-                                        "you want to proceed?"),
+                                     tr("计算"),
+                                     tr("此操作将根据旧设置和时间常数计算 KP、KI 和观测器增益并应用。适用于手动输入参数，或在不运行检测的情况下更改时间常数。是否继续？"),
                                      QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
 
     if (reply == QMessageBox::Yes) {
@@ -450,8 +442,8 @@ void DetectFoc::on_encApplyButton_clicked()
         }
     } else {
         QMessageBox::critical(this,
-                              tr("Apply Encoder Error"),
-                              tr("Please run flux linkage (FW 6.06+) or encoder detection first."));
+                              tr("应用编码器错误"),
+                              tr("请先运行磁链检测（固件 6.06+）或编码器检测。"));
     }
 }
 

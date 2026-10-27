@@ -29,7 +29,7 @@
      <item>
       <widget class="QPushButton" name="readButton">
        <property name="text">
-        <string>Read</string>
+        <string>读取</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -40,7 +40,7 @@
      <item>
       <widget class="QPushButton" name="readDefaultButton">
        <property name="text">
-        <string>Read Default</string>
+        <string>读取默认值</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -51,7 +51,7 @@
      <item>
       <widget class="QPushButton" name="writeButton">
        <property name="text">
-        <string>Write</string>
+        <string>写入</string>
        </property>
        <property name="icon">
         <iconset resource="../res.qrc">
@@ -62,14 +62,14 @@
      <item>
       <widget class="QPushButton" name="saveXmlButton">
        <property name="text">
-        <string>Save XML</string>
+        <string>保存 XML</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="loadXmlButton">
        <property name="text">
-        <string>Load XML</string>
+        <string>加载 XML</string>
        </property>
       </widget>
      </item>

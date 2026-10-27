@@ -32,7 +32,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Detect and Calculate Parameters</string>
+      <string>检测并计算参数</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
       <item row="1" column="0" colspan="2">
@@ -43,7 +43,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Current for starting</string>
+         <string>启动电流</string>
         </property>
         <property name="prefix">
          <string>I: </string>
@@ -67,7 +67,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Duty cycle to sample at</string>
+         <string>采样时使用的占空比</string>
         </property>
         <property name="prefix">
          <string>D: </string>
@@ -94,7 +94,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ERPM/sec to ramp up the motor in openloop mode with.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;开环模式下使电机升速所用的 ERPM/秒。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="prefix">
          <string>α: </string>
@@ -119,7 +119,7 @@
       <item row="1" column="5">
        <widget class="QLabel" name="label_2">
         <property name="text">
-         <string>← For λ</string>
+         <string>← 用于 λ</string>
         </property>
        </widget>
       </item>
@@ -137,7 +137,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Motor resistance</string>
+         <string>电机电阻</string>
         </property>
         <property name="readOnly">
          <bool>true</bool>
@@ -176,7 +176,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Motor inductance</string>
+         <string>电机电感</string>
         </property>
         <property name="wrapping">
          <bool>false</bool>
@@ -242,7 +242,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Motor flux linkage</string>
+         <string>电机磁链</string>
         </property>
         <property name="readOnly">
          <bool>true</bool>
@@ -270,7 +270,7 @@
       <item row="2" column="5">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>← Param</string>
+         <string>← 参数</string>
         </property>
        </widget>
       </item>
@@ -283,7 +283,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Calculate KP and KI (requires R and L)</string>
+         <string>计算 KP 和 KI（需要 R 和 L）</string>
         </property>
         <property name="text">
          <string/>
@@ -304,7 +304,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Time constant for calculating KP and KI</string>
+         <string>计算 KP 和 KI 所用的时间常数</string>
         </property>
         <property name="prefix">
          <string>T: </string>
@@ -334,7 +334,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Current control KP</string>
+         <string>电流环 KP</string>
         </property>
         <property name="readOnly">
          <bool>true</bool>
@@ -370,7 +370,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Current control KI</string>
+         <string>电流环 KI</string>
         </property>
         <property name="readOnly">
          <bool>true</bool>
@@ -401,7 +401,7 @@
       <item row="3" column="5">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>← Calc</string>
+         <string>← 计算</string>
         </property>
        </widget>
       </item>
@@ -414,7 +414,7 @@
          </sizepolicy>
         </property>
         <property name="toolTip">
-         <string>Calculate Observer Gain (requires λ)</string>
+         <string>计算观测器增益（需要 λ）</string>
         </property>
         <property name="text">
          <string/>
@@ -429,7 +429,7 @@
          </font>
         </property>
         <property name="toolTip">
-         <string>Observer gain</string>
+         <string>观测器增益</string>
         </property>
         <property name="readOnly">
          <bool>true</bool>
@@ -451,17 +451,17 @@
       <item row="4" column="3">
        <widget class="QPushButton" name="calcApplyLocalButton">
         <property name="toolTip">
-         <string>Calculate KP, KI and Observer Gain from the entered settings and the time constant, and apply them.</string>
+         <string>根据输入的设置和时间常数计算 KP、KI 和观测器增益，并应用。</string>
         </property>
         <property name="text">
-         <string>Calc Apply Old</string>
+         <string>按旧方式计算并应用</string>
         </property>
        </widget>
       </item>
       <item row="4" column="5">
        <widget class="QLabel" name="label_4">
         <property name="text">
-         <string>← Calc</string>
+         <string>← 计算</string>
         </property>
        </widget>
       </item>
@@ -470,7 +470,7 @@
         <item>
          <widget class="QPushButton" name="helpButton">
           <property name="toolTip">
-           <string>Show help</string>
+           <string>显示帮助</string>
           </property>
           <property name="text">
            <string/>
@@ -511,7 +511,7 @@
         <item>
          <widget class="QPushButton" name="rlButton">
           <property name="toolTip">
-           <string>Measure resistance and inductance</string>
+           <string>测量电阻和电感</string>
           </property>
           <property name="text">
            <string/>
@@ -552,7 +552,7 @@
         <item>
          <widget class="QPushButton" name="lambdaButton">
           <property name="toolTip">
-           <string>Measure flux linkage</string>
+           <string>测量磁链</string>
           </property>
           <property name="text">
            <string/>
@@ -599,7 +599,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Calculate and apply all parameters</string>
+           <string>计算并应用所有参数</string>
           </property>
           <property name="text">
            <string/>
@@ -622,7 +622,7 @@
         <item>
          <widget class="QLabel" name="label_5">
           <property name="text">
-           <string>Encoder</string>
+           <string>编码器</string>
           </property>
          </widget>
         </item>
@@ -635,7 +635,7 @@
            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
           </property>
           <property name="prefix">
-           <string>Offset: </string>
+           <string>偏移：</string>
           </property>
           <property name="decimals">
            <number>1</number>
@@ -660,7 +660,7 @@
            <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
           </property>
           <property name="prefix">
-           <string>Ratio: </string>
+           <string>比率：</string>
           </property>
           <property name="decimals">
            <number>1</number>
@@ -680,12 +680,12 @@
          <widget class="QComboBox" name="encInvertedBox">
           <item>
            <property name="text">
-            <string>Not Inverted</string>
+            <string>未反向</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Inverted</string>
+            <string>反向</string>
            </property>
           </item>
          </widget>
@@ -693,7 +693,7 @@
         <item>
          <widget class="QPushButton" name="encApplyButton">
           <property name="text">
-           <string>Apply Encoder</string>
+           <string>应用编码器</string>
           </property>
          </widget>
         </item>

@@ -34,7 +34,7 @@
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
-        <string>Voltages</string>
+        <string>电压</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
@@ -44,7 +44,7 @@
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
-        <string>Temperatures</string>
+        <string>温度</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
@@ -54,7 +54,7 @@
       </widget>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
-        <string>Temp Plot</string>
+        <string>温度图</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
@@ -84,112 +84,112 @@
          </attribute>
          <row>
           <property name="text">
-           <string>Total Voltage</string>
+           <string>总电压</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Cell Min</string>
+           <string>单体最低</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Cell Max</string>
+           <string>单体最高</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Cell Diff</string>
+           <string>单体压差</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Charge Input Voltage</string>
+           <string>充电输入电压</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Input Current</string>
+           <string>输入电流</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Input Current BMS IC</string>
+           <string>BMS IC 输入电流</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Ah Counter</string>
+           <string>Ah 计数</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Wh Counter</string>
+           <string>Wh 计数</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Power</string>
+           <string>功率</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>State of Charge (SoC)</string>
+           <string>荷电状态 (SoC)</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>State of Health (SoH)</string>
+           <string>健康状态 (SoH)</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Temp Cell Max</string>
+           <string>电芯最高温度</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Temp PCB Max</string>
+           <string>PCB 最高温度</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Humidity</string>
+           <string>湿度</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Pressure</string>
+           <string>气压</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Ah Charge Total</string>
+           <string>累计充电 Ah</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Wh Charge Total</string>
+           <string>累计充电 Wh</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Ah Discharge Total</string>
+           <string>累计放电 Ah</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Wh Discharge Total</string>
+           <string>累计放电 Wh</string>
           </property>
          </row>
          <row>
           <property name="text">
-           <string>Status</string>
+           <string>状态</string>
           </property>
          </row>
          <column>
           <property name="text">
-           <string>Value</string>
+           <string>值</string>
           </property>
          </column>
          <item row="0" column="0">
@@ -307,7 +307,7 @@
          <item>
           <widget class="QPushButton" name="resetAhButton">
            <property name="text">
-            <string>Reset Ah</string>
+            <string>重置 Ah</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -318,7 +318,7 @@
          <item>
           <widget class="QPushButton" name="resetWhButton">
            <property name="text">
-            <string>Reset Wh</string>
+            <string>重置 Wh</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -334,7 +334,7 @@
            <item>
             <widget class="QPushButton" name="balOnButton">
              <property name="text">
-              <string>Bal On</string>
+              <string>均衡开</string>
              </property>
              <property name="icon">
               <iconset resource="../res.qrc">
@@ -345,7 +345,7 @@
            <item>
             <widget class="QPushButton" name="balOffButton">
              <property name="text">
-              <string>Bal Off</string>
+              <string>均衡关</string>
              </property>
              <property name="icon">
               <iconset resource="../res.qrc">
@@ -358,7 +358,7 @@
          <item>
           <widget class="QPushButton" name="zeroCurrentButton">
            <property name="text">
-            <string>Cal Zero Current</string>
+            <string>电流零点校准</string>
            </property>
            <property name="icon">
             <iconset resource="../res.qrc">
@@ -374,7 +374,7 @@
            <item>
             <widget class="QPushButton" name="chgEnButton">
              <property name="text">
-              <string>Chg En</string>
+              <string>充电使能</string>
              </property>
              <property name="icon">
               <iconset resource="../res.qrc">
@@ -385,7 +385,7 @@
            <item>
             <widget class="QPushButton" name="chgDisButton">
              <property name="text">
-              <string>Chg Dis</string>
+              <string>充电禁用</string>
              </property>
              <property name="icon">
               <iconset resource="../res.qrc">

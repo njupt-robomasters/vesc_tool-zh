@@ -71,14 +71,18 @@ void ParamEditBitfield::setConfig(ConfigParams *config)
         if (param->enumNames.size() > 6) ui->b6Box->setText(param->enumNames.at(6));
         if (param->enumNames.size() > 7) ui->b7Box->setText(param->enumNames.at(7));
 
-        ui->b0Box->setVisible(ui->b0Box->text().toLower() != "unused");
-        ui->b1Box->setVisible(ui->b1Box->text().toLower() != "unused");
-        ui->b2Box->setVisible(ui->b2Box->text().toLower() != "unused");
-        ui->b3Box->setVisible(ui->b3Box->text().toLower() != "unused");
-        ui->b4Box->setVisible(ui->b4Box->text().toLower() != "unused");
-        ui->b5Box->setVisible(ui->b5Box->text().toLower() != "unused");
-        ui->b6Box->setVisible(ui->b6Box->text().toLower() != "unused");
-        ui->b7Box->setVisible(ui->b7Box->text().toLower() != "unused");
+        auto isUnused = [](const QString &t) {
+            return t.toLower() == "unused" || t == "未使用";
+        };
+
+        ui->b0Box->setVisible(!isUnused(ui->b0Box->text()));
+        ui->b1Box->setVisible(!isUnused(ui->b1Box->text()));
+        ui->b2Box->setVisible(!isUnused(ui->b2Box->text()));
+        ui->b3Box->setVisible(!isUnused(ui->b3Box->text()));
+        ui->b4Box->setVisible(!isUnused(ui->b4Box->text()));
+        ui->b5Box->setVisible(!isUnused(ui->b5Box->text()));
+        ui->b6Box->setVisible(!isUnused(ui->b6Box->text()));
+        ui->b7Box->setVisible(!isUnused(ui->b7Box->text()));
     }
 
     connect(mConfig, SIGNAL(paramChangedInt(QObject*,QString,int)),

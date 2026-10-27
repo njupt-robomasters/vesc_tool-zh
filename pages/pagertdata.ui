@@ -26,7 +26,7 @@
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
-         <string>Current</string>
+         <string>电流</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
@@ -36,7 +36,7 @@
        </widget>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
-         <string>Temperature</string>
+         <string>温度</string>
         </attribute>
         <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,0">
          <item>
@@ -47,7 +47,7 @@
            <item>
             <widget class="QCheckBox" name="tempShowMosfetBox">
              <property name="toolTip">
-              <string>Show MOSFET temperature</string>
+              <string>显示 MOSFET 温度</string>
              </property>
              <property name="text">
               <string>MOSFET</string>
@@ -60,10 +60,10 @@
            <item>
             <widget class="QCheckBox" name="tempShowMotorBox">
              <property name="toolTip">
-              <string>Show motor temperature</string>
+              <string>显示电机温度</string>
              </property>
              <property name="text">
-              <string>Motor</string>
+              <string>电机</string>
              </property>
              <property name="checked">
               <bool>true</bool>
@@ -109,7 +109,7 @@
        </widget>
        <widget class="QWidget" name="tab_5">
         <attribute name="title">
-         <string>Rotor Position</string>
+         <string>转子位置</string>
         </attribute>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
@@ -123,7 +123,7 @@
               <number>120</number>
              </property>
              <property name="format">
-              <string>%v Degrees</string>
+              <string>%v 度</string>
              </property>
             </widget>
            </item>
@@ -144,80 +144,80 @@
            <item>
             <widget class="QPushButton" name="posInductanceButton">
              <property name="toolTip">
-              <string>Start inductance based signal injection detection (BLDC only)</string>
+              <string>开始基于电感的信号注入检测（仅 BLDC）</string>
              </property>
              <property name="text">
-              <string>Inductance</string>
+              <string>电感</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="posEncoderButton">
              <property name="toolTip">
-              <string>Plot the encoder position</string>
+              <string>绘制编码器位置</string>
              </property>
              <property name="text">
-              <string>Encoder</string>
+              <string>编码器</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="posObserverButton">
              <property name="toolTip">
-              <string>Plot the rotor position seen by the observer (FOC only)</string>
+              <string>绘制观测器得到的转子位置（仅 FOC）</string>
              </property>
              <property name="text">
-              <string>Observer</string>
+              <string>观测器</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="posPidButton">
              <property name="toolTip">
-              <string>Plot the PID controller position</string>
+              <string>绘制 PID 控制器位置</string>
              </property>
              <property name="text">
-              <string>PID Pos</string>
+              <string>PID 位置</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="posEncoderObserverErrorButton">
              <property name="toolTip">
-              <string>Plot the difference between the observer and encoder position (FOC only)</string>
+              <string>绘制观测器与编码器位置之差（仅 FOC）</string>
              </property>
              <property name="text">
-              <string>Obs vs Enc</string>
+              <string>观测器与编码器</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="posHallObserverErrorButton">
              <property name="toolTip">
-              <string>Plot the difference between the observer and hall sensor position (FOC only)</string>
+              <string>绘制观测器与霍尔传感器位置之差（仅 FOC）</string>
              </property>
              <property name="text">
-              <string>Obs vs Hall</string>
+              <string>观测器与霍尔</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="posPidErrorButton">
              <property name="toolTip">
-              <string>Plot the PID controller position error</string>
+              <string>绘制 PID 控制器位置误差</string>
              </property>
              <property name="text">
-              <string>PID Error</string>
+              <string>PID 误差</string>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QPushButton" name="posStopButton">
              <property name="toolTip">
-              <string>Stop sending position samples</string>
+              <string>停止发送位置采样</string>
              </property>
              <property name="text">
-              <string>Stop</string>
+              <string>停止</string>
              </property>
             </widget>
            </item>
@@ -284,7 +284,7 @@
            </font>
           </property>
           <property name="toolTip">
-           <string>Autoscale plots with incoming samples</string>
+           <string>随新采样自动缩放图表</string>
           </property>
           <property name="text">
            <string/>
@@ -322,7 +322,7 @@
            </font>
           </property>
           <property name="toolTip">
-           <string>Enable horizontal zoom</string>
+           <string>启用水平缩放</string>
           </property>
           <property name="text">
            <string/>
@@ -360,7 +360,7 @@
            </font>
           </property>
           <property name="toolTip">
-           <string>Enable vertical zoom</string>
+           <string>启用垂直缩放</string>
           </property>
           <property name="text">
            <string/>
@@ -387,7 +387,7 @@
         <item>
          <widget class="QToolButton" name="rescaleButton">
           <property name="toolTip">
-           <string>Rescale plots to fit</string>
+           <string>重新缩放图表以适应</string>
           </property>
           <property name="text">
            <string/>
@@ -420,7 +420,7 @@
         <item>
          <widget class="QToolButton" name="logRtButton">
           <property name="toolTip">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Log Realtime Data to File.&lt;/p&gt;&lt;p&gt;Go to &lt;span style=&quot; font-weight:600;&quot;&gt;Settings -&amp;gt; Paths&lt;/span&gt; to choose the output directory.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将实时数据记录到文件。&lt;/p&gt;&lt;p&gt;前往&lt;span style=&quot; font-weight:600;&quot;&gt;Settings -&amp;gt; Paths&lt;/span&gt; 选择输出目录。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="text">
            <string>...</string>

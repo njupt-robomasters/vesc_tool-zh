@@ -44,7 +44,7 @@
           </font>
          </property>
          <property name="toolTip">
-          <string>Clear all text from console</string>
+          <string>清除控制台所有文本</string>
          </property>
          <property name="text">
           <string/>

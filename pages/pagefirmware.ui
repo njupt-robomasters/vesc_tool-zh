@@ -17,7 +17,7 @@
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="title">
-      <string>Install New Firmware</string>
+      <string>安装新固件</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
@@ -30,7 +30,7 @@
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
-          <string>Included Files</string>
+          <string>内置文件</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
@@ -48,7 +48,7 @@
             <item>
              <widget class="QPushButton" name="dlFwButton">
               <property name="text">
-               <string>Download Latest</string>
+               <string>下载最新版</string>
               </property>
              </widget>
             </item>
@@ -82,7 +82,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Hardware Version</string>
+                  <string>硬件版本</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -104,7 +104,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Firmware</string>
+                  <string>固件</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -131,10 +131,10 @@
             <item>
              <widget class="QCheckBox" name="showNonDefaultBox">
               <property name="toolTip">
-               <string>Show firmwares with non-default compilation options</string>
+               <string>显示使用非默认编译选项的固件</string>
               </property>
               <property name="text">
-               <string>Show non-default firmwares</string>
+               <string>显示非默认固件</string>
               </property>
              </widget>
             </item>
@@ -154,7 +154,7 @@
             <item>
              <widget class="QPushButton" name="changelogButton">
               <property name="toolTip">
-               <string>Show firmware changelog</string>
+               <string>显示固件更新日志</string>
               </property>
               <property name="text">
                <string/>
@@ -171,7 +171,7 @@
         </widget>
         <widget class="QWidget" name="tab_2">
          <attribute name="title">
-          <string>Custom File</string>
+          <string>自定义文件</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,1,0">
           <item>
@@ -179,7 +179,7 @@
             <item>
              <widget class="QRadioButton" name="useFw1Button">
               <property name="text">
-               <string>Use</string>
+               <string>使用</string>
               </property>
               <property name="checked">
                <bool>true</bool>
@@ -198,7 +198,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Choose file...</string>
+               <string>选择文件...</string>
               </property>
               <property name="text">
                <string/>
@@ -216,7 +216,7 @@
             <item>
              <widget class="QRadioButton" name="useFw2Button">
               <property name="text">
-               <string>Use</string>
+               <string>使用</string>
               </property>
              </widget>
             </item>
@@ -232,7 +232,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Choose file...</string>
+               <string>选择文件...</string>
               </property>
               <property name="text">
                <string/>
@@ -250,7 +250,7 @@
             <item>
              <widget class="QRadioButton" name="useFw3Button">
               <property name="text">
-               <string>Use</string>
+               <string>使用</string>
               </property>
              </widget>
             </item>
@@ -266,7 +266,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Choose file...</string>
+               <string>选择文件...</string>
               </property>
               <property name="text">
                <string/>
@@ -284,7 +284,7 @@
             <item>
              <widget class="QRadioButton" name="useFw4Button">
               <property name="text">
-               <string>Use</string>
+               <string>使用</string>
               </property>
              </widget>
             </item>
@@ -300,7 +300,7 @@
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string>Choose file...</string>
+               <string>选择文件...</string>
               </property>
               <property name="text">
                <string/>
@@ -329,10 +329,10 @@
           <item>
            <widget class="QCheckBox" name="fwCustomBlBox">
             <property name="toolTip">
-             <string>Upload bootloader before uploading firmware</string>
+             <string>上传固件前先上传引导程序</string>
             </property>
             <property name="text">
-             <string>Upload Bootloader</string>
+             <string>上传引导程序</string>
             </property>
             <property name="checked">
              <bool>true</bool>
@@ -343,7 +343,7 @@
         </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
-          <string>Bootloader</string>
+          <string>引导程序</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_8">
           <item>
@@ -353,7 +353,7 @@
         </widget>
         <widget class="QWidget" name="tab_4">
          <attribute name="title">
-          <string>Archive</string>
+          <string>归档</string>
          </attribute>
          <layout class="QVBoxLayout" name="verticalLayout_11">
           <item>
@@ -371,7 +371,7 @@
             <item>
              <widget class="QPushButton" name="dlArchiveButton">
               <property name="text">
-               <string>Download Archive</string>
+               <string>下载归档</string>
               </property>
              </widget>
             </item>
@@ -389,7 +389,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>Firmware Version</string>
+                 <string>固件版本</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -411,7 +411,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>File</string>
+                 <string>文件</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -430,10 +430,10 @@
             <item>
              <widget class="QCheckBox" name="showNonDefaultArchBox">
               <property name="toolTip">
-               <string>Show firmwares with non-default compilation options</string>
+               <string>显示使用非默认编译选项的固件</string>
               </property>
               <property name="text">
-               <string>Show non-default firmwares</string>
+               <string>显示非默认固件</string>
               </property>
              </widget>
             </item>
@@ -470,7 +470,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Cancel upload</string>
+           <string>取消上传</string>
           </property>
           <property name="text">
            <string/>
@@ -490,7 +490,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Update firmware on the connected VESC</string>
+           <string>更新已连接 VESC 的固件</string>
           </property>
           <property name="text">
            <string/>
@@ -510,10 +510,10 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Upload firmware to the connected VESC, as well as to the VESCs connected over CAN-bus. Only available in FW3.45+.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#cc0000;&quot;&gt;WARNING&lt;/span&gt;: This function should &lt;span style=&quot; font-weight:600;&quot;&gt;only&lt;/span&gt; be used if all VESCs on the CAN-bus have the same hardware version. Otherwise, the firmware has to be updated on them individually.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;将固件上传到已连接的 VESC，以及通过 CAN 总线连接的所有 VESC。仅适用于固件 3.45 及以上版本。&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#cc0000;&quot;&gt;警告&lt;/span&gt;：此功能应&lt;span style=&quot; font-weight:600;&quot;&gt;仅&lt;/span&gt;在 CAN 总线上所有 VESC 的硬件版本相同时使用。否则，必须逐个更新各 VESC 的固件。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="text">
-           <string>All</string>
+           <string>全部</string>
           </property>
           <property name="icon">
            <iconset resource="../res.qrc">
@@ -531,7 +531,7 @@
      <item>
       <widget class="QGroupBox" name="groupBox_2">
        <property name="title">
-        <string>VESC Firmware, Hardware and UUID</string>
+        <string>VESC 固件、硬件和 UUID</string>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
@@ -550,7 +550,7 @@
            </sizepolicy>
           </property>
           <property name="toolTip">
-           <string>Read firmware version</string>
+           <string>读取固件版本</string>
           </property>
           <property name="text">
            <string/>
@@ -567,7 +567,7 @@
      <item>
       <widget class="QGroupBox" name="groupBox_3">
        <property name="title">
-        <string>Supported Firmwares Loaded</string>
+        <string>已加载支持的固件</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
