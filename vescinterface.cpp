@@ -3726,7 +3726,9 @@ void VescInterface::fwVersionReceived(FW_RX_PARAMS params)
         compCommands.append(int(COMM_GET_APPCONF_DEFAULT));
 
         if (!fwPairs.contains(fw_connected)) {
-            Utility::configLoad(this, fw_connected.first, fw_connected.second);
+            if (Utility::configLoad(this, fw_connected.first, fw_connected.second)) {
+                fwPairs = getSupportedFirmwarePairs();
+            }
         }
 
         mFwSupportsConfiguration = true;
